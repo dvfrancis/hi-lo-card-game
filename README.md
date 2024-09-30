@@ -14,8 +14,8 @@ TBC
 
 ### Site Link
 
-[here]: https://dvfrancis.github.io/older-and-wider
-The Github Pages live site can be accessed [here].
+[live site]: https://dvfrancis.github.io/hi-lo-card-game
+The [live site] is hosted by Github Pages.
 
 ## Index
 

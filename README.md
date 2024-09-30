@@ -2,7 +2,7 @@
 
 ## Overview
 
-The higher-or-lower card game is deceptively simple but will test anyone's nerve - decide whether the next card is higher or lower than your existing card to win your hand and increase your score.
+The higher-or-lower card game is deceptively simple but will test anyone's nerve - just decide whether the next card is higher or lower than your existing card to win your hand and increase your score.
 
 ### Background Information
 
@@ -10,7 +10,7 @@ TBC
 
 ### Site Preview
 
-![Preview of the Hi-Lo website at different screen sizes](tbc)
+![A preview of the Hi-Lo website at various screen sizes](../assets/images/)
 
 ### Site Link
 

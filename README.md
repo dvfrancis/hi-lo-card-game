@@ -2,15 +2,13 @@
 
 ## Overview
 
-The higher-or-lower card game is deceptively simple but will test anyone's nerve - just decide whether the next card is higher or lower than your existing card to win your hand and increase your score.
+The higher-or-lower card game is deceptively simple, but will test anyone's nerve.
 
-### Background Information
-
-TBC
+Decide whether the next card is higher or lower than your existing card to win your hand, and increase your score.
 
 ### Site Preview
 
-![A preview of the Hi-Lo website at various screen sizes](../assets/images/)
+![A preview of the Hi-Lo website at various screen sizes](assets/images/holding-image.jpg)
 
 ### Site Link
 
@@ -67,9 +65,7 @@ The [live site] is hosted by Github Pages.
 #### User Expectations
 
 - An accessible and responsive website.
-- Relevant information that is easily found.
 - Simple website navigation.
-- A way to get in touch with the podcast, to share experiences.
 - An experience that matches existing expectations of what to expect from a website; for example, links are easy to identify and function as expected.
 - An appealing visual design.
 
@@ -96,11 +92,11 @@ The [live site] is hosted by Github Pages.
     - All pages will be responsive at different screen sizes, and change layout accordingly and appropriately.
     - All screenshots shown in this section were taken from the desktop site, to give the clearest examples possible (apart from the Header section which also shows the header as seen on mobile devices, with a hamburger menu). 
 
-- Browser Tab Icon:
+- Browser Icon:
 
     - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
 
-        ![Website custom favicon](assets/images/website-favicon.webp)
+        ![Website custom favicon](assets/images/holding-image.jpg)
 
 - Header:
 
@@ -114,17 +110,6 @@ The [live site] is hosted by Github Pages.
         - Message Board - this takes the user to a page with the podcast's embedded Instagram profile.
         - Contact - this takes the user to a contact form that can be completed to send a message to the podcast hosts.
     - The currently active page is indicated on the navigation bar.
-    - The header as it appears on desktops:
-
-        ![Website header](assets/images/website-header.webp)
-
-    - The header as it appears on mobile:
-
-        ![Website mobile menu](assets/images/website-mobile-menu.webp)
-
-    - and with expanded hamburger menu:
-
-        ![Website mobile menu expanded](assets/images/website-mobile-menu-expanded.webp)
 
 - Footer:
 
@@ -135,7 +120,7 @@ The [live site] is hosted by Github Pages.
     - Legal information is centred in the second row.
     - On hover, each social media icon will change colour, and also when clicked. The legal links only change colour on hover:
 
-        ![Website footer](assets/images/website-footer.webp)        
+        ![Website footer](assets/images/holding-image.jpg)    
 
 - Home (index):
 
@@ -146,17 +131,9 @@ The [live site] is hosted by Github Pages.
     - The merchandise section has a button that, when clicked, takes the user to the merchandise website via a new tab.
     - In the mailing list section, the user has the opportunity to sign-up for a regularly released newsletter.
 
-        ![Website home page](assets/images/website-index-feature.webp)
+        ![Website home page](assets/images/holding-image.jpg)
 
-- Mailing List Completion:
-
-    - A custom completion page appears once 'Send' is clicked on the mailing list signup form on the home page, with suggested links to other parts of the site.
-    - The page will add humour to the site while offering suggested links to other pages on the site.
-    - After 30 seconds, the page will redirect automatically to the home page.
-
-        ![Website mailing list completion page](assets/images/website-mailing-list-completion-feature.webp)
-
-- About:
+- FAQ:
 
     - This section contains more detailed information about the podcast's purpose and the people behind it. It helps the user to understand the motivations behind the creation and continuation of the podcast.
     - Sections are:
@@ -164,48 +141,18 @@ The [live site] is hosted by Github Pages.
         - Biography of Jenny Eclair.
         - Biography of Judith Holder.
 
-        ![Website about page](assets/images/website-about-feature.webp)
-
-- Message Board:
-
-    - The "message board" page allows the user to read posts on the Instagram page without having to navigate away from the site, so keeping them on the site for longer.
-    - The podcast's Instagram profile is embedded on this page.
-
-        ![Website message board page](assets/images/website-message-board-feature.webp)
-
-- Contact:
-
-    - The 'Contact' page allows the user to send a message to the podcast hosts, helping them to feel involved in the podcast, it contains:
-        - First Name field - for user's first name.
-        - Last Name field - for user's last name.
-        - Age field (a text input that allows people to enter their age as, for example, "58 and a half" – a running joke on the podcast).
-        - Message field - for users to enter their message.
-        - Send button - users can click this button to send their message.
-        - Reset button - users can click this button to clear any information already entered on the form.
-    - All fields have validation where appropriate.
-    - Text input fields all have placeholder text.
-    - All inputs are required.
-
-        ![Website contact page](assets/images/website-contact-feature.webp)
-    
-- Contact Completion:
-
-    - A custom completion page appears once 'Send' is clicked on the Contact page, with suggested links to other parts of the site.
-    - The page will add humour to the site while offering suggested links to other pages on the site.
-    - After 30 seconds, the page will redirect automatically to the home page.
-
-        ![Website contact completion page](assets/images/website-contact-completion-feature.webp)
+        ![Website about page](assets/images/holding-image.jpg)
 
 - Custom 404:
     - A custom 404 error page appears whenever a user attempts to navigate to a non-existent page.
     - The page will add humour to the site while offering suggested links to other pages on the site.
     - After 30 seconds, the page will redirect automatically to the home page.
 
-        ![Website custom 404 error page](assets/images/website-404-feature.webp)
+        ![Website custom 404 error page](assets/images/holding-image.jpg)
 
 #### Future Features
 
-- The addition of a website forum would allow fans of the podcast to interact, discuss the show, and share their life experiences.
+- TBC
 
 ### Structure
 
@@ -213,7 +160,7 @@ The [live site] is hosted by Github Pages.
 
 This diagram shows how the user may interact and navigate through the website; dashed lines indicate optional routes.
 
-![User flow diagram](assets/images/user-flow-diagram.webp)
+![User flow diagram](assets/images/holding-image.jpg)
 
 ### Skeleton
 
@@ -228,70 +175,22 @@ The wireframes presented here show my initial ideas:
 ##### Mobile
 
 ###### Home
-![Home (index)](documentation/wireframes/mobile/home.webp)
-###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion.webp)
-###### About
-![About](documentation/wireframes/mobile/about.webp)
-###### Message Board
-![Message Board](documentation/wireframes/mobile/message-board.webp)
-###### Contact
-![Contact](documentation/wireframes/mobile/contact.webp)
-###### Contact Completion
-![Contact Completion](documentation/wireframes/mobile/contact-completion.webp)
-###### Custom 404
-![Custom 404](documentation/wireframes/mobile/404.webp)
+![Home (index)](assets/images/holding-image.jpg)
 
 ##### Mobile (with expanded menu)
 
 ###### Home
-![Home (index)](documentation/wireframes/mobile/home-menu.webp)
-###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/mobile/mailing-list-completion-menu.webp)
-###### About
-![About](documentation/wireframes/mobile/about-menu.webp)
-###### Message Board
-![Message Board](documentation/wireframes/mobile/message-board-menu.webp)
-###### Contact
-![Contact](documentation/wireframes/mobile/contact-menu.webp)
-###### Contact Completion
-![Contact Completion](documentation/wireframes/mobile/contact-completion-menu.webp)
-###### Custom 404
-![Custom 404](documentation/wireframes/mobile/404-menu.webp)
+![Home (index)](assets/images/holding-image.jpg)
 
 ##### Tablet
 
 ###### Home
-![Home (index)](documentation/wireframes/tablet/home.webp)
-###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/tablet/mailing-list-completion.webp)
-###### About
-![About](documentation/wireframes/tablet/about.webp)
-###### Message Board
-![Message Board](documentation/wireframes/tablet/message-board.webp)
-###### Contact
-![Contact](documentation/wireframes/tablet/contact.webp)
-###### Contact Completion
-![Contact Completion](documentation/wireframes/tablet/contact-completion.webp)
-###### Custom 404
-![Custom 404](documentation/wireframes/tablet/custom-404.webp)
+![Home (index)](assets/images/holding-image.jpg)
 
 ##### Desktop
 
 ###### Home
-![Home (index)](documentation/wireframes/desktop/home.webp)
-###### Mailing List Completion
-![Mailing List Completion](documentation/wireframes/desktop/mailing-list-completion.webp)
-###### About
-![About](documentation/wireframes/desktop/about.webp)
-###### Message Board
-![Message Board](documentation/wireframes/desktop/message-board.webp)
-###### Contact
-![Contact](documentation/wireframes/desktop/contact.webp)
-###### Contact Completion
-![Contact Completion](documentation/wireframes/desktop/contact-completion.webp)
-###### Custom 404
-![Custom 404](documentation/wireframes/desktop/custom-404.webp)
+![Home (index)](assets/images/holding-image.jpg)
 
 ### Surface
 
@@ -299,7 +198,7 @@ The wireframes presented here show my initial ideas:
 
 The following colours have been used to add interesting backgrounds to site sections, with white (#FFF) as a contrasting colour, which is also used for all text:
 
-![Website colour scheme](assets/images/website-colours.webp)
+![Website colour scheme](assets/images/holding-image.jpg)
 
 [Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1)]:https://brandpalettes.com/facebook-colors
 [Instagram Rose (#E1306C) and Instagram Purple Red (#C13584)]: https://brandpalettes.com/instagram-color-codes
@@ -344,7 +243,7 @@ The site was deployed using GitHub Pages, as follows:
 - On the 'GitHub Pages' section, under 'Build and deployment > Source' select 'Deploy from a branch'.
 - Ensure that the 'main' branch has been selected, and then click 'Save'.
 
-![GitHub Pages deployment](assets/images/github-pages-deployment.webp)
+![GitHub Pages deployment](assets/images/holding-image.jpg)
 
 ### Forks
 
@@ -353,7 +252,7 @@ To copy the repository to your own GitHub account, so you can make changes witho
 - Navigate to the GitHub repository.
 - Just above the 'About' section, on the right of the page, click the 'Fork' button.
 
-![Fork deployment](assets/images/fork-deployment.webp)
+![Fork deployment](assets/images/holding-image.jpg)
 
 ### Local Clones
 
@@ -367,13 +266,13 @@ To deploy the project on your own computer you can clone it:
 - At the prompt, type `git clone` and add the string copied earlier.
 - Press 'Enter' to create the copy.
 
-![Clone deployment](assets/images/local-clone-deployment.webp)
+![Clone deployment](assets/images/holding-image.jpg)
 
 ### Gitpod Workspaces
 
 When using Gitpod, you can click the button below to create a workspace from this repository, which also requires that you [install the Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dvfrancis/older-and-wider)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://dvfrancis.github.io/hi-lo-card-game)
 
 ## Credits and References
 

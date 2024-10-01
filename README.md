@@ -2,35 +2,34 @@
 
 ## Overview
 
-Higher-or-lower is a deceptively simple card game where the player has to decide if the next card (in a short sequence of cards) is higher or lower than the card currently displayed.
+Higher-or-lower is a deceptively simple card game where the player has to decide if the next face-down card (in a short sequence of cards) is higher or lower than the current face-up card.
 
-The player places a wager on whether or not they can guess the next card correctly until they either guess all cards (from a standard pack of 52 cards) correctly, or they lose their wager and have to start again. The game ends when all cards have been played, or the player has used up all of their points.
+The player places a wager on whether or not they can guess the next card correctly until they either guess all cards (from a standard pack of 52 cards) correctly, or they lose their wager and have to start again; the game ends when all cards have been played, or the player has used up all of their points.
 
-In the UK, higher-or-lower was the basis for the popular 1980s game show [Play Your Cards Right](https://en.wikipedia.org/wiki/Play_Your_Cards_Right#:~:text=Learn%20about%20the%20British%20television%20game), where contestants answered questions and guessed a longer sequence of cards than that typically used in the classic higher-or-lower card game.
+In the UK, higher-or-lower was the basis for the popular 1980s television game show [Play Your Cards Right](https://en.wikipedia.org/wiki/Play_Your_Cards_Right#:~:text=Learn%20about%20the%20British%20television%20game), where contestants answered questions to guess a longer sequence of cards than that typically used in the classic higher-or-lower card game.
 
 ### Gameplay Variations
 
 #### Hi-Lo Classic
 
-- The dealer uses a standard 52-card deck and deals one card face up and the other face down.        
-- Based on the initial card, the player must guess whether the face-down card is higher or lower.
-- A correct guess win points, while an incorrect guess reduces a player's points by the amount wagered.
+- The dealer uses a standard 52-card deck and deals one card face up and one card face down.
+- The player places a wager on the outcome before making their decision.
+- Based on the face-up card, the player must guess whether the face-down card is higher or lower.
+- A correct guess wins the wager, while an incorrect guess reduces a player's points by the amount wagered.
 
-There are several variations of the basic games that are included in the gameplay of this website:
+The following variations are included in the website's gameplay:
 
 #### Hi-Lo Switch
 
-- The player have three cards dealt to them and must correctly guess whether the next card will be higher or lower than the previous one.        
-- A player can decide whether to replace the base card.    
-- A player can only collect their winnings if they correctly guess all three cards.        
-- After successfully guessing all three, the player can continue betting with their winnings.
+- The player has three cards dealt to them and must correctly guess whether the next face-down card will be higher or lower than the previous face-up card.        
+- A player can decide whether to replace the first card.    
+- A player can only collect their winnings if they correctly guess all three cards sequentially.        
 
 #### Hi-Lo Premium
 
 - Players are offered more options than just the single higher or lower wager.        
-- They can place a wager on a tie so that, if the next card matches the value of the first card, they will win more points.        
-- There are also better odds for betting on the appearance of groups of cards, or even specific ones.        
-- They can also place a wager on which suit the next card will be.
+- They can place a wager on a tie so that, if the face-down card matches the value of the face-up card, they win more points.        
+- There are also increasingly better odds when placing a wager on the appearance of a specific card, a groups of cards, or what the suit of the face-down card will be.
 
 ### Site Preview
 

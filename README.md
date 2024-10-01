@@ -209,7 +209,7 @@ The following flowcharts show the logic behind the various gameplay modes in the
 
 #### Wireframes
 
-After I created the wireframes, and was bulding the site, I altered the layout of the header and footer so that the logo was replaced by a centred site title in the header but removed from the footer.
+After I created the wireframes, and was building the site, I altered the layout of the header and footer so that the logo was replaced by a centred site title in the header but removed from the footer.
 
 The hamburger menu (shown in the header on smaller mobile devices) was also centred on the screen.
 

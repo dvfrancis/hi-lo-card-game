@@ -4,9 +4,9 @@
 
 Higher-or-lower is a deceptively simple card game where the player has to decide if the next card (in a short sequence of cards) is higher or lower than the card currently displayed.
 
-The player places a wager on whether or not they can guess the next card correctly until they either guess all cards (from a pack of 52 cards) correctly, or they lose their wager and have to start again. The game ends when all cards have been played, or the player has used up all their points.
+The player places a wager on whether or not they can guess the next card correctly until they either guess all cards (from a standard pack of 52 cards) correctly, or they lose their wager and have to start again. The game ends when all cards have been played, or the player has used up all of their points.
 
-In the UK, it was the basis for the popular 1980s game show [Play Your Cards Right](https://en.wikipedia.org/wiki/Play_Your_Cards_Right#:~:text=Learn%20about%20the%20British%20television%20game), where contestants have to answer questions and work their way through a longer sequence of cards than that typically used in the classic higher-or-lower card game.
+In the UK, higher-or-lower was the basis for the popular 1980s game show [Play Your Cards Right](https://en.wikipedia.org/wiki/Play_Your_Cards_Right#:~:text=Learn%20about%20the%20British%20television%20game), where contestants answered questions and guessed a longer sequence of cards than that typically used in the classic higher-or-lower card game.
 
 ### Gameplay Variations
 
@@ -82,6 +82,22 @@ The [live site] is hosted by Github Pages.
 ## User Experience Design
 
 ### Strategy
+
+#### Key Business Goals
+
+- What is the main business goal of your website? 
+- What value does the website owner need to gain from this website?
+- What is the Call to Action is needed to achieve the website's primary goal?
+
+#### Key User Goals
+
+- Who are the users / who will be using it?
+- What are the primary users' needs from the website?
+- Website design should be user centric and aligned to their needs.
+
+#### User Personas
+
+- Helps tailor our website to a user's specific needs and preferences.
 
 #### User Experience
 
@@ -179,7 +195,8 @@ The [live site] is hosted by Github Pages.
 
 #### Future Features
 
-- TBC
+- Allow wagers to be placed using real currencies.
+- User accounts.
 
 ### Structure
 

@@ -195,15 +195,15 @@ The following flowcharts show the logic behind the various gameplay modes in the
 
 ##### Hi-Lo Classic
 
-![Hi-Lo Classic](assets/images/holding-image.jpg)
+![Hi-Lo Classic](assets/images/hi-lo-classic.png)
 
 ##### Hi-Lo Switch
 
-![Hi-Lo Switch](assets/images/holding-image.jpg)
+![Hi-Lo Switch](assets/images/hi-lo-switch.png)
 
 ##### Hi-Lo Premium
 
-![Hi-Lo Premium](assets/images/holding-image.jpg)
+![Hi-Lo Premium](assets/images/hi-lo-premium.png)
 
 ### Skeleton
 

@@ -2,9 +2,35 @@
 
 ## Overview
 
-The higher-or-lower card game is deceptively simple, but will test anyone's nerve.
+Higher-or-lower is a deceptively simple card game where the player has to decide if the next card (in a short sequence of cards) is higher or lower than the card currently displayed.
 
-Decide whether the next card is higher or lower than your existing card to win your hand, and increase your score.
+The player places a wager on whether or not they can guess the next card correctly until they either guess all cards (from a pack of 52 cards) correctly, or they lose their wager and have to start again. The game ends when all cards have been played, or the player has used up all their points.
+
+In the UK, it was the basis for the popular 1980s game show [Play Your Cards Right](https://en.wikipedia.org/wiki/Play_Your_Cards_Right#:~:text=Learn%20about%20the%20British%20television%20game), where contestants have to answer questions and work their way through a longer sequence of cards than that typically used in the classic higher-or-lower card game.
+
+### Gameplay Variations
+
+#### Hi-Lo Classic
+
+- The dealer uses a standard 52-card deck and deals one card face up and the other face down.        
+- Based on the initial card, the player must guess whether the face-down card is higher or lower.
+- A correct guess win points, while an incorrect guess reduces a player's points by the amount wagered.
+
+There are several variations of the basic games that are included in the gameplay of this website:
+
+#### Hi-Lo Switch
+
+- The player have three cards dealt to them and must correctly guess whether the next card will be higher or lower than the previous one.        
+- A player can decide whether to replace the base card.    
+- A player can only collect their winnings if they correctly guess all three cards.        
+- After successfully guessing all three, the player can continue betting with their winnings.
+
+#### Hi-Lo Premium
+
+- Players are offered more options than just the single higher or lower wager.        
+- They can place a wager on a tie so that, if the next card matches the value of the first card, they will win more points.        
+- There are also better odds for betting on the appearance of groups of cards, or even specific ones.        
+- They can also place a wager on which suit the next card will be.
 
 ### Site Preview
 
@@ -31,6 +57,7 @@ The [live site] is hosted by Github Pages.
         2. [Future Features](#future-features)
     3. [Structure](#structure)
         1. [User Flow Diagram](#user-flow-diagram)
+        2. [Logic Flowcharts](#logic-flowcharts)
     4. [Skeleton](#skeleton)
         1. [Wireframes](#wireframes)
             1. [Mobile](#mobile)
@@ -156,11 +183,27 @@ The [live site] is hosted by Github Pages.
 
 ### Structure
 
-#### User Flow diagram
+#### User Flow Diagram
 
 This diagram shows how the user may interact and navigate through the website; dashed lines indicate optional routes.
 
 ![User flow diagram](assets/images/holding-image.jpg)
+
+#### Logic Flowcharts
+
+The following flowcharts show the logic behind the various gameplay modes in the game:
+
+##### Hi-Lo Classic
+
+![Hi-Lo Classic](assets/images/holding-image.jpg)
+
+##### Hi-Lo Switch
+
+![Hi-Lo Switch](assets/images/holding-image.jpg)
+
+##### Hi-Lo Premium
+
+![Hi-Lo Premium](assets/images/holding-image.jpg)
 
 ### Skeleton
 

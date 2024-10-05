@@ -266,8 +266,9 @@ The website is designed to appeal to all demographics and ages, but the followin
 
 #### Future Features
 
-- Allow wagers to be placed using real currencies.
-- User accounts.
+- Expand site to include other card games.
+- Add ability for users to create an account.
+- Allow users to be place real wagers in a currency of their choice.
 
 ### Structure
 

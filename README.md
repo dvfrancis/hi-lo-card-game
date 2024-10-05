@@ -48,9 +48,12 @@ The [live site] is hosted by Github Pages.
     3. [Site Link](#site-link)
 2. [User Experience Design](#user-experience-design)
     1. [Strategy](#strategy)
-        1. [User Experience](#user-experience)
-        2. [User Expectations](#user-expectations)
-        3. [User Stories](#user-stories)
+        1. [Key Business Goals](#key-business-goals)
+        2. [Key User Goals](#key-user-goals)
+        3. [User Experience](#user-experience)
+        4. [User Expectations](#user-expectations)
+        5. [User Stories](#user-stories)
+        6. [User Personas](#user-personas)
     2. [Scope](#scope)
         1. [Existing Features](#existing-features)
         2. [Future Features](#future-features)
@@ -84,46 +87,115 @@ The [live site] is hosted by Github Pages.
 
 #### Key Business Goals
 
-- What is the main business goal of your website? 
-- What value does the website owner need to gain from this website?
-- What is the Call to Action is needed to achieve the website's primary goal?
+- To attract players to the game and provide a fun experience.
+- The value provided to the website owner is increasing visitor numbers to the website.
+- The call to action on the website will be “Play Game”, or similar.
 
 #### Key User Goals
 
-- Who are the users / who will be using it?
-- What are the primary users' needs from the website?
-- Website design should be user centric and aligned to their needs.
-
-#### User Personas
-
-- Helps tailor our website to a user's specific needs and preferences.
+- Users of all ages visit the website as a way to relax and enjoy playing an easy to understand, and exciting, game.
 
 #### User Experience
 
 - Target audience
 
-    - TBC
+    - Any age.
+    - Student, employed, or retired.
+    - An interest in puzzles.
+    - Possibly a casual or serious gamer.
+    - Looking for ways to relax and have fun.
  
 #### User Expectations
 
-- An accessible and responsive website.
-- Simple website navigation.
-- An experience that matches existing expectations of what to expect from a website; for example, links are easy to identify and function as expected.
-- An appealing visual design.
+- The website:
+    - functions as expected; for example, buttons are easy to identify and behave like buttons.
+    - is accessible and responsive.
+    - is easy to navigate.
+    - Has an appropriate and appealing visual design that reinforces the purpose of the site.
 
 #### User Stories
 
-- First time visitor goals:
+##### First time visitor goals
+    
+- “What is this website about?”
+- “How do you play higher or lower?”
+- “What are the rules of the game?”
+        
+##### Returning visitor goals
+    
+- “How many points do I have from the last time I played?”
+- “What other versions of the game are available?”
+    
+##### Frequent visitor goals
+    
+- “Where am I placed among other players on the website?”
 
-    - TBC
+#### User Personas
 
-- Returning visitor goals:
+The website is designed to appeal to all demographics and ages, but the following user personas are meant to represent a general range of potential users:
 
-    - TBC
+- User 1: Male, student, age 18-21.
+- User 2: Female, works part-time, mother of young children, age 25-30.
+- User 3: Male, works full-time, professional qualification, age 35-55.
+- User 4: Female, retired, grandmother, age 60-80.
 
-- Frequent visitor goals:
+##### User 1
 
-    - TBC
+“As a student, I want something I can play during my journey to university, so that I’m not bored”
+
+###### Acceptance Criteria
+
+- The website is responsive and displays correctly on a mobile device.
+- All messages are clearly displayed and easy to read on smaller screens.
+- Any audio prompts can be easily muted when on public transport.
+    
+###### Tasks
+
+- Style a responsive website using Bootstrap, Tailwind, and / or media queries.
+- Display any system messages in a large format.
+- Add the ability to disable audio feedback.
+    
+##### User 2
+
+“As a mother of two, I want an easy, quick game to play while looking after my children.”
+
+###### Acceptance Criteria
+
+- The website is quick to load and saves user progress.
+- The length of the game can be decreased.
+    
+###### Tasks
+
+- Ensure the website has excellent load performance on Google Lighthouse.
+- Add an option to specify the number of cards used in a game. 
+
+##### User 3
+
+“As a project manager, I want a game that I can play to take my mind off my stressful job”
+
+###### Acceptance Criteria
+
+- The game offers different experiences to maintain user interest.
+- Gameplay is streamlined and easy to understand.
+    
+###### Tasks
+
+- Add an FAQ page that explains the game, its rules, and other playing modes.
+- Create additional gameplay modes for the game.
+
+##### User 4
+
+“As a retired schoolteacher, I want a fun game that I can enjoy but also possibly use to teach my grand-children about numbers”
+
+###### Acceptance Criteria
+
+- The game has a visually interesting design with a captivating (but not annoying) soundtrack.
+- Cards and scores are displayed clearly and are easy to understand.
+    
+###### Tasks
+
+- Implement a design that is bright and colourful, with appropriate sound effects and music.
+- Display scores clearly on the screen and ensure cards are shown effectively.
 
 ### Scope
 

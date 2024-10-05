@@ -241,17 +241,7 @@ This diagram shows how the user may interact with the website during a game; das
 
 #### Logic Flowcharts
 
-The following flowcharts show the logic behind the various gameplay modes in the game:
-
-##### Hi-Lo Classic
-
-![Hi-Lo Classic](assets/images/hi-lo-classic.png)
-
-##### Hi-Lo Switch
-
-![Hi-Lo Switch](assets/images/hi-lo-switch.png)
-
-##### Hi-Lo Premium
+The following flowchart explains the logic used for the gameplay:
 
 ![Hi-Lo Premium](assets/images/hi-lo-premium.png)
 

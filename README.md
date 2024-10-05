@@ -237,13 +237,13 @@ The website is designed to appeal to all demographics, but the following persona
 
 This diagram shows how the user may interact with the website during a game; dashed lines indicate optional routes.
 
-![User flow diagram](assets/images/user-flow-diagram.png)
+![User flow diagram](documentation/flowcharts/user-flow-diagram.png)
 
 #### Logic Flowchart
 
 The following flowchart explains the logic used for the gameplay:
 
-![Hi-Lo Premium](assets/images/hi-lo-premium.png)
+![Hi-Lo Premium](documentation/flowcharts/hi-lo-premium.png)
 
 ### Skeleton
 
@@ -254,26 +254,36 @@ The wireframes presented here show my initial ideas:
 ##### Mobile
 
 ###### Home
-![Home (index)](assets/images/holding-image.jpg)
+![Home (index)](documentation/wireframes/mobile/mobile-home.jpg)
 
 ###### FAQ
-![FAQ](assets/images/holding-image.jpg)
+![FAQ](documentation/wireframes/mobile/mobile-faq.jpg)
+
+###### 404
+![404](documentation/wireframes/mobile/mobile-404.jpg)
 
 ##### Tablet
 
 ###### Home
-![Home (index)](assets/images/holding-image.jpg)
+![Home (index)](documentation/wireframes/tablet/tablet-home.jpg)
 
 ###### FAQ
-![FAQ](assets/images/holding-image.jpg)
+![FAQ](documentation/wireframes/tablet/tablet-faq.jpg)
+
+###### 404
+![404](documentation/wireframes/tablet/tablet-404.jpg)
 
 ##### Desktop
 
 ###### Home
-![Home (index)](assets/images/holding-image.jpg)
+![Home (index)](documentation/wireframes/desktop/desktop-home.jpg)
 
 ###### FAQ
-![FAQ](assets/images/holding-image.jpg)
+![FAQ](documentation/wireframes/desktop/desktop-faq.jpg)
+
+###### 404
+![404](documentation/wireframes/desktop/desktop-404.jpg)
+
 
 ### Surface
 

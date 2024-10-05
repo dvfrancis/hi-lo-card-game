@@ -6,7 +6,7 @@ Higher-or-lower is a deceptively simple card game where the player has to decide
 
 The player places a wager on whether or not they can guess the next card correctly until they either guess all cards correctly, or they lose their wager and have to start again; the game ends when all cards, in a pack, have been played, or the player has used up all of their points.
 
-For this website, the gameplay reflects the premium version of the game. Higher-or-lower premium offers better odds than just the single wager, with the number of possible winning points increasing dramatically when placing a wager on, and then guessing correctly, the appearance of a specific suit, matching card, a specific card, or a run of cards.
+For this website, the gameplay reflects an amended version of higher-or-lower premium. This offers better odds than just the single wager, with the number of possible winning points increasing dramatically when placing a wager on, and then guessing correctly, the appearance of a specific suit, matching card, a specific card, or a run of cards.
 
 In the UK, higher-or-lower was the basis for the popular 1980s television game show [Play Your Cards Right](https://en.wikipedia.org/wiki/Play_Your_Cards_Right#:~:text=Learn%20about%20the%20British%20television%20game), where contestants answered questions to guess a longer sequence of cards than that typically used in the classic higher-or-lower card game.
 

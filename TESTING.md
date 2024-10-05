@@ -1,6 +1,6 @@
 [Return to the Hi-Lo card game README.md](https://github.com/dvfrancis/hi-lo-card-game/blob/main/README.md)
 
-# Testing THIS FILE IS NOT YET FINALISED
+# Testing *THIS DOCUMENT IS NOT YET COMPLETE*
 
 ## Index
 

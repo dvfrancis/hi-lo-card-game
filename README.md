@@ -1,4 +1,4 @@
-# Hi-Lo Card Game THIS FILE IS NOT YET FINALISED
+# Hi-Lo Card Game *THIS DOCUMENT IS NOT YET COMPLETE*
 
 ## Overview
 

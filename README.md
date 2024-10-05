@@ -233,7 +233,7 @@ The website is designed to appeal to all demographics, but the following persona
 
 ### Structure
 
-#### User Flow Diagram
+#### User Flow Diagram *TO BE UPDATED TO FINAL VERSION*
 
 This diagram shows how the user may interact with the website during a game; dashed lines indicate optional routes.
 

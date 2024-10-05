@@ -37,7 +37,7 @@ The [live site] is hosted by Github Pages.
         2. [Future Features](#future-features)
     3. [Structure](#structure)
         1. [User Flow Diagram](#user-flow-diagram)
-        2. [Logic Flowcharts](#logic-flowcharts)
+        2. [Logic Flowchart](#logic-flowchart)
     4. [Skeleton](#skeleton)
         1. [Wireframes](#wireframes)
             1. [Mobile](#mobile)
@@ -237,9 +237,9 @@ The website is designed to appeal to all demographics, but the following persona
 
 This diagram shows how the user may interact with the website during a game; dashed lines indicate optional routes.
 
-![User flow diagram](assets/images/holding-image.jpg)
+![User flow diagram](assets/images/user-flow-diagram.png)
 
-#### Logic Flowcharts
+#### Logic Flowchart
 
 The following flowchart explains the logic used for the gameplay:
 

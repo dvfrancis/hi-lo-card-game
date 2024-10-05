@@ -1,34 +1,14 @@
-# Higher-or-Lower Card Game *THIS DOCUMENT IS NOT YET COMPLETE*
+# Higher-or-Lower Premium Card Game *THIS DOCUMENT IS NOT YET COMPLETE*
 
 ## Overview
 
-Higher-or-lower is a deceptively simple card game where the player has to decide if the next face-down card (in a short sequence of cards) is higher or lower than the current face-up card.
+Higher-or-lower is a deceptively simple card game where the player has to decide if the next face-down card (in a sequence of cards) is higher or lower than the current face-up card.
 
-The player places a wager on whether or not they can guess the next card correctly until they either guess all cards correctly, or they lose their wager and have to start again; the game ends when all cards, in the pack, have been played, or the player has used up all of their points.
+The player places a wager on whether or not they can guess the next card correctly until they either guess all cards correctly, or they lose their wager and have to start again; the game ends when all cards, in a pack, have been played, or the player has used up all of their points.
+
+For this website, the gameplay reflects the premium version of the game. Higher-or-lower premium offers better odds than just the single wager, with the number of possible winning points increasing dramatically when placing a wager on, and then guessing correctly, the appearance of a specific suit, matching card, a specific card, or a run of cards.
 
 In the UK, higher-or-lower was the basis for the popular 1980s television game show [Play Your Cards Right](https://en.wikipedia.org/wiki/Play_Your_Cards_Right#:~:text=Learn%20about%20the%20British%20television%20game), where contestants answered questions to guess a longer sequence of cards than that typically used in the classic higher-or-lower card game.
-
-### Gameplay Variations
-
-#### Higher-or-Lower Classic
-
-- The dealer uses a standard 52-card deck and deals one card face up and one card face down.
-- The player places a wager on the outcome before making their decision.
-- Based on the face-up card, the player must guess whether the face-down card is higher or lower.
-- A correct guess wins the wager, while an incorrect guess reduces a player's points by the amount wagered.
-
-The following variations are included in this website's gameplay:
-
-#### Higher-or-Lower Switch
-
-- The player has three cards dealt to them and must correctly guess whether the next face-down card will be higher or lower than the previous face-up card.        
-- A player can decide whether to replace the first card.    
-- A player can only collect their winnings if they correctly guess all three cards sequentially.        
-
-#### Higher-or-Lower Premium
-
-- Players are offered better odds than just the single wager.        
-- The number of possible winning points increases when placing a wager, and then guessing correctly, the appearance of a matching card, a specific card, a specific suit, or a group of cards.
 
 ### Site Preview
 
@@ -42,9 +22,8 @@ The [live site] is hosted by Github Pages.
 ## Index
 
 1. [Overview](#overview)
-    1. [Gameplay Variations](#gameplay-variations)
-    2. [Site Preview](#site-preview)
-    3. [Site Link](#site-link)
+    1. [Site Preview](#site-preview)
+    2. [Site Link](#site-link)
 2. [User Experience Design](#user-experience-design)
     1. [Strategy](#strategy)
         1. [Key Business Goals](#key-business-goals)
@@ -116,7 +95,7 @@ The [live site] is hosted by Github Pages.
 ##### First time visitor goals
     
 - “What is this website about?”
-- “How do you play higher-or-lower?”
+- “How do you play the game?”
 - “What are the rules of the game?”
 - "What can I win?"
         
@@ -127,7 +106,7 @@ The [live site] is hosted by Github Pages.
     
 ##### Frequent visitor goals
     
-- “Where am I ranked among other players on the website?”
+- “Where am I ranked among other players who use the website?”
 
 #### User Personas
 
@@ -246,7 +225,9 @@ The website is designed to appeal to all demographics, but the following persona
 
 #### Future Features
 
-- Expand site to include other card games.
+- Add the ability to play the classic version of higher-or-lower.
+- Add the ability to play the switch version of higher-or-lower.
+- Expand site to include different card games.
 - Add ability for users to create an account.
 - Allow users to be place real wagers in a currency of their choice.
 

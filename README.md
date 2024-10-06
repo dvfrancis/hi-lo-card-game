@@ -236,7 +236,7 @@ The website is designed to appeal to all demographics, but the following persona
 
 This diagram shows how the user may interact with the website during a game; dashed lines indicate optional routes.
 
-![User flow diagram](documentation/flowcharts/user-flow-diagram.png)
+![User flow diagram](documentation/flowcharts/user-flow.png)
 
 #### Logic Flowchart
 

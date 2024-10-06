@@ -289,21 +289,26 @@ The wireframes presented here show my initial ideas:
 
 #### Colours
 
-The following colours have been used to add interesting backgrounds to site sections, with white (#FFF) as a contrasting colour, which is also used for all text:
+The following colours, taken from palette 406 of the Sarah Renae Clarke Colour Catalogue, Volume 2, have been used to add interesting backgrounds to the website, with white (#FFF) as a contrast:
 
-![Website colour scheme](assets/images/holding-image.jpg)
+![Website colour scheme](assets/images/website-colours.jpg)
 
 For the the hover and active link states of each social media icon I used:
 
-- TBC
-- TBC
+- Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1).
+- Instagram Rose (#E1306C) and Instagram Purple Red (#C13584).
 
-The colours used are taken from TBC.
+These colours used are taken from ...
 
 #### Typography
 
-Fonts were chosen from Google Fonts:
+The following fonts were chosen for the site, and taken from Google Fonts:
   
+- TBC
+- TBC
+
+Text colours are:
+
 - TBC
 - TBC
 
@@ -313,7 +318,7 @@ All images used on the site have been taken from TBC.
 
 #### Content
 
-All page content was initially written by myself, inspired by the sources listed in the credits, and then polished using Copilot in Microsoft Edge.
+All website copy has been written by myself.
 
 ## Testing
 
@@ -396,7 +401,7 @@ References used to gain a general understanding about the podcast, and for creat
 - [Opera](https://www.opera.com/) was used for website testing.
 - [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
 - [Figma](https://www.figma.com/) was used to create the wireframes and the user flow diagram.
-- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the website's colur scheme.
+- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the website's colour scheme.
 - [Font Joy](https://fontjoy.com/) was used to determine font pairings.
 - [Google Fonts](https://fonts.google.com/) was used to source the Marcellus and Pontano Sans fonts.
 - [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook colours.

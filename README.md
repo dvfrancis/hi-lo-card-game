@@ -293,28 +293,31 @@ The following colours, taken from palette 406 of the Sarah Renae Clarke Colour C
 
 ![Website colour scheme](assets/images/website-colours.jpg)
 
-For the the hover and active link states of each social media icon I used:
+Link state colours for social media icons:
 
-- Facebook Light Blue (#17A9FD) and Facebook Dark Blue (#0165E1).
-- Instagram Rose (#E1306C) and Instagram Purple Red (#C13584).
+##### Hover
 
-These colours used are taken from ...
+- [Facebook Light Blue (#17A9FD)](https://brandpalettes.com/facebook-colors)
+- [Instagram Rose (#E1306C)](https://brandpalettes.com/instagram-color-codes)
+
+##### Active
+
+- [Facebook Dark Blue (#0165E1)](https://brandpalettes.com/facebook-colors)
+- [Instagram Purple Red (#C13584)](https://brandpalettes.com/instagram-color-codes)
 
 #### Typography
 
-The following fonts were chosen for the site, and taken from Google Fonts:
+The fonts used on the site were chosen from Google Fonts:
   
-- TBC
-- TBC
-
-Text colours are:
-
-- TBC
-- TBC
+- [Montserrat](https://fonts.google.com/specimen/Montserrat)
+- [Lora](https://fonts.google.com/specimen/Lora)
+- [Hind Madurai](https://fonts.google.com/specimen/Hind+Madurai)
 
 #### Media
 
-All images used on the site have been taken from TBC.
+The following images, used on the site, have been taken from [Deposit Photos](https://depositphotos.com/):
+- TBC
+- TBC
 
 #### Content
 
@@ -370,10 +373,11 @@ When using Gitpod, you can click the button below to create a workspace from thi
 ## Credits and References
 
 The following references were used for general advice and help in implementing specific functionality on the website:
-- [Duckett, J. (2011) HTML & CSS - Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.](https://htmlandcssbook.com/) - general coding advice.
+- [Duckett, J. (2011) HTML & CSS](https://htmlandcssbook.com/) Design and Build Websites. Indianapolis: John Wiley & Sons, Inc.
+- [Duckett, J. (2014) JavaScript and jQuery](https://javascriptbook.com/) Interactive Front-End Web Development. Indianapolis: John Wiley & Sons, Inc.
 - [Microsoft Edge Copilot](https://www.microsoft.com/en-us/edge/features/copilot) - coding advice, particularly around CSS rules of ingeritance.
 - [How to create a copyright symbol](https://blog.hubspot.com/website/html-code-copyright) - creating the copyright symbol in the footer.
-- [How to set a favicon in GitHub Pages]( https://stackoverflow.com/questions/35037482/favicon-with-github-pages) - setting a favicon on GitGub Pages.
+- [How to set a favicon in GitHub Pages](https://stackoverflow.com/questions/35037482/favicon-with-github-pages) - setting a favicon on GitGub Pages.
 - [W3 Schools CSS :visited Selector](https://www.w3schools.com/cssref/sel_visited.php) and 
  [CSS-Tricks :visited](https://css-tricks.com/almanac/selectors/v/visited/) - styling the navigation links after they had been visited.
 - [Background on semantic HTML5 elements](https://www.freecodecamp.org/news/semantic-html5-elements/) - ordering semantic HTMl elements.
@@ -400,11 +404,13 @@ References used to gain a general understanding about the podcast, and for creat
 - [Firefox](https://www.mozilla.org/en-GB/firefox/new/) was used for website testing.
 - [Opera](https://www.opera.com/) was used for website testing.
 - [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
-- [Figma](https://www.figma.com/) was used to create the wireframes and the user flow diagram.
-- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used to determine the website's colour scheme.
-- [Font Joy](https://fontjoy.com/) was used to determine font pairings.
-- [Google Fonts](https://fonts.google.com/) was used to source the Marcellus and Pontano Sans fonts.
-- [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook colours.
+- [Figma](https://www.figma.com/) was used to create the user flow diagram, logic flowcharts, and wireframes.
+- [Deposit Photos](https://depositphotos.com/) was used for these images on the site:
+    - Baize background image TBC.
+- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used for the website's colour scheme.
+- [Font Joy](https://fontjoy.com/) was used for font pairings.
+- [Google Fonts](https://fonts.google.com/) was used to source all fonts.
+- [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook link state colours.
 - [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
 - [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
 - [To WebP](https://towebp.io/) was used to compress images into webp format.

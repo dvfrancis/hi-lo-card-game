@@ -41,9 +41,8 @@ The [live site] is hosted by Github Pages.
     4. [Skeleton](#skeleton)
         1. [Wireframes](#wireframes)
             1. [Mobile](#mobile)
-            2. [Mobile with Expanded Menu](#mobile-with-expanded-menu)
-            3. [Tablet](#tablet)
-            4. [Desktop](#desktop)
+            2. [Tablet](#tablet)
+            3. [Desktop](#desktop)
     5. [Surface](#surface)
         1. [Colours](#colours)
         2. [Typography](#typography)
@@ -364,9 +363,9 @@ To deploy the project on your own computer you can clone it:
 
 ![Clone deployment](assets/images/holding-image.jpg)
 
-### Gitpod Workspaces
+### Automatically Create a Gitpod Workspace
 
-When using Gitpod, you can click the button below to create a workspace from this repository, which also requires that you [install the Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+Click the button below to create a Gitpod workspace from this repository (requires the [Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension)).
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://dvfrancis.github.io/hi-lo-card-game)
 
@@ -389,10 +388,6 @@ The following references were used for general advice and help in implementing s
 - [How to use srcset and sizes for responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images) - making the website's image carousels more responsive.
 - [The Only Markdown Cheatsheet You Need](https://github.com/im-luka/markdown-cheatsheet) - creating the README.md and TESTING.md documentation.
 
-References used to gain a general understanding about the podcast, and for creating website content:
-
-- TBC
-    
 ## Technologies Used
 
 - The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS),  [JavaScript](https://en.wikipedia.org/wiki/JavaScript), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)).

@@ -242,7 +242,7 @@ This diagram shows how the user may interact with the website during a game; das
 
 The following flowchart explains the logic used for the gameplay:
 
-![Hi-Lo Premium](documentation/flowcharts/hi-lo-premium.png)
+![Hi-Lo Premium](documentation/flowcharts/game-logic.png)
 
 ### Skeleton
 

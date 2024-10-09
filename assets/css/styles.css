@@ -187,3 +187,7 @@ table {
 #footer {
   background-color: darkgrey;
 }
+
+a.fa-brands, .copyright-text {
+    text-decoration: none;
+}

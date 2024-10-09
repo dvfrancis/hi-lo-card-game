@@ -131,3 +131,59 @@ table {
 }
 
 /* Website CSS */
+
+#header {
+  background-color:lightblue;
+}
+
+#game-info {
+  background-color: aqua;
+}
+
+#cards {
+  background-color: chartreuse;
+}
+
+#card-1 {
+  background-color: cornflowerblue;
+}
+
+#card-2 {
+  background-color: darkgreen;
+}
+
+#card-3 {
+  background-color: crimson;
+}
+
+#card-4 {
+  background-color: dimgrey;
+}
+
+#card-5 {
+  background-color: khaki;
+}
+
+#card-6 {
+  background-color: blanchedalmond;
+}
+
+#faq-info {
+  background-color: darksalmon;
+}
+
+#error-message {
+  background-color: goldenrod;
+}
+
+#error-image {
+  background-color: hotpink;
+}
+
+#error-links {
+  background-color: mediumspringgreen;
+}
+
+#footer {
+  background-color:darkgrey;
+}

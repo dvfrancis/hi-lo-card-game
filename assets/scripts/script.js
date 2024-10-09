@@ -1,4 +1,4 @@
-// Get current year and update copyright year in footer
+// Get current year and update footer
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
 document.getElementById(

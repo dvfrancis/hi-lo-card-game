@@ -376,6 +376,7 @@ The following references were used for general advice and help in implementing s
 - [Duckett, J. (2014) JavaScript and jQuery](https://javascriptbook.com/) Interactive Front-End Web Development. Indianapolis: John Wiley & Sons, Inc.
 - [Microsoft Edge Copilot](https://www.microsoft.com/en-us/edge/features/copilot) - coding advice, particularly around CSS rules of ingeritance.
 - [How to create a copyright symbol](https://blog.hubspot.com/website/html-code-copyright) - creating the copyright symbol in the footer.
+- [Displaying the current year](https://sysadminsage.com/javascript-get-current-year/) - used to display the current copyright year in the footer.
 - [How to set a favicon in GitHub Pages](https://stackoverflow.com/questions/35037482/favicon-with-github-pages) - setting a favicon on GitGub Pages.
 - [W3 Schools CSS :visited Selector](https://www.w3schools.com/cssref/sel_visited.php) and 
  [CSS-Tricks :visited](https://css-tricks.com/almanac/selectors/v/visited/) - styling the navigation links after they had been visited.

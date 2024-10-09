@@ -393,6 +393,7 @@ The following references were used for general advice and help in implementing s
 - The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS),  [JavaScript](https://en.wikipedia.org/wiki/JavaScript), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)).
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
 - [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
+- [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/) to reduce browser inconsistencies.
 - The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
 - The [GoFullPage](https://gofullpage.com/) extension was used in all browsers (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
 - [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) was used for website testing.

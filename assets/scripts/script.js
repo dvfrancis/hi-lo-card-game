@@ -1,4 +1,6 @@
-// Get current year and display as copyright year in footer
+// Get current year and update copyright year in footer
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
-document.getElementById("copyright").innerText = currentYear;
+document.getElementById(
+  "copyright"
+).innerHTML = `&#169 ${currentYear} <a href="https://www.dominicfrancis.co.uk/" target="_blank" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;

@@ -41,47 +41,67 @@
   </head>
   <body>
     <!-- Header / Navigation -->
-    <header id="header">
-      <a href="index.html"
-        ><img id="logo" src="assets/images/logo.jpg" alt="hi-lo website logo"
-      /></a>
-      <a href="index.html">Home</a>
+    <header id="header" class="container-fluid fixed-top">
+      <div class="row">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+          <a href="index.html"
+            ><img id="logo" src="assets/images/logo.jpg" alt="hi-lo website logo"
+          /></a>
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 align-self-center text-end">
+          <a href="index.html">Home</a>
+        </div>
+      </div>
     </header>
     <main>
       <!-- Error Message -->
-      <section id="error-message">
-        <h1>Bad luck! You've been dealt a bad hand.</h1>
-        <h2>We'll send you home in 15 seconds</h2>
+      <section id="error-message" class="container-fluid">
+        <div class="row justify-content-center text-center">
+          <div class="col-10 col-lg-8">
+            <h1>Bad luck! You've been dealt a bad hand.</h1>
+            <h2>We'll send you home in 15 seconds</h2>
+          </div>
+        </div>
       </section>
       <!-- Error Image -->
-      <section id="error-image">
-        <img src="assets/images/holding-image.jpg" alt="A holding image" />
+      <section id="error-image" class="container-fluid">
+        <div class="row justify-content-center text-center">
+          <div class="col-10 col-lg-8">
+            <img class="mx-auto d-block" src="assets/images/holding-image.jpg" alt="A holding image" id="404"/>
+          </div>
+        </div>
       </section>
       <!-- Suggested Links -->
-      <section id="error-links">
-        <p>Alternatively, you might want to play your cards right by visiting <a href="faq.html" aria-label="Visit the FAQ" class="" rel="bookmark"
-          >the FAQ</p></a
-        >
+      <section id="error-links" class="container-fluid">
+        <div class="row justify-content-center text-center">
+          <div class="col-10 col-lg-8">
+            <p>Alternatively, you might want to play your cards right by visiting <a href="faq.html" aria-label="Visit the FAQ" class="" rel="bookmark"
+              >the FAQ</p></a
+            >
+          </div>
+        </div>
       </section>
     </main>
     <!-- Footer / Social Media Icons -->
-    <footer id="footer">
-      <div class="text-center">
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="fa-brands fa-square-instagram"
-          aria-label="Visit Instagram"
-        ></a>
-        <a
-          href="https://www.facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="fa-brands fa-square-facebook"
-          aria-label="Visit Facebook"
-        ></a>
-        <span id="copyright" class="text-center"></span>
+    <footer id="footer" class="container-fluid">
+      <div class="row text-center">
+        <div class="col">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fa-brands fa-square-instagram"
+            aria-label="Visit Instagram"
+          ></a>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fa-brands fa-square-facebook"
+            aria-label="Visit Facebook"
+          ></a>
+          <span id="copyright" class="text-center"></span>
+        </div>
       </div>
     </footer>
     <script

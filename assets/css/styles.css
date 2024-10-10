@@ -136,6 +136,9 @@ table {
   background-color: lightblue;
 }
 
+#logo {
+}
+
 #game-info {
   background-color: aqua;
 }
@@ -174,10 +177,15 @@ table {
 
 #error-message {
   background-color: goldenrod;
+  margin-top: 50px;
 }
 
 #error-image {
   background-color: hotpink;
+}
+
+#error-image img {
+  width: 100%;
 }
 
 #error-links {
@@ -188,6 +196,15 @@ table {
   background-color: darkgrey;
 }
 
-a.fa-brands, .copyright-text {
-    text-decoration: none;
+a.fa-brands,
+.copyright-text {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0 !important;
+}
+
+.row > * {
+  padding-left: 0 !important;
 }

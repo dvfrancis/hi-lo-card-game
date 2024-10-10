@@ -178,12 +178,6 @@ table {
   width: 150px;
 }
 
-#card-6 {
-  background-color: blanchedalmond;
-  height: 200px;
-  width: 150px;
-}
-
 #faq-info {
   background-color: darksalmon;
 }
@@ -230,6 +224,8 @@ p {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+/* Add padding back to nav link */
 
 #nav {
    padding-right: 15px !important;

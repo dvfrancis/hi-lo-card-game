@@ -197,7 +197,7 @@ table {
 }
 
 a.fa-brands,
-.copyright-text {
+.copyright-text, a.nav {
   text-decoration: none;
 }
 

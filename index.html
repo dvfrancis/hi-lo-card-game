@@ -39,42 +39,65 @@
   </head>
   <body>
     <!-- Header / Navigation -->
-    <header id="header">
-      <a href="index.html"
-        ><img id="logo" src="assets/images/logo.jpg" alt="hi-lo website logo"
-      /></a>
-      <a href="faq.html">FAQ</a>
+    <header id="header" class="container-fluid fixed-top">
+      <div class="row">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+          <a href="index.html">
+            <img
+              id="logo"
+              src="assets/images/logo.jpg"
+              alt="hi-lo website logo"
+            />
+          </a>
+        </div>
+        <div
+          class="col-6 col-sm-6 col-md-6 col-lg-6 d-flex align-items-center justify-content-end"
+        >
+          <a id="nav" href="faq.html">FAQ</a>
+        </div>
+      </div>
     </header>
     <main>
       <!-- Game Information Panel -->
-      <section id="game-info"></section>
+      <section id="game-info" class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-10 col-lg-10 pt-3 pb-3 text-center">
+            Game Information Panel
+          </div>
+        </div>
+      </section>
       <!-- Playing Cards Section -->
-      <section id="cards">
-        <div id="card-1"></div>
-        <div id="card-2"></div>
-        <div id="card-3"></div>
-        <div id="card-4"></div>
-        <div id="card-5"></div>
+      <section id="cards" class="container-fluid">
+        <div class="row justify-content-center text-center pt-3 pb-3">
+            <div id="card-1" class="col-4">Card 1</div>
+        </div>
+        <div class="row justify-content-evenly text-center">
+            <div id="card-2" class="col-4 mb-2 ms-1 me-1">Card 2</div>
+            <div id="card-3" class="col-4 mb-2 ms-1 me-1">Card 3</div>
+            <div id="card-4" class="col-4 mb-2 ms-1 me-1">Card 4</div>
+            <div id="card-5" class="col-4 mb-2 ms-1 me-1">Card 5</div>
       </section>
     </main>
     <!-- Footer / Social Media Icons -->
-    <footer id="footer">
-      <div class="text-center">
-        <a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="fa-brands fa-square-instagram"
-          aria-label="Visit Instagram"
-        ></a>
-        <a
-          href="https://www.facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="fa-brands fa-square-facebook"
-          aria-label="Visit Facebook"
-        ></a>
-        <span id="copyright" class="text-center"></span>
+    <footer id="footer" class="container-fluid">
+      <div class="row justify-content-center text-center">
+        <div class="col-10 col-lg-9 pt-3 pb-3">
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fa-brands fa-square-instagram"
+            aria-label="Visit Instagram"
+          ></a>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="fa-brands fa-square-facebook"
+            aria-label="Visit Facebook"
+          ></a>
+          <span id="copyright" class="text-center"></span>
+        </div>
       </div>
     </footer>
     <script

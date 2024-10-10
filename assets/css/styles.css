@@ -141,6 +141,7 @@ table {
 
 #game-info {
   background-color: aqua;
+  margin-top: 50px;
 }
 
 #cards {
@@ -149,26 +150,38 @@ table {
 
 #card-1 {
   background-color: cornflowerblue;
+  height: 200px;
+  width: 150px;
 }
 
 #card-2 {
   background-color: darkgreen;
+  height: 200px;
+  width: 150px;
 }
 
 #card-3 {
   background-color: crimson;
+  height: 200px;
+  width: 150px;
 }
 
 #card-4 {
   background-color: dimgrey;
+  height: 200px;
+  width: 150px;
 }
 
 #card-5 {
   background-color: khaki;
+  height: 200px;
+  width: 150px;
 }
 
 #card-6 {
   background-color: blanchedalmond;
+  height: 200px;
+  width: 150px;
 }
 
 #faq-info {

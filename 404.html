@@ -13,6 +13,8 @@
       content="hi-lo error page, error 404, page does not exist"
     />
     <meta name="author" content="Dominic Francis" />
+    <!-- Re-enable this redirect once site is completed-->
+    <!-- <meta http-equiv="refresh" content="15; url=index.html" /> -->
     <!-- Website CSS -->
     <link rel="stylesheet" href="..\assets\css\styles.css" />
     <!-- Bootstrap CSS -->
@@ -47,11 +49,20 @@
     </header>
     <main>
       <!-- Error Message -->
-      <section id="error-message"></section>
+      <section id="error-message">
+        <h1>Bad luck! You've been dealt a bad hand.</h1>
+        <h2>We'll send you home in 15 seconds</h2>
+      </section>
       <!-- Error Image -->
-      <section id="error-image"></section>
+      <section id="error-image">
+        <img src="assets/images/holding-image.jpg" alt="A holding image" />
+      </section>
       <!-- Suggested Links -->
-      <section id="error-links"></section>
+      <section id="error-links">
+        <p>Alternatively, you might want to play your cards right by visiting <a href="faq.html" aria-label="Visit the FAQ" class="" rel="bookmark"
+          >the FAQ</p></a
+        >
+      </section>
     </main>
     <!-- Footer / Social Media Icons -->
     <footer id="footer">

@@ -175,6 +175,10 @@ table {
   background-color: darksalmon;
 }
 
+.accordion {
+  margin-top: 50px;
+}
+
 #error-message {
   background-color: goldenrod;
   margin-top: 50px;
@@ -197,14 +201,24 @@ table {
 }
 
 a.fa-brands,
-.copyright-text, a.nav {
+.copyright-text, #nav {
   text-decoration: none;
 }
+
+/* Remove default Paragraph padding */
 
 p {
   margin-bottom: 0 !important;
 }
 
+/* Remove default Bootstrap padding */
+
 .row > * {
   padding-left: 0 !important;
+  padding-right: 0 !important;
 }
+
+#nav {
+   padding-right: 15px !important;
+}
+

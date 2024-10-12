@@ -14,8 +14,21 @@ const dealtCardThree = document.getElementById("card-4");
 const dealtCardFour = document.getElementById("card-5");
 let playerPoints = 100;
 let deckUrl;
-const initialWager = 100;
+const lowWager = Math.ceil(Math.random() * 100);
+const highWager = Math.ceil(Math.random() * 100);
 const acesBool = Math.random() < 0.5;
+
+// function randRange(low, high) {
+//   let diff = high - low; // find difference between lowest and highest numbers
+//   console.log(diff);
+//   diff = Math.floor(diff * Math.random()); // multiple the difference by a random number
+//   console.log(diff);
+//   diff = diff + low; // add the the lowest number back to the new difference
+//   console.log(diff);
+//   return diff;
+// }
+
+// randRange(playerPoints, highWager);
 
 // Display initial card view
 
@@ -50,6 +63,7 @@ async function drawCards() {
   const drawnCards = await drawReply.json();
   if (drawReply.ok) {
     console.log(drawnCards); // Log out the drawn cards
+    console.log(initialWager);
   } else {
     console.error("Error:", drawReply.statusText);
   }

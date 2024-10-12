@@ -14,8 +14,8 @@ const dealtCardThree = document.getElementById("card-4");
 const dealtCardFour = document.getElementById("card-5");
 let playerPoints = 100;
 let deckUrl;
-const lowWager = Math.ceil(Math.random() * 100);
-const highWager = Math.ceil(Math.random() * 100);
+// const lowWager = Math.ceil(Math.random() * 100);
+// const highWager = Math.ceil(Math.random() * 100);
 const acesBool = Math.random() < 0.5;
 
 // function randRange(low, high) {

@@ -133,19 +133,19 @@ table {
 /* Website CSS */
 
 #header {
-  background-color: whitesmoke;
+  background-color: whitesmoke; /* Remove before submission*/
 }
 
 #logo {
 }
 
 #game-info {
-  background-color: blanchedalmond;
+  background-color: blanchedalmond; /* Remove before submission*/
   margin-top: 50px;
 }
 
 #cards {
-  background-color: darkgreen;
+  background-color: darkgreen; /* Remove before submission*/
 }
 
 #card-1 {
@@ -155,31 +155,31 @@ table {
 }
 
 #card-2 {
-  border: 1px solid black;
+  border: 1px solid black; /* Remove before submission*/
   height: 200px;
   width: 150px;
 }
 
 #card-3 {
-  border: 1px solid black;
+  border: 1px solid black; /* Remove before submission*/
   height: 200px;
   width: 150px;
 }
 
 #card-4 {
-  border: 1px solid black;
+  border: 1px solid black; /* Remove before submission*/
   height: 200px;
   width: 150px;
 }
 
 #card-5 {
-  border: 1px solid black;
+  border: 1px solid black; /* Remove before submission*/
   height: 200px;
   width: 150px;
 }
 
 #faq-info {
-  background-color: darksalmon;
+  background-color: darksalmon; /* Remove before submission*/
 }
 
 .accordion {
@@ -187,12 +187,12 @@ table {
 }
 
 #error-message {
-  background-color: goldenrod;
+  background-color: goldenrod; /* Remove before submission*/
   margin-top: 50px;
 }
 
 #error-image {
-  background-color: hotpink;
+  background-color: hotpink; /* Remove before submission*/
 }
 
 #error-image img {
@@ -200,11 +200,11 @@ table {
 }
 
 #error-links {
-  background-color: mediumspringgreen;
+  background-color: mediumspringgreen; /* Remove before submission*/
 }
 
 #footer {
-  background-color:whitesmoke;
+  background-color:whitesmoke; /* Remove before submission*/
 }
 
 a.fa-brands,

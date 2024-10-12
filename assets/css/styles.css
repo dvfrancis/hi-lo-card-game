@@ -133,47 +133,47 @@ table {
 /* Website CSS */
 
 #header {
-  background-color: lightblue;
+  background-color: whitesmoke;
 }
 
 #logo {
 }
 
 #game-info {
-  background-color: aqua;
+  background-color: blanchedalmond;
   margin-top: 50px;
 }
 
 #cards {
-  background-color: chartreuse;
+  background-color: darkgreen;
 }
 
 #card-1 {
-  background-color: cornflowerblue;
+  border: 1px solid black; /* Remove before submission*/
   height: 200px;
   width: 150px;
 }
 
 #card-2 {
-  background-color: darkgreen;
+  border: 1px solid black;
   height: 200px;
   width: 150px;
 }
 
 #card-3 {
-  background-color: crimson;
+  border: 1px solid black;
   height: 200px;
   width: 150px;
 }
 
 #card-4 {
-  background-color: dimgrey;
+  border: 1px solid black;
   height: 200px;
   width: 150px;
 }
 
 #card-5 {
-  background-color: khaki;
+  border: 1px solid black;
   height: 200px;
   width: 150px;
 }
@@ -204,11 +204,12 @@ table {
 }
 
 #footer {
-  background-color: darkgrey;
+  background-color:whitesmoke;
 }
 
 a.fa-brands,
-.copyright-text, #nav {
+.copyright-text,
+#nav {
   text-decoration: none;
 }
 
@@ -228,6 +229,15 @@ p {
 /* Add padding back to nav link */
 
 #nav {
-   padding-right: 15px !important;
+  padding-right: 15px !important;
 }
 
+/* Playing card image size */
+
+img.card-one,
+img.card-two,
+img.card-three,
+img.card-four,
+img.card-five {
+  width: 100%;
+}

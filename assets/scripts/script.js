@@ -14,6 +14,8 @@ const dealtCardThree = document.getElementById("card-4");
 const dealtCardFour = document.getElementById("card-5");
 let playerPoints = 100;
 let deckUrl;
+const initialWager = 100;
+const acesBool = Math.random() < 0.5;
 
 // Display initial card view
 
@@ -33,7 +35,6 @@ async function shuffleCards() {
   if (shuffleReply.ok) {
     console.log(cardDeck); // Log out the shuffled deck
     deckUrl = cardDeck.deck_id;
-    console.log(deckUrl); // Log out the deck id portion of the draw cards function URL
     drawCards();
   } else {
     console.error("Error:", shuffleReply.statusText);

@@ -53,7 +53,7 @@ async function drawCards() {
   );
   const drawnCards = await drawReply.json();
   if (drawReply.ok) {
-   console.log(drawnCards);
+    console.log(drawnCards);
     playerCard.innerHTML = `<img id="player-card" src="${drawnCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
   } else {
     console.error("Error:", drawReply.statusText);

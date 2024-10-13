@@ -158,7 +158,6 @@ table {
 #card-two,
 #card-three,
 #card-four {
-  border: 1px solid black; /* Remove before submission*/
   height: 200px;
   width: 150px;
 }

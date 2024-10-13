@@ -17,18 +17,18 @@ document.getElementById(
   "copyright"
 ).innerHTML = `&#169 ${currentYear} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
 
-// Set Aces high or low
+// Set Aces true or false
 function aces() {
   acesBool = Math.random() < 0.5;
   return acesBool;
 }
 
 // Display initial card view
-playerCard.innerHTML = `<img src="assets/images/red-playing-card-back.png" alt="Back of a playing card">`;
-cardOne.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
-cardTwo.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
-cardThree.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
-cardFour.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
+playerCard.innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cardOne.innerHTML = `<img id="card-one" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cardTwo.innerHTML = `<img id="card-two" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cardThree.innerHTML = `<img id="card-three" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cardFour.innerHTML = `<img id="card-four" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 acesHighLow.innerText = `For this round, Aces are ${aces() ? "HIGH" : "LOW"}`;
 
 // Shuffle the deck of cards via https://www.deckofcardsapi.com
@@ -53,7 +53,8 @@ async function drawCards() {
   );
   const drawnCards = await drawReply.json();
   if (drawReply.ok) {
-    console.log(drawnCards); // Console log the drawn cards
+   console.log(drawnCards);
+    playerCard.innerHTML = `<img id="player-card" src="${drawnCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
   } else {
     console.error("Error:", drawReply.statusText);
   }

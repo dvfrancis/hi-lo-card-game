@@ -6,6 +6,7 @@ const cardTwo = document.getElementById("card-two");
 const cardThree = document.getElementById("card-three");
 const cardFour = document.getElementById("card-four");
 const acesHighLow = document.getElementById("aces-high-low");
+let acesBool = false;
 let playerPoints = 100;
 
 let deckUrl;
@@ -20,7 +21,7 @@ document.getElementById(
 // Set Aces high or low
 
 function aces() {
-  const acesBool = Math.random() < 0.5 ? "HIGH" : "LOW";
+  acesBool = Math.random() < 0.5 ? "HIGH" : "LOW";
   return acesBool;
 }
 

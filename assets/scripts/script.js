@@ -51,6 +51,23 @@ async function shuffleCards() {
   }
 }
 
+// Draw cards from the shuffled deck and display the player's card (via https://www.deckofcardsapi.com)
+async function drawCards() {
+  const drawReply = await fetch(
+    `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
+  );
+  dealtCards = await drawReply.json();
+  if (drawReply.ok) {
+    console.log(dealtCards);
+    cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
+    currentCard++;
+    console.log(currentCard);
+    setWager();
+  } else {
+    console.error("Error:", drawReply.statusText);
+  }
+}
+
 // Get player's current wager
 
 function setWager() {
@@ -100,32 +117,19 @@ function setWager() {
       return (totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`);
     }
   }
-  const wagerSubmit = document.getElementById("wager-submit");
-  wagerSubmit.addEventListener("click", function () {
-    playerChoice();
-  });
   const wagerReset = document.getElementById("wager-reset");
   wagerReset.addEventListener("click", function () {
     playerWager = 0;
     totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
   });
-}
-
-// Draw cards from the shuffled deck and display the player's card (via https://www.deckofcardsapi.com)
-async function drawCards() {
-  const drawReply = await fetch(
-    `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
-  );
-  dealtCards = await drawReply.json();
-  if (drawReply.ok) {
-    console.log(dealtCards);
-    cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
-    currentCard++;
-    console.log(currentCard);
-    setWager();
-  } else {
-    console.error("Error:", drawReply.statusText);
-  }
+  const wagerSubmit = document.getElementById("wager-submit");
+  wagerSubmit.addEventListener("click", function () {
+    if (playerWager === 0 || playerWager > playerPoints) {
+      totalWager.innerHTML = `<p>Please enter a valid amount.</p>`;
+    } else {
+      playerChoice();
+    }
+  });
 }
 
 // Get higher or lower choice from the player

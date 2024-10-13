@@ -17,6 +17,13 @@ document.getElementById(
   "copyright"
 ).innerHTML = `&#169 ${currentYear} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
 
+// Set Aces high or low
+
+function aces() {
+  const acesBool = Math.random() < 0.5 ? "HIGH" : "LOW";
+  return acesBool;
+}
+
 // Display initial card view
 
 playerCard.innerHTML = `<img src="assets/images/red-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
@@ -24,9 +31,7 @@ cardOne.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Ba
 cardTwo.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
 cardThree.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
 cardFour.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
-acesHighLow.innerHTML = `<div>For this round, Aces are ${
-  Math.random() < 0.5 ? "HIGH" : "LOW"
-}</div>`;
+acesHighLow.innerHTML = `<div>For this round, Aces are ${aces()}</div>`;
 
 // Shuffle the deck of cards via https://www.deckofcardsapi.com
 

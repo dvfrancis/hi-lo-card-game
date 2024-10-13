@@ -125,7 +125,7 @@ function getWager() {
   const wagerSubmit = document.getElementById("wager-submit");
   wagerSubmit.addEventListener("click", function () {
     if (playerWager === 0 || playerWager > playerPoints) {
-      totalWager.innerHTML = `<p>Please enter a valid amount.</p>`;
+      totalWager.innerHTML = `<p>You have entered an invalid amount. Try again.</p>`;
     } else {
       playerChoice();
     }

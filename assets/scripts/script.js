@@ -62,7 +62,7 @@ async function drawCards() {
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
     currentCard++;
     console.log(currentCard);
-    setWager();
+    getWager();
   } else {
     console.error("Error:", drawReply.statusText);
   }
@@ -70,7 +70,7 @@ async function drawCards() {
 
 // Get player's current wager
 
-function setWager() {
+function getWager() {
   changeMsg.innerHTML = `
   <div>
   <p>You have ${playerPoints} points</p>

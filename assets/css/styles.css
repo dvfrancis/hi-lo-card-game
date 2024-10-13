@@ -133,7 +133,7 @@ table {
 /* Website CSS */
 
 p {
-  color: #FFF;
+  color: #fff;
 }
 
 #header {
@@ -145,14 +145,17 @@ p {
 }
 
 #game-info {
-  background-color: blanchedalmond; /* Remove before submission*/
-  margin-top: 50px;
+  background-color: black; /* Remove before submission*/
+}
+
+#game-messages {
 }
 
 /* Playing cards parent container */
 
 #cards {
   background-color: darkgreen; /* Remove before submission*/
+  margin-top: 50px;
 }
 
 /* Playing card containers */
@@ -199,10 +202,6 @@ img#card-four {
 
 #error-links {
   background-color: mediumspringgreen; /* Remove before submission*/
-}
-
-#game-messages {
-  height: 4rem;
 }
 
 #footer {

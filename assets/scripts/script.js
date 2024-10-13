@@ -5,23 +5,24 @@ const cards = [
   document.getElementById("card-two"),
   document.getElementById("card-three"),
   document.getElementById("card-four"),
-]; // Stores references to card placement divs
-let acesBool; // Used later to store whether Aces are high or low
-let playerPoints = 100; // Set player's initial points balance to 100
-let cardChoice; // Used to store player's higher or lower choice
+]; // References to card placement divs
+let currentCard = 0; // Current cards index
+let acesBool; // Used to determine if Aces true or false
+const currAces = decideAces() ? "HIGH" : "LOW"; // Used to determine if Aces high or low
+let playerPoints = 100; // Player's initial points balance
+let cardChoice; // Player's high or low choice
 let deckUrl; // Used to create the drawCards function fetch URL
-let drawnCards; // Used to store drawn cards later
-let currentCard = 0; // Used to store current card in play
-let changeMsg = document.getElementById("game-messages");
+let dealtCards; // Cards dealt for the game
+let changeMsg = document.getElementById("game-messages"); // Reference to game messages div
 
-// Get current year and update copyright in footer
+// Update footer and copyright year
 let currentDate = new Date();
 let currentYear = currentDate.getFullYear();
 document.getElementById(
   "copyright"
 ).innerHTML = `&#169 ${currentYear} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
 
-// Set Aces true or false
+// Decide if Aces are true or false
 function decideAces() {
   acesBool = Math.random() < 0.5;
   return acesBool;
@@ -65,37 +66,12 @@ async function drawCards() {
   }
 }
 
-//
-
-function flipCard(cardIndex, increment) {
-  changeMsg.innerHTML = `
-    <div>
-    <p>For this round, Aces are ${decideAces() ? "HIGH" : "LOW"}</p>
-    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${
-    dealtCards.cards[cardIndex].suit
-  }!</p>
-    <button type="button" id="higher">Higher</button>
-    <button type="button" id="lower">Lower</button>
-    </div>
-    `;
-  cards[cardIndex].innerHTML = `
-    <img id="card-one" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
-    `; // Display the flipped card
-  if (increment) {
-    currentCard++;
-    if (currentCard === 5) {
-      return;
-    } else {
-      playerChoice();
-    }
-  }
-}
-
 // Get higher or lower choice from the player
 function playerChoice() {
   changeMsg.innerHTML = `
   <div>
-  <p>For this round, Aces are ${decideAces() ? "HIGH" : "LOW"}</p>
+  <p>Minimum wager is 1 point</p>
+  <p>For this round, Aces are ${currAces}</p>
   <p>Is the next card HIGHER or LOWER than your card?</p>
   <button type="button" id="higher">Higher</button>
   <button type="button" id="lower">Lower</button>
@@ -111,6 +87,31 @@ function playerChoice() {
     cardChoice = "Lower";
     flipCard(currentCard, true);
   });
+}
+
+// Sequentially reveal all cards in the dealtCards array 
+
+function flipCard(cardIndex, increment) {
+  changeMsg.innerHTML = `
+    <div>
+    <p>Minimum wager is 1 point</p>
+    <p>For this round, Aces are ${currAces}</p>
+    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
+    <button type="button" id="higher">Higher</button>
+    <button type="button" id="lower">Lower</button>
+    </div>
+    `;
+  cards[cardIndex].innerHTML = `
+    <img id="card-one" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
+    `; // Display the flipped card
+  if (increment) {
+    currentCard++;
+    if (currentCard === 5) {
+      return;
+    } else {
+      playerChoice();
+    }
+  }
 }
 
 shuffleCards();

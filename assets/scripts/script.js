@@ -1,13 +1,12 @@
 // Variable declarations
-
-const playerCard = document.getElementById("player-card");
-const cardOne = document.getElementById("card-one");
-const cardTwo = document.getElementById("card-two");
-const cardThree = document.getElementById("card-three");
-const cardFour = document.getElementById("card-four");
-const acesHighLow = document.getElementById("aces-high-low");
-let acesBool = false;
-let playerPoints = 100;
+const playerCard = document.getElementById("player-card"); // Store reference to player-card div
+const cardOne = document.getElementById("card-one"); // Store reference to card-one div
+const cardTwo = document.getElementById("card-two"); // Store reference to card-two div
+const cardThree = document.getElementById("card-three"); // Store reference to card-three div
+const cardFour = document.getElementById("card-four"); // Store reference to card-four div
+const acesHighLow = document.getElementById("aces-high-low"); // Store reference to aces-high-low div
+let acesBool = false; // Used later to store whether Aces are high or low
+let playerPoints = 100; // Set player's initial points balance to 100
 
 let deckUrl;
 
@@ -19,23 +18,20 @@ document.getElementById(
 ).innerHTML = `&#169 ${currentYear} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
 
 // Set Aces high or low
-
 function aces() {
   acesBool = Math.random() < 0.5 ? "HIGH" : "LOW";
   return acesBool;
 }
 
 // Display initial card view
-
-playerCard.innerHTML = `<img src="assets/images/red-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
-cardOne.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
-cardTwo.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
-cardThree.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
-cardFour.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
+playerCard.innerHTML = `<img src="assets/images/red-playing-card-back.png" alt="Back of a playing card">`;
+cardOne.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
+cardTwo.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
+cardThree.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
+cardFour.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
 acesHighLow.innerHTML = `<div>For this round, Aces are ${aces()}</div>`;
 
 // Shuffle the deck of cards via https://www.deckofcardsapi.com
-
 async function shuffleCards() {
   const shuffleReply = await fetch(
     "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
@@ -51,7 +47,6 @@ async function shuffleCards() {
 }
 
 // Draw cards from the shuffled deck via https://www.deckofcardsapi.com
-
 async function drawCards() {
   const drawReply = await fetch(
     `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`

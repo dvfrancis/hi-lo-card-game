@@ -5,7 +5,7 @@ const cardTwo = document.getElementById("card-two"); // Store reference to card-
 const cardThree = document.getElementById("card-three"); // Store reference to card-three div
 const cardFour = document.getElementById("card-four"); // Store reference to card-four div
 const acesHighLow = document.getElementById("aces-high-low"); // Store reference to aces-high-low div
-let acesBool = false; // Used later to store whether Aces are high or low
+let acesBool; // Used later to store whether Aces are high or low
 let playerPoints = 100; // Set player's initial points balance to 100
 
 let deckUrl;
@@ -19,7 +19,7 @@ document.getElementById(
 
 // Set Aces high or low
 function aces() {
-  acesBool = Math.random() < 0.5 ? "HIGH" : "LOW";
+  acesBool = Math.random() < 0.5;
   return acesBool;
 }
 
@@ -29,7 +29,7 @@ cardOne.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Ba
 cardTwo.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
 cardThree.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
 cardFour.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
-acesHighLow.innerHTML = `<div>For this round, Aces are ${aces()}</div>`;
+acesHighLow.innerHTML = `<div>For this round, Aces are ${aces() ? "HIGH" : "LOW"}</div>`;
 
 // Shuffle the deck of cards via https://www.deckofcardsapi.com
 async function shuffleCards() {

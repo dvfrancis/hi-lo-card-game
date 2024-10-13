@@ -7,8 +7,9 @@ const cardFour = document.getElementById("card-four"); // Store reference to car
 const acesHighLow = document.getElementById("aces-high-low"); // Store reference to aces-high-low div
 let acesBool; // Used later to store whether Aces are high or low
 let playerPoints = 100; // Set player's initial points balance to 100
-
+let playerChoice; // Used to store player's higher or lower choice
 let deckUrl;
+let drawnCards; // Used to store drawn cards later
 
 // Get current year and update copyright in footer
 let currentDate = new Date();
@@ -18,7 +19,7 @@ document.getElementById(
 ).innerHTML = `&#169 ${currentYear} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
 
 // Set Aces true or false
-function aces() {
+function decideAces() {
   acesBool = Math.random() < 0.5;
   return acesBool;
 }
@@ -29,9 +30,11 @@ cardOne.innerHTML = `<img id="card-one" src="https://www.deckofcardsapi.com/stat
 cardTwo.innerHTML = `<img id="card-two" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 cardThree.innerHTML = `<img id="card-three" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 cardFour.innerHTML = `<img id="card-four" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-acesHighLow.innerText = `For this round, Aces are ${aces() ? "HIGH" : "LOW"}`;
+acesHighLow.innerText = `For this round, Aces are ${
+  decideAces() ? "HIGH" : "LOW"
+}`;
 
-// Shuffle the deck of cards via https://www.deckofcardsapi.com
+// Shuffle the deck of cards (via https://www.deckofcardsapi.com)
 async function shuffleCards() {
   const shuffleReply = await fetch(
     "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
@@ -46,18 +49,38 @@ async function shuffleCards() {
   }
 }
 
-// Draw cards from the shuffled deck via https://www.deckofcardsapi.com
+// Draw cards from the shuffled deck and display the player's card (via https://www.deckofcardsapi.com)
 async function drawCards() {
   const drawReply = await fetch(
     `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
   );
-  const drawnCards = await drawReply.json();
+  drawnCards = await drawReply.json();
   if (drawReply.ok) {
     console.log(drawnCards);
     playerCard.innerHTML = `<img id="player-card" src="${drawnCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
+    playerWagers();
   } else {
     console.error("Error:", drawReply.statusText);
   }
+}
+
+// Get higher or lower choice from the player
+
+function playerWagers() {
+  let changeMsg = document.getElementById("game-messages");
+  changeMsg.innerHTML = `<div><p>Is the next card HIGHER or LOWER than your card?</p><button type="button" id="higher">Higher</button><button type="button" id="lower">Lower</button></div>`;
+  const highBtn = document.getElementById("higher");
+  const lowBtn = document.getElementById("lower");
+  highBtn.addEventListener("click", function () {
+    changeMsg.innerHTML = `<div><p>You have chosen HIGHER</p></div>`;
+    playerChoice = "Higher";
+    cardOne.innerHTML = `<img id="card-one" src="${drawnCards.cards[1].images.png}" alt="The first card">`; // Display the first card
+  });
+  lowBtn.addEventListener("click", function () {
+    changeMsg.innerHTML = `<div><p>You have chosen LOWER</p></div>`;
+    playerChoice = "Lower";
+    cardOne.innerHTML = `<img id="card-one" src="${drawnCards.cards[1].images.png}" alt="The first card">`; // Display the first card
+  });
 }
 
 // function randRange(low, high) {

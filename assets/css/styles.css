@@ -197,6 +197,10 @@ img#card-four {
   background-color: mediumspringgreen; /* Remove before submission*/
 }
 
+#game-messages {
+  height: 4rem;
+}
+
 #footer {
   background-color: whitesmoke; /* Remove before submission*/
 }

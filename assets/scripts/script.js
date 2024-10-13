@@ -5,8 +5,9 @@ const cardOne = document.getElementById("card-one");
 const cardTwo = document.getElementById("card-two");
 const cardThree = document.getElementById("card-three");
 const cardFour = document.getElementById("card-four");
+const acesHighLow = document.getElementById("aces-high-low");
 let playerPoints = 100;
-const acesBool = Math.random() < 0.5; // Generate boolean to determine if aces high or low
+
 let deckUrl;
 
 // Get current year and update copyright in footer
@@ -23,6 +24,9 @@ cardOne.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Ba
 cardTwo.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
 cardThree.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
 cardFour.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`; // Need to change this image for a final credited version
+acesHighLow.innerHTML = `<div>For this round, Aces are ${
+  Math.random() < 0.5 ? "HIGH" : "LOW"
+}</div>`;
 
 // Shuffle the deck of cards via https://www.deckofcardsapi.com
 

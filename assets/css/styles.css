@@ -137,6 +137,7 @@ table {
 }
 
 #logo {
+  background-color: aliceblue;
 }
 
 #game-info {
@@ -144,38 +145,32 @@ table {
   margin-top: 50px;
 }
 
+/* Playing cards parent container */
+
 #cards {
   background-color: darkgreen; /* Remove before submission*/
 }
 
-#card-1 {
+/* Playing card containers */
+
+#player-card,
+#card-one,
+#card-two,
+#card-three,
+#card-four {
   border: 1px solid black; /* Remove before submission*/
   height: 200px;
   width: 150px;
 }
 
-#card-2 {
-  border: 1px solid black; /* Remove before submission*/
-  height: 200px;
-  width: 150px;
-}
+/* Playing card image size */
 
-#card-3 {
-  border: 1px solid black; /* Remove before submission*/
-  height: 200px;
-  width: 150px;
-}
-
-#card-4 {
-  border: 1px solid black; /* Remove before submission*/
-  height: 200px;
-  width: 150px;
-}
-
-#card-5 {
-  border: 1px solid black; /* Remove before submission*/
-  height: 200px;
-  width: 150px;
+img#player-card,
+img#card-one,
+img#card-two,
+img#card-three,
+img#card-four {
+  width: 100%;
 }
 
 #faq-info {
@@ -204,7 +199,7 @@ table {
 }
 
 #footer {
-  background-color:whitesmoke; /* Remove before submission*/
+  background-color: whitesmoke; /* Remove before submission*/
 }
 
 a.fa-brands,
@@ -230,14 +225,4 @@ p {
 
 #nav {
   padding-right: 15px !important;
-}
-
-/* Playing card image size */
-
-img.card-one,
-img.card-two,
-img.card-three,
-img.card-four,
-img.card-five {
-  width: 100%;
 }

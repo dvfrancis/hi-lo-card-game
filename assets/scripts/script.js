@@ -29,7 +29,7 @@ cardOne.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Ba
 cardTwo.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
 cardThree.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
 cardFour.innerHTML = `<img src="assets/images/blue-playing-card-back.png" alt="Back of a playing card">`;
-acesHighLow.innerHTML = `<div>For this round, Aces are ${aces() ? "HIGH" : "LOW"}</div>`;
+acesHighLow.innerText = `For this round, Aces are ${aces() ? "HIGH" : "LOW"}`;
 
 // Shuffle the deck of cards via https://www.deckofcardsapi.com
 async function shuffleCards() {

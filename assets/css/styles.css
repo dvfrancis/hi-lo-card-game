@@ -132,6 +132,10 @@ table {
 
 /* Website CSS */
 
+p {
+  color: #FFF;
+}
+
 #header {
   background-color: whitesmoke; /* Remove before submission*/
 }

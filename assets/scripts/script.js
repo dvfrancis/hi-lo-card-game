@@ -1,15 +1,18 @@
 // Variable declarations
-const playerCard = document.getElementById("player-card"); // Store reference to player-card div
-const cardOne = document.getElementById("card-one"); // Store reference to card-one div
-const cardTwo = document.getElementById("card-two"); // Store reference to card-two div
-const cardThree = document.getElementById("card-three"); // Store reference to card-three div
-const cardFour = document.getElementById("card-four"); // Store reference to card-four div
-const acesHighLow = document.getElementById("aces-high-low"); // Store reference to aces-high-low div
+const cards = [
+  document.getElementById("player-card"),
+  document.getElementById("card-one"),
+  document.getElementById("card-two"),
+  document.getElementById("card-three"),
+  document.getElementById("card-four"),
+]; // Stores references to card placement divs
 let acesBool; // Used later to store whether Aces are high or low
 let playerPoints = 100; // Set player's initial points balance to 100
-let playerChoice; // Used to store player's higher or lower choice
-let deckUrl;
+let cardChoice; // Used to store player's higher or lower choice
+let deckUrl; // Used to create the drawCards function fetch URL
 let drawnCards; // Used to store drawn cards later
+let currentCard = 0; // Used to store current card in play
+let changeMsg = document.getElementById("game-messages");
 
 // Get current year and update copyright in footer
 let currentDate = new Date();
@@ -25,14 +28,11 @@ function decideAces() {
 }
 
 // Display initial card view
-playerCard.innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cardOne.innerHTML = `<img id="card-one" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cardTwo.innerHTML = `<img id="card-two" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cardThree.innerHTML = `<img id="card-three" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cardFour.innerHTML = `<img id="card-four" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-acesHighLow.innerText = `For this round, Aces are ${
-  decideAces() ? "HIGH" : "LOW"
-}`;
+cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[1].innerHTML = `<img id="card-one" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[2].innerHTML = `<img id="card-two" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[3].innerHTML = `<img id="card-three" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[4].innerHTML = `<img id="card-four" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 
 // Shuffle the deck of cards (via https://www.deckofcardsapi.com)
 async function shuffleCards() {
@@ -54,45 +54,63 @@ async function drawCards() {
   const drawReply = await fetch(
     `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
   );
-  drawnCards = await drawReply.json();
+  dealtCards = await drawReply.json();
   if (drawReply.ok) {
-    console.log(drawnCards);
-    playerCard.innerHTML = `<img id="player-card" src="${drawnCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
-    playerWagers();
+    console.log(dealtCards);
+    cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
+    currentCard++;
+    playerChoice();
   } else {
     console.error("Error:", drawReply.statusText);
   }
 }
 
-// Get higher or lower choice from the player
+//
 
-function playerWagers() {
-  let changeMsg = document.getElementById("game-messages");
-  changeMsg.innerHTML = `<div><p>Is the next card HIGHER or LOWER than your card?</p><button type="button" id="higher">Higher</button><button type="button" id="lower">Lower</button></div>`;
+function flipCard(cardIndex, increment) {
+  changeMsg.innerHTML = `
+    <div>
+    <p>For this round, Aces are ${decideAces() ? "HIGH" : "LOW"}</p>
+    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${
+    dealtCards.cards[cardIndex].suit
+  }!</p>
+    <button type="button" id="higher">Higher</button>
+    <button type="button" id="lower">Lower</button>
+    </div>
+    `;
+  cards[cardIndex].innerHTML = `
+    <img id="card-one" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
+    `; // Display the flipped card
+  if (increment) {
+    currentCard++;
+    if (currentCard === 5) {
+      return;
+    } else {
+      playerChoice();
+    }
+  }
+}
+
+// Get higher or lower choice from the player
+function playerChoice() {
+  changeMsg.innerHTML = `
+  <div>
+  <p>For this round, Aces are ${decideAces() ? "HIGH" : "LOW"}</p>
+  <p>Is the next card HIGHER or LOWER than your card?</p>
+  <button type="button" id="higher">Higher</button>
+  <button type="button" id="lower">Lower</button>
+  </div>
+  `;
   const highBtn = document.getElementById("higher");
   const lowBtn = document.getElementById("lower");
   highBtn.addEventListener("click", function () {
-    changeMsg.innerHTML = `<div><p>You have chosen HIGHER</p></div>`;
-    playerChoice = "Higher";
-    cardOne.innerHTML = `<img id="card-one" src="${drawnCards.cards[1].images.png}" alt="The first card">`; // Display the first card
+    cardChoice = "Higher";
+    flipCard(currentCard, true);
   });
   lowBtn.addEventListener("click", function () {
-    changeMsg.innerHTML = `<div><p>You have chosen LOWER</p></div>`;
-    playerChoice = "Lower";
-    cardOne.innerHTML = `<img id="card-one" src="${drawnCards.cards[1].images.png}" alt="The first card">`; // Display the first card
+    cardChoice = "Lower";
+    flipCard(currentCard, true);
   });
 }
-
-// function randRange(low, high) {
-//   let diff = high - low; // find difference between lowest and highest numbers
-//   console.log(diff);
-//   diff = Math.floor(diff * Math.random()); // multiple the difference by a random number
-//   console.log(diff);
-//   diff = diff + low; // add the the lowest number back to the new difference
-//   console.log(diff);
-//   return diff;
-// }
-
-// randRange(playerPoints, highWager);
 
 shuffleCards();

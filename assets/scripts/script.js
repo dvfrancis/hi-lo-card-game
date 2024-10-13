@@ -10,10 +10,11 @@ let currentCard = 0; // Current cards index
 let acesBool; // Used to determine if Aces true or false
 const currAces = decideAces() ? "HIGH" : "LOW"; // Used to determine if Aces high or low
 let playerPoints = 100; // Player's initial points balance
+let playerWager = 0; // Player's current wager
 let cardChoice; // Player's high or low choice
 let deckUrl; // Used to create the drawCards function fetch URL
 let dealtCards; // Cards dealt for the game
-let changeMsg = document.getElementById("game-messages"); // Reference to game messages div
+const changeMsg = document.getElementById("game-messages"); // Reference to game messages div
 
 // Update footer and copyright year
 let currentDate = new Date();
@@ -50,6 +51,66 @@ async function shuffleCards() {
   }
 }
 
+// Get player's current wager
+
+function setWager() {
+  changeMsg.innerHTML = `
+  <div>
+  <p>You have ${playerPoints} points</p>
+  <p>Please enter your wager on this round</p>
+  <p>Minimum wager is 1 point, and you cannot wager more than your total points</p>
+  <button type="button" id="wager-one">+1</button>
+  <button type="button" id="wager-five">+5</button>
+  <button type="button" id="wager-ten">+10</button>
+  <button type="button" id="wager-fifty">+50</button>
+  <button type="button" id="wager-hundred">+100</button>
+  <div><button type="submit" id="wager-submit">Submit</button>
+ <button type="reset" id="wager-reset">Reset</button></div>
+  <div id="total-wager"></div>
+  </div>
+  `;
+  let totalWager = document.getElementById("total-wager");
+  const WagerOne = document.getElementById("wager-one");
+  WagerOne.addEventListener("click", function () {
+    setPlayerWager(1);
+  });
+  const WagerFive = document.getElementById("wager-five");
+  WagerFive.addEventListener("click", function () {
+    setPlayerWager(5);
+  });
+  const WagerTen = document.getElementById("wager-ten");
+  WagerTen.addEventListener("click", function () {
+    setPlayerWager(10);
+  });
+  const WagerFifty = document.getElementById("wager-fifty");
+  WagerFifty.addEventListener("click", function () {
+    setPlayerWager(50);
+  });
+  const WagerHundred = document.getElementById("wager-hundred");
+  WagerHundred.addEventListener("click", function () {
+    setPlayerWager(100);
+  });
+  function setPlayerWager(num) {
+    if (playerWager + num > playerPoints) {
+      totalWager.innerHTML = `<p>You cannot exceed your total points. Try again.</p>`;
+      playerWager = 0;
+    } else {
+      playerWager += num;
+      console.log(playerWager);
+      return (totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`);
+    }
+  }
+  const wagerSubmit = document.getElementById("wager-submit");
+  wagerSubmit.addEventListener("click", function () {
+    playerChoice();
+  });
+  const wagerReset = document.getElementById("wager-reset");
+  wagerReset.addEventListener("click", function () {
+    playerWager = 0;
+    totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
+  });
+}
+
 // Draw cards from the shuffled deck and display the player's card (via https://www.deckofcardsapi.com)
 async function drawCards() {
   const drawReply = await fetch(
@@ -60,7 +121,8 @@ async function drawCards() {
     console.log(dealtCards);
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
     currentCard++;
-    playerChoice();
+    console.log(currentCard);
+    setWager();
   } else {
     console.error("Error:", drawReply.statusText);
   }
@@ -89,7 +151,7 @@ function playerChoice() {
   });
 }
 
-// Sequentially reveal all cards in the dealtCards array 
+// Sequentially reveal all cards in the dealtCards array
 
 function flipCard(cardIndex, increment) {
   changeMsg.innerHTML = `
@@ -104,6 +166,7 @@ function flipCard(cardIndex, increment) {
   cards[cardIndex].innerHTML = `
     <img id="card-one" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
     `; // Display the flipped card
+  console.log(currentCard);
   if (increment) {
     currentCard++;
     if (currentCard === 5) {

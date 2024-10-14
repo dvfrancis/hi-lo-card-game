@@ -5,10 +5,10 @@ const cards = [
   document.getElementById("card-two"),
   document.getElementById("card-three"),
   document.getElementById("card-four"),
-]; // References to card placement divs
-let currentCard = 0; // Current cards index
-let acesBool; // Used to determine if Aces true or false
-const currAces = decideAces() ? "HIGH" : "LOW"; // Used to determine if Aces high or low
+]; // References to card divs
+let currentCard = 0; // Current card's index
+let acesBool; // Used to set Aces true or false
+const currAces = decideAces() ? "HIGH" : "LOW"; // Used to set Aces high or low
 let playerPoints = 100; // Player's initial points balance
 let playerWager = 0; // Player's current wager
 let cardChoice; // Player's high or low choice
@@ -17,13 +17,13 @@ let dealtCards; // Cards dealt for the game
 const changeMsg = document.getElementById("game-messages"); // Reference to game messages div
 
 // Update footer and copyright year
-let currentDate = new Date();
-let currentYear = currentDate.getFullYear();
+let dateNow = new Date();
+let yearNow = dateNow.getFullYear();
 document.getElementById(
   "copyright"
-).innerHTML = `&#169 ${currentYear} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
+).innerHTML = `&#169 ${yearNow} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
 
-// Decide if Aces are true or false
+// Set Aces are true or false
 function decideAces() {
   acesBool = Math.random() < 0.5;
   return acesBool;
@@ -58,10 +58,9 @@ async function drawCards() {
   );
   dealtCards = await drawReply.json();
   if (drawReply.ok) {
-    console.log(dealtCards);
+    console.log(dealtCards); // Console log the drawn cards
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
     currentCard++;
-    console.log(currentCard);
     getWager();
   } else {
     console.error("Error:", drawReply.statusText);
@@ -74,7 +73,7 @@ function getWager() {
   changeMsg.innerHTML = `
   <div>
   <p>You have ${playerPoints} points</p>
-  <p>Please enter your wager on this round</p>
+  <p>Please enter your wager for this round</p>
   <p>Minimum wager is 1 point, and you cannot wager more than your total points</p>
   <button type="button" id="wager-one">+1</button>
   <button type="button" id="wager-five">+5</button>
@@ -86,7 +85,6 @@ function getWager() {
   <div id="total-wager"></div>
   </div>
   `;
-  let totalWager = document.getElementById("total-wager");
   const WagerOne = document.getElementById("wager-one");
   WagerOne.addEventListener("click", function () {
     setPlayerWager(1);
@@ -107,6 +105,7 @@ function getWager() {
   WagerHundred.addEventListener("click", function () {
     setPlayerWager(100);
   });
+  let totalWager = document.getElementById("total-wager");
   function setPlayerWager(num) {
     if (playerWager + num > playerPoints) {
       totalWager.innerHTML = `<p>You cannot exceed your total points. Try again.</p>`;

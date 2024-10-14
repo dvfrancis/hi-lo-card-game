@@ -84,51 +84,54 @@ function getWager() {
  <button type="reset" id="wager-reset">Reset</button></div>
   <div id="total-wager"></div>
   </div>
-  `;
+  `; // Display wager instructions and wager buttons
   const WagerOne = document.getElementById("wager-one");
   WagerOne.addEventListener("click", function () {
     setPlayerWager(1);
-  });
+  }); // Increases wager by 1 when clicked
   const WagerFive = document.getElementById("wager-five");
   WagerFive.addEventListener("click", function () {
     setPlayerWager(5);
-  });
+  }); // Increases wager by 5 when clicked
   const WagerTen = document.getElementById("wager-ten");
   WagerTen.addEventListener("click", function () {
     setPlayerWager(10);
-  });
+  }); // Increases wager by 10 when clicked
   const WagerFifty = document.getElementById("wager-fifty");
   WagerFifty.addEventListener("click", function () {
     setPlayerWager(50);
-  });
+  }); // Increases wager by 50 when clicked
   const WagerHundred = document.getElementById("wager-hundred");
   WagerHundred.addEventListener("click", function () {
     setPlayerWager(100);
-  });
+  }); // Increases wager by 100 when clicked
   let totalWager = document.getElementById("total-wager");
+  totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
   function setPlayerWager(num) {
     if (playerWager + num > playerPoints) {
-      totalWager.innerHTML = `<p>You cannot exceed your total points. Try again.</p>`;
+      totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
       playerWager = 0;
+      setTimeout(() => {
+        totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
+      }, 1250);
     } else {
       playerWager += num;
-      console.log(playerWager);
-      return (totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`);
+      totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
     }
-  }
+  } // Calculate wager ensuring it is not zero or exceeds available points
   const wagerReset = document.getElementById("wager-reset");
   wagerReset.addEventListener("click", function () {
     playerWager = 0;
     totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
-  });
+  }); // Reset wager to zero when clicked
   const wagerSubmit = document.getElementById("wager-submit");
   wagerSubmit.addEventListener("click", function () {
     if (playerWager === 0 || playerWager > playerPoints) {
-      totalWager.innerHTML = `<p>You have entered an invalid amount. Try again.</p>`;
+      totalWager.innerHTML = `<p>You have entered an incorrect wager. Please try again.</p>`;
     } else {
       playerChoice();
     }
-  });
+  }); // Submit wager as long as it is not zero or exceeds available points, then move to next stage
 }
 
 // Get higher or lower choice from the player
@@ -141,17 +144,17 @@ function playerChoice() {
   <button type="button" id="higher">Higher</button>
   <button type="button" id="lower">Lower</button>
   </div>
-  `;
-  const highBtn = document.getElementById("higher");
-  const lowBtn = document.getElementById("lower");
+  `; // Display higher or lower choice instructions and wager buttons
+  const highBtn = document.getElementById("higher"); // Reference to higher button
+  const lowBtn = document.getElementById("lower"); // Reference to lower button
   highBtn.addEventListener("click", function () {
     cardChoice = "Higher";
     flipCard(currentCard, true);
-  });
+  }); // Set card choice to Higher and move to next stage
   lowBtn.addEventListener("click", function () {
     cardChoice = "Lower";
     flipCard(currentCard, true);
-  });
+  }); // Set card choice to Lower and move to next stage
 }
 
 // Sequentially reveal all cards in the dealtCards array
@@ -165,19 +168,18 @@ function flipCard(cardIndex, increment) {
     <button type="button" id="higher">Higher</button>
     <button type="button" id="lower">Lower</button>
     </div>
-    `;
+    `; // Display higher or lower choice instructions and wager buttons
   cards[cardIndex].innerHTML = `
     <img id="card-one" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
-    `; // Display the flipped card
-  console.log(currentCard);
+    `; // Flip the next card
   if (increment) {
     currentCard++;
     if (currentCard === 5) {
-      return;
+      return; // Move to the next stage *TO BE WRITTEN*
     } else {
       playerChoice();
     }
-  }
+  } // Only allow the currentCard variable to be incremented four times
 }
 
 shuffleCards();

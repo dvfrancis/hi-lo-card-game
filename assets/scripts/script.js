@@ -68,6 +68,7 @@ let deckUrl; // Used to create the drawCards function fetch URL
 let dealtCards; // Cards dealt for the game
 const changeMsg = document.getElementById("game-messages"); // Reference to game messages div
 let currAces = decideAces(); // Aces value for the round
+let correctGuesses = 0; // The number of correct guesses
 
 // Decide whether Aces are high or low and send value to amendCardArray
 function decideAces() {
@@ -141,7 +142,7 @@ async function drawCards() {
 function getWager() {
   changeMsg.innerHTML = `
   <div>
-  <p>You have ${playerPoints} points</p>
+  <p>You currently have ${playerPoints} points</p>
   <p>Please enter your wager for this round</p>
   <p>Minimum wager is 1 point, and you cannot wager more than your total points</p>
   <button type="button" id="wager-one">+1</button>
@@ -207,7 +208,7 @@ function getWager() {
 function playerChoice() {
   changeMsg.innerHTML = `
   <div>
-  <p>Minimum wager is 1 point</p>
+  <p>You currently have ${playerPoints} points</p>
   <p>For this round, Aces are ${currAces}</p>
   <p>Is the next card HIGHER or LOWER than your card?</p>
   <button type="button" id="higher">Higher</button>
@@ -218,33 +219,55 @@ function playerChoice() {
   const lowBtn = document.getElementById("lower"); // Reference to lower button
   highBtn.addEventListener("click", function () {
     cardChoice = "Higher";
+    changeMsg.innerHTML = `
+  <div>
+    <p>Your card choice was ${cardChoice}</p>
+  </div>
+  `;
     flipCard(currentCard, true);
   }); // Set card choice to Higher and move to next stage
   lowBtn.addEventListener("click", function () {
     cardChoice = "Lower";
+    changeMsg.innerHTML = `
+  <div>
+    <p>Your card choice was ${cardChoice}</p>
+   </div>
+  `;
+    console.log("Card choice is", cardChoice);
     flipCard(currentCard, true);
   }); // Set card choice to Lower and move to next stage
 }
 
 // Sequentially reveal all cards in the dealtCards array
 function flipCard(cardIndex, increment) {
-  changeMsg.innerHTML = `
-    <div>
-    <p>Minimum wager is 1 point</p>
-    <p>For this round, Aces are ${currAces}</p>
-    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
-    <button type="button" id="higher">Higher</button>
-    <button type="button" id="lower">Lower</button>
-    </div>
-    `; // Display higher or lower choice instructions and wager buttons
   cards[cardIndex].innerHTML = `
     <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
     `; // Flip the next card
   if (increment) {
     currentCard++;
     if (currentCard === 5) {
+      changeMsg.innerHTML = `
+    <div>
+    <p>You currently have ${playerPoints} points</p>
+    <p>For this round, Aces are ${currAces}</p>
+    <p>You guessed that the next card was ${cardChoice}</p>
+    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
+    <button type="button" id="higher">Higher</button>
+    <button type="button" id="lower">Lower</button>
+    </div>
+    `; // Display higher or lower choice instructions and wager buttons
       calculateOutcome();
     } else {
+      changeMsg.innerHTML = `
+    <div>
+    <p>You currently have ${playerPoints} points</p>
+    <p>For this round, Aces are ${currAces}</p>
+    <p>You guessed that the next card was ${cardChoice}</p>
+    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
+    <button type="button" id="higher">Higher</button>
+    <button type="button" id="lower">Lower</button>
+    </div>
+    `; // Display higher or lower choice instructions and wager buttons
       calculateOutcome(); // Calculate if the player was correct
       playerChoice(); // Choose whether the next card is higher or lower;
     }
@@ -253,22 +276,43 @@ function flipCard(cardIndex, increment) {
 
 // Calculate the outcome of the player's choice
 function calculateOutcome() {
-  let prev = cardsObject["card" + dealtCards.cards[currentCard - 2].code];
-  let curr = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
-  if (curr > prev && cardChoice === "Higher") {
-    console.log(prev);
-    console.log(curr);
-    console.log("Your card is higher in value");
-  } else if (curr < prev && cardChoice === "Lower") {
-    console.log(prev);
-    console.log(curr);
-    console.log("Your card is lower in value");
-  } else if ((curr === prev)) {
-    console.log(prev);
-    console.log(curr);
-    console.log("Your card is of the same value");
+  let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 2].code];
+  let currCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
+  if (currCard > prevCard && cardChoice === "Higher") {
+    console.log(prevCard);
+    console.log(currCard);
+    correctGuesses = +1;
+    console.log(correctGuesses);
+    console.log("CONGRATULATIONS your card is higher in value");
+  } else if (currCard < prevCard && cardChoice === "Lower") {
+    console.log(prevCard);
+    console.log(currCard);
+    correctGuesses = +1;
+    console.log(correctGuesses);
+    console.log("CONGRATULATIONS your card is lower in value");
+  } else if (currCard === prevCard) {
+    console.log(prevCard);
+    console.log(currCard);
+    correctGuesses = +1;
+    console.log(correctGuesses);
+    console.log(
+      "Your card is of the same value - you don't win but you don't lose either"
+    );
   } else {
+    playerPoints -= playerWager;
+    checkSuccess();
     console.log("LOSER");
+  }
+}
+
+// Check whether all cards were guessed successfully in the round
+
+function checkSuccess() {
+  if (correctGuesses === 4) {
+    playerPoints += playerWager;
+    getWager();
+  } else {
+    return; // INSERT NEXT STEP HERE
   }
 }
 

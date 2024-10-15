@@ -67,16 +67,17 @@ let cardChoice; // Player's high or low choice
 let deckUrl; // Used to create the drawCards function fetch URL
 let dealtCards; // Cards dealt for the game
 const changeMsg = document.getElementById("game-messages"); // Reference to game messages div
+let currAces = decideAces(); // Aces value for the round
 
-// Decide whether Aces are high or low and store value for the round
-let currAces = (function decideAces() {
+// Decide whether Aces are high or low and send value to amendCardArray
+function decideAces() {
   let acesBool = Math.random() < 0.5;
   let acesResult = acesBool ? "HIGH" : "LOW";
   amendCardArray(acesResult); // Pass result to amendCardArray
   return acesResult;
-})();
+}
 
-// Amend card array to the current Aces value
+// Update Aces in the card array to the current Aces value
 function amendCardArray(acesValue) {
   if (acesValue === "HIGH") {
     cardArray.cardAC = 14;
@@ -137,7 +138,6 @@ async function drawCards() {
 }
 
 // Get player's current wager
-
 function getWager() {
   changeMsg.innerHTML = `
   <div>
@@ -227,7 +227,6 @@ function playerChoice() {
 }
 
 // Sequentially reveal all cards in the dealtCards array
-
 function flipCard(cardIndex, increment) {
   changeMsg.innerHTML = `
     <div>
@@ -244,7 +243,7 @@ function flipCard(cardIndex, increment) {
   if (increment) {
     currentCard++;
     if (currentCard === 5) {
-      return;
+      calculateOutcome();
     } else {
       calculateOutcome(); // Calculate if the player was correct
       playerChoice(); // Choose whether the next card is higher or lower;
@@ -254,11 +253,7 @@ function flipCard(cardIndex, increment) {
 
 // Calculate the outcome of the player's choice
 function calculateOutcome() {
-  if (dealtCards.cards[currentCard].value > dealtCards.cards[0].value) {
-    console.log("The current card has a higher value");
-  } else if (dealtCards.cards[currentCard].value <= dealtCards.cards[0].value) {
-    console.log("The current card is lower or of the same value");
-  }
+  console.log(cardArray["card" + dealtCards.cards[currentCard-1].code]); // REMOVE AT END
 }
 
 shuffleCards();

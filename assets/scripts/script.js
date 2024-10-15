@@ -253,26 +253,19 @@ function flipCard(cardIndex, increment) {
 
 // Calculate the outcome of the player's choice
 function calculateOutcome() {
-  if (
-    cardsObject["card" + dealtCards.cards[currentCard - 2]] >
-    cardsObject["card" + dealtCards.cards[currentCard - 1]]
-  ) {
-    console.log(dealtCards.cards[currentCard - 2]);
-    console.log(cardsObject["card" + dealtCards.cards[currentCard - 1]]);
+  let prev = cardsObject["card" + dealtCards.cards[currentCard - 2].code];
+  let curr = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
+  if (curr > prev) {
+    console.log(prev);
+    console.log(curr);
     console.log("Your card is higher in value");
-  } else if (
-    cardsObject["card" + dealtCards.cards[currentCard - 2]] <
-    cardsObject["card" + dealtCards.cards[currentCard - 1]]
-  ) {
-    console.log(dealtCards.cards[currentCard - 2]);
-    console.log(cardsObject["card" + dealtCards.cards[currentCard - 1]]);
+  } else if (curr < prev) {
+    console.log(prev);
+    console.log(curr);
     console.log("Your card is lower in value");
-  } else if (
-    cardsObject["card" + dealtCards.cards[currentCard - 2]] =
-    cardsObject["card" + dealtCards.cards[currentCard - 1]]
-  ) {
-    console.log(dealtCards.cards[currentCard - 2]);
-    console.log(cardsObject["card" + dealtCards.cards[currentCard - 1]]);
+  } else if ((curr = prev)) {
+    console.log(prev);
+    console.log(curr);
     console.log("Your card is of the same value");
   }
 }

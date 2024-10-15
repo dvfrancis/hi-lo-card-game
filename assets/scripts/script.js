@@ -1,4 +1,58 @@
 // Variable declarations
+let cardArray = {
+  cardAC: 1,
+  card2C: 2,
+  card3C: 3,
+  card4C: 4,
+  card5C: 5,
+  card6C: 6,
+  card7C: 7,
+  card8C: 8,
+  card9C: 9,
+  card10C: 10,
+  cardJC: 11,
+  cardQC: 12,
+  cardKC: 13,
+  cardAD: 1,
+  card2D: 2,
+  card3D: 3,
+  card4D: 4,
+  card5D: 5,
+  card6D: 6,
+  card7D: 7,
+  card8D: 8,
+  card9D: 9,
+  card10D: 10,
+  cardJD: 11,
+  cardQD: 12,
+  cardKD: 13,
+  cardAH: 1,
+  card2H: 2,
+  card3H: 3,
+  card4H: 4,
+  card5H: 5,
+  card6H: 6,
+  card7H: 7,
+  card8H: 8,
+  card9H: 9,
+  card10H: 10,
+  cardJH: 11,
+  cardQH: 12,
+  cardKH: 13,
+  cardAS: 1,
+  card2S: 2,
+  card3S: 3,
+  card4S: 4,
+  card5S: 5,
+  card6S: 6,
+  card7S: 7,
+  card8S: 8,
+  card9S: 9,
+  card10S: 10,
+  cardJS: 11,
+  cardQS: 12,
+  cardKS: 13,
+}; // Array of playing card codes from https://www.deckofcardsapi.com/ (with associated values)
 const cards = [
   document.getElementById("player-card"),
   document.getElementById("card-1"),
@@ -7,8 +61,6 @@ const cards = [
   document.getElementById("card-4"),
 ]; // References to card divs
 let currentCard = 0; // Current card's index
-let acesBool; // Used to set Aces true or false
-const currAces = decideAces() ? "HIGH" : "LOW"; // Used to set Aces high or low
 let playerPoints = 100; // Player's initial points balance
 let playerWager = 0; // Player's current wager
 let cardChoice; // Player's high or low choice
@@ -16,18 +68,35 @@ let deckUrl; // Used to create the drawCards function fetch URL
 let dealtCards; // Cards dealt for the game
 const changeMsg = document.getElementById("game-messages"); // Reference to game messages div
 
+// Decide whether Aces are high or low and store value for the round
+let currAces = (function decideAces() {
+  let acesBool = Math.random() < 0.5;
+  let acesResult = acesBool ? "HIGH" : "LOW";
+  amendCardArray(acesResult); // Pass result to amendCardArray
+  return acesResult;
+})();
+
+// Amend card array to the current Aces value
+function amendCardArray(acesValue) {
+  if (acesValue === "HIGH") {
+    cardArray.cardAC = 14;
+    cardArray.cardAD = 14;
+    cardArray.cardAH = 14;
+    cardArray.cardAS = 14;
+  } else {
+    cardArray.cardAC = 1;
+    cardArray.cardAD = 1;
+    cardArray.cardAH = 1;
+    cardArray.cardAS = 1;
+  }
+}
+
 // Update footer and copyright year
 let dateNow = new Date();
 let yearNow = dateNow.getFullYear();
 document.getElementById(
   "copyright"
 ).innerHTML = `&#169 ${yearNow} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
-
-// Set Aces are true or false
-function decideAces() {
-  acesBool = Math.random() < 0.5;
-  return acesBool;
-}
 
 // Display initial card view
 cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
@@ -184,76 +253,10 @@ function flipCard(cardIndex, increment) {
 }
 
 // Calculate the outcome of the player's choice
-let acesNum = 0;
-if ((currAces = "HIGH")) {
-  acesNum = 14;
-} else {
-  acesNum = 0;
-}
-
-let cardArray = {
-  cardAC: 1,
-  card2C: 2,
-  card3C: 3,
-  card4C: 4,
-  card5C: 5,
-  card6C: 6,
-  card7C: 7,
-  card8C: 8,
-  card9C: 9,
-  card10C: 10,
-  cardJC: 11,
-  cardQC: 12,
-  cardKC: 13,
-  cardAD: 1,
-  card2D: 2,
-  card3D: 3,
-  card4D: 4,
-  card5D: 5,
-  card6D: 6,
-  card7D: 7,
-  card8D: 8,
-  card9D: 9,
-  card10D: 10,
-  cardJD: 11,
-  cardQD: 12,
-  cardKD: 13,
-  cardAH: 1,
-  card2H: 2,
-  card3H: 3,
-  card4H: 4,
-  card5H: 5,
-  card6H: 6,
-  card7H: 7,
-  card8H: 8,
-  card9H: 9,
-  card10H: 10,
-  cardJH: 11,
-  cardQH: 12,
-  cardKH: 13,
-  cardAS: 1,
-  card2S: 2,
-  card3S: 3,
-  card4S: 4,
-  card5S: 5,
-  card6S: 6,
-  card7S: 7,
-  card8S: 8,
-  card9S: 9,
-  card10S: 10,
-  cardJS: 11,
-  cardQS: 12,
-  cardKS: 13,
-};
-
 function calculateOutcome() {
   if (dealtCards.cards[currentCard].value > dealtCards.cards[0].value) {
     console.log("The current card has a higher value");
-  } else if (
-    (dealtCards.cards[currentCard].value =
-      dealtCards.cards[0].value ||
-      dealtCards.cards[currentCard].value < dealtCards.cards[0].value)
-  ) {
+  } else if (dealtCards.cards[currentCard].value <= dealtCards.cards[0].value) {
     console.log("The current card is lower or of the same value");
   }
 }

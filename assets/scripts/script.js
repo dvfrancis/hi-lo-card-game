@@ -1,5 +1,5 @@
 // Variable declarations
-let cardArray = {
+let cardsObject = {
   cardAC: 1,
   card2C: 2,
   card3C: 3,
@@ -80,15 +80,15 @@ function decideAces() {
 // Update Aces in the card array to the current Aces value
 function amendCardArray(acesValue) {
   if (acesValue === "HIGH") {
-    cardArray.cardAC = 14;
-    cardArray.cardAD = 14;
-    cardArray.cardAH = 14;
-    cardArray.cardAS = 14;
+    cardsObject.cardAC = 14;
+    cardsObject.cardAD = 14;
+    cardsObject.cardAH = 14;
+    cardsObject.cardAS = 14;
   } else {
-    cardArray.cardAC = 1;
-    cardArray.cardAD = 1;
-    cardArray.cardAH = 1;
-    cardArray.cardAS = 1;
+    cardsObject.cardAC = 1;
+    cardsObject.cardAD = 1;
+    cardsObject.cardAH = 1;
+    cardsObject.cardAS = 1;
   }
 }
 
@@ -253,7 +253,28 @@ function flipCard(cardIndex, increment) {
 
 // Calculate the outcome of the player's choice
 function calculateOutcome() {
-  console.log(cardArray["card" + dealtCards.cards[currentCard-1].code]); // REMOVE AT END
+  if (
+    cardsObject["card" + dealtCards.cards[currentCard - 2]] >
+    cardsObject["card" + dealtCards.cards[currentCard - 1]]
+  ) {
+    console.log(dealtCards.cards[currentCard - 2]);
+    console.log(cardsObject["card" + dealtCards.cards[currentCard - 1]]);
+    console.log("Your card is higher in value");
+  } else if (
+    cardsObject["card" + dealtCards.cards[currentCard - 2]] <
+    cardsObject["card" + dealtCards.cards[currentCard - 1]]
+  ) {
+    console.log(dealtCards.cards[currentCard - 2]);
+    console.log(cardsObject["card" + dealtCards.cards[currentCard - 1]]);
+    console.log("Your card is lower in value");
+  } else if (
+    cardsObject["card" + dealtCards.cards[currentCard - 2]] =
+    cardsObject["card" + dealtCards.cards[currentCard - 1]]
+  ) {
+    console.log(dealtCards.cards[currentCard - 2]);
+    console.log(cardsObject["card" + dealtCards.cards[currentCard - 1]]);
+    console.log("Your card is of the same value");
+  }
 }
 
 shuffleCards();

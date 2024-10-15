@@ -255,18 +255,20 @@ function flipCard(cardIndex, increment) {
 function calculateOutcome() {
   let prev = cardsObject["card" + dealtCards.cards[currentCard - 2].code];
   let curr = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
-  if (curr > prev) {
+  if (curr > prev && cardChoice === "Higher") {
     console.log(prev);
     console.log(curr);
     console.log("Your card is higher in value");
-  } else if (curr < prev) {
+  } else if (curr < prev && cardChoice === "Lower") {
     console.log(prev);
     console.log(curr);
     console.log("Your card is lower in value");
-  } else if ((curr = prev)) {
+  } else if ((curr === prev)) {
     console.log(prev);
     console.log(curr);
     console.log("Your card is of the same value");
+  } else {
+    console.log("LOSER");
   }
 }
 

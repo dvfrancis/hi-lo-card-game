@@ -175,17 +175,87 @@ function flipCard(cardIndex, increment) {
   if (increment) {
     currentCard++;
     if (currentCard === 5) {
-      calculateOutcome();
+      return;
     } else {
-      playerChoice();
+      calculateOutcome(); // Calculate if the player was correct
+      playerChoice(); // Choose whether the next card is higher or lower;
     }
   } // Only allow the currentCard variable to be incremented four times
 }
 
 // Calculate the outcome of the player's choice
+let acesNum = 0;
+if(currAces = "HIGH") {
+      acesNum = 14;
+    } else { 
+      acesNum = 0;
+    };
+
+    let cardArray = {
+      AC: 1,
+      2C: 2,
+      3C: 3,
+      4C: 4,
+      5C: 5,
+      6C: 6,
+      7C: 7,
+      8C: 8,
+      9C: 9,
+      10C: 10,
+      JC: 11,
+      QC: 12,
+      KC: 13,
+      AD: 1,
+      2D: 2,
+      3D: 3,
+      4D: 4,
+      5D: 5,
+      6D: 6,
+      7D: 7,
+      8D: 8,
+      9D: 9,
+      10D: 10,
+      JD: 11,
+      QD: 12,
+      KD: 13,
+      AH: 1,
+      2H: 2,
+      3H: 3,
+      4H: 4,
+      5H: 5,
+      6H: 6,
+      7H: 7,
+      8H: 8,
+      9H: 9,
+      10H: 10,
+      JH: 11,
+      QH: 12,
+      KH: 13,
+      AS: 1,
+      2S: 2,
+      3S: 3,
+      4S: 4,
+      5S: 5,
+      6S: 6,
+      7S: 7,
+      8S: 8,
+      9S: 9,
+      10S: 10,
+      JS: 11,
+      QH: 12,
+      KH: 13,
+    };
 
 function calculateOutcome() {
-  
-};
+  if (dealtCards.cards[currentCard].value > dealtCards.cards[0].value) {
+    console.log("The current card has a higher value");
+  } else if (
+    (dealtCards.cards[currentCard].value =
+      dealtCards.cards[0].value ||
+      dealtCards.cards[currentCard].value < dealtCards.cards[0].value)
+  ) {
+    console.log("The current card is lower or of the same value");
+  }
+}
 
 shuffleCards();

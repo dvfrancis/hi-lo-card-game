@@ -1,10 +1,10 @@
 // Variable declarations
 const cards = [
   document.getElementById("player-card"),
-  document.getElementById("card-one"),
-  document.getElementById("card-two"),
-  document.getElementById("card-three"),
-  document.getElementById("card-four"),
+  document.getElementById("card-1"),
+  document.getElementById("card-2"),
+  document.getElementById("card-3"),
+  document.getElementById("card-4"),
 ]; // References to card divs
 let currentCard = 0; // Current card's index
 let acesBool; // Used to set Aces true or false
@@ -31,10 +31,10 @@ function decideAces() {
 
 // Display initial card view
 cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[1].innerHTML = `<img id="card-one" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[2].innerHTML = `<img id="card-two" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[3].innerHTML = `<img id="card-three" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[4].innerHTML = `<img id="card-four" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[2].innerHTML = `<img id="card-2" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[3].innerHTML = `<img id="card-3" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 
 // Shuffle the deck of cards (via https://www.deckofcardsapi.com)
 async function shuffleCards() {
@@ -170,16 +170,22 @@ function flipCard(cardIndex, increment) {
     </div>
     `; // Display higher or lower choice instructions and wager buttons
   cards[cardIndex].innerHTML = `
-    <img id="card-one" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
+    <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
     `; // Flip the next card
   if (increment) {
     currentCard++;
     if (currentCard === 5) {
-      return; // Move to the next stage *TO BE WRITTEN*
+      calculateOutcome();
     } else {
       playerChoice();
     }
   } // Only allow the currentCard variable to be incremented four times
 }
+
+// Calculate the outcome of the player's choice
+
+function calculateOutcome() {
+  
+};
 
 shuffleCards();

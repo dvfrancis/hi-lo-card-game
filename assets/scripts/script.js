@@ -281,7 +281,7 @@ function flipCard(cardIndex) {
   playerChoice(); // Choose whether the next card is higher or lower;
 }
 
-// Only allow the currentCard variable to be incremented four times
+// Calculate whether player choices were correct or incorrect
 function calculateOutcome() {
   let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
   let currCard = cardsObject["card" + dealtCards.cards[currentCard].code];
@@ -313,8 +313,7 @@ function calculateOutcome() {
   console.log(correctGuesses);
 }
 
-// Check whether all cards were guessed successfully in the round
-
+// Check whether the player won or lost the round
 function checkSuccess() {
   console.log(correctGuesses);
   if (correctGuesses === 4) {

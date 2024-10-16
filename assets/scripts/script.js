@@ -218,12 +218,10 @@ function getWager() {
 
 // Get higher or lower choice from the player
 function playerChoice() {
-  const yourWager = document.getElementById("wager");
-  // Display higher or lower choice instructions and wager buttons
   changeMsg.innerHTML = `
   <div>
   <p>You currently have ${playerPoints} points</p>
-  <p>Your wager for this round is ${yourWager.innerHTML = playerWager}</p>
+  <p>Your wager for this round is ${playerWager}</p>
   <p>For this round, Aces are ${currAces}</p>
   <p>Is the next card HIGHER or LOWER than your card?</p>
   <button type="button" id="higher">Higher</button>

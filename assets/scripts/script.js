@@ -292,29 +292,22 @@ function calculateOutcome() {
   let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 2].code];
   let currCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
   if (currCard > prevCard && cardChoice === "Higher") {
-    console.log(prevCard);
-    console.log(currCard);
-    correctGuesses = +1;
-    console.log(correctGuesses);
+    correctGuesses += 1;
     console.log("CONGRATULATIONS your card is higher in value");
   } else if (currCard < prevCard && cardChoice === "Lower") {
-    console.log(prevCard);
-    console.log(currCard);
-    correctGuesses = +1;
-    console.log(correctGuesses);
+    correctGuesses += 1;
     console.log("CONGRATULATIONS your card is lower in value");
   } else if (currCard === prevCard) {
-    console.log(prevCard);
-    console.log(currCard);
-    correctGuesses = +1;
-    console.log(correctGuesses);
+    correctGuesses += 1;
     console.log(
       "Your card is of the same value - you don't win but you don't lose either"
     );
   } else {
     playerPoints -= playerWager;
+    console.log(
+      "Sorry that was an incorrect choice. You have lost your wager!"
+    );
     checkSuccess();
-    console.log("LOSER");
   }
 }
 
@@ -322,10 +315,10 @@ function calculateOutcome() {
 
 function checkSuccess() {
   if (correctGuesses === 4) {
-    playerPoints += playerWager;
-    getWager();
+    return playerPoints += playerWager;
+    // getWager();
   } else {
-    return; // INSERT NEXT STEP HERE
+    return playerPoints -= playerWager;
   }
 }
 

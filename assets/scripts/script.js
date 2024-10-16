@@ -246,7 +246,6 @@ function playerChoice() {
     <p>Your card choice was ${cardChoice}</p>
    </div>
   `;
-    console.log("Card choice is", cardChoice);
     flipCard(currentCard, true);
   }); // Set card choice to Lower and move to next stage
 }
@@ -259,28 +258,28 @@ function flipCard(cardIndex, increment) {
   if (increment) {
     currentCard++;
     if (currentCard === 5) {
-    //   changeMsg.innerHTML = `
-    // <div>
-    // <p>You currently have ${playerPoints} points</p>
-    // <p>For this round, Aces are ${currAces}</p>
-    // <p>You guessed that the next card was ${cardChoice}</p>
-    // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
-    // <button type="button" id="higher">Higher</button>
-    // <button type="button" id="lower">Lower</button>
-    // </div>
-    // `; // Display higher or lower choice instructions and wager buttons
+      //   changeMsg.innerHTML = `
+      // <div>
+      // <p>You currently have ${playerPoints} points</p>
+      // <p>For this round, Aces are ${currAces}</p>
+      // <p>You guessed that the next card was ${cardChoice}</p>
+      // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
+      // <button type="button" id="higher">Higher</button>
+      // <button type="button" id="lower">Lower</button>
+      // </div>
+      // `; // Display higher or lower choice instructions and wager buttons
       calculateOutcome();
     } else {
-    //   changeMsg.innerHTML = `
-    // <div>
-    // <p>You currently have ${playerPoints} points</p>
-    // <p>For this round, Aces are ${currAces}</p>
-    // <p>You guessed that the next card was ${cardChoice}</p>
-    // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
-    // <button type="button" id="higher">Higher</button>
-    // <button type="button" id="lower">Lower</button>
-    // </div>
-    // `; // Display higher or lower choice instructions and wager buttons
+      //   changeMsg.innerHTML = `
+      // <div>
+      // <p>You currently have ${playerPoints} points</p>
+      // <p>For this round, Aces are ${currAces}</p>
+      // <p>You guessed that the next card was ${cardChoice}</p>
+      // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
+      // <button type="button" id="higher">Higher</button>
+      // <button type="button" id="lower">Lower</button>
+      // </div>
+      // `; // Display higher or lower choice instructions and wager buttons
       calculateOutcome(); // Calculate if the player was correct
       playerChoice(); // Choose whether the next card is higher or lower;
     }
@@ -291,19 +290,27 @@ function flipCard(cardIndex, increment) {
 function calculateOutcome() {
   let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 2].code];
   let currCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
-  if (currCard > prevCard && cardChoice === "Higher") {
+  if (currCard > prevCard && cardChoice === "Higher" && correctGuesses !== 4) {
     correctGuesses += 1;
+    console.log(correctGuesses);
     console.log("CONGRATULATIONS your card is higher in value");
-  } else if (currCard < prevCard && cardChoice === "Lower") {
+  } else if (
+    currCard < prevCard &&
+    cardChoice === "Lower" &&
+    correctGuesses !== 4
+  ) {
     correctGuesses += 1;
+    console.log(correctGuesses);
     console.log("CONGRATULATIONS your card is lower in value");
-  } else if (currCard === prevCard) {
+  } else if (currCard === prevCard && correctGuesses !== 4) {
     correctGuesses += 1;
+    console.log(correctGuesses);
     console.log(
       "Your card is of the same value - you don't win but you don't lose either"
     );
   } else {
     playerPoints -= playerWager;
+    console.log(correctGuesses);
     console.log(
       "Sorry that was an incorrect choice. You have lost your wager!"
     );
@@ -315,9 +322,11 @@ function calculateOutcome() {
 
 function checkSuccess() {
   if (correctGuesses === 4) {
-    return playerPoints += playerWager;
+    console.log("Points =", playerPoints);
+    playerPoints += playerWager;
   } else {
-    return playerPoints -= playerWager;
+    console.log("Points =", playerPoints);
+    playerPoints -= playerWager;
   }
 }
 

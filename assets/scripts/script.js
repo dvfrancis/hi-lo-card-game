@@ -74,12 +74,12 @@ let currAces = decideAces(); // The value of an Ace for the round
 function decideAces() {
   let acesBool = Math.random() < 0.5;
   let acesResult = acesBool ? "HIGH" : "LOW";
-  amendCardArray(acesResult); // Pass result to amendCardArray
+  amendCardsObject(acesResult); // Pass result to amendCardArray
   return acesResult;
 }
 
 // Update all Aces in the card array to match the current round's Ace value
-function amendCardArray(acesValue) {
+function amendCardsObject(acesValue) {
   if (acesValue === "HIGH") {
     cardsObject["cardAC"] = 14;
     cardsObject["cardAD"] = 14;
@@ -254,33 +254,33 @@ function playerChoice() {
 // Sequentially reveal all cards in the dealtCards array
 function flipCard(cardIndex, increment) {
   cards[cardIndex].innerHTML = `
-    <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">
+    <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The next game card">
     `; // Flip the next card
   if (increment) {
     currentCard++;
     if (currentCard === 5) {
-      changeMsg.innerHTML = `
-    <div>
-    <p>You currently have ${playerPoints} points</p>
-    <p>For this round, Aces are ${currAces}</p>
-    <p>You guessed that the next card was ${cardChoice}</p>
-    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
-    <button type="button" id="higher">Higher</button>
-    <button type="button" id="lower">Lower</button>
-    </div>
-    `; // Display higher or lower choice instructions and wager buttons
+    //   changeMsg.innerHTML = `
+    // <div>
+    // <p>You currently have ${playerPoints} points</p>
+    // <p>For this round, Aces are ${currAces}</p>
+    // <p>You guessed that the next card was ${cardChoice}</p>
+    // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
+    // <button type="button" id="higher">Higher</button>
+    // <button type="button" id="lower">Lower</button>
+    // </div>
+    // `; // Display higher or lower choice instructions and wager buttons
       calculateOutcome();
     } else {
-      changeMsg.innerHTML = `
-    <div>
-    <p>You currently have ${playerPoints} points</p>
-    <p>For this round, Aces are ${currAces}</p>
-    <p>You guessed that the next card was ${cardChoice}</p>
-    <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
-    <button type="button" id="higher">Higher</button>
-    <button type="button" id="lower">Lower</button>
-    </div>
-    `; // Display higher or lower choice instructions and wager buttons
+    //   changeMsg.innerHTML = `
+    // <div>
+    // <p>You currently have ${playerPoints} points</p>
+    // <p>For this round, Aces are ${currAces}</p>
+    // <p>You guessed that the next card was ${cardChoice}</p>
+    // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
+    // <button type="button" id="higher">Higher</button>
+    // <button type="button" id="lower">Lower</button>
+    // </div>
+    // `; // Display higher or lower choice instructions and wager buttons
       calculateOutcome(); // Calculate if the player was correct
       playerChoice(); // Choose whether the next card is higher or lower;
     }
@@ -316,7 +316,6 @@ function calculateOutcome() {
 function checkSuccess() {
   if (correctGuesses === 4) {
     return playerPoints += playerWager;
-    // getWager();
   } else {
     return playerPoints -= playerWager;
   }

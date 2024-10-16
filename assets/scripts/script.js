@@ -59,16 +59,16 @@ const cards = [
   document.getElementById("card-2"),
   document.getElementById("card-3"),
   document.getElementById("card-4"),
-]; // References to card divs
-let currentCard = 0; // Current card's index
-let playerPoints = 100; // Player's initial points balance
-let playerWager = 0; // Player's current wager
-let cardChoice; // Player's high or low choice
-let deckUrl; // Used to create the drawCards function fetch URL
-let dealtCards; // Cards dealt for the game
-const changeMsg = document.getElementById("game-messages"); // Reference to game messages div
-let currAces = decideAces(); // Aces value for the round
-let correctGuesses = 0; // The number of correct guesses
+]; // DOM references for card DIVs
+let deckUrl; // Current API deck_id used to complete the drawCards function fetch URL
+let dealtCards; // The five cards used for a round of the game
+let currentCard = 0; // Index of the current card to access the dealtCards array
+let playerPoints = 100; // The player's initial points balance
+let playerWager = 0; // The player's wager
+let cardChoice; // The player's high or low choice
+let correctGuesses = 0; // The player's correct guesses
+const changeMsg = document.getElementById("game-messages"); // DOM reference to game-messages DIV
+let currAces = decideAces(); // The value of an Ace for the round
 
 // Decide whether Aces are high or low and send value to amendCardArray
 function decideAces() {
@@ -78,22 +78,22 @@ function decideAces() {
   return acesResult;
 }
 
-// Update Aces in the card array to the current Aces value
+// Update all Aces in the card array to match the current round's Ace value
 function amendCardArray(acesValue) {
   if (acesValue === "HIGH") {
-    cardsObject.cardAC = 14;
-    cardsObject.cardAD = 14;
-    cardsObject.cardAH = 14;
-    cardsObject.cardAS = 14;
+    cardsObject["cardAC"] = 14;
+    cardsObject["cardAD"] = 14;
+    cardsObject["cardAH"] = 14;
+    cardsObject["cardAS"] = 14;
   } else {
-    cardsObject.cardAC = 1;
-    cardsObject.cardAD = 1;
-    cardsObject.cardAH = 1;
-    cardsObject.cardAS = 1;
+    cardsObject["cardAC"] = 1;
+    cardsObject["cardAD"] = 1;
+    cardsObject["cardAH"] = 1;
+    cardsObject["cardAS"] = 1;
   }
 }
 
-// Update footer and copyright year
+// Update copyright year in footer
 let dateNow = new Date();
 let yearNow = dateNow.getFullYear();
 document.getElementById(
@@ -115,7 +115,7 @@ async function shuffleCards() {
   const cardDeck = await shuffleReply.json();
   if (shuffleReply.ok) {
     console.log(cardDeck); // Console log the shuffled deck
-    deckUrl = cardDeck.deck_id;
+    deckUrl = cardDeck.deck_id; // Save the deck_id for use in completing the fetch URL
     drawCards();
   } else {
     console.error("Error:", shuffleReply.statusText);
@@ -131,7 +131,7 @@ async function drawCards() {
   if (drawReply.ok) {
     console.log(dealtCards); // Console log the drawn cards
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
-    currentCard++;
+    currentCard++; // Increment currentCard which is used to specify the index of the next card in the deck of dealt cards
     getWager();
   } else {
     console.error("Error:", drawReply.statusText);
@@ -140,81 +140,96 @@ async function drawCards() {
 
 // Get player's current wager
 function getWager() {
+  // Display wager instructions and wager buttons
   changeMsg.innerHTML = `
   <div>
   <p>You currently have ${playerPoints} points</p>
-  <p>Please enter your wager for this round</p>
-  <p>Minimum wager is 1 point, and you cannot wager more than your total points</p>
+  <p>Please enter your wager for this round (minimum = 1 point, maximum = your total points)</p>
+  <div id="wager"></div>
   <button type="button" id="wager-one">+1</button>
   <button type="button" id="wager-five">+5</button>
   <button type="button" id="wager-ten">+10</button>
   <button type="button" id="wager-fifty">+50</button>
   <button type="button" id="wager-hundred">+100</button>
   <div><button type="submit" id="wager-submit">Submit</button>
- <button type="reset" id="wager-reset">Reset</button></div>
-  <div id="total-wager"></div>
+  <button type="reset" id="wager-reset">Reset</button></div>
   </div>
-  `; // Display wager instructions and wager buttons
-  const WagerOne = document.getElementById("wager-one");
-  WagerOne.addEventListener("click", function () {
-    setPlayerWager(1);
-  }); // Increases wager by 1 when clicked
-  const WagerFive = document.getElementById("wager-five");
-  WagerFive.addEventListener("click", function () {
-    setPlayerWager(5);
-  }); // Increases wager by 5 when clicked
-  const WagerTen = document.getElementById("wager-ten");
-  WagerTen.addEventListener("click", function () {
-    setPlayerWager(10);
-  }); // Increases wager by 10 when clicked
-  const WagerFifty = document.getElementById("wager-fifty");
-  WagerFifty.addEventListener("click", function () {
-    setPlayerWager(50);
-  }); // Increases wager by 50 when clicked
-  const WagerHundred = document.getElementById("wager-hundred");
-  WagerHundred.addEventListener("click", function () {
-    setPlayerWager(100);
-  }); // Increases wager by 100 when clicked
-  let totalWager = document.getElementById("total-wager");
-  totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
+  `;
+  // DOM reference to total-wager DIV
+  const totalWager = document.getElementById("wager");
+  // Calculate wager ensuring it is not zero or exceeds available points
   function setPlayerWager(num) {
     if (playerWager + num > playerPoints) {
       totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
       playerWager = 0;
       setTimeout(() => {
         totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
-      }, 1250);
+      }, 1500);
     } else {
       playerWager += num;
       totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
     }
-  } // Calculate wager ensuring it is not zero or exceeds available points
+  }
+  // Increase playerWager by 1 when clicked
+  const WagerOne = document.getElementById("wager-one");
+  WagerOne.addEventListener("click", function () {
+    setPlayerWager(1);
+  });
+  // Increase playerWager by 5 when clicked
+  const WagerFive = document.getElementById("wager-five");
+  WagerFive.addEventListener("click", function () {
+    setPlayerWager(5);
+  });
+  // Increase playerWager by 10 when clicked
+  const WagerTen = document.getElementById("wager-ten");
+  WagerTen.addEventListener("click", function () {
+    setPlayerWager(10);
+  });
+  // Increase playerWager by 50 when clicked
+  const WagerFifty = document.getElementById("wager-fifty");
+  WagerFifty.addEventListener("click", function () {
+    setPlayerWager(50);
+  });
+  // Increase playerWager by 100 when clicked
+  const WagerHundred = document.getElementById("wager-hundred");
+  WagerHundred.addEventListener("click", function () {
+    setPlayerWager(100);
+  });
+  // Reset wager to zero when clicked
+  totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
   const wagerReset = document.getElementById("wager-reset");
   wagerReset.addEventListener("click", function () {
     playerWager = 0;
     totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
-  }); // Reset wager to zero when clicked
+  });
+  // Submit wager as long as it is not zero or exceeds available points, then move to next stage
   const wagerSubmit = document.getElementById("wager-submit");
   wagerSubmit.addEventListener("click", function () {
     if (playerWager === 0 || playerWager > playerPoints) {
       totalWager.innerHTML = `<p>You have entered an incorrect wager. Please try again.</p>`;
+      setTimeout(() => {
+        totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
+      }, 1500);
     } else {
       playerChoice();
     }
-  }); // Submit wager as long as it is not zero or exceeds available points, then move to next stage
+  });
 }
 
 // Get higher or lower choice from the player
 function playerChoice() {
+  const yourWager = document.getElementById("wager");
+  // Display higher or lower choice instructions and wager buttons
   changeMsg.innerHTML = `
   <div>
   <p>You currently have ${playerPoints} points</p>
+  <p>Your wager for this round is ${yourWager.innerHTML = playerWager}</p>
   <p>For this round, Aces are ${currAces}</p>
   <p>Is the next card HIGHER or LOWER than your card?</p>
   <button type="button" id="higher">Higher</button>
   <button type="button" id="lower">Lower</button>
   </div>
-  `; // Display higher or lower choice instructions and wager buttons
+  `;
   const highBtn = document.getElementById("higher"); // Reference to higher button
   const lowBtn = document.getElementById("lower"); // Reference to lower button
   highBtn.addEventListener("click", function () {

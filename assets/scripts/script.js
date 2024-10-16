@@ -9,7 +9,7 @@ let cardsObject = {
   card7C: 7,
   card8C: 8,
   card9C: 9,
-  card10C: 10,
+  card0C: 10,
   cardJC: 11,
   cardQC: 12,
   cardKC: 13,
@@ -22,7 +22,7 @@ let cardsObject = {
   card7D: 7,
   card8D: 8,
   card9D: 9,
-  card10D: 10,
+  card0D: 10,
   cardJD: 11,
   cardQD: 12,
   cardKD: 13,
@@ -35,7 +35,7 @@ let cardsObject = {
   card7H: 7,
   card8H: 8,
   card9H: 9,
-  card10H: 10,
+  card0H: 10,
   cardJH: 11,
   cardQH: 12,
   cardKH: 13,
@@ -48,7 +48,7 @@ let cardsObject = {
   card7S: 7,
   card8S: 8,
   card9S: 9,
-  card10S: 10,
+  card0S: 10,
   cardJS: 11,
   cardQS: 12,
   cardKS: 13,
@@ -60,6 +60,7 @@ const cards = [
   document.getElementById("card-3"),
   document.getElementById("card-4"),
 ]; // DOM references for card DIVs
+let cardArea = document.getElementById("cards"); // DOM reference for card area
 let deckUrl; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards; // The five cards used for a round of the game
 let currentCard = 0; // Index of the current card to access the dealtCards array
@@ -101,11 +102,13 @@ document.getElementById(
 ).innerHTML = `&#169 ${yearNow} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
 
 // Display initial card view
-cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[2].innerHTML = `<img id="card-2" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[3].innerHTML = `<img id="card-3" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+function initialView() {
+  cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[2].innerHTML = `<img id="card-2" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[3].innerHTML = `<img id="card-3" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+}
 
 // Shuffle the deck of cards (via https://www.deckofcardsapi.com)
 async function shuffleCards() {
@@ -130,7 +133,11 @@ async function drawCards() {
   dealtCards = await drawReply.json();
   if (drawReply.ok) {
     console.log(dealtCards); // Console log the drawn cards
+    initialView();
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
+    currentCard = 0; // Reset before round
+    correctGuesses = 0; // Reset before round
+    playerWager = 0; // Reset before round
     currentCard++; // Increment currentCard which is used to specify the index of the next card in the deck of dealt cards
     getWager();
   } else {
@@ -228,105 +235,102 @@ function playerChoice() {
   <button type="button" id="lower">Lower</button>
   </div>
   `;
-  const highBtn = document.getElementById("higher"); // Reference to higher button
-  const lowBtn = document.getElementById("lower"); // Reference to lower button
+  const highBtn = document.getElementById("higher"); // DOM reference to Higher button
+  const lowBtn = document.getElementById("lower"); // DOM reference to Lower button
   highBtn.addEventListener("click", function () {
     cardChoice = "Higher";
     changeMsg.innerHTML = `
   <div>
-    <p>Your card choice was ${cardChoice}</p>
+  <p>You currently have ${playerPoints} points</p>
+  <p>Your wager for this round is ${playerWager}</p>
+  <p>For this round, Aces are ${currAces}</p>
+  <p>from the flipCard function</p>
+  <p>Your card choice was ${cardChoice}</p>
+  <p>Is the next card HIGHER or LOWER than your card?</p>
+  <button type="button" id="higher">Higher</button>
+  <button type="button" id="lower">Lower</button>
   </div>
   `;
-    flipCard(currentCard, true);
+    flipCard(currentCard);
   }); // Set card choice to Higher and move to next stage
   lowBtn.addEventListener("click", function () {
     cardChoice = "Lower";
     changeMsg.innerHTML = `
   <div>
-    <p>Your card choice was ${cardChoice}</p>
-   </div>
+  <p>You currently have ${playerPoints} points</p>
+  <p>Your wager for this round is ${playerWager}</p>
+  <p>For this round, Aces are ${currAces}</p>
+  <p>from the flipCard function</p>
+  <p>Your card choice was ${cardChoice}</p>
+  <p>Is the next card HIGHER or LOWER than your card?</p>
+  <button type="button" id="higher">Higher</button>
+  <button type="button" id="lower">Lower</button>
+  </div>
   `;
-    flipCard(currentCard, true);
+    flipCard(currentCard);
   }); // Set card choice to Lower and move to next stage
 }
 
 // Sequentially reveal all cards in the dealtCards array
-function flipCard(cardIndex, increment) {
+function flipCard(cardIndex) {
   cards[cardIndex].innerHTML = `
     <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The next game card">
     `; // Flip the next card
-  if (increment) {
-    currentCard++;
-    if (currentCard === 5) {
-      //   changeMsg.innerHTML = `
-      // <div>
-      // <p>You currently have ${playerPoints} points</p>
-      // <p>For this round, Aces are ${currAces}</p>
-      // <p>You guessed that the next card was ${cardChoice}</p>
-      // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
-      // <button type="button" id="higher">Higher</button>
-      // <button type="button" id="lower">Lower</button>
-      // </div>
-      // `; // Display higher or lower choice instructions and wager buttons
-      calculateOutcome();
-    } else {
-      //   changeMsg.innerHTML = `
-      // <div>
-      // <p>You currently have ${playerPoints} points</p>
-      // <p>For this round, Aces are ${currAces}</p>
-      // <p>You guessed that the next card was ${cardChoice}</p>
-      // <p>The next card is the ${dealtCards.cards[cardIndex].value} of ${dealtCards.cards[cardIndex].suit}!</p>
-      // <button type="button" id="higher">Higher</button>
-      // <button type="button" id="lower">Lower</button>
-      // </div>
-      // `; // Display higher or lower choice instructions and wager buttons
-      calculateOutcome(); // Calculate if the player was correct
-      playerChoice(); // Choose whether the next card is higher or lower;
-    }
-  } // Only allow the currentCard variable to be incremented four times
+  calculateOutcome(); // Calculate if the player was correct
+  currentCard++;
+  playerChoice(); // Choose whether the next card is higher or lower;
 }
 
-// Calculate the outcome of the player's choice
+// Only allow the currentCard variable to be incremented four times
 function calculateOutcome() {
-  let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 2].code];
-  let currCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
-  if (currCard > prevCard && cardChoice === "Higher" && correctGuesses !== 4) {
+  let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
+  let currCard = cardsObject["card" + dealtCards.cards[currentCard].code];
+  if (currCard > prevCard && cardChoice === "Higher") {
     correctGuesses += 1;
-    console.log(correctGuesses);
     console.log("CONGRATULATIONS your card is higher in value");
-  } else if (
-    currCard < prevCard &&
-    cardChoice === "Lower" &&
-    correctGuesses !== 4
-  ) {
+    if (correctGuesses === 4) {
+      checkSuccess();
+      return;
+    }
+  } else if (currCard < prevCard && cardChoice === "Lower") {
     correctGuesses += 1;
-    console.log(correctGuesses);
     console.log("CONGRATULATIONS your card is lower in value");
-  } else if (currCard === prevCard && correctGuesses !== 4) {
-    correctGuesses += 1;
-    console.log(correctGuesses);
+    if (correctGuesses === 4) {
+      checkSuccess();
+      return;
+    }
+  } else if (currCard === prevCard) {
     console.log(
-      "Your card is of the same value - you don't win but you don't lose either"
+      "Sorry you got a match. You don't get anything for two in this game!"
     );
+    checkSuccess();
   } else {
-    playerPoints -= playerWager;
-    console.log(correctGuesses);
     console.log(
       "Sorry that was an incorrect choice. You have lost your wager!"
     );
     checkSuccess();
   }
+  console.log(correctGuesses);
 }
 
 // Check whether all cards were guessed successfully in the round
 
 function checkSuccess() {
+  console.log(correctGuesses);
   if (correctGuesses === 4) {
-    console.log("Points =", playerPoints);
     playerPoints += playerWager;
+    console.log("Plus Points =", playerPoints);
+    changeMsg.innerHTML = `CONGRATULATIONS`;
+    setTimeout(() => {
+      drawCards();
+    }, 2500);
   } else {
-    console.log("Points =", playerPoints);
     playerPoints -= playerWager;
+    console.log("Minus Points =", playerPoints);
+    changeMsg.innerHTML = `COMMISERATIONS!`;
+    setTimeout(() => {
+      drawCards();
+    }, 2500);
   }
 }
 

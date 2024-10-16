@@ -321,16 +321,12 @@ function checkSuccess() {
     playerPoints += playerWager;
     console.log("Plus Points =", playerPoints);
     changeMsg.innerHTML = `CONGRATULATIONS`;
-    setTimeout(() => {
-      drawCards();
-    }, 2500);
+    drawCards();
   } else {
     playerPoints -= playerWager;
     console.log("Minus Points =", playerPoints);
     changeMsg.innerHTML = `COMMISERATIONS!`;
-    setTimeout(() => {
-      drawCards();
-    }, 2500);
+    drawCards();
   }
 }
 

@@ -61,7 +61,7 @@ const cards = [
   document.getElementById("card-2"),
   document.getElementById("card-3"),
   document.getElementById("card-4"),
-]; 
+];
 let cardArea = document.getElementById("cards"); // DOM reference for card area
 let deckUrl; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards; // The five cards used for a round of the game
@@ -96,23 +96,7 @@ function amendCardsObject(acesValue) {
   }
 }
 
-// Keep copyright year current, in the footer
-let dateNow = new Date();
-let yearNow = dateNow.getFullYear();
-document.getElementById(
-  "copyright"
-).innerHTML = ` ${yearNow} `;
-
-// Display initial card view
-function initialView() {
-  cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-  cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-  cards[2].innerHTML = `<img id="card-2" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-  cards[3].innerHTML = `<img id="card-3" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-  cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-}
-
-// Shuffle the deck of cards (via https://www.deckofcardsapi.com)
+// Shuffle the deck of cards (via API call to https://www.deckofcardsapi.com)
 async function shuffleCards() {
   const shuffleReply = await fetch(
     "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
@@ -127,33 +111,41 @@ async function shuffleCards() {
   }
 }
 
-// Draw cards from the shuffled deck and display the player's card (via https://www.deckofcardsapi.com)
+// Display initial card view
+function initialView() {
+  cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The player's first card">`;
+  cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[2].innerHTML = `<img id="card-2" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[3].innerHTML = `<img id="card-3" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+}
+
+// Draw cards from the shuffled deck and display the player's card (via API call to https://www.deckofcardsapi.com)
 async function drawCards() {
   const drawReply = await fetch(
-    `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
+    `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5` // URL dynamically updated based on previously shuffled deck_id value
   );
   dealtCards = await drawReply.json();
   if (drawReply.ok) {
     console.log(dealtCards); // Console log the drawn cards
     initialView();
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
-    currentCard = 0; // Reset before round
-    correctGuesses = 0; // Reset before round
-    playerWager = 0; // Reset before round
-    currentCard++; // Increment currentCard which is used to specify the index of the next card in the deck of dealt cards
+    currentCard = 0; // Reset currentCard count before new round
+    correctGuesses = 0; // Reset correctGuesses count before new round
+    playerWager = 0; // Reset playerWager amount before new round
+    currentCard++; // Increment currentCard to specify the index of the next card in dealtCards
     getWager();
   } else {
     console.error("Error:", drawReply.statusText);
   }
 }
 
-// Get player's current wager
-function getWager() {
-  // Display wager instructions and wager buttons
+// Display wager information
+function wagerInfo() {
   changeMsg.innerHTML = `
   <div>
   <p>You currently have ${playerPoints} points</p>
-  <p>Please enter your wager for this round (minimum = 1 point, maximum = your total points)</p>
+  <p>What is your wager this round? (min = 1 point, max = total points)</p>
   <div id="wager"></div>
   <button type="button" id="wager-one">+1</button>
   <button type="button" id="wager-five">+5</button>
@@ -164,21 +156,13 @@ function getWager() {
   <button type="reset" id="wager-reset">Reset</button></div>
   </div>
   `;
-  // DOM reference to total-wager DIV
+}
+
+// Get player's current wager
+function getWager() {
+  wagerInfo(); // Display wager instructions and wager buttons
+  // DOM reference to wager DIV
   const totalWager = document.getElementById("wager");
-  // Calculate wager ensuring it is not zero or exceeds available points
-  function setPlayerWager(num) {
-    if (playerWager + num > playerPoints) {
-      totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
-      playerWager = 0;
-      setTimeout(() => {
-        totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
-      }, 1500);
-    } else {
-      playerWager += num;
-      totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
-    }
-  }
   // Increase playerWager by 1 when clicked
   const WagerOne = document.getElementById("wager-one");
   WagerOne.addEventListener("click", function () {
@@ -204,20 +188,33 @@ function getWager() {
   WagerHundred.addEventListener("click", function () {
     setPlayerWager(100);
   });
+  // Calculate wager ensuring it is not zero or exceeds available points
+  function setPlayerWager(num) {
+    if (playerWager + num > playerPoints) {
+      totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
+      playerWager = 0;
+      setTimeout(() => {
+        totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
+      }, 1500);
+    } else {
+      playerWager += num;
+      totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
+    }
+  }
   // Reset wager to zero when clicked
-  totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
+  totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
   const wagerReset = document.getElementById("wager-reset");
   wagerReset.addEventListener("click", function () {
     playerWager = 0;
-    totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
+    totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
   });
   // Submit wager as long as it is not zero or exceeds available points, then move to next stage
   const wagerSubmit = document.getElementById("wager-submit");
   wagerSubmit.addEventListener("click", function () {
     if (playerWager === 0 || playerWager > playerPoints) {
-      totalWager.innerHTML = `<p>You have entered an incorrect wager. Please try again.</p>`;
+      totalWager.innerHTML = `<p>Your wager is not valid - please try again.</p>`;
       setTimeout(() => {
-        totalWager.innerHTML = `<p>Total wager: ${playerWager}</p>`;
+        totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
       }, 1500);
     } else {
       playerChoice();
@@ -225,8 +222,8 @@ function getWager() {
   });
 }
 
-// Get higher or lower choice from the player
-function playerChoice() {
+// Display card guess information
+function guessInfo() {
   changeMsg.innerHTML = `
   <div>
   <p>You currently have ${playerPoints} points</p>
@@ -237,38 +234,19 @@ function playerChoice() {
   <button type="button" id="lower">Lower</button>
   </div>
   `;
+}
+
+// Get higher or lower choice from the player
+function playerChoice() {
+  guessInfo();
   const highBtn = document.getElementById("higher"); // DOM reference to Higher button
   const lowBtn = document.getElementById("lower"); // DOM reference to Lower button
   highBtn.addEventListener("click", function () {
     cardChoice = "Higher";
-    changeMsg.innerHTML = `
-  <div>
-  <p>You currently have ${playerPoints} points</p>
-  <p>Your wager for this round is ${playerWager}</p>
-  <p>For this round, Aces are ${currAces}</p>
-  <p>from the flipCard function</p>
-  <p>Your card choice was ${cardChoice}</p>
-  <p>Is the next card HIGHER or LOWER than your card?</p>
-  <button type="button" id="higher">Higher</button>
-  <button type="button" id="lower">Lower</button>
-  </div>
-  `;
     flipCard(currentCard);
   }); // Set card choice to Higher and move to next stage
   lowBtn.addEventListener("click", function () {
     cardChoice = "Lower";
-    changeMsg.innerHTML = `
-  <div>
-  <p>You currently have ${playerPoints} points</p>
-  <p>Your wager for this round is ${playerWager}</p>
-  <p>For this round, Aces are ${currAces}</p>
-  <p>from the flipCard function</p>
-  <p>Your card choice was ${cardChoice}</p>
-  <p>Is the next card HIGHER or LOWER than your card?</p>
-  <button type="button" id="higher">Higher</button>
-  <button type="button" id="lower">Lower</button>
-  </div>
-  `;
     flipCard(currentCard);
   }); // Set card choice to Lower and move to next stage
 }
@@ -303,7 +281,7 @@ function calculateOutcome() {
     }
   } else if (currCard === prevCard) {
     console.log(
-      "Sorry you got a match. You don't get anything for two in this game!"
+      "Sorry you got a match, and there's nothing for two - not in this game!"
     );
     checkSuccess();
   } else {
@@ -312,23 +290,22 @@ function calculateOutcome() {
     );
     checkSuccess();
   }
-  console.log(correctGuesses);
 }
 
 // Check whether the player won or lost the round
 function checkSuccess() {
-  console.log(correctGuesses);
   if (correctGuesses === 4) {
     playerPoints += playerWager;
-    console.log("Plus Points =", playerPoints);
-    changeMsg.innerHTML = `CONGRATULATIONS`;
     drawCards();
   } else {
     playerPoints -= playerWager;
-    console.log("Minus Points =", playerPoints);
-    changeMsg.innerHTML = `COMMISERATIONS!`;
     drawCards();
   }
 }
+
+// Keep copyright year current, in the footer
+let dateNow = new Date();
+let yearNow = dateNow.getFullYear();
+document.getElementById("copyright").innerHTML = ` ${yearNow} `;
 
 shuffleCards();

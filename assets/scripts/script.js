@@ -1,4 +1,5 @@
 // Variable declarations
+// Array of playing card codes from https://www.deckofcardsapi.com/ (with associated values)
 let cardsObject = {
   cardAC: 1,
   card2C: 2,
@@ -52,14 +53,15 @@ let cardsObject = {
   cardJS: 11,
   cardQS: 12,
   cardKS: 13,
-}; // Array of playing card codes from https://www.deckofcardsapi.com/ (with associated values)
+};
+// DOM references for card DIVs
 const cards = [
   document.getElementById("player-card"),
   document.getElementById("card-1"),
   document.getElementById("card-2"),
   document.getElementById("card-3"),
   document.getElementById("card-4"),
-]; // DOM references for card DIVs
+]; 
 let cardArea = document.getElementById("cards"); // DOM reference for card area
 let deckUrl; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards; // The five cards used for a round of the game
@@ -94,12 +96,12 @@ function amendCardsObject(acesValue) {
   }
 }
 
-// Update copyright year in footer
+// Keep copyright year current, in the footer
 let dateNow = new Date();
 let yearNow = dateNow.getFullYear();
 document.getElementById(
   "copyright"
-).innerHTML = `&#169 ${yearNow} <a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>`;
+).innerHTML = ` ${yearNow} `;
 
 // Display initial card view
 function initialView() {

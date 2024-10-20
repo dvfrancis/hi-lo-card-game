@@ -62,6 +62,23 @@ const cards = [
   document.getElementById("card-3"),
   document.getElementById("card-4"),
 ];
+// Bootstrap modal template
+const modalTemplate = `
+<div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal-title"></h5>   
+      </div>
+      <div class="modal-body" id="modal-text"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="modal-btn-2"></button>
+        <button type="button" class="btn btn-primary" id="modal-btn-1"></button>
+      </div>
+    </div>
+  </div>
+</div>`;
+let modal = document.getElementById("bootstrap-modal"); // DOM reference to bootstrap-modal DIV
 let cardArea = document.getElementById("cards"); // DOM reference for card area
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards = ""; // The five cards used for a round of the game
@@ -93,6 +110,35 @@ function amendCardsObject(acesValue) {
     cardsObject["cardAD"] = 1;
     cardsObject["cardAH"] = 1;
     cardsObject["cardAS"] = 1;
+  }
+}
+
+// Create Bootstrap modal
+
+function createModal() {
+  document.body.insertAdjacentHTML("beforeend", modalTemplate);
+  modal = document.getElementById("bootstrap-modal"); // Re-select the modal after insertion
+}
+
+// Display Bootstrap modal
+
+function displayModal() {
+  if (modal) {
+    modal.style.display = "block";
+    modal.classList.add("show");
+  } else {
+    console.error("Modal element not found");
+  }
+}
+
+// Hide Bootstrap modal
+
+function hideModal() {
+  if (modal) {
+    modal.style.display = "none";
+    modal.classList.add("hide");
+  } else {
+    console.error("Modal element not found");
   }
 }
 
@@ -269,51 +315,91 @@ function calculateOutcome() {
     correctGuesses += 1;
     console.log("CONGRATULATIONS your card is higher in value");
     if (correctGuesses === 4) {
-      checkSuccess();
+      playerPoints += playerWager;
+      continueGame("win");
       return;
     }
   } else if (currCard < prevCard && cardChoice === "Lower") {
     correctGuesses += 1;
     console.log("CONGRATULATIONS your card is lower in value");
     if (correctGuesses === 4) {
-      checkSuccess();
+      playerPoints += playerWager;
+      continueGame("win");
       return;
     }
   } else if (currCard === prevCard) {
+    continueGame("lose");
     console.log(
       "Sorry you got a match, and there's nothing for two - not in this game!"
     );
-    checkSuccess();
+    // checkSuccess();
   } else {
+    playerPoints -= playerWager;
+    continueGame("lose");
     console.log(
       "Sorry that was an incorrect choice. You have lost your wager!"
     );
-    checkSuccess();
+    // checkSuccess();
   }
 }
 
 // Check whether the player won or lost the round
-function checkSuccess() {
-  if (correctGuesses === 4) {
-    playerPoints += playerWager;
-    continueGame("win");
-  } else {
-    playerPoints -= playerWager;
-    continueGame("lose");
-  }
-}
+// function checkSuccess() {
+//   if (correctGuesses === 4) {
+//     playerPoints += playerWager;
+//     continueGame("win");
+//   } else {
+//     playerPoints -= playerWager;
+//     continueGame("lose");
+//   }
+// }
 
 // Ask player if they wish to continue playing the game
 
 function continueGame(status) {
   if (status === "win" && playerPoints > 0 && dealtCards.remaining >= 5) {
-    drawCards();
+    createModal();
+    const bsTitle = document.getElementById("modal-title");
+    const bsText = document.getElementById("modal-text");
+    const bsBtn1 = document.getElementById("modal-btn-1");
+    const bsBtn2 = document.getElementById("modal-btn-2");
+    bsTitle.innerText = "Continue Game";
+    bsText.innerText = "Do you wish to proceed to the next round?";
+    bsBtn1.innerText = "Yes";
+    bsBtn2.innerText = "No";
+    bsBtn1.addEventListener("click", function () {
+      hideModal();
+      drawCards();
+    });
+    bsBtn2.addEventListener("click", function () {
+      hideModal();
+      // DISPLAY SCORE AND HIGH-SCORES
+    });
+    displayModal();
   } else if (
     status === "lose" &&
     playerPoints > 0 &&
     dealtCards.remaining >= 5
   ) {
-    shuffleCards();
+    createModal();
+    const bsTitle = document.getElementById("modal-title");
+    const bsText = document.getElementById("modal-text");
+    const bsBtn1 = document.getElementById("modal-btn-1");
+    const bsBtn2 = document.getElementById("modal-btn-2");
+    bsTitle.innerText = "Continue Game";
+    bsText.innerText = "Do you wish to play again?";
+    bsBtn1.innerText = "Yes";
+    bsBtn2.innerText = "No";
+    bsBtn1.addEventListener("click", function () {
+      hideModal();
+      drawCards();
+    });
+    bsBtn2.addEventListener("click", function () {
+      hideModal();
+      // DISPLAY SCORE AND HIGH-SCORES
+    });
+    displayModal();
+    // shuffleCards();
   } else {
     // DISPLAY SCORE AND HIGH-SCORES
   }

@@ -280,7 +280,6 @@ function calculateOutcome() {
       return;
     }
   } else if (currCard === prevCard) {
-    setState("match");
     console.log(
       "Sorry you got a match, and there's nothing for two - not in this game!"
     );
@@ -297,45 +296,33 @@ function calculateOutcome() {
 function checkSuccess() {
   if (correctGuesses === 4) {
     playerPoints += playerWager;
-    drawCards();
+    continueGame("win");
   } else {
     playerPoints -= playerWager;
-    drawCards();
+    continueGame("lose");
   }
 }
+
+// Ask player if they wish to continue playing the game
+
+function continueGame(status) {
+  if (status === "win" && playerPoints > 0 && dealtCards.remaining >= 5) {
+    drawCards();
+  } else if (status === "lose" && dealtCards.remaining >= 5) {
+    shuffleCards();
+  }
+}
+
+// Cancel game
+
+const cancelGame = document.getElementById("leave-game");
+cancelGame.addEventListener("click", function () {
+  shuffleCards();
+});
 
 // Keep copyright year current, in the footer
 let dateNow = new Date();
 let yearNow = dateNow.getFullYear();
 document.getElementById("copyright").innerHTML = ` ${yearNow} `;
 
-// let state = "";
-// let oldState = "";
-
-// function setState(s) {
-//   oldState = state;
-//   state = s;
-// }
-
-// function gameLoop() {
-//   switch (state) {
-//     case "match":
-//       if (state !== oldState) {
-//         changeMsg.innerHTML = `
-//         <div>
-//         <p>MATCHES</p>
-//         </div`;
-//         oldState = state;
-//       } else {
-//         break;
-//       }
-//     default:
-//       break;
-//   }
-//   setTimeout(() => {
-//     setTimeout(gameLoop, 1000 / 30);
-//   });
-// }
-
 shuffleCards();
-// gameLoop();

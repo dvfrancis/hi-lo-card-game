@@ -73,7 +73,8 @@
         <div class="row justify-content-center">
           <div class="col-10 col-lg-10 pt-3 pb-3 text-center">
             <div id="game-messages"></div>
-            <div><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cancel</button>  
+          <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Cancel</button>  
           </div>
           <div class="modal fade"id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -92,13 +93,13 @@
               <div class="modal-body">You will lose any progress you have made up to this point, and be redirected to the FAQ</div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button id="cancel" type="button" class="btn btn-primary"><a href="faq.html">Leave Game</a>
-                </button>
+                <button id="leave-game" type="button" class="btn btn-primary">Leave Game</button>
               </div>
             </div>
           </div>
         </div>
-      </section>
+        <div id="myModal"></div>
+    </section>
     </main>
     <!-- Footer / Social Media Icons -->
     <footer id="footer" class="container-fluid">

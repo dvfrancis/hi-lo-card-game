@@ -310,8 +310,8 @@ function continueGame(status) {
     drawCards();
   } else if (
     status === "lose" &&
-    dealtCards.remaining >= 5 &&
-    playerPoints > 0
+    playerPoints > 0 &&
+    dealtCards.remaining >= 5
   ) {
     shuffleCards();
   } else {

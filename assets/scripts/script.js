@@ -308,17 +308,16 @@ function checkSuccess() {
 function continueGame(status) {
   if (status === "win" && playerPoints > 0 && dealtCards.remaining >= 5) {
     drawCards();
-  } else if (status === "lose" && dealtCards.remaining >= 5) {
+  } else if (
+    status === "lose" &&
+    dealtCards.remaining >= 5 &&
+    playerPoints > 0
+  ) {
     shuffleCards();
+  } else {
+    // DISPLAY SCORE AND HIGH-SCORES
   }
 }
-
-// Cancel game
-
-const cancelGame = document.getElementById("leave-game");
-cancelGame.addEventListener("click", function () {
-  shuffleCards();
-});
 
 // Keep copyright year current, in the footer
 let dateNow = new Date();

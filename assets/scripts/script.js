@@ -63,12 +63,12 @@ const cards = [
   document.getElementById("card-4"),
 ];
 let cardArea = document.getElementById("cards"); // DOM reference for card area
-let deckUrl; // Current API deck_id used to complete the drawCards function fetch URL
-let dealtCards; // The five cards used for a round of the game
+let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
+let dealtCards = ""; // The five cards used for a round of the game
 let currentCard = 0; // Index of the current card to access the dealtCards array
 let playerPoints = 100; // The player's initial points balance
 let playerWager = 0; // The player's wager
-let cardChoice; // The player's high or low choice
+let cardChoice = ""; // The player's high or low choice
 let correctGuesses = 0; // The player's correct guesses
 const changeMsg = document.getElementById("game-messages"); // DOM reference to game-messages DIV
 let currAces = decideAces(); // The value of an Ace for the round
@@ -280,6 +280,7 @@ function calculateOutcome() {
       return;
     }
   } else if (currCard === prevCard) {
+    setState("match");
     console.log(
       "Sorry you got a match, and there's nothing for two - not in this game!"
     );
@@ -308,4 +309,33 @@ let dateNow = new Date();
 let yearNow = dateNow.getFullYear();
 document.getElementById("copyright").innerHTML = ` ${yearNow} `;
 
+// let state = "";
+// let oldState = "";
+
+// function setState(s) {
+//   oldState = state;
+//   state = s;
+// }
+
+// function gameLoop() {
+//   switch (state) {
+//     case "match":
+//       if (state !== oldState) {
+//         changeMsg.innerHTML = `
+//         <div>
+//         <p>MATCHES</p>
+//         </div`;
+//         oldState = state;
+//       } else {
+//         break;
+//       }
+//     default:
+//       break;
+//   }
+//   setTimeout(() => {
+//     setTimeout(gameLoop, 1000 / 30);
+//   });
+// }
+
 shuffleCards();
+// gameLoop();

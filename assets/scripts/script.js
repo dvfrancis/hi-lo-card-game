@@ -369,7 +369,7 @@ function continueGame(status) {
     const bsText = document.getElementById("modal-text");
     const bsBtn1 = document.getElementById("modal-btn-1");
     const bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "Continue Game";
+    bsTitle.innerText = "Continue Game?";
     bsText.innerText = "Do you wish to proceed to the next round?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
@@ -391,7 +391,7 @@ function continueGame(status) {
     const bsText = document.getElementById("modal-text");
     const bsBtn1 = document.getElementById("modal-btn-1");
     const bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "Continue Game";
+    bsTitle.innerText = "Play Again?";
     bsText.innerText = "Do you wish to play again?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";

@@ -1,5 +1,5 @@
 // Variable declarations
-// Array of playing card codes from https://www.deckofcardsapi.com/ (with associated values)
+// Object containing playing card codes from https://www.deckofcardsapi.com/ (with associated values)
 let cardsObject = {
   cardAC: 1,
   card2C: 2,
@@ -83,7 +83,7 @@ let cardArea = document.getElementById("cards"); // DOM reference for card area
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards = ""; // The five cards used for a round of the game
 let cardsDrawn = false; // Tracking if cards have already been drawn to prevent multiple draws
-let currentCard = 0; // Index of the current card to access the dealtCards array
+let currentCard = 0; // Index of the current card - used to access the dealtCards array
 let playerPoints = 100; // The player's initial points balance
 let playerWager = 0; // The player's wager
 let cardChoice = ""; // The player's high or low choice
@@ -152,20 +152,10 @@ async function shuffleCards() {
   if (shuffleReply.ok) {
     console.log(cardDeck); // Console log the shuffled deck
     deckUrl = cardDeck.deck_id; // Save the deck_id for use in completing the fetch URL
-    console.log("drawCards() called from shuffleCards()");
     drawCards();
   } else {
     console.error("Error:", shuffleReply.statusText);
   }
-}
-
-// Display initial card view
-function initialView() {
-  cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The player's first card">`;
-  cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-  cards[2].innerHTML = `<img id="card-2" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-  cards[3].innerHTML = `<img id="card-3" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
-  cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 }
 
 // Draw cards from the shuffled deck and display the player's card (via API call to https://www.deckofcardsapi.com)
@@ -192,22 +182,13 @@ async function drawCards() {
   }
 }
 
-// Display wager information
-function wagerInfo() {
-  changeMsg.innerHTML = `
-  <div>
-  <p>You currently have ${playerPoints} points</p>
-  <p>What is your wager this round? (min = 1 point, max = total points)</p>
-  <div id="wager"></div>
-  <button type="button" id="wager-one">+1</button>
-  <button type="button" id="wager-five">+5</button>
-  <button type="button" id="wager-ten">+10</button>
-  <button type="button" id="wager-fifty">+50</button>
-  <button type="button" id="wager-hundred">+100</button>
-  <div><button type="submit" id="wager-submit">Submit</button>
-  <button type="reset" id="wager-reset">Reset</button></div>
-  </div>
-  `;
+// Display initial card view
+function initialView() {
+  cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The player's first card">`;
+  cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[2].innerHTML = `<img id="card-2" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[3].innerHTML = `<img id="card-3" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
+  cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 }
 
 // Get player's current wager
@@ -274,16 +255,20 @@ function getWager() {
   });
 }
 
-// Display card guess information
-function guessInfo() {
+// Display wager information
+function wagerInfo() {
   changeMsg.innerHTML = `
   <div>
   <p>You currently have ${playerPoints} points</p>
-  <p>Your wager for this round is ${playerWager}</p>
-  <p>For this round, Aces are ${currAces}</p>
-  <p>Is the next card HIGHER or LOWER than your card?</p>
-  <button type="button" id="higher">Higher</button>
-  <button type="button" id="lower">Lower</button>
+  <p>What is your wager this round? (min = 1 point, max = total points)</p>
+  <div id="wager"></div>
+  <button type="button" id="wager-one">+1</button>
+  <button type="button" id="wager-five">+5</button>
+  <button type="button" id="wager-ten">+10</button>
+  <button type="button" id="wager-fifty">+50</button>
+  <button type="button" id="wager-hundred">+100</button>
+  <div><button type="submit" id="wager-submit">Submit</button>
+  <button type="reset" id="wager-reset">Reset</button></div>
   </div>
   `;
 }
@@ -303,6 +288,20 @@ function playerChoice() {
   }); // Set card choice to Lower and move to next stage
 }
 
+// Display card guess information
+function guessInfo() {
+  changeMsg.innerHTML = `
+  <div>
+  <p>You currently have ${playerPoints} points</p>
+  <p>Your wager for this round is ${playerWager}</p>
+  <p>For this round, Aces are ${currAces}</p>
+  <p>Is the next card HIGHER or LOWER than your card?</p>
+  <button type="button" id="higher">Higher</button>
+  <button type="button" id="lower">Lower</button>
+  </div>
+  `;
+}
+
 // Sequentially reveal all cards in the dealtCards array
 function flipCard(cardIndex) {
   cards[cardIndex].innerHTML = `
@@ -319,19 +318,17 @@ function calculateOutcome() {
   let currCard = cardsObject["card" + dealtCards.cards[currentCard].code];
   if (currCard > prevCard && cardChoice === "Higher") {
     correctGuesses += 1;
-    console.log("CONGRATULATIONS your card is higher in value");
+    console.log("The card is higher in value.");
     console.log(correctGuesses);
     if (correctGuesses === 4) {
       playerPoints += playerWager;
       continueGame("win");
     } else {
-      playerChoice();
+      return;
     }
-    // checkSuccess();
-    return;
   } else if (currCard < prevCard && cardChoice === "Lower") {
     correctGuesses += 1;
-    console.log("CONGRATULATIONS your card is lower in value");
+    console.log("The card is lower in value.");
     console.log(correctGuesses);
     if (correctGuesses === 4) {
       playerPoints += playerWager;
@@ -339,42 +336,18 @@ function calculateOutcome() {
     } else {
       playerChoice();
     }
-    // checkSuccess();
     return;
   } else if (currCard === prevCard) {
     console.log(
-      "Sorry you got a match, and there's nothing for two - not in this game!"
+      "You got a match, and there's nothing for two - not in this game!"
     );
     playerPoints -= playerWager;
     continueGame("lose");
-    // checkSuccess();
   } else {
-    console.log(
-      "Sorry that was an incorrect choice. You have lost your wager!"
-    );
+    console.log("Incorrect choice. You have lost your wager.");
     playerPoints -= playerWager;
     continueGame("lose");
-    // checkSuccess();
   }
-}
-
-// // Check whether the player won or lost the round
-// function checkSuccess() {
-//   if (correctGuesses === 4) {
-//     playerPoints += playerWager;
-//     continueGame("win");
-//   } else {
-//     playerPoints -= playerWager;
-//     continueGame("lose");
-//   }
-// }
-
-// Event listener to handle continue click in continueGame function
-function handleClick() {
-  hideModal();
-  console.log("drawCards() called from continueGame() - 'win'");
-  cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
-  drawCards();
 }
 
 // Ask player if they wish to continue playing the game
@@ -385,13 +358,13 @@ function continueGame(status) {
     const bsText = document.getElementById("modal-text");
     const bsBtn1 = document.getElementById("modal-btn-1");
     const bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "Continue Game?";
+    bsTitle.innerText = "YOU WON THE ROUND! 😄";
     bsText.innerText = "Do you wish to proceed to the next round?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsBtn1.removeEventListener("click", handleClick); // Remove event listener from bsBtn1 button to prevent drawCards being called multiple times
-    bsBtn1.addEventListener("click", handleClick);
-    // Add removeEventListener if more than one function called by bsBtn2 below
+    bsBtn1.removeEventListener("click", handleClick("win")); // Remove event listener from bsBtn1 button to prevent drawCards being called multiple times
+    bsBtn1.addEventListener("click", handleClick("win"));
+    bsBtn2.removeEventListener("click", handleClick("win")); // Remove event listener from bsBtn2 button to prevent drawCards being called multiple times
     bsBtn2.addEventListener("click", function () {
       hideModal();
       // DISPLAY SCORE AND HIGH-SCORES
@@ -407,25 +380,39 @@ function continueGame(status) {
     const bsText = document.getElementById("modal-text");
     const bsBtn1 = document.getElementById("modal-btn-1");
     const bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "Play Again?";
+    bsTitle.innerText = "YOU LOST THE ROUND! 😭";
     bsText.innerText = "Do you wish to play again?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsBtn1.addEventListener("click", function () {
-      hideModal();
-      console.log("drawCards() called from continueGame() - 'lose'");
-      cardsDrawn = false;
-      drawCards();
-    });
+    bsBtn1.removeEventListener("click", handleClick("lose")); // Remove event listener from bsBtn1 button to prevent drawCards being called multiple times
+    bsBtn1.addEventListener("click", handleClick("lose"));
+    bsBtn2.removeEventListener("click", handleClick("lose")); // Remove event listener from bsBtn2 button to prevent drawCards being called multiple times
     bsBtn2.addEventListener("click", function () {
       hideModal();
-      // DISPLAY SCORE AND HIGH-SCORES
+      createModal();
+      bsTitle = document.getElementById("modal-title");
+      bsText = document.getElementById("modal-text");
+      bsTitle.innerText = "GAME OVER 😭";
+      bsText.innerText = "You currently have " + playerPoints + " points";
+      displayModal();
     });
     displayModal();
-    // shuffleCards();
   } else {
-    // DISPLAY SCORE AND HIGH-SCORES
+    hideModal();
+    createModal();
+    bsTitle = document.getElementById("modal-title");
+    bsText = document.getElementById("modal-text");
+    bsTitle.innerText = "GAME OVER 😭";
+    bsText.innerText = "You currently have " + playerPoints + " points";
+    displayModal();
   }
+}
+
+// Event listener to handle continue click in continueGame function
+function handleClick(status) {
+  hideModal();
+  cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
+  drawCards();
 }
 
 // Keep copyright year current, in the footer

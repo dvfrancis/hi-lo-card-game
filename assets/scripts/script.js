@@ -78,10 +78,11 @@ const modalTemplate = `
     </div>
   </div>
 </div>`;
-let modal = document.getElementById("bootstrap-modal"); // DOM reference to bootstrap-modal DIV
+let bsModal = document.getElementById("bootstrap-modal"); // DOM reference to bootstrap-modal DIV
 let cardArea = document.getElementById("cards"); // DOM reference for card area
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards = ""; // The five cards used for a round of the game
+let cardsDrawn = false; // Tracking if cards have already been drawn to prevent multiple draws
 let currentCard = 0; // Index of the current card to access the dealtCards array
 let playerPoints = 100; // The player's initial points balance
 let playerWager = 0; // The player's wager
@@ -151,6 +152,7 @@ async function shuffleCards() {
   if (shuffleReply.ok) {
     console.log(cardDeck); // Console log the shuffled deck
     deckUrl = cardDeck.deck_id; // Save the deck_id for use in completing the fetch URL
+    console.log("drawCards() called from shuffleCards()");
     drawCards();
   } else {
     console.error("Error:", shuffleReply.statusText);
@@ -171,6 +173,10 @@ async function drawCards() {
   const drawReply = await fetch(
     `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5` // URL dynamically updated based on previously shuffled deck_id value
   );
+  if (cardsDrawn) {
+    return;
+  } // Additional check to ensure that the drawCards function is not called multiple times
+  cardsDrawn = true; // Set cardsDrawn to true when deck drawn
   dealtCards = await drawReply.json();
   if (drawReply.ok) {
     console.log(dealtCards); // Console log the drawn cards
@@ -314,48 +320,48 @@ function calculateOutcome() {
   if (currCard > prevCard && cardChoice === "Higher") {
     correctGuesses += 1;
     console.log("CONGRATULATIONS your card is higher in value");
-    if (correctGuesses === 4) {
-      playerPoints += playerWager;
-      continueGame("win");
-      return;
-    }
+    checkSuccess();
+    return;
   } else if (currCard < prevCard && cardChoice === "Lower") {
     correctGuesses += 1;
     console.log("CONGRATULATIONS your card is lower in value");
-    if (correctGuesses === 4) {
-      playerPoints += playerWager;
-      continueGame("win");
-      return;
-    }
+    checkSuccess();
+    return;
   } else if (currCard === prevCard) {
-    continueGame("lose");
     console.log(
       "Sorry you got a match, and there's nothing for two - not in this game!"
     );
-    // checkSuccess();
+    checkSuccess();
   } else {
-    playerPoints -= playerWager;
-    continueGame("lose");
     console.log(
       "Sorry that was an incorrect choice. You have lost your wager!"
     );
-    // checkSuccess();
+    checkSuccess();
   }
 }
 
 // Check whether the player won or lost the round
-// function checkSuccess() {
-//   if (correctGuesses === 4) {
-//     playerPoints += playerWager;
-//     continueGame("win");
-//   } else {
-//     playerPoints -= playerWager;
-//     continueGame("lose");
-//   }
-// }
+function checkSuccess() {
+  if (correctGuesses === 4) {
+    playerPoints += playerWager;
+    continueGame("win");
+  } else if (correctGuesses < 4) {
+    playerChoice();
+  } else {
+    playerPoints -= playerWager;
+    continueGame("lose");
+  }
+}
+
+// Event listener to handle continue click in continueGame function
+function handleClick() {
+  hideModal();
+  console.log("drawCards() called from continueGame() - 'win'");
+  cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
+  drawCards();
+}
 
 // Ask player if they wish to continue playing the game
-
 function continueGame(status) {
   if (status === "win" && playerPoints > 0 && dealtCards.remaining >= 5) {
     createModal();
@@ -367,10 +373,9 @@ function continueGame(status) {
     bsText.innerText = "Do you wish to proceed to the next round?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsBtn1.addEventListener("click", function () {
-      hideModal();
-      drawCards();
-    });
+    bsBtn1.removeEventListener("click", handleClick); // Remove event listener from bsBtn1 button to prevent drawCards being called multiple times
+    bsBtn1.addEventListener("click", handleClick);
+    // Add removeEventListener if more than one function called by bsBtn2 below
     bsBtn2.addEventListener("click", function () {
       hideModal();
       // DISPLAY SCORE AND HIGH-SCORES
@@ -392,6 +397,8 @@ function continueGame(status) {
     bsBtn2.innerText = "No";
     bsBtn1.addEventListener("click", function () {
       hideModal();
+      console.log("drawCards() called from continueGame() - 'lose'");
+      cardsDrawn = false;
       drawCards();
     });
     bsBtn2.addEventListener("click", function () {

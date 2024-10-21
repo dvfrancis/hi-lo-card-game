@@ -420,6 +420,7 @@ function gameOver() {
   bsBtn2.remove();
   bsTitle.innerText = "GAME OVER 😭";
   bsText.innerText = "You scored " + playerPoints + " points";
+  // INSERT CODE TO DISPLAY HIGH SCORE
   displayModal();
 }
 

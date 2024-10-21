@@ -362,8 +362,8 @@ function continueGame(status) {
     bsText.innerText = "Do you wish to proceed to the next round?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsBtn1.addEventListener("click", handleYesClick);
-    bsBtn2.addEventListener("click", handleNoClick);
+    bsBtn1.addEventListener("click", newDeck);
+    bsBtn2.addEventListener("click", gameOver);
     displayModal();
   } else if (status === "lose") {
     createModal();
@@ -375,8 +375,8 @@ function continueGame(status) {
     bsText.innerText = "Do you wish to play again?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsBtn1.addEventListener("click", handleYesClick);
-    bsBtn2.addEventListener("click", handleNoClick);
+    bsBtn1.addEventListener("click", newDeck);
+    bsBtn2.addEventListener("click", gameOver);
     displayModal();
   } else {
     hideModal();
@@ -389,15 +389,19 @@ function continueGame(status) {
   }
 }
 
-// Event listener to handle 'Yes' click in continueGame function
-function handleYesClick() {
+// Start a new round
+function newDeck() {
   hideModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
-  drawCards();
+  if (dealtCards.remaining >= 5) {
+    drawCards();
+  } else {
+    endGame();
+  }
 }
 
-// Event listener to handle 'No' click in continueGame function
-function handleNoClick() {
+// Display final points
+function gameOver() {
   hideModal();
   createModal();
   let bsTitle = document.getElementById("modal-title");
@@ -408,6 +412,23 @@ function handleNoClick() {
   bsBtn2.remove();
   bsTitle.innerText = "GAME OVER 😭";
   bsText.innerText = "You currently have " + playerPoints + " points";
+  displayModal();
+}
+
+// End the game
+function endGame() {
+  hideModal();
+  createModal();
+  let bsTitle = document.getElementById("modal-title");
+  let bsText = document.getElementById("modal-text");
+  let bsBtn1 = document.getElementById("modal-btn-1");
+  let bsBtn2 = document.getElementById("modal-btn-2");
+  bsTitle.innerText = "ALL CARDS HAVE BEEN PLAYED";
+  bsText.innerText = "Do you wish to play again?";
+  bsBtn1.innerText = "Yes";
+  bsBtn2.innerText = "No";
+  bsBtn1.addEventListener("click", shuffleCards);
+  bsBtn2.addEventListener("click", gameOver);
   displayModal();
 }
 

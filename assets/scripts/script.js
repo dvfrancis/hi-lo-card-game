@@ -65,7 +65,7 @@ const cards = [
 // Bootstrap modal template
 let modalTemplate = `
 <div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modal-title"></h5>   
@@ -389,6 +389,11 @@ function continueGame(status) {
   }
 }
 
+// Cancel the game
+
+let cancelBtn = document.getElementById("cancel");
+cancelBtn.addEventListener("click", endGame);
+
 // Start a new round
 function newDeck() {
   hideModal();
@@ -411,13 +416,12 @@ function gameOver() {
   bsBtn1.remove();
   bsBtn2.remove();
   bsTitle.innerText = "GAME OVER 😭";
-  bsText.innerText = "You currently have " + playerPoints + " points";
+  bsText.innerText = "You scored " + playerPoints + " points";
   displayModal();
 }
 
 // End the game
 function endGame() {
-  hideModal();
   createModal();
   let bsTitle = document.getElementById("modal-title");
   let bsText = document.getElementById("modal-text");
@@ -427,7 +431,10 @@ function endGame() {
   bsText.innerText = "Do you wish to play again?";
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
-  bsBtn1.addEventListener("click", shuffleCards);
+  bsBtn1.addEventListener("click", function () {
+    hideModal();
+    shuffleCards();
+  });
   bsBtn2.addEventListener("click", gameOver);
   displayModal();
 }

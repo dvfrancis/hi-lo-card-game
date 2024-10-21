@@ -151,6 +151,7 @@ async function shuffleCards() {
   const cardDeck = await shuffleReply.json();
   if (shuffleReply.ok) {
     console.log(cardDeck); // Console log the shuffled deck
+    playerPoints = 100;
     deckUrl = cardDeck.deck_id; // Save the deck_id for use in completing the fetch URL
     drawCards();
   } else {
@@ -392,14 +393,16 @@ function continueGame(status) {
 // Cancel the game
 
 let cancelBtn = document.getElementById("cancel");
-cancelBtn.addEventListener("click", endGame);
+cancelBtn.addEventListener("click", gameOver);
 
 // Start a new round
 function newDeck() {
   hideModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
-  if (dealtCards.remaining >= 5) {
+  if (dealtCards.remaining >= 5 && playerPoints > 0) {
     drawCards();
+  } else if (dealtCards.remaining < 5 || playerPoints < 1) {
+    shuffleCards();
   } else {
     endGame();
   }
@@ -427,14 +430,11 @@ function endGame() {
   let bsText = document.getElementById("modal-text");
   let bsBtn1 = document.getElementById("modal-btn-1");
   let bsBtn2 = document.getElementById("modal-btn-2");
-  bsTitle.innerText = "ALL CARDS HAVE BEEN PLAYED";
-  bsText.innerText = "Do you wish to play again?";
+  bsTitle.innerText = "BAD LUCK";
+  bsText.innerText = "You have used all of your points / cards. Play again?";
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
-  bsBtn1.addEventListener("click", function () {
-    hideModal();
-    shuffleCards();
-  });
+  bsBtn1.addEventListener("click", newDeck);
   bsBtn2.addEventListener("click", gameOver);
   displayModal();
 }

@@ -118,15 +118,15 @@ function amendCardsObject(acesValue) {
 
 function createModal() {
   document.body.insertAdjacentHTML("beforeend", modalTemplate);
-  modal = document.getElementById("bootstrap-modal"); // Re-select the modal after insertion
+  bsModal = document.getElementById("bootstrap-modal"); // Re-select the modal after insertion
 }
 
 // Display Bootstrap modal
 
 function displayModal() {
-  if (modal) {
-    modal.style.display = "block";
-    modal.classList.add("show");
+  if (bsModal) {
+    bsModal.style.display = "block";
+    bsModal.classList.add("show");
   } else {
     console.error("Modal element not found");
   }
@@ -135,9 +135,9 @@ function displayModal() {
 // Hide Bootstrap modal
 
 function hideModal() {
-  if (modal) {
-    modal.style.display = "none";
-    modal.classList.add("hide");
+  if (bsModal) {
+    bsModal.style.display = "none";
+    bsModal.classList.add("hide");
   } else {
     console.error("Modal element not found");
   }
@@ -309,7 +309,7 @@ function flipCard(cardIndex) {
     <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The next game card">
     `; // Flip the next card
   calculateOutcome(); // Calculate if the player was correct
-  currentCard++;
+  currentCard++; // Increase currentCard number
   playerChoice(); // Choose whether the next card is higher or lower;
 }
 
@@ -320,38 +320,54 @@ function calculateOutcome() {
   if (currCard > prevCard && cardChoice === "Higher") {
     correctGuesses += 1;
     console.log("CONGRATULATIONS your card is higher in value");
-    checkSuccess();
+    console.log(correctGuesses);
+    if (correctGuesses === 4) {
+      playerPoints += playerWager;
+      continueGame("win");
+    } else {
+      playerChoice();
+    }
+    // checkSuccess();
     return;
   } else if (currCard < prevCard && cardChoice === "Lower") {
     correctGuesses += 1;
     console.log("CONGRATULATIONS your card is lower in value");
-    checkSuccess();
+    console.log(correctGuesses);
+    if (correctGuesses === 4) {
+      playerPoints += playerWager;
+      continueGame("win");
+    } else {
+      playerChoice();
+    }
+    // checkSuccess();
     return;
   } else if (currCard === prevCard) {
     console.log(
       "Sorry you got a match, and there's nothing for two - not in this game!"
     );
-    checkSuccess();
+    playerPoints -= playerWager;
+    continueGame("lose");
+    // checkSuccess();
   } else {
     console.log(
       "Sorry that was an incorrect choice. You have lost your wager!"
     );
-    checkSuccess();
+    playerPoints -= playerWager;
+    continueGame("lose");
+    // checkSuccess();
   }
 }
 
-// Check whether the player won or lost the round
-function checkSuccess() {
-  if (correctGuesses === 4) {
-    playerPoints += playerWager;
-    continueGame("win");
-  } else if (correctGuesses < 4) {
-    playerChoice();
-  } else {
-    playerPoints -= playerWager;
-    continueGame("lose");
-  }
-}
+// // Check whether the player won or lost the round
+// function checkSuccess() {
+//   if (correctGuesses === 4) {
+//     playerPoints += playerWager;
+//     continueGame("win");
+//   } else {
+//     playerPoints -= playerWager;
+//     continueGame("lose");
+//   }
+// }
 
 // Event listener to handle continue click in continueGame function
 function handleClick() {

@@ -63,7 +63,7 @@ const cards = [
   document.getElementById("card-4"),
 ];
 // Bootstrap modal template
-const modalTemplate = `
+let modalTemplate = `
 <div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -352,67 +352,63 @@ function calculateOutcome() {
 
 // Ask player if they wish to continue playing the game
 function continueGame(status) {
-  if (status === "win" && playerPoints > 0 && dealtCards.remaining >= 5) {
+  if (status === "win") {
     createModal();
-    const bsTitle = document.getElementById("modal-title");
-    const bsText = document.getElementById("modal-text");
-    const bsBtn1 = document.getElementById("modal-btn-1");
-    const bsBtn2 = document.getElementById("modal-btn-2");
+    let bsTitle = document.getElementById("modal-title");
+    let bsText = document.getElementById("modal-text");
+    let bsBtn1 = document.getElementById("modal-btn-1");
+    let bsBtn2 = document.getElementById("modal-btn-2");
     bsTitle.innerText = "YOU WON THE ROUND! 😄";
     bsText.innerText = "Do you wish to proceed to the next round?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsBtn1.removeEventListener("click", handleClick("win")); // Remove event listener from bsBtn1 button to prevent drawCards being called multiple times
-    bsBtn1.addEventListener("click", handleClick("win"));
-    bsBtn2.removeEventListener("click", handleClick("win")); // Remove event listener from bsBtn2 button to prevent drawCards being called multiple times
-    bsBtn2.addEventListener("click", function () {
-      hideModal();
-      // DISPLAY SCORE AND HIGH-SCORES
-    });
+    bsBtn1.addEventListener("click", handleYesClick);
+    bsBtn2.addEventListener("click", handleNoClick);
     displayModal();
-  } else if (
-    status === "lose" &&
-    playerPoints > 0 &&
-    dealtCards.remaining >= 5
-  ) {
+  } else if (status === "lose") {
     createModal();
-    const bsTitle = document.getElementById("modal-title");
-    const bsText = document.getElementById("modal-text");
-    const bsBtn1 = document.getElementById("modal-btn-1");
-    const bsBtn2 = document.getElementById("modal-btn-2");
+    let bsTitle = document.getElementById("modal-title");
+    let bsText = document.getElementById("modal-text");
+    let bsBtn1 = document.getElementById("modal-btn-1");
+    let bsBtn2 = document.getElementById("modal-btn-2");
     bsTitle.innerText = "YOU LOST THE ROUND! 😭";
     bsText.innerText = "Do you wish to play again?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsBtn1.removeEventListener("click", handleClick("lose")); // Remove event listener from bsBtn1 button to prevent drawCards being called multiple times
-    bsBtn1.addEventListener("click", handleClick("lose"));
-    bsBtn2.removeEventListener("click", handleClick("lose")); // Remove event listener from bsBtn2 button to prevent drawCards being called multiple times
-    bsBtn2.addEventListener("click", function () {
-      hideModal();
-      createModal();
-      bsTitle = document.getElementById("modal-title");
-      bsText = document.getElementById("modal-text");
-      bsTitle.innerText = "GAME OVER 😭";
-      bsText.innerText = "You currently have " + playerPoints + " points";
-      displayModal();
-    });
+    bsBtn1.addEventListener("click", handleYesClick);
+    bsBtn2.addEventListener("click", handleNoClick);
     displayModal();
   } else {
     hideModal();
     createModal();
-    bsTitle = document.getElementById("modal-title");
-    bsText = document.getElementById("modal-text");
+    let bsTitle = document.getElementById("modal-title");
+    let bsText = document.getElementById("modal-text");
     bsTitle.innerText = "GAME OVER 😭";
     bsText.innerText = "You currently have " + playerPoints + " points";
     displayModal();
   }
 }
 
-// Event listener to handle continue click in continueGame function
-function handleClick(status) {
+// Event listener to handle 'Yes' click in continueGame function
+function handleYesClick() {
   hideModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
   drawCards();
+}
+
+// Event listener to handle 'No' click in continueGame function
+function handleNoClick() {
+  hideModal();
+  createModal();
+  let bsTitle = document.getElementById("modal-title");
+  let bsText = document.getElementById("modal-text");
+  let bsBtn1 = document.getElementById("modal-btn-1");
+  let bsBtn2 = document.getElementById("modal-btn-2");
+  bsBtn1.remove();
+  bsBtn2.remove();
+  bsTitle.innerText = "GAME OVER 😭";
+  bsText.innerText = "You currently have " + playerPoints + " points";
+  displayModal();
 }
 
 // Keep copyright year current, in the footer

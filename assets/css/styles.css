@@ -148,6 +148,10 @@ p {
   background-color: black; /* Remove before submission*/
 }
 
+#game-messages p {
+  color: #fff;
+}
+
 /* Playing cards parent container */
 
 #cards {

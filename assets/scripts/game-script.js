@@ -390,10 +390,10 @@ function continueGame(status) {
   }
 }
 
-// Cancel the game
+// Start a new game
 
-let cancelBtn = document.getElementById("cancel");
-cancelBtn.addEventListener("click", gameOver);
+let newGameBtn = document.getElementById("new-game");
+newGameBtn.addEventListener("click", shuffleCards);
 
 // Start a new round
 function newDeck() {

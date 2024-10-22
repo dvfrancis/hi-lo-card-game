@@ -211,7 +211,9 @@ img#card-4 {
 
 a.fa-brands,
 .copyright-text,
-#nav {
+#nav,
+#start-game,
+a {
   text-decoration: none;
 }
 

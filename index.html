@@ -41,7 +41,7 @@
     <!-- Header / Navigation -->
     <header id="header" class="container-fluid fixed-top">
       <div class="row">
-        <div class="col-9 col-sm-9 col-md-9 col-lg-9 d-flex align-items-center justify-content-start">
+        <div class="col-10 col-sm-10 col-md-10 col-lg-10 d-flex align-items-center justify-content-start">
           <span id="title">Hi-Lo | How Far Can YOU Go?</span>
         </div>
         <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
@@ -50,30 +50,38 @@
         <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
           <a id="nav" href="faq.html">FAQ</a>
         </div>
-        <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
-          <button type="submit" id="cancel">New Game</button>
-        </div>
       </div>
     </header>
     <main>
-      <!-- Playing Cards Section -->
-      <section id="cards" class="container-fluid">
-        <div class="row justify-content-center text-center pt-4 pb-4">
-          <div id="player-card" class="col-12 mb-2 ms-2 me-2">Card 1</div>
-          <div id="card-1" class="col-12 mb-2 ms-2 me-2">Card 2</div>
-          <div id="card-2" class="col-12 mb-2 ms-2 me-2">Card 3</div>
-          <div id="card-3" class="col-12 mb-2 ms-2 me-2">Card 4</div>
-          <div id="card-4" class="col-12 mb-2 ms-2 me-2">Card 5</div>
+      <!-- Website Introduction -->
+      <section id="site-intro-section" class="container-fluid">
+        <div class="row justify-content-center text-center">
+          <div id="site-intro">
+            Welcome to Hi-Lo, etc...
+          </div>        
         </div>
       </section>
-      <!-- Game Information Panel -->
-      <section id="game-info" class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-10 col-lg-10 pt-3 pb-3 text-center">
-            <div id="game-messages"></div>
+      <!-- User Information Section -->
+      <section id="user-info-section" class="container-fluid">
+        <div class="row justify-content-center text-center">
+          <div id="user-info" class="col-12">
+            <label for="name">Name</label>
+            <input type="text" id="user-name" placeholder="Wild Bill Hickok">
+            <input type="submit" id="user-submit" value="submit">
           </div>
         </div>
-    </section>
+        <div class="row justify-content-center text-center">
+          <div id="play-game" class="col-12">
+          <button type="submit" id="start-game">Play</button>
+          </div>
+        </div>
+        <div class="row justify-content-center text-center">
+          <div id="prev-score-section" class="col-12">
+            <span id="prev-score-title">Previous Score</span>
+            <div id="prev-score">1000</div>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Footer / Social Media Icons -->
     <footer id="footer" class="container-fluid">
@@ -106,6 +114,6 @@
       src="https://kit.fontawesome.com/9a47a7f2a8.js"
       crossorigin="anonymous"
     ></script>
-    <script src="assets/scripts/script.js"></script>
+    <script src="assets/scripts/index-script.js"></script>
   </body>
 </html>

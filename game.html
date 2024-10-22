@@ -1,111 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Tags -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Hi-Lo is a deceptively simple card game where the player decides if the next card is higher or lower than their current card."
-    />
-    <meta
-      name="keywords"
-      content="hi-lo, higher-or-lower, higher-or-lower premium, hi-lo card game, higher-or-lower card game, higher-or-lower premium, card game"
-    />
-    <meta name="author" content="Dominic Francis" />
-    <!-- Website CSS -->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Custom Favicon -->
-    <link
-      rel="shortcut icon"
-      type="image/x-icon"
-      href="assets/images/favicon.ico"
-    />
-    <title>Hi-Lo | Play The Game</title>
-  </head>
-  <body>
-    <!-- Header / Navigation -->
-    <header id="header" class="container-fluid fixed-top">
-      <div class="row">
-        <div class="col-9 col-sm-9 col-md-9 col-lg-9 d-flex align-items-center justify-content-start">
-          <span id="title">Hi-Lo | How Far Can YOU Go?</span>
-        </div>
-        <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
-          <a id="nav" href="index.html">Home</a>
-        </div>
-        <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
-          <a id="nav" href="faq.html">FAQ</a>
-        </div>
-        <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
-          <button type="submit" id="new-game">New Game</button>
-        </div>
+
+<head>
+  <!-- Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Hi-Lo is a deceptively simple card game where the player decides if the next card is higher or lower than their current card." />
+  <meta name="keywords"
+    content="hi-lo, higher-or-lower, higher-or-lower premium, hi-lo card game, higher-or-lower card game, higher-or-lower premium, card game" />
+  <meta name="author" content="Dominic Francis" />
+  <!-- Website CSS -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Custom Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.ico" />
+  <title>Hi-Lo | Play The Game</title>
+</head>
+
+<body>
+  <!-- Header / Navigation -->
+  <header id="header" class="container-fluid fixed-top">
+    <div class="row">
+      <div class="col-9 col-sm-9 col-md-9 col-lg-9 d-flex align-items-center justify-content-start">
+        <span id="title">Hi-Lo | How Far Can YOU Go?</span>
       </div>
-    </header>
-    <main>
-      <!-- Playing Cards Section -->
-      <section id="cards" class="container-fluid">
-        <div class="row justify-content-center text-center pt-4 pb-4">
-          <div id="player-card" class="col-12 mb-2 ms-2 me-2">Card 1</div>
-          <div id="card-1" class="col-12 mb-2 ms-2 me-2">Card 2</div>
-          <div id="card-2" class="col-12 mb-2 ms-2 me-2">Card 3</div>
-          <div id="card-3" class="col-12 mb-2 ms-2 me-2">Card 4</div>
-          <div id="card-4" class="col-12 mb-2 ms-2 me-2">Card 5</div>
-        </div>
-      </section>
-      <!-- Game Information Panel -->
-      <section id="game-info" class="container-fluid">
-        <div class="row justify-content-center">
-          <div class="col-10 col-lg-10 pt-3 pb-3 text-center">
-            <div id="game-messages"></div>
-          </div>
-        </div>
+      <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
+        <a id="nav" href="index.html">Home</a>
+      </div>
+      <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
+        <a id="nav" href="faq.html">FAQ</a>
+      </div>
+      <div class="col-1 col-sm-1 col-md-1 col-lg-1 d-flex align-items-center justify-content-center">
+        <button type="submit" id="new-game">New Game</button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- Playing Cards Section -->
+    <section id="cards" class="container-fluid">
+      <div class="row justify-content-center text-center pt-4 pb-4">
+        <div id="player-card" class="col-12 mb-2 ms-2 me-2">Card 1</div>
+        <div id="card-1" class="col-12 mb-2 ms-2 me-2">Card 2</div>
+        <div id="card-2" class="col-12 mb-2 ms-2 me-2">Card 3</div>
+        <div id="card-3" class="col-12 mb-2 ms-2 me-2">Card 4</div>
+        <div id="card-4" class="col-12 mb-2 ms-2 me-2">Card 5</div>
+      </div>
     </section>
-    </main>
-    <!-- Footer / Social Media Icons -->
-    <footer id="footer" class="container-fluid">
-      <div class="row justify-content-center text-center">
-        <div class="col-10 col-lg-9 pt-3 pb-3">
-          <a
-            href="https://www.instagram.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="fa-brands fa-square-instagram"
-            aria-label="Visit Instagram"
-          ></a>
-          <a
-            href="https://www.facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="fa-brands fa-square-facebook"
-            aria-label="Visit Facebook"
-          ></a>
-          &#169<span id="copyright" class="text-center"></span><a href="https://www.dominicfrancis.co.uk/" target="_blank" class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic Francis</a>
+    <!-- Game Information Panel -->
+    <section id="game-info" class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-10 col-lg-10 pt-3 pb-3 text-center">
+          <div id="game-messages"></div>
         </div>
       </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/9a47a7f2a8.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="assets/scripts/game-script.js"></script>
-  </body>
+    </section>
+  </main>
+  <!-- Footer / Social Media Icons -->
+  <footer id="footer" class="container-fluid">
+    <div class="row justify-content-center text-center">
+      <div class="col-10 col-lg-9 pt-3 pb-3">
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+          class="fa-brands fa-square-instagram" aria-label="Visit Instagram"></a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
+          class="fa-brands fa-square-facebook" aria-label="Visit Facebook"></a>
+        &#169<span id="copyright" class="text-center"></span><a href="https://www.dominicfrancis.co.uk/" target="_blank"
+          class="copyright-text" rel="noopener noreferrer" aria-label="Visit Dominic Francis's website">Dominic
+          Francis</a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/9a47a7f2a8.js" crossorigin="anonymous"></script>
+  <script src="assets/scripts/game-script.js"></script>
+</body>
+
 </html>

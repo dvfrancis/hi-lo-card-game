@@ -152,7 +152,7 @@ p {
 
 #cards {
   background-color: darkgreen; /* Remove before submission*/
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 /* Playing card containers */
@@ -186,7 +186,7 @@ img#card-4 {
 
 #error-message {
   background-color: goldenrod; /* Remove before submission*/
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 #error-image {

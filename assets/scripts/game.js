@@ -172,23 +172,6 @@ function hideModal() {
  * Shuffle the deck of cards
  *(via API call to https: //www.deckofcardsapi.com)
  */
-// async function shuffleCards() {
-//     try {
-//       const shuffleReply = await fetch(
-//         "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
-//       );
-//       const cardDeck = await shuffleReply.json();
-//       if (shuffleReply.ok) {
-//         console.log(cardDeck);
-//         playerPoints = 100;
-//         deckUrl = cardDeck.deck_id;
-//         drawCards();
-//       } else {
-//         console.error("Error:", shuffleReply.statusText);
-//       } catch (error) {
-//         console.error("Fetch error:", error);
-//       }
-//     }
 
 async function shuffleCards() {
   try {

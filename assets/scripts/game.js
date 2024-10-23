@@ -98,6 +98,10 @@ let wagerInfo = `<div>
   <div><button type="submit" id="wager-submit">Submit</button>
   <button type="reset" id="wager-reset">Reset</button></div>
   </div>`;
+let bsTitle = document.getElementById("modal-title");
+let bsText = document.getElementById("modal-text");
+let bsBtn1 = document.getElementById("modal-btn-1");
+let bsBtn2 = document.getElementById("modal-btn-2");
 let totalWager = document.getElementById("wager");
 let hiLoChoice = "";
 let correctGuesses = 0;
@@ -383,10 +387,10 @@ function calculateOutcome() {
 function continueGame(status) {
   if (status === "win") {
     createModal();
-    let bsTitle = document.getElementById("modal-title");
-    let bsText = document.getElementById("modal-text");
-    let bsBtn1 = document.getElementById("modal-btn-1");
-    let bsBtn2 = document.getElementById("modal-btn-2");
+    bsTitle = document.getElementById("modal-title");
+    bsText = document.getElementById("modal-text");
+    bsBtn1 = document.getElementById("modal-btn-1");
+    bsBtn2 = document.getElementById("modal-btn-2");
     bsTitle.innerText = "YOU WON THE ROUND! 😄";
     bsText.innerText = "Do you wish to proceed to the next round?";
     bsBtn1.innerText = "Yes";
@@ -396,10 +400,10 @@ function continueGame(status) {
     displayModal();
   } else if (status === "lose") {
     createModal();
-    let bsTitle = document.getElementById("modal-title");
-    let bsText = document.getElementById("modal-text");
-    let bsBtn1 = document.getElementById("modal-btn-1");
-    let bsBtn2 = document.getElementById("modal-btn-2");
+    bsTitle = document.getElementById("modal-title");
+    bsText = document.getElementById("modal-text");
+    bsBtn1 = document.getElementById("modal-btn-1");
+    bsBtn2 = document.getElementById("modal-btn-2");
     bsTitle.innerText = "YOU LOST THE ROUND! 😭";
     bsText.innerText = "Do you wish to play again?";
     bsBtn1.innerText = "Yes";

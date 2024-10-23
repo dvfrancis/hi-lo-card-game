@@ -61,7 +61,6 @@ const cards = [
   document.getElementById("card-3"),
   document.getElementById("card-4"),
 ];
-// Bootstrap message modal template
 let modalTemplate = `
 <div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -77,26 +76,14 @@ let modalTemplate = `
     </div>
   </div>
 </div>`;
-
 let messageModal = document.getElementById("bootstrap-modal");
 let cardArea = document.getElementById("cards");
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards = "";
 let cardsDrawn = false;
 let currentCard = 0;
-let playerPoints = 0;
+let playerPoints = 100;
 let playerWager = 0;
-let wagerInfo = `<div>
-  <p>You currently have ${playerPoints} points</p>
-  <p>What is your wager this round? (min = 1 point, max = total points)</p>
-  <div id="wager"></div>
-  <button type="button" id="wager-one">+1</button>
-  <button type="button" id="wager-five">+5</button>
-  <button type="button" id="wager-ten">+10</button>
-  <button type="button" id="wager-fifty">+50</button>
-  <button type="button" id="wager-hundred">+100</button>
-  <div><button type="submit" id="wager-submit">Submit</button>
-  </div>`;
 let bsTitle = document.getElementById("modal-title");
 let bsText = document.getElementById("modal-text");
 let bsBtn1 = document.getElementById("modal-btn-1");
@@ -238,7 +225,17 @@ function initialView() {
  * Get player 's current wager
  */
 function getWager() {
-  changeMsg.innerHTML = wagerInfo;
+  changeMsg.innerHTML = `<div>
+  <p>You currently have ${playerPoints} points</p>
+  <p>What is your wager this round? (min = 1 point, max = total points)</p>
+  <div id="wager"></div>
+  <button type="button" id="wager-one">+1</button>
+  <button type="button" id="wager-five">+5</button>
+  <button type="button" id="wager-ten">+10</button>
+  <button type="button" id="wager-fifty">+50</button>
+  <button type="button" id="wager-hundred">+100</button>
+  <div><button type="submit" id="wager-submit">Submit</button>
+  </div>`;
   totalWager = document.getElementById("wager");
   const WagerOne = document.getElementById("wager-one");
   WagerOne.addEventListener("click", function () {

@@ -160,7 +160,6 @@ function deleteModal() {
  * Shuffle the deck of cards
  *(via API call to https: //www.deckofcardsapi.com)
  */
-
 async function shuffleCards() {
   try {
     const shuffleReply = await fetch(
@@ -376,7 +375,6 @@ function calculateOutcome() {
  * Ask player if they wish to
  * continue playing the game
  */
-
 function continueGame(status) {
   const modalStatus = ["win", "lose", "draw"];
   const modalTitles = ["YOU WON THE ROUND!", "YOU LOST THE ROUND!", "IT'S A DRAW!"];
@@ -401,7 +399,6 @@ function continueGame(status) {
 /**
  * Leave game.html and return to index.html
  */
-
 function leaveGame() {
   window.location.href = "index.html";
 }
@@ -414,39 +411,62 @@ function newDeck() {
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
   if (gameEnded) {
     shuffleCards();
-  } else if (gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw" && dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
+  } else if ((gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw") && dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
     drawCards();
-  } else if (gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw" && dealtCards.remaining === 7 && playerPoints > 0) {
+  } else if ((gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw") && dealtCards.remaining === 7 && playerPoints > 0) {
     finalRound();
-  } else if (gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw" && dealtCards.remaining === 2 && playerPoints > 0) {
-    noCards();
+  } else if ((gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw") && dealtCards.remaining === 2 && playerPoints > 0) {
+    gameOver();
   } else if (playerPoints <= 0) {
     noPoints();
   }
 }
 
 /**
- * Display final points
+ * Display final points at the end of the game
  */
 function gameOver() {
-  gameEnded = true;
-  deleteModal();
-  createModal();
-  bsTitle = document.getElementById("modal-title");
-  bsText = document.getElementById("modal-text");
-  bsBtn1 = document.getElementById("modal-btn-1");
-  bsBtn2 = document.getElementById("modal-btn-2");
-  bsBtn1.innerText = "Yes";
-  bsBtn2.innerText = "No";
-  bsTitle.innerText = "GAME OVER";
-  bsText.innerText = "You scored " + playerPoints + " points. Do you wish to play again?";
-  bsBtn1.addEventListener("click", newDeck);
-  bsBtn2.addEventListener("click", leaveGame);
-  displayModal();
+  if (dealtCards.remaining < 3) {
+    gameEnded = true;
+    deleteModal();
+    createModal();
+    bsTitle = document.getElementById("modal-title");
+    bsText = document.getElementById("modal-text");
+    bsBtn1 = document.getElementById("modal-btn-1");
+    bsBtn2 = document.getElementById("modal-btn-2");
+    bsBtn1.innerText = "Yes";
+    bsBtn2.innerText = "No";
+    bsTitle.innerText = "CONGRATULATIONS!";
+    bsText.innerText = "You have finished the game with " + playerPoints + " points. Play again?";
+    bsBtn1.addEventListener("click", function () {
+      deleteModal();
+      shuffleCards();
+    });
+    bsBtn2.addEventListener("click", leaveGame);
+    displayModal();
+  } else {
+    gameEnded = true;
+    deleteModal();
+    createModal();
+    bsTitle = document.getElementById("modal-title");
+    bsText = document.getElementById("modal-text");
+    bsBtn1 = document.getElementById("modal-btn-1");
+    bsBtn2 = document.getElementById("modal-btn-2");
+    bsBtn1.innerText = "Yes";
+    bsBtn2.innerText = "No";
+    bsTitle.innerText = "GAME OVER";
+    bsText.innerText = "You scored " + playerPoints + " points. Do you wish to play again?";
+    bsBtn1.addEventListener("click", function () {
+      deleteModal();
+      shuffleCards();
+    });
+    bsBtn2.addEventListener("click", leaveGame);
+    displayModal();
+  }
 }
 
 /**
- * Show before the final round
+ * Final round notification
  */
 function finalRound() {
   createModal();
@@ -461,27 +481,6 @@ function finalRound() {
   bsBtn1.addEventListener("click", function () {
     deleteModal();
     drawCards();
-  });
-  bsBtn2.addEventListener("click", leaveGame);
-  displayModal();
-}
-
-/**
- * End the game if all cards in the deck have been played
- */
-function noCards() {
-  createModal();
-  bsTitle = document.getElementById("modal-title");
-  bsText = document.getElementById("modal-text");
-  bsBtn1 = document.getElementById("modal-btn-1");
-  bsBtn2 = document.getElementById("modal-btn-2");
-  bsTitle.innerText = "THE DECK IS EMPTY";
-  bsText.innerText = "You have finished your deck of cards. Play again?";
-  bsBtn1.innerText = "Yes";
-  bsBtn2.innerText = "No";
-  bsBtn1.addEventListener("click", function () {
-    deleteModal();
-    shuffleCards();
   });
   bsBtn2.addEventListener("click", leaveGame);
   displayModal();

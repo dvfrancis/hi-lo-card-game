@@ -91,7 +91,10 @@ let correctGuesses = 0; // The player's correct guesses
 const changeMsg = document.getElementById("game-messages"); // DOM reference to game-messages DIV
 let currAces = decideAces(); // The value of an Ace for the round
 
-// Decide whether Aces are high or low and send value to amendCardArray
+/**
+ * Decide whether Aces are high or low
+ * and send value to amendCardArray
+ */
 function decideAces() {
   let acesBool = Math.random() < 0.5;
   let acesResult = acesBool ? "HIGH" : "LOW";
@@ -99,7 +102,10 @@ function decideAces() {
   return acesResult;
 }
 
-// Update all Aces in the card array to match the current round's Ace value
+/**
+ * Update all Aces in the card array
+ * to match the current round 's Ace value
+ */
 function amendCardsObject(acesValue) {
   if (acesValue === "HIGH") {
     cardsObject["cardAC"] = 14;
@@ -114,15 +120,17 @@ function amendCardsObject(acesValue) {
   }
 }
 
-// Create Bootstrap modal
-
+/**
+ * Create Bootstrap modal
+ */
 function createModal() {
   document.body.insertAdjacentHTML("beforeend", modalTemplate);
   bsModal = document.getElementById("bootstrap-modal"); // Re-select the modal after insertion
 }
 
-// Display Bootstrap modal
-
+/**
+ * Display Bootstrap modal
+ */
 function displayModal() {
   if (bsModal) {
     bsModal.style.display = "block";
@@ -132,8 +140,9 @@ function displayModal() {
   }
 }
 
-// Hide Bootstrap modal
-
+/**
+ * Hide Bootstrap modal
+ */
 function hideModal() {
   if (bsModal) {
     bsModal.style.display = "none";
@@ -143,7 +152,10 @@ function hideModal() {
   }
 }
 
-// Shuffle the deck of cards (via API call to https://www.deckofcardsapi.com)
+/**
+ * Shuffle the deck of cards
+ *(via API call to https: //www.deckofcardsapi.com)
+ */
 async function shuffleCards() {
   const shuffleReply = await fetch(
     "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
@@ -159,7 +171,11 @@ async function shuffleCards() {
   }
 }
 
-// Draw cards from the shuffled deck and display the player's card (via API call to https://www.deckofcardsapi.com)
+/**
+ * Draw cards from the shuffled deck
+ * and display the player's card
+ * (via API call to https: //www.deckofcardsapi.com)
+ */
 async function drawCards() {
   const drawReply = await fetch(
     `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5` // URL dynamically updated based on previously shuffled deck_id value
@@ -183,7 +199,9 @@ async function drawCards() {
   }
 }
 
-// Display initial card view
+/**
+ * Display initial card view
+ */
 function initialView() {
   cards[0].innerHTML = `<img id="player-card" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The player's first card">`;
   cards[1].innerHTML = `<img id="card-1" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
@@ -192,7 +210,9 @@ function initialView() {
   cards[4].innerHTML = `<img id="card-4" src="https://www.deckofcardsapi.com/static/img/back.png" alt="The back of a playing card">`;
 }
 
-// Get player's current wager
+/**
+ * Get player 's current wager
+ */
 function getWager() {
   wagerInfo(); // Display wager instructions and wager buttons
   // DOM reference to wager DIV
@@ -222,7 +242,10 @@ function getWager() {
   WagerHundred.addEventListener("click", function () {
     setPlayerWager(100);
   });
-  // Calculate wager ensuring it is not zero or exceeds available points
+  /**
+   * Calculate wager ensuring it is
+   * not zero or exceeds available points
+   */
   function setPlayerWager(num) {
     if (playerWager + num > playerPoints) {
       totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
@@ -256,7 +279,9 @@ function getWager() {
   });
 }
 
-// Display wager information
+/**
+ * Display wager information
+ */
 function wagerInfo() {
   changeMsg.innerHTML = `
   <div>
@@ -274,7 +299,9 @@ function wagerInfo() {
   `;
 }
 
-// Get higher or lower choice from the player
+/**
+ * Get higher or lower choice from the player
+ */
 function playerChoice() {
   guessInfo();
   const highBtn = document.getElementById("higher"); // DOM reference to Higher button
@@ -289,7 +316,9 @@ function playerChoice() {
   }); // Set card choice to Lower and move to next stage
 }
 
-// Display card guess information
+/**
+ * Display card guess information
+ */
 function guessInfo() {
   changeMsg.innerHTML = `
   <div>
@@ -303,7 +332,10 @@ function guessInfo() {
   `;
 }
 
-// Sequentially reveal all cards in the dealtCards array
+/**
+ * Sequentially reveal all cards
+ * in the dealtCards array
+ */
 function flipCard(cardIndex) {
   cards[cardIndex].innerHTML = `
     <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The next game card">
@@ -313,7 +345,10 @@ function flipCard(cardIndex) {
   playerChoice(); // Choose whether the next card is higher or lower;
 }
 
-// Calculate whether player choices were correct or incorrect
+/**
+ * Calculate whether player choices
+ * were correct or incorrect
+ */
 function calculateOutcome() {
   let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
   let currCard = cardsObject["card" + dealtCards.cards[currentCard].code];
@@ -351,7 +386,10 @@ function calculateOutcome() {
   }
 }
 
-// Ask player if they wish to continue playing the game
+/**
+ * Ask player if they wish to
+ * continue playing the game
+ */
 function continueGame(status) {
   if (status === "win") {
     createModal();
@@ -391,11 +429,12 @@ function continueGame(status) {
 }
 
 // Start a new game
-
 let newGameBtn = document.getElementById("new-game");
 newGameBtn.addEventListener("click", shuffleCards);
 
-// Start a new round
+/**
+ * Start a new round
+ */
 function newDeck() {
   hideModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
@@ -408,7 +447,9 @@ function newDeck() {
   }
 }
 
-// Display final points
+/**
+ * Display final points
+ */
 function gameOver() {
   hideModal();
   createModal();
@@ -424,7 +465,9 @@ function gameOver() {
   displayModal();
 }
 
-// End the game
+/**
+ * End the game
+ */
 function endGame() {
   createModal();
   let bsTitle = document.getElementById("modal-title");
@@ -440,9 +483,14 @@ function endGame() {
   displayModal();
 }
 
-// Keep copyright year current, in the footer
-let dateNow = new Date();
-let yearNow = dateNow.getFullYear();
-document.getElementById("copyright").innerHTML = ` ${yearNow} `;
+/**
+ * Keep copyright year current, in the footer
+ */
+function updateCopyrightYear() {
+  let dateNow = new Date();
+  let yearNow = dateNow.getFullYear();
+  document.getElementById("copyright").innerHTML = ` ${yearNow} `;
+}
 
+updateCopyrightYear();
 shuffleCards();

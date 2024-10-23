@@ -107,7 +107,7 @@ function decideAces() {
 
 /**
  * Update all Aces in the card array
- * to match the current round 's Ace value
+ * to match the current round's Ace value
  */
 function amendCardsObject(result) {
   if (result === "HIGH") {
@@ -221,7 +221,7 @@ function initialView() {
 }
 
 /**
- * Get player 's current wager
+ * Get player's current wager
  */
 function getWager() {
   changeMsg.innerHTML = `<div>

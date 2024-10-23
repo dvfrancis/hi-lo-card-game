@@ -173,7 +173,7 @@ async function shuffleCards() {
 
 /**
  * Draw cards from the shuffled deck
- * and display the player's card
+ *  and display the player's card
  * (via API call to https: //www.deckofcardsapi.com)
  */
 async function drawCards() {

@@ -91,6 +91,8 @@ let bsBtn2 = document.getElementById("modal-btn-2");
 let totalWager = document.getElementById("wager");
 let hiLoChoice = "";
 let correctGuesses = 0;
+let gameEnded = false;
+let gameStatus = "";
 const changeMsg = document.getElementById("game-messages");
 let acesValue = decideAces();
 
@@ -346,7 +348,8 @@ function calculateOutcome() {
     correctGuesses += 1;
     if (correctGuesses === 4) {
       playerPoints += playerWager;
-      continueGame("win");
+      gameStatus = "win";
+      continueGame(gameStatus);
     } else {
       playerChoice();
     }
@@ -354,15 +357,18 @@ function calculateOutcome() {
     correctGuesses += 1;
     if (correctGuesses === 4) {
       playerPoints += playerWager;
-      continueGame("win");
+      gameStatus = "win";
+      continueGame(gameStatus);
     } else {
       playerChoice();
     }
   } else if (currCard === prevCard) {
-    continueGame("draw");
+    gameStatus = "draw"
+    continueGame(gameStatus);
   } else {
     playerPoints -= playerWager;
-    continueGame("lose");
+    gameStatus = "lose"
+    continueGame(gameStatus);
   }
 }
 
@@ -370,43 +376,23 @@ function calculateOutcome() {
  * Ask player if they wish to
  * continue playing the game
  */
+
 function continueGame(status) {
-  if (status === "win") {
+  const modalStatus = ["win", "lose", "draw"];
+  const modalTitles = ["YOU WON THE ROUND!", "YOU LOST THE ROUND!", "IT'S A DRAW!"];
+  const modalText = ["Play another round?"];
+  const modalBtns = ["Yes", "No"];
+  if (modalStatus.includes(status)) {
     createModal();
     bsTitle = document.getElementById("modal-title");
     bsText = document.getElementById("modal-text");
     bsBtn1 = document.getElementById("modal-btn-1");
     bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "YOU WON THE ROUND!";
-    bsText.innerText = "Play another round?";
-    bsBtn1.innerText = "Yes";
-    bsBtn2.innerText = "No";
-    bsBtn1.addEventListener("click", newDeck);
-    bsBtn2.addEventListener("click", gameOver);
-    displayModal();
-  } else if (status === "lose") {
-    createModal();
-    bsTitle = document.getElementById("modal-title");
-    bsText = document.getElementById("modal-text");
-    bsBtn1 = document.getElementById("modal-btn-1");
-    bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "YOU LOST THE ROUND!";
-    bsText.innerText = "Play another round?";
-    bsBtn1.innerText = "Yes";
-    bsBtn2.innerText = "No";
-    bsBtn1.addEventListener("click", newDeck);
-    bsBtn2.addEventListener("click", gameOver);
-    displayModal();
-  } else if (status === "draw") {
-    createModal();
-    bsTitle = document.getElementById("modal-title");
-    bsText = document.getElementById("modal-text");
-    bsBtn1 = document.getElementById("modal-btn-1");
-    bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "IT'S A DRAW!";
-    bsText.innerText = "You didn't lose...but you also didn't win. Play another round?";
-    bsBtn1.innerText = "Yes";
-    bsBtn2.innerText = "No";
+    const statusIndex = modalStatus.indexOf(status);
+    bsTitle.innerText = modalTitles[statusIndex];
+    bsText.innerText = modalText[0];
+    bsBtn1.innerText = modalBtns[0];
+    bsBtn2.innerText = modalBtns[1];
     bsBtn1.addEventListener("click", newDeck);
     bsBtn2.addEventListener("click", gameOver);
     displayModal();
@@ -427,16 +413,16 @@ function leaveGame() {
 function newDeck() {
   deleteModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
-  if (dealtCards && dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
+  if (gameEnded) {
+    shuffleCards();
+  } else if (gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw" && dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
     drawCards();
-  } else if (dealtCards && dealtCards.remaining === 7 && playerPoints > 0) {
+  } else if (gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw" && dealtCards.remaining === 7 && playerPoints > 0) {
     finalRound();
-  } else if (dealtCards && dealtCards.remaining === 2 && playerPoints > 0) {
+  } else if (gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw" && dealtCards.remaining === 2 && playerPoints > 0) {
     noCards();
   } else if (playerPoints <= 0) {
     noPoints();
-  } else {
-    shuffleCards();
   }
 }
 
@@ -444,6 +430,7 @@ function newDeck() {
  * Display final points
  */
 function gameOver() {
+  gameEnded = true;
   deleteModal();
   createModal();
   bsTitle = document.getElementById("modal-title");
@@ -454,7 +441,7 @@ function gameOver() {
   bsBtn2.innerText = "No";
   bsTitle.innerText = "GAME OVER";
   bsText.innerText = "You scored " + playerPoints + " points. Do you wish to play again?";
-  bsBtn1.addEventListener("click", shuffleCards);
+  bsBtn1.addEventListener("click", newDeck);
   bsBtn2.addEventListener("click", leaveGame);
   displayModal();
 }

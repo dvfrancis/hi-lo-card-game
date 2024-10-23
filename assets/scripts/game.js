@@ -172,20 +172,42 @@ function hideModal() {
  * Shuffle the deck of cards
  *(via API call to https: //www.deckofcardsapi.com)
  */
+// async function shuffleCards() {
+//     try {
+//       const shuffleReply = await fetch(
+//         "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
+//       );
+//       const cardDeck = await shuffleReply.json();
+//       if (shuffleReply.ok) {
+//         console.log(cardDeck);
+//         playerPoints = 100;
+//         deckUrl = cardDeck.deck_id;
+//         drawCards();
+//       } else {
+//         console.error("Error:", shuffleReply.statusText);
+//       } catch (error) {
+//         console.error("Fetch error:", error);
+//       }
+//     }
+
 async function shuffleCards() {
-  const shuffleReply = await fetch(
-    "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
-  );
-  const cardDeck = await shuffleReply.json();
-  if (shuffleReply.ok) {
-    console.log(cardDeck);
+  try {
+    const shuffleReply = await fetch(
+      "https://www.deckofcardsapi.com/api/deck/new/shuffle/"
+    );
+    if (!shuffleReply.ok) {
+      throw new Error(shuffleReply.statusText);
+    }
+    const cardDeck = await shuffleReply.json();
+    console.log(cardDeck); // Remove before project submission
     playerPoints = 100;
     deckUrl = cardDeck.deck_id;
     drawCards();
-  } else {
-    console.error("Error:", shuffleReply.statusText);
+  } catch (error) {
+    console.error('Fetch error:', error);
   }
 }
+
 
 /**
  * Draw cards from the shuffled deck
@@ -193,16 +215,19 @@ async function shuffleCards() {
  * (via API call to https: //www.deckofcardsapi.com)
  */
 async function drawCards() {
-  const drawReply = await fetch(
-    `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
-  );
-  if (cardsDrawn) {
-    return;
-  } // Additional check to ensure that the drawCards function is not called multiple times
-  cardsDrawn = true;
-  dealtCards = await drawReply.json();
-  if (drawReply.ok) {
-    console.log(dealtCards);
+  try {
+    if (cardsDrawn) {
+      return;
+    } // Additional check to ensure that the drawCards function is not called multiple times
+    cardsDrawn = true;
+    const drawReply = await fetch(
+      `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
+    );
+    if (!drawReply.ok) {
+      throw new Error(drawReply.statusText);
+    }
+    dealtCards = await drawReply.json();
+    console.log(dealtCards); // Remove before project submission
     initialView();
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`;
     // Reset values before round
@@ -211,8 +236,8 @@ async function drawCards() {
     playerWager = 0;
     currentCard++;
     getWager();
-  } else {
-    console.error("Error:", drawReply.statusText);
+  } catch (error) {
+    console.error('Fetch error:', error);
   }
 }
 
@@ -403,15 +428,15 @@ function continueGame(status) {
     bsBtn1.addEventListener("click", newDeck);
     bsBtn2.addEventListener("click", gameOver);
     displayModal();
-  } else {
-    hideModal();
-    createModal();
-    let bsTitle = document.getElementById("modal-title");
-    let bsText = document.getElementById("modal-text");
-    bsTitle.innerText = "GAME OVER 😭";
-    bsText.innerText = "You currently have " + playerPoints + " points";
-    displayModal();
   }
+}
+
+/**
+ * Leave game.html and return to index.html
+ */
+
+function leaveGame() {
+  window.location.href = "index.html";
 }
 
 /**
@@ -422,10 +447,10 @@ function newDeck() {
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
   if (dealtCards.remaining >= 5 && playerPoints > 0) {
     drawCards();
-  } else if (dealtCards.remaining < 5 || playerPoints < 1) {
-    shuffleCards();
-  } else {
-    endGame();
+  } else if (dealtCards.remaining < 5) {
+    noCards();
+  } else if (playerPoints < 1) {
+    noPoints();
   }
 }
 
@@ -439,28 +464,54 @@ function gameOver() {
   bsText = document.getElementById("modal-text");
   bsBtn1 = document.getElementById("modal-btn-1");
   bsBtn2 = document.getElementById("modal-btn-2");
-  bsBtn1.remove();
-  bsBtn2.remove();
+  bsBtn1.innerText = "Yes";
+  bsBtn2.innerText = "No";
   bsTitle.innerText = "GAME OVER 😭";
-  bsText.innerText = "You scored " + playerPoints + " points";
+  bsText.innerText = "You scored " + playerPoints + " points. Do you wish to play again?";
+  bsBtn1.addEventListener("click", shuffleCards);
+  bsBtn2.addEventListener("click", leaveGame);
   displayModal();
 }
 
 /**
- * End the game
+ * End the game if all cards in the deck have been played
  */
-function endGame() {
+function noCards() {
   createModal();
   bsTitle = document.getElementById("modal-title");
   bsText = document.getElementById("modal-text");
   bsBtn1 = document.getElementById("modal-btn-1");
   bsBtn2 = document.getElementById("modal-btn-2");
-  bsTitle.innerText = "BAD LUCK";
-  bsText.innerText = "You have used all of your points / cards. Play again?";
+  bsTitle.innerText = "NO CARDS REMAIN";
+  bsText.innerText = "You have finished your deck of cards. Play again?";
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
-  bsBtn1.addEventListener("click", newDeck);
-  bsBtn2.addEventListener("click", gameOver);
+  bsBtn1.addEventListener("click", function () {
+    hideModal();
+    shuffleCards();
+  });
+  bsBtn2.addEventListener("click", leaveGame);
+  displayModal();
+}
+
+/**
+ * End the game if the player has no points
+ */
+function noPoints() {
+  createModal();
+  bsTitle = document.getElementById("modal-title");
+  bsText = document.getElementById("modal-text");
+  bsBtn1 = document.getElementById("modal-btn-1");
+  bsBtn2 = document.getElementById("modal-btn-2");
+  bsTitle.innerText = "BANKRUPT!";
+  bsText.innerText = "You have no points. Play again?";
+  bsBtn1.innerText = "Yes";
+  bsBtn2.innerText = "No";
+  bsBtn1.addEventListener("click", function () {
+    hideModal();
+    shuffleCards();
+  });
+  bsBtn2.addEventListener("click", leaveGame);
   displayModal();
 }
 
@@ -482,9 +533,7 @@ linkIDs.forEach(id => {
       bsText.innerText = "Are you sure you want to abandon the game?";
       bsBtn1.innerText = "Yes";
       bsBtn2.innerText = "No";
-      bsBtn1.addEventListener("click", function () {
-        window.location.href = "index.html";
-      });
+      bsBtn1.addEventListener("click", leaveGame);
       bsBtn2.addEventListener("click", function () {
         hideModal();
       });

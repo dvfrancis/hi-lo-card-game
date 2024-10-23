@@ -428,10 +428,6 @@ function continueGame(status) {
   }
 }
 
-// Start a new game
-let newGameBtn = document.getElementById("new-game");
-newGameBtn.addEventListener("click", shuffleCards);
-
 /**
  * Start a new round
  */

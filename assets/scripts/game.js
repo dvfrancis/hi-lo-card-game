@@ -96,7 +96,6 @@ let wagerInfo = `<div>
   <button type="button" id="wager-fifty">+50</button>
   <button type="button" id="wager-hundred">+100</button>
   <div><button type="submit" id="wager-submit">Submit</button>
-  <button type="reset" id="wager-reset">Reset</button></div>
   </div>`;
 let bsTitle = document.getElementById("modal-title");
 let bsText = document.getElementById("modal-text");
@@ -253,13 +252,6 @@ function getWager() {
   const WagerHundred = document.getElementById("wager-hundred");
   WagerHundred.addEventListener("click", function () {
     setPlayerWager(100);
-  });
-  // Reset wager to zero when clicked
-  totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
-  const wagerReset = document.getElementById("wager-reset");
-  wagerReset.addEventListener("click", function () {
-    playerWager = 0;
-    totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
   });
   // Submit wager as long as it is not zero or exceeds available points, then move to next stage
   const wagerSubmit = document.getElementById("wager-submit");

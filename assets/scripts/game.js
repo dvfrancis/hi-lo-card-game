@@ -380,7 +380,6 @@ function calculateOutcome() {
 function continueGame(status) {
   const modalStatus = ["win", "lose", "draw"];
   const modalTitles = ["YOU WON THE ROUND!", "YOU LOST THE ROUND!", "IT'S A DRAW!"];
-  const modalText = ["Play another round?"];
   const modalBtns = ["Yes", "No"];
   if (modalStatus.includes(status)) {
     createModal();
@@ -390,7 +389,7 @@ function continueGame(status) {
     bsBtn2 = document.getElementById("modal-btn-2");
     const statusIndex = modalStatus.indexOf(status);
     bsTitle.innerText = modalTitles[statusIndex];
-    bsText.innerText = modalText[0];
+    bsText.innerText = "Play another round?";
     bsBtn1.innerText = modalBtns[0];
     bsBtn2.innerText = modalBtns[1];
     bsBtn1.addEventListener("click", newDeck);

@@ -234,8 +234,7 @@ function getWager() {
   <button type="button" id="wager-ten">+10</button>
   <button type="button" id="wager-fifty">+50</button>
   <button type="button" id="wager-hundred">+100</button>
-  <div><button type="submit" id="wager-submit">Submit</button>
-  </div>`;
+  <button type="submit" id="wager-submit">Submit</button>`;
   totalWager = document.getElementById("wager");
   totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
   const WagerOne = document.getElementById("wager-one");

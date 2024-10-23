@@ -107,17 +107,21 @@ nav,
 section {
   display: block;
 }
+
 body {
   line-height: 1;
 }
+
 ol,
 ul {
   list-style: none;
 }
+
 blockquote,
 q {
   quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -125,6 +129,7 @@ q:after {
   content: "";
   content: none;
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -137,7 +142,8 @@ p {
 }
 
 #header {
-  background-color: whitesmoke; /* Remove before submission*/
+  background-color: whitesmoke;
+  /* Remove before submission*/
 }
 
 #logo {
@@ -145,7 +151,8 @@ p {
 }
 
 #game-info {
-  background-color: black; /* Remove before submission*/
+  background-color: black;
+  /* Remove before submission*/
 }
 
 #game-messages p {
@@ -155,7 +162,8 @@ p {
 /* Playing cards parent container */
 
 #cards {
-  background-color: darkgreen; /* Remove before submission*/
+  background-color: darkgreen;
+  /* Remove before submission*/
   margin-top: 30px;
 }
 
@@ -185,7 +193,8 @@ img#card-4 {
 }
 
 #faq-info {
-  background-color: darksalmon; /* Remove before submission*/
+  background-color: darksalmon;
+  /* Remove before submission*/
 }
 
 .accordion {
@@ -193,12 +202,14 @@ img#card-4 {
 }
 
 #error-message {
-  background-color: goldenrod; /* Remove before submission*/
+  background-color: goldenrod;
+  /* Remove before submission*/
   margin-top: 30px;
 }
 
 #error-image {
-  background-color: hotpink; /* Remove before submission*/
+  background-color: hotpink;
+  /* Remove before submission*/
 }
 
 #error-image img {
@@ -206,11 +217,13 @@ img#card-4 {
 }
 
 #error-links {
-  background-color: mediumspringgreen; /* Remove before submission*/
+  background-color: mediumspringgreen;
+  /* Remove before submission*/
 }
 
 #footer {
-  background-color: whitesmoke; /* Remove before submission*/
+  background-color: whitesmoke;
+  /* Remove before submission*/
 }
 
 a.fa-brands,
@@ -229,7 +242,7 @@ p {
 
 /* Remove default Bootstrap padding */
 
-.row > * {
+.row>* {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }

@@ -144,12 +144,11 @@ function displayModal() {
 }
 
 /**
- * Hide Bootstrap modal
+ * Delete Bootstrap modal
  */
-function hideModal() {
+function deleteModal() {
   if (messageModal) {
-    messageModal.style.display = "none";
-    messageModal.classList.add("hide");
+    messageModal.remove();
   } else {
     console.error("Modal element not found");
   }
@@ -426,14 +425,18 @@ function leaveGame() {
  * Start a new round
  */
 function newDeck() {
-  hideModal();
+  deleteModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
-  if (dealtCards.remaining >= 5 && playerPoints > 0) {
+  if (dealtCards && dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
     drawCards();
-  } else if (dealtCards.remaining < 5) {
+  } else if (dealtCards && dealtCards.remaining === 7 && playerPoints > 0) {
+    finalRound();
+  } else if (dealtCards && dealtCards.remaining === 2 && playerPoints > 0) {
     noCards();
-  } else if (playerPoints < 1) {
+  } else if (playerPoints <= 0) {
     noPoints();
+  } else {
+    shuffleCards();
   }
 }
 
@@ -441,7 +444,7 @@ function newDeck() {
  * Display final points
  */
 function gameOver() {
-  hideModal();
+  deleteModal();
   createModal();
   bsTitle = document.getElementById("modal-title");
   bsText = document.getElementById("modal-text");
@@ -452,6 +455,27 @@ function gameOver() {
   bsTitle.innerText = "GAME OVER";
   bsText.innerText = "You scored " + playerPoints + " points. Do you wish to play again?";
   bsBtn1.addEventListener("click", shuffleCards);
+  bsBtn2.addEventListener("click", leaveGame);
+  displayModal();
+}
+
+/**
+ * Show before the final round
+ */
+function finalRound() {
+  createModal();
+  bsTitle = document.getElementById("modal-title");
+  bsText = document.getElementById("modal-text");
+  bsBtn1 = document.getElementById("modal-btn-1");
+  bsBtn2 = document.getElementById("modal-btn-2");
+  bsTitle.innerText = "LAST ROUND";
+  bsText.innerText = "This is your final round of cards from this deck";
+  bsBtn1.innerText = "OK";
+  bsBtn2.innerText = "Cancel";
+  bsBtn1.addEventListener("click", function () {
+    deleteModal();
+    drawCards();
+  });
   bsBtn2.addEventListener("click", leaveGame);
   displayModal();
 }
@@ -470,7 +494,7 @@ function noCards() {
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
   bsBtn1.addEventListener("click", function () {
-    hideModal();
+    deleteModal();
     shuffleCards();
   });
   bsBtn2.addEventListener("click", leaveGame);
@@ -491,7 +515,7 @@ function noPoints() {
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
   bsBtn1.addEventListener("click", function () {
-    hideModal();
+    deleteModal();
     shuffleCards();
   });
   bsBtn2.addEventListener("click", leaveGame);
@@ -518,12 +542,11 @@ linkIds.forEach(id => {
       bsBtn2.innerText = "No";
       bsBtn1.addEventListener("click", leaveGame);
       bsBtn2.addEventListener("click", function () {
-        hideModal();
+        deleteModal();
       });
       displayModal();
     })
   }
 })
-
 
 shuffleCards();

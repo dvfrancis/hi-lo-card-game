@@ -84,7 +84,7 @@ let deckUrl = ""; // Current API deck_id used to complete the drawCards function
 let dealtCards = "";
 let cardsDrawn = false;
 let currentCard = 0;
-let playerPoints = 100;
+let playerPoints = 0;
 let playerWager = 0;
 let wagerInfo = `<div>
   <p>You currently have ${playerPoints} points</p>
@@ -190,7 +190,6 @@ async function shuffleCards() {
     console.error('Fetch error:', error);
   }
 }
-
 
 /**
  * Draw cards from the shuffled deck
@@ -348,33 +347,23 @@ function calculateOutcome() {
   let currCard = cardsObject["card" + dealtCards.cards[currentCard].code];
   if (currCard > prevCard && hiLoChoice === "Higher") {
     correctGuesses += 1;
-    console.log("The card is higher in value.");
-    console.log(correctGuesses);
-    if (correctGuesses === 4) {
-      playerPoints += playerWager;
-      continueGame("win");
-    } else {
-      return;
-    }
-  } else if (currCard < prevCard && hiLoChoice === "Lower") {
-    correctGuesses += 1;
-    console.log("The card is lower in value.");
-    console.log(correctGuesses);
     if (correctGuesses === 4) {
       playerPoints += playerWager;
       continueGame("win");
     } else {
       playerChoice();
     }
-    return;
+  } else if (currCard < prevCard && hiLoChoice === "Lower") {
+    correctGuesses += 1;
+    if (correctGuesses === 4) {
+      playerPoints += playerWager;
+      continueGame("win");
+    } else {
+      playerChoice();
+    }
   } else if (currCard === prevCard) {
-    console.log(
-      "You got a match, and there's nothing for two - not in this game!"
-    );
-    playerPoints -= playerWager;
-    continueGame("lose");
+    continueGame("draw");
   } else {
-    console.log("Incorrect choice. You have lost your wager.");
     playerPoints -= playerWager;
     continueGame("lose");
   }
@@ -391,8 +380,8 @@ function continueGame(status) {
     bsText = document.getElementById("modal-text");
     bsBtn1 = document.getElementById("modal-btn-1");
     bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "YOU WON THE ROUND! 😄";
-    bsText.innerText = "Do you wish to proceed to the next round?";
+    bsTitle.innerText = "YOU WON THE ROUND!";
+    bsText.innerText = "Play another round?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
     bsBtn1.addEventListener("click", newDeck);
@@ -404,8 +393,21 @@ function continueGame(status) {
     bsText = document.getElementById("modal-text");
     bsBtn1 = document.getElementById("modal-btn-1");
     bsBtn2 = document.getElementById("modal-btn-2");
-    bsTitle.innerText = "YOU LOST THE ROUND! 😭";
-    bsText.innerText = "Do you wish to play again?";
+    bsTitle.innerText = "YOU LOST THE ROUND!";
+    bsText.innerText = "Play another round?";
+    bsBtn1.innerText = "Yes";
+    bsBtn2.innerText = "No";
+    bsBtn1.addEventListener("click", newDeck);
+    bsBtn2.addEventListener("click", gameOver);
+    displayModal();
+  } else if (status === "draw") {
+    createModal();
+    bsTitle = document.getElementById("modal-title");
+    bsText = document.getElementById("modal-text");
+    bsBtn1 = document.getElementById("modal-btn-1");
+    bsBtn2 = document.getElementById("modal-btn-2");
+    bsTitle.innerText = "IT'S A DRAW!";
+    bsText.innerText = "You didn't lose...but you also didn't win. Play another round?";
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
     bsBtn1.addEventListener("click", newDeck);
@@ -449,7 +451,7 @@ function gameOver() {
   bsBtn2 = document.getElementById("modal-btn-2");
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
-  bsTitle.innerText = "GAME OVER 😭";
+  bsTitle.innerText = "GAME OVER";
   bsText.innerText = "You scored " + playerPoints + " points. Do you wish to play again?";
   bsBtn1.addEventListener("click", shuffleCards);
   bsBtn2.addEventListener("click", leaveGame);
@@ -465,7 +467,7 @@ function noCards() {
   bsText = document.getElementById("modal-text");
   bsBtn1 = document.getElementById("modal-btn-1");
   bsBtn2 = document.getElementById("modal-btn-2");
-  bsTitle.innerText = "NO CARDS REMAIN";
+  bsTitle.innerText = "THE DECK IS EMPTY";
   bsText.innerText = "You have finished your deck of cards. Play again?";
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
@@ -486,8 +488,8 @@ function noPoints() {
   bsText = document.getElementById("modal-text");
   bsBtn1 = document.getElementById("modal-btn-1");
   bsBtn2 = document.getElementById("modal-btn-2");
-  bsTitle.innerText = "BANKRUPT!";
-  bsText.innerText = "You have no points. Play again?";
+  bsTitle.innerText = "YOU'RE BANKRUPT!";
+  bsText.innerText = "You cannot play without any points. Start over?";
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
   bsBtn1.addEventListener("click", function () {
@@ -501,8 +503,8 @@ function noPoints() {
 /**
  * Leave the game
  */
-const linkIDs = ["home-page-link", "faq-page-link"];
-linkIDs.forEach(id => {
+const linkIds = ["home-page-link", "faq-page-link"];
+linkIds.forEach(id => {
   const element = document.getElementById(id);
   if (element) {
     element.addEventListener("click", function (event) {

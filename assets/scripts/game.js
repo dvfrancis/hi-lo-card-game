@@ -1,5 +1,5 @@
 // Variable declarations
-// Object containing playing card codes from https://www.deckofcardsapi.com/ (with associated values)
+// Playing card codes from https://www.deckofcardsapi.com/, adding numeric values for use in the game
 let cardsObject = {
   cardAC: 1,
   card2C: 2,
@@ -54,7 +54,6 @@ let cardsObject = {
   cardQS: 12,
   cardKS: 13,
 };
-// DOM references for card DIVs
 const cards = [
   document.getElementById("player-card"),
   document.getElementById("card-1"),
@@ -62,7 +61,7 @@ const cards = [
   document.getElementById("card-3"),
   document.getElementById("card-4"),
 ];
-// Bootstrap modal template
+// Bootstrap message modal template
 let modalTemplate = `
 <div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -78,18 +77,18 @@ let modalTemplate = `
     </div>
   </div>
 </div>`;
-let bsModal = document.getElementById("bootstrap-modal"); // DOM reference to bootstrap-modal DIV
-let cardArea = document.getElementById("cards"); // DOM reference for card area
+const messageModal = document.getElementById("bootstrap-modal");
+let cardArea = document.getElementById("cards");
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
-let dealtCards = ""; // The five cards used for a round of the game
-let cardsDrawn = false; // Tracking if cards have already been drawn to prevent multiple draws
-let currentCard = 0; // Index of the current card - used to access the dealtCards array
-let playerPoints = 100; // The player's initial points balance
-let playerWager = 0; // The player's wager
-let cardChoice = ""; // The player's high or low choice
-let correctGuesses = 0; // The player's correct guesses
-const changeMsg = document.getElementById("game-messages"); // DOM reference to game-messages DIV
-let currAces = decideAces(); // The value of an Ace for the round
+let dealtCards = "";
+let cardsDrawn = false;
+let currentCard = 0;
+let playerPoints = 100;
+let playerWager = 0;
+let hiLoChoice = "";
+let correctGuesses = 0;
+const changeMsg = document.getElementById("game-messages");
+let acesValue = decideAces();
 
 /**
  * Decide whether Aces are high or low
@@ -98,7 +97,7 @@ let currAces = decideAces(); // The value of an Ace for the round
 function decideAces() {
   let acesBool = Math.random() < 0.5;
   let acesResult = acesBool ? "HIGH" : "LOW";
-  amendCardsObject(acesResult); // Pass result to amendCardArray
+  amendCardsObject(acesResult);
   return acesResult;
 }
 
@@ -106,8 +105,8 @@ function decideAces() {
  * Update all Aces in the card array
  * to match the current round 's Ace value
  */
-function amendCardsObject(acesValue) {
-  if (acesValue === "HIGH") {
+function amendCardsObject(result) {
+  if (result === "HIGH") {
     cardsObject["cardAC"] = 14;
     cardsObject["cardAD"] = 14;
     cardsObject["cardAH"] = 14;
@@ -125,16 +124,16 @@ function amendCardsObject(acesValue) {
  */
 function createModal() {
   document.body.insertAdjacentHTML("beforeend", modalTemplate);
-  bsModal = document.getElementById("bootstrap-modal"); // Re-select the modal after insertion
+  messageModal = document.getElementById("bootstrap-modal");
 }
 
 /**
  * Display Bootstrap modal
  */
 function displayModal() {
-  if (bsModal) {
-    bsModal.style.display = "block";
-    bsModal.classList.add("show");
+  if (messageModal) {
+    messageModal.style.display = "block";
+    messageModal.classList.add("show");
   } else {
     console.error("Modal element not found");
   }
@@ -144,9 +143,9 @@ function displayModal() {
  * Hide Bootstrap modal
  */
 function hideModal() {
-  if (bsModal) {
-    bsModal.style.display = "none";
-    bsModal.classList.add("hide");
+  if (messageModal) {
+    messageModal.style.display = "none";
+    messageModal.classList.add("hide");
   } else {
     console.error("Modal element not found");
   }
@@ -162,9 +161,9 @@ async function shuffleCards() {
   );
   const cardDeck = await shuffleReply.json();
   if (shuffleReply.ok) {
-    console.log(cardDeck); // Console log the shuffled deck
+    console.log(cardDeck);
     playerPoints = 100;
-    deckUrl = cardDeck.deck_id; // Save the deck_id for use in completing the fetch URL
+    deckUrl = cardDeck.deck_id;
     drawCards();
   } else {
     console.error("Error:", shuffleReply.statusText);
@@ -178,21 +177,22 @@ async function shuffleCards() {
  */
 async function drawCards() {
   const drawReply = await fetch(
-    `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5` // URL dynamically updated based on previously shuffled deck_id value
+    `https://www.deckofcardsapi.com/api/deck/${deckUrl}/draw/?count=5`
   );
   if (cardsDrawn) {
     return;
   } // Additional check to ensure that the drawCards function is not called multiple times
-  cardsDrawn = true; // Set cardsDrawn to true when deck drawn
+  cardsDrawn = true;
   dealtCards = await drawReply.json();
   if (drawReply.ok) {
-    console.log(dealtCards); // Console log the drawn cards
+    console.log(dealtCards);
     initialView();
-    cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`; // Display the player's card
-    currentCard = 0; // Reset currentCard count before new round
-    correctGuesses = 0; // Reset correctGuesses count before new round
-    playerWager = 0; // Reset playerWager amount before new round
-    currentCard++; // Increment currentCard to specify the index of the next card in dealtCards
+    cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`;
+    // Reset values before round
+    currentCard = 0;
+    correctGuesses = 0;
+    playerWager = 0;
+    currentCard++;
     getWager();
   } else {
     console.error("Error:", drawReply.statusText);
@@ -214,30 +214,24 @@ function initialView() {
  * Get player 's current wager
  */
 function getWager() {
-  wagerInfo(); // Display wager instructions and wager buttons
-  // DOM reference to wager DIV
+  wagerInfo();
   const totalWager = document.getElementById("wager");
-  // Increase playerWager by 1 when clicked
   const WagerOne = document.getElementById("wager-one");
   WagerOne.addEventListener("click", function () {
     setPlayerWager(1);
   });
-  // Increase playerWager by 5 when clicked
   const WagerFive = document.getElementById("wager-five");
   WagerFive.addEventListener("click", function () {
     setPlayerWager(5);
   });
-  // Increase playerWager by 10 when clicked
   const WagerTen = document.getElementById("wager-ten");
   WagerTen.addEventListener("click", function () {
     setPlayerWager(10);
   });
-  // Increase playerWager by 50 when clicked
   const WagerFifty = document.getElementById("wager-fifty");
   WagerFifty.addEventListener("click", function () {
     setPlayerWager(50);
   });
-  // Increase playerWager by 100 when clicked
   const WagerHundred = document.getElementById("wager-hundred");
   WagerHundred.addEventListener("click", function () {
     setPlayerWager(100);
@@ -304,16 +298,16 @@ function wagerInfo() {
  */
 function playerChoice() {
   guessInfo();
-  const highBtn = document.getElementById("higher"); // DOM reference to Higher button
-  const lowBtn = document.getElementById("lower"); // DOM reference to Lower button
+  const highBtn = document.getElementById("higher");
+  const lowBtn = document.getElementById("lower");
   highBtn.addEventListener("click", function () {
-    cardChoice = "Higher";
+    hiLoChoice = "Higher";
     flipCard(currentCard);
-  }); // Set card choice to Higher and move to next stage
+  });
   lowBtn.addEventListener("click", function () {
-    cardChoice = "Lower";
+    hiLoChoice = "Lower";
     flipCard(currentCard);
-  }); // Set card choice to Lower and move to next stage
+  });
 }
 
 /**
@@ -324,7 +318,7 @@ function guessInfo() {
   <div>
   <p>You currently have ${playerPoints} points</p>
   <p>Your wager for this round is ${playerWager}</p>
-  <p>For this round, Aces are ${currAces}</p>
+  <p>For this round, Aces are ${acesValue}</p>
   <p>Is the next card HIGHER or LOWER than your card?</p>
   <button type="button" id="higher">Higher</button>
   <button type="button" id="lower">Lower</button>
@@ -339,10 +333,10 @@ function guessInfo() {
 function flipCard(cardIndex) {
   cards[cardIndex].innerHTML = `
     <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The next game card">
-    `; // Flip the next card
-  calculateOutcome(); // Calculate if the player was correct
-  currentCard++; // Increase currentCard number
-  playerChoice(); // Choose whether the next card is higher or lower;
+    `;
+  calculateOutcome();
+  currentCard++;
+  playerChoice();
 }
 
 /**
@@ -352,7 +346,7 @@ function flipCard(cardIndex) {
 function calculateOutcome() {
   let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
   let currCard = cardsObject["card" + dealtCards.cards[currentCard].code];
-  if (currCard > prevCard && cardChoice === "Higher") {
+  if (currCard > prevCard && hiLoChoice === "Higher") {
     correctGuesses += 1;
     console.log("The card is higher in value.");
     console.log(correctGuesses);
@@ -362,7 +356,7 @@ function calculateOutcome() {
     } else {
       return;
     }
-  } else if (currCard < prevCard && cardChoice === "Lower") {
+  } else if (currCard < prevCard && hiLoChoice === "Lower") {
     correctGuesses += 1;
     console.log("The card is lower in value.");
     console.log(correctGuesses);
@@ -457,7 +451,6 @@ function gameOver() {
   bsBtn2.remove();
   bsTitle.innerText = "GAME OVER 😭";
   bsText.innerText = "You scored " + playerPoints + " points";
-  // INSERT CODE TO DISPLAY HIGH SCORE
   displayModal();
 }
 

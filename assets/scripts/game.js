@@ -443,10 +443,10 @@ function newDeck() {
 function gameOver() {
   hideModal();
   createModal();
-  let bsTitle = document.getElementById("modal-title");
-  let bsText = document.getElementById("modal-text");
-  let bsBtn1 = document.getElementById("modal-btn-1");
-  let bsBtn2 = document.getElementById("modal-btn-2");
+  bsTitle = document.getElementById("modal-title");
+  bsText = document.getElementById("modal-text");
+  bsBtn1 = document.getElementById("modal-btn-1");
+  bsBtn2 = document.getElementById("modal-btn-2");
   bsBtn1.remove();
   bsBtn2.remove();
   bsTitle.innerText = "GAME OVER 😭";
@@ -459,10 +459,10 @@ function gameOver() {
  */
 function endGame() {
   createModal();
-  let bsTitle = document.getElementById("modal-title");
-  let bsText = document.getElementById("modal-text");
-  let bsBtn1 = document.getElementById("modal-btn-1");
-  let bsBtn2 = document.getElementById("modal-btn-2");
+  bsTitle = document.getElementById("modal-title");
+  bsText = document.getElementById("modal-text");
+  bsBtn1 = document.getElementById("modal-btn-1");
+  bsBtn2 = document.getElementById("modal-btn-2");
   bsTitle.innerText = "BAD LUCK";
   bsText.innerText = "You have used all of your points / cards. Play again?";
   bsBtn1.innerText = "Yes";
@@ -471,5 +471,35 @@ function endGame() {
   bsBtn2.addEventListener("click", gameOver);
   displayModal();
 }
+
+/**
+ * Leave the game
+ */
+const linkIDs = ["home-page-link", "faq-page-link"];
+linkIDs.forEach(id => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.addEventListener("click", function (event) {
+      event.preventDefault();
+      createModal();
+      bsTitle = document.getElementById("modal-title");
+      bsText = document.getElementById("modal-text");
+      bsBtn1 = document.getElementById("modal-btn-1");
+      bsBtn2 = document.getElementById("modal-btn-2");
+      bsTitle.innerText = "LEAVE THE GAME";
+      bsText.innerText = "Are you sure you want to abandon the game?";
+      bsBtn1.innerText = "Yes";
+      bsBtn2.innerText = "No";
+      bsBtn1.addEventListener("click", function () {
+        window.location.href = "index.html";
+      });
+      bsBtn2.addEventListener("click", function () {
+        hideModal();
+      });
+      displayModal();
+    })
+  }
+})
+
 
 shuffleCards();

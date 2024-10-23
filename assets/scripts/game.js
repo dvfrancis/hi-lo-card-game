@@ -237,6 +237,7 @@ function getWager() {
   <div><button type="submit" id="wager-submit">Submit</button>
   </div>`;
   totalWager = document.getElementById("wager");
+  totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
   const WagerOne = document.getElementById("wager-one");
   WagerOne.addEventListener("click", function () {
     setPlayerWager(1);

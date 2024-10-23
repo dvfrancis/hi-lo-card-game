@@ -77,7 +77,8 @@ let modalTemplate = `
     </div>
   </div>
 </div>`;
-const messageModal = document.getElementById("bootstrap-modal");
+
+let messageModal = document.getElementById("bootstrap-modal");
 let cardArea = document.getElementById("cards");
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards = "";
@@ -85,6 +86,19 @@ let cardsDrawn = false;
 let currentCard = 0;
 let playerPoints = 100;
 let playerWager = 0;
+let wagerInfo = `<div>
+  <p>You currently have ${playerPoints} points</p>
+  <p>What is your wager this round? (min = 1 point, max = total points)</p>
+  <div id="wager"></div>
+  <button type="button" id="wager-one">+1</button>
+  <button type="button" id="wager-five">+5</button>
+  <button type="button" id="wager-ten">+10</button>
+  <button type="button" id="wager-fifty">+50</button>
+  <button type="button" id="wager-hundred">+100</button>
+  <div><button type="submit" id="wager-submit">Submit</button>
+  <button type="reset" id="wager-reset">Reset</button></div>
+  </div>`;
+let totalWager = document.getElementById("wager");
 let hiLoChoice = "";
 let correctGuesses = 0;
 const changeMsg = document.getElementById("game-messages");
@@ -214,8 +228,8 @@ function initialView() {
  * Get player 's current wager
  */
 function getWager() {
-  wagerInfo();
-  const totalWager = document.getElementById("wager");
+  changeMsg.innerHTML = wagerInfo;
+  totalWager = document.getElementById("wager");
   const WagerOne = document.getElementById("wager-one");
   WagerOne.addEventListener("click", function () {
     setPlayerWager(1);
@@ -236,22 +250,6 @@ function getWager() {
   WagerHundred.addEventListener("click", function () {
     setPlayerWager(100);
   });
-  /**
-   * Calculate wager ensuring it is
-   * not zero or exceeds available points
-   */
-  function setPlayerWager(num) {
-    if (playerWager + num > playerPoints) {
-      totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
-      playerWager = 0;
-      setTimeout(() => {
-        totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
-      }, 1500);
-    } else {
-      playerWager += num;
-      totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
-    }
-  }
   // Reset wager to zero when clicked
   totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
   const wagerReset = document.getElementById("wager-reset");
@@ -274,23 +272,21 @@ function getWager() {
 }
 
 /**
- * Display wager information
+ * Calculate wager ensuring it is
+ * not zero or exceeds available points
  */
-function wagerInfo() {
-  changeMsg.innerHTML = `
-  <div>
-  <p>You currently have ${playerPoints} points</p>
-  <p>What is your wager this round? (min = 1 point, max = total points)</p>
-  <div id="wager"></div>
-  <button type="button" id="wager-one">+1</button>
-  <button type="button" id="wager-five">+5</button>
-  <button type="button" id="wager-ten">+10</button>
-  <button type="button" id="wager-fifty">+50</button>
-  <button type="button" id="wager-hundred">+100</button>
-  <div><button type="submit" id="wager-submit">Submit</button>
-  <button type="reset" id="wager-reset">Reset</button></div>
-  </div>
-  `;
+function setPlayerWager(num) {
+  totalWager = document.getElementById("wager");
+  if (playerWager + num > playerPoints) {
+    totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
+    playerWager = 0;
+    setTimeout(() => {
+      totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
+    }, 1500);
+  } else {
+    playerWager += num;
+    totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
+  }
 }
 
 /**
@@ -298,8 +294,8 @@ function wagerInfo() {
  */
 function playerChoice() {
   guessInfo();
-  const highBtn = document.getElementById("higher");
-  const lowBtn = document.getElementById("lower");
+  const highBtn = document.getElementById("higher-button");
+  const lowBtn = document.getElementById("lower-button");
   highBtn.addEventListener("click", function () {
     hiLoChoice = "Higher";
     flipCard(currentCard);
@@ -320,8 +316,8 @@ function guessInfo() {
   <p>Your wager for this round is ${playerWager}</p>
   <p>For this round, Aces are ${acesValue}</p>
   <p>Is the next card HIGHER or LOWER than your card?</p>
-  <button type="button" id="higher">Higher</button>
-  <button type="button" id="lower">Lower</button>
+  <button type="button" id="higher-button">Higher</button>
+  <button type="button" id="lower-button">Lower</button>
   </div>
   `;
 }

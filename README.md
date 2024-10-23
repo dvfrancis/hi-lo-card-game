@@ -389,6 +389,12 @@ The following references were used for general advice and help in implementing s
 - [How To Change the Color of the Bootstrap 5 Mobile Menu Icon](https://www.youtube.com/watch?v=45QSuJaHEss) - altering the colour of the hamburger menu on mobile devices.
 - [How to use srcset and sizes for responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images) - making the website's image carousels more responsive.
 - [The Only Markdown Cheatsheet You Need](https://github.com/im-luka/markdown-cheatsheet) - creating the README.md and TESTING.md documentation.
+- [Modal](https://getbootstrap.com/docs/5.0/components/modal/) - Bootstrap modal component document.
+- [Bootstrap 5 Modal](https://www.w3schools.com/bootstrap5/bootstrap_modal.php) - used to create pop-up modal dialogs 
+- [Element: insertAdjacentHTML() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) - used for adding modal dialogs to pages.
+- [HTML DOM Element remove()](https://www.w3schools.com/jsref/met_element_remove.asp) - used for removing modal dialogs from pages
+- [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) - used to test calls to the API.
+- [Julia Konovalova's example of Try / Catch](https://github.com/IuliiaKonovalova/flash_cards/blob/main/assets/js/grammar_quiz.js).
 
 ## Technologies Used
 
@@ -396,9 +402,11 @@ The following references were used for general advice and help in implementing s
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
 - [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
 - [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/) to reduce browser inconsistencies.
+- [Deck of Cards - An API](https://www.deckofcardsapi.com/) - the deck of crds API website.
 - The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
 - The [GoFullPage](https://gofullpage.com/) extension was used in all browsers (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
 - [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) was used for website testing.
+- [Microsoft CoPilot](https://copilot.microsoft.com/) - used for general coding advice.
 - [Firefox](https://www.mozilla.org/en-GB/firefox/new/) was used for website testing.
 - [Opera](https://www.opera.com/) was used for website testing.
 - [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).

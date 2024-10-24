@@ -223,44 +223,24 @@ function initialView() {
 }
 
 /**
- * Get player's current wager
+ * Get player's wager for the current round
  */
 function getWager() {
   changeMsg.innerHTML = `<div>
-  <p>You currently have ${playerPoints} points</p>
-  <p>What is your wager this round? (min = 1 point, max = total points)</p>
-  <div id="wager"></div>
-  <button type="button" id="wager-one">+1</button>
-  <button type="button" id="wager-five">+5</button>
-  <button type="button" id="wager-ten">+10</button>
-  <button type="button" id="wager-fifty">+50</button>
-  <button type="button" id="wager-hundred">+100</button>
-  <button type="submit" id="wager-submit">Submit</button>`;
+    <p>You currently have ${playerPoints} points</p>
+    <p>What is your wager this round? (min = 1 point, max = total points)</p>
+    <input type="number" id="wager-amount" min="1" max="${playerPoints}" required>
+    <button id="wager-submit">Submit</button>
+    <div id="wager"></div>
+  </div>`;
+
   totalWager = document.getElementById("wager");
   totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
-  const WagerOne = document.getElementById("wager-one");
-  WagerOne.addEventListener("click", function () {
-    setPlayerWager(1);
-  });
-  const WagerFive = document.getElementById("wager-five");
-  WagerFive.addEventListener("click", function () {
-    setPlayerWager(5);
-  });
-  const WagerTen = document.getElementById("wager-ten");
-  WagerTen.addEventListener("click", function () {
-    setPlayerWager(10);
-  });
-  const WagerFifty = document.getElementById("wager-fifty");
-  WagerFifty.addEventListener("click", function () {
-    setPlayerWager(50);
-  });
-  const WagerHundred = document.getElementById("wager-hundred");
-  WagerHundred.addEventListener("click", function () {
-    setPlayerWager(100);
-  });
-  // Submit wager as long as it is not zero or exceeds available points, then move to next stage
+
   const wagerSubmit = document.getElementById("wager-submit");
   wagerSubmit.addEventListener("click", function () {
+    const wagerAmount = +document.getElementById("wager-amount").value;
+    setPlayerWager(wagerAmount);
     if (playerWager === 0 || playerWager > playerPoints) {
       totalWager.innerHTML = `<p>Your wager is not valid - please try again.</p>`;
       setTimeout(() => {
@@ -278,14 +258,14 @@ function getWager() {
  */
 function setPlayerWager(num) {
   totalWager = document.getElementById("wager");
-  if (playerWager + num > playerPoints) {
-    totalWager.innerHTML = `<p>Your wager cannot exceed your total points. Please try again.</p>`;
+  if (num > playerPoints || num < 1) {
+    totalWager.innerHTML = `<p>Your wager cannot exceed your total points or be less than 1. Please try again.</p>`;
     playerWager = 0;
     setTimeout(() => {
       totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
     }, 1500);
   } else {
-    playerWager += num;
+    playerWager = num;
     totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
   }
 }

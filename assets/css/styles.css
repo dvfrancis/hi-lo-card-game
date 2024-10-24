@@ -244,3 +244,7 @@ p {
 label {
   color: #FFF;
 }
+
+input {
+  text-align: center;
+}

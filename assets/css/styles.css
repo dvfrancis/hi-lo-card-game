@@ -249,3 +249,7 @@ label {
 input {
   text-align: center;
 }
+
+.row {
+  height: 100%
+}

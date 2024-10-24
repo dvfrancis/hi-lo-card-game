@@ -395,6 +395,7 @@ The following references were used for general advice and help in implementing s
 - [HTML DOM Element remove()](https://www.w3schools.com/jsref/met_element_remove.asp) - used for removing modal dialogs from pages
 - [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) - used to test calls to the API.
 - [Julia Konovalova's example of Try / Catch](https://github.com/IuliiaKonovalova/flash_cards/blob/main/assets/js/grammar_quiz.js).
+- [Extracting numbers from localStorage as numbers](https://stackoverflow.com/questions/40005108/extracting-numbers-from-localstorage-as-numbers) - how to convert localStorage values into numbers
 
 ## Technologies Used
 

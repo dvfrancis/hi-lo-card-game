@@ -137,6 +137,7 @@ p {
 
 #header {
   background-color: whitesmoke;
+  height: 50px;
   /* Remove before submission*/
 }
 
@@ -157,11 +158,11 @@ p {
 #cards {
   background-color: darkgreen;
   /* Remove before submission*/
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 #site-intro-section {
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 /* Playing card containers */

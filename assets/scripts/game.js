@@ -233,10 +233,8 @@ function getWager() {
     <button id="wager-submit">Submit</button>
     <div id="wager"></div>
   </div>`;
-
   totalWager = document.getElementById("wager");
   totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
-
   const wagerSubmit = document.getElementById("wager-submit");
   wagerSubmit.addEventListener("click", function () {
     const wagerAmount = +document.getElementById("wager-amount").value;
@@ -259,7 +257,8 @@ function getWager() {
 function setPlayerWager(num) {
   totalWager = document.getElementById("wager");
   if (num > playerPoints || num < 1) {
-    totalWager.innerHTML = `<p>Your wager cannot exceed your total points or be less than 1. Please try again.</p>`;
+    totalWager.innerHTML = `<p>Your wager cannot be less than one or exceed your total points. Please try again.</p>`;
+    document.getElementById("wager-amount").value = "";
     playerWager = 0;
     setTimeout(() => {
       totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;

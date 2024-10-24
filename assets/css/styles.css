@@ -136,28 +136,15 @@ p {
 }
 
 #header {
-  background-color: whitesmoke;
   height: 50px;
-  /* Remove before submission*/
 }
 
 #logo {
   background-color: aliceblue;
 }
 
-#game-info {
-  background-color: black;
-  /* Remove before submission*/
-}
-
-#game-messages p {
-  color: #fff;
-}
-
 /* Playing cards parent container */
 #cards {
-  background-color: darkgreen;
-  /* Remove before submission*/
   margin-top: 50px;
 }
 
@@ -184,38 +171,16 @@ img#card-4 {
   width: 100%;
 }
 
-#faq-info {
-  background-color: darksalmon;
-  /* Remove before submission*/
-}
-
 .accordion {
   margin-top: 50px;
 }
 
 #error-message {
-  background-color: goldenrod;
-  /* Remove before submission*/
-  margin-top: 30px;
-}
-
-#error-image {
-  background-color: hotpink;
-  /* Remove before submission*/
+  margin-top: 50px;
 }
 
 #error-image img {
   width: 100%;
-}
-
-#error-links {
-  background-color: mediumspringgreen;
-  /* Remove before submission*/
-}
-
-#footer {
-  background-color: whitesmoke;
-  /* Remove before submission*/
 }
 
 a.fa-brands,
@@ -240,10 +205,6 @@ p {
 /* Add padding back to nav link */
 #nav {
   padding-right: 15px !important;
-}
-
-label {
-  color: #FFF;
 }
 
 input {

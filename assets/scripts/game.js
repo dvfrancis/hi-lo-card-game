@@ -228,7 +228,7 @@ function initialView() {
 function getWager() {
   changeMsg.innerHTML = `<div>
     <p>You currently have ${playerPoints} points</p>
-    <p>What is your wager this round? (min = 1 point, max = total points)</p>
+    <label for="wager-amount">What is your wager for this round?</label>
     <input type="number" id="wager-amount" min="1" max="${playerPoints}" required>
     <button id="wager-submit">Submit</button>
     <div id="wager"></div>

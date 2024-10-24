@@ -94,6 +94,7 @@ let hiLoChoice = "";
 let correctGuesses = 0;
 let gameEnded = false;
 let gameStatus = "";
+let linkElement = "";
 const changeMsg = document.getElementById("game-messages");
 let acesValue = decideAces();
 
@@ -376,13 +377,6 @@ function continueGame(status) {
 }
 
 /**
- * Leave game.html and return to index.html
- */
-function leaveGame() {
-  window.location.href = "index.html";
-}
-
-/**
  * Start a new round
  */
 function newDeck() {
@@ -498,9 +492,9 @@ function noPoints() {
  */
 const linkIds = ["home-page-link", "faq-page-link"];
 linkIds.forEach(id => {
-  const element = document.getElementById(id);
-  if (element) {
-    element.addEventListener("click", function (event) {
+  const linkElement = document.getElementById(id);
+  if (linkElement) {
+    linkElement.addEventListener("click", function (event) {
       event.preventDefault();
       createModal();
       bsTitle = document.getElementById("modal-title");
@@ -511,13 +505,23 @@ linkIds.forEach(id => {
       bsText.innerText = "Are you sure you want to abandon the game?";
       bsBtn1.innerText = "Yes";
       bsBtn2.innerText = "No";
-      bsBtn1.addEventListener("click", leaveGame);
+      bsBtn1.addEventListener("click", function () {
+        leaveGame(linkElement.href);
+      });
       bsBtn2.addEventListener("click", function () {
         deleteModal();
       });
       displayModal();
-    })
+    });
   }
-})
+});
+
+/**
+ * Leave game.html and return to the specified URL
+ */
+
+function leaveGame(url) {
+  window.location.href = url || "index.html";
+}
 
 shuffleCards();

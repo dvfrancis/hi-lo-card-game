@@ -240,3 +240,7 @@ p {
 #nav {
   padding-right: 15px !important;
 }
+
+label {
+  color: #FFF;
+}

@@ -83,6 +83,7 @@ let dealtCards = "";
 let cardsDrawn = false;
 let currentCard = 0;
 let playerPoints = 100;
+let highScore = 0;
 let playerWager = 0;
 let bsTitle = document.getElementById("modal-title");
 let bsText = document.getElementById("modal-text");
@@ -386,7 +387,7 @@ function continueGame(status) {
     bsBtn2 = document.getElementById("modal-btn-2");
     const statusIndex = modalStatus.indexOf(status);
     bsTitle.innerText = modalTitles[statusIndex];
-    bsText.innerText = "Play another round?";
+    bsText.innerText = "Continue to the next round?";
     bsBtn1.innerText = modalBtns[0];
     bsBtn2.innerText = modalBtns[1];
     bsBtn1.addEventListener("click", newDeck);
@@ -426,6 +427,13 @@ function newDeck() {
  */
 function gameOver() {
   if (dealtCards.remaining < 3) {
+    let storedScore = localStorage.getItem("high-score");
+    highScore = storedScore ? +storedScore : 0;
+    console.log("Current High Score:", highScore);
+    if (playerPoints > highScore) {
+      localStorage.setItem("high-score", playerPoints);
+      highScore = playerPoints;
+    }
     gameEnded = true;
     deleteModal();
     createModal();
@@ -435,8 +443,8 @@ function gameOver() {
     bsBtn2 = document.getElementById("modal-btn-2");
     bsBtn1.innerText = "Yes";
     bsBtn2.innerText = "No";
-    bsTitle.innerText = "CONGRATULATIONS!";
-    bsText.innerText = "You have finished the game with " + playerPoints + " points. Play again?";
+    bsTitle.innerText = "CONGRATULATIONS - YOU FINISHED THE GAME!";
+    bsText.innerHTML = `<p>Your score was ${playerPoints} points</p><p>Your highest score so far has been ${highScore} points</p><p>Play again?</p>`;
     bsBtn1.addEventListener("click", function () {
       deleteModal();
       shuffleCards();
@@ -476,7 +484,7 @@ function finalRound() {
   bsTitle.innerText = "LAST ROUND";
   bsText.innerText = "This is your final round of cards from this deck";
   bsBtn1.innerText = "OK";
-  bsBtn2.innerText = "Cancel";
+  bsBtn2.innerText = "Exit";
   bsBtn1.addEventListener("click", function () {
     deleteModal();
     drawCards();

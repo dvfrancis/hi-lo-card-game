@@ -130,6 +130,17 @@ table {
   border-spacing: 0;
 }
 
+/* Remove default Paragraph padding */
+p {
+  margin-bottom: 0 !important;
+}
+
+/* Remove default Bootstrap padding */
+.row>* {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 /* Website CSS */
 p {
   color: #000;
@@ -143,33 +154,11 @@ p {
   background-color: aliceblue;
 }
 
-/* Playing cards parent container */
-#cards {
-  margin-top: 50px;
-}
-
 #site-intro-section {
   margin-top: 50px;
 }
 
-/* Playing card containers */
-#player-card,
-#card-1,
-#card-2,
-#card-3,
-#card-4 {
-  height: 200px;
-  width: 150px;
-}
-
 /* Playing card image size */
-img#player-card,
-img#card-1,
-img#card-2,
-img#card-3,
-img#card-4 {
-  width: 100%;
-}
 
 .accordion {
   margin-top: 50px;
@@ -191,17 +180,6 @@ a {
   text-decoration: none;
 }
 
-/* Remove default Paragraph padding */
-p {
-  margin-bottom: 0 !important;
-}
-
-/* Remove default Bootstrap padding */
-.row>* {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
 /* Add padding back to nav link */
 #nav {
   padding-right: 15px !important;
@@ -213,4 +191,41 @@ input {
 
 .row {
   height: 100%
+}
+
+#round-info {
+  height: 5rem;
+  width: 15rem;
+  border: 5px goldenrod solid;
+}
+
+#card-info {
+  height: 5rem;
+  width: 15rem;
+  border: 5px goldenrod solid;
+}
+
+#wager-info {
+  height: 5rem;
+  width: 15rem;
+  border: 5px goldenrod solid;
+}
+
+#points-info {
+  height: 5rem;
+  width: 15rem;
+  border: 5px goldenrod solid;
+}
+
+#game-messages {
+  border: 5px goldenrod solid;
+}
+
+#player-card,
+#card-1,
+#card-2,
+#card-3,
+#card-4 {
+  height: 267px;
+  width: 192px;
 }

@@ -217,6 +217,12 @@ input {
   border: 5px goldenrod solid;
 }
 
+#aces-info-group {
+  height: 5rem;
+  width: 15rem;
+  border: 5px goldenrod solid;
+}
+
 #game-messages {
   border: 5px goldenrod solid;
 }

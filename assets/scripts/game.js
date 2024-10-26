@@ -81,22 +81,37 @@ let cardArea = document.getElementById("cards");
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards = "";
 let cardsDrawn = false;
-let currentCard = 0;
+let currentCardIndex = 0;
+let currentCardCount = 0;
+let totalCards = 0;
 let playerPoints = 100;
 let highScore = 0;
 let playerWager = 0;
+let errorMessage = "";
 let bsTitle = document.getElementById("modal-title");
 let bsText = document.getElementById("modal-text");
 let bsBtn1 = document.getElementById("modal-btn-1");
 let bsBtn2 = document.getElementById("modal-btn-2");
-let totalWager = document.getElementById("wager");
+const wagerInfo = document.getElementById("wager");
+const pointsInfo = document.getElementById("points-info");
+const cardInfo = document.getElementById("card-info");
+const roundInfo = document.getElementById("round-info");
+const acesInfo = document.getElementById("aces-info");
+const changeMsg = document.getElementById("game-messages");
+let acesValue = "";
+let roundCount = 0;
 let hiLoChoice = "";
 let correctGuesses = 0;
 let gameEnded = false;
 let gameStatus = "";
 let linkElement = "";
-const changeMsg = document.getElementById("game-messages");
-let acesValue = decideAces();
+
+/**
+ * Display player's points
+ */
+function displayPoints() {
+  pointsInfo.innerHTML = `${playerPoints}`;
+}
 
 /**
  * Decide whether Aces are high or low
@@ -106,7 +121,7 @@ function decideAces() {
   let acesBool = Math.random() < 0.5;
   let acesResult = acesBool ? "HIGH" : "LOW";
   amendCardsObject(acesResult);
-  return acesResult;
+  acesValue = acesResult;
 }
 
 /**
@@ -125,6 +140,13 @@ function amendCardsObject(result) {
     cardsObject["cardAH"] = 1;
     cardsObject["cardAS"] = 1;
   }
+}
+
+/**
+ * Display whether Aces High or Low
+ */
+function displayAces() {
+  acesInfo.innerHTML = `${acesValue}`;
 }
 
 /**
@@ -173,6 +195,10 @@ async function shuffleCards() {
     const cardDeck = await shuffleReply.json();
     console.log(cardDeck); // Remove before project submission
     playerPoints = 100;
+    totalCards = 0;
+    currentCardCount = 0;
+    roundCount = 0;
+    displayPoints();
     deckUrl = cardDeck.deck_id;
     drawCards();
   } catch (error) {
@@ -200,16 +226,30 @@ async function drawCards() {
     dealtCards = await drawReply.json();
     console.log(dealtCards); // Remove before project submission
     initialView();
+    displayWager();
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`;
     // Reset values before round
-    currentCard = 0;
+    currentCardIndex = 0;
     correctGuesses = 0;
     playerWager = 0;
-    currentCard++;
+    roundCount++;
+    currentCardIndex++;
+    totalCards++;
+    currentCardCount += 5;
+    decideAces();
+    displayAces();
+    displayRound();
     getWager();
   } catch (error) {
     console.error('Fetch error:', error);
   }
+}
+
+/**
+ * Display current round
+ */
+function displayRound() {
+  roundInfo.innerHTML = `${roundCount}`;
 }
 
 /**
@@ -228,80 +268,85 @@ function initialView() {
  */
 function getWager() {
   changeMsg.innerHTML = `<div>
-    <p>You currently have ${playerPoints} points</p>
     <label for="wager-amount">What is your wager for this round?</label>
     <input type="number" id="wager-amount" min="1" max="${playerPoints}" required>
     <button id="wager-submit" aria-label="Submit Wager">Submit</button>
-    <div id="wager"></div>
+    <span id="error-message"></span>
   </div>`;
-  totalWager = document.getElementById("wager");
-  totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
+  displayCard();
+  displayWager();
   const wagerSubmit = document.getElementById("wager-submit");
-  wagerSubmit.addEventListener("click", function () {
-    const wagerAmount = +document.getElementById("wager-amount").value;
-    setPlayerWager(wagerAmount);
-    if (playerWager === 0 || playerWager > playerPoints) {
-      totalWager.innerHTML = `<p>Your wager is not valid - please try again.</p>`;
-      setTimeout(() => {
-        totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
-      }, 1500);
-    } else {
-      playerChoice();
-    }
-  });
+  document.getElementById("wager-amount").focus();
+  wagerSubmit.removeEventListener("click", handleWagerSubmit);
+  wagerSubmit.addEventListener("click", handleWagerSubmit);
 }
 
 /**
- * Calculate wager ensuring it is
- * not zero or exceeds available points
+ * Handle Wager Submissions
  */
-function setPlayerWager(num) {
-  totalWager = document.getElementById("wager");
-  if (num > playerPoints || num < 1) {
-    totalWager.innerHTML = `<p>Your wager cannot be less than one or exceed your total points. Please try again.</p>`;
+
+function handleWagerSubmit() {
+  const wagerAmount = +document.getElementById("wager-amount").value;
+  errorMessage = document.getElementById("error-message");
+  if (isNaN(wagerAmount) || wagerAmount > playerPoints || wagerAmount < 1) {
+    errorMessage.innerHTML = `<p>Your wager must be a number between 1 and ${playerPoints}. Please try again.</p>`;
     document.getElementById("wager-amount").value = "";
     playerWager = 0;
-    setTimeout(() => {
-      totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
-    }, 1500);
+    displayCard();
+    displayWager();
   } else {
-    playerWager = num;
-    totalWager.innerHTML = `<p>Wager is ${playerWager}</p>`;
+    playerWager = wagerAmount;
+    displayCard();
+    displayWager();
+    playerChoice();
   }
+}
+
+/**
+ * Display player's wager
+ */
+function displayWager() {
+  setTimeout(() => {
+    errorMessage.innerHTML = ``;
+  }, 2000);
+  wagerInfo.innerHTML = `${playerWager}`;
 }
 
 /**
  * Get higher or lower choice from the player
  */
 function playerChoice() {
-  guessInfo();
+  changeMsg.innerHTML = `
+  <div>
+  <p>Is the next card HIGHER or LOWER than your card?</p>
+  <button type="button" id="higher-button">Higher</button>
+  <button type="button" id="lower-button">Lower</button>
+  </div>
+  `;
   const highBtn = document.getElementById("higher-button");
   const lowBtn = document.getElementById("lower-button");
   highBtn.addEventListener("click", function () {
     hiLoChoice = "Higher";
-    flipCard(currentCard);
+    flipCard(currentCardIndex);
   });
   lowBtn.addEventListener("click", function () {
     hiLoChoice = "Lower";
-    flipCard(currentCard);
+    flipCard(currentCardIndex);
   });
 }
 
 /**
  * Display card guess information
  */
-function guessInfo() {
-  changeMsg.innerHTML = `
-  <div>
-  <p>You currently have ${playerPoints} points</p>
-  <p>Your wager for this round is ${playerWager}</p>
-  <p>For this round, Aces are ${acesValue}</p>
-  <p>Is the next card HIGHER or LOWER than your card?</p>
-  <button type="button" id="higher-button">Higher</button>
-  <button type="button" id="lower-button">Lower</button>
-  </div>
-  `;
-}
+// function guessInfo() {
+//   changeMsg.innerHTML = `
+//   <div>
+//   <p>Is the next card HIGHER or LOWER than your card?</p>
+//   <button type="button" id="higher-button">Higher</button>
+//   <button type="button" id="lower-button">Lower</button>
+//   </div>
+//   `;
+// }
 
 /**
  * Sequentially reveal all cards
@@ -309,11 +354,20 @@ function guessInfo() {
  */
 function flipCard(cardIndex) {
   cards[cardIndex].innerHTML = `
-    <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The next game card">
+    <img id="card-${currentCardIndex}" src="${dealtCards.cards[cardIndex].images.png}" alt="The next game card">
     `;
   calculateOutcome();
-  currentCard++;
+  currentCardIndex++;
+  totalCards += 1;
+  displayCard();
   playerChoice();
+}
+
+/**
+ * Display current card's position in the pack
+ */
+function displayCard() {
+  cardInfo.innerHTML = `${totalCards}`;
 }
 
 /**
@@ -321,12 +375,13 @@ function flipCard(cardIndex) {
  * were correct or incorrect
  */
 function calculateOutcome() {
-  let prevCard = cardsObject["card" + dealtCards.cards[currentCard - 1].code];
-  let currCard = cardsObject["card" + dealtCards.cards[currentCard].code];
+  let prevCard = cardsObject["card" + dealtCards.cards[currentCardIndex - 1].code];
+  let currCard = cardsObject["card" + dealtCards.cards[currentCardIndex].code];
   if (currCard > prevCard && hiLoChoice === "Higher") {
     correctGuesses += 1;
     if (correctGuesses === 4) {
       playerPoints += playerWager;
+      displayPoints();
       gameStatus = "win";
       continueGame(gameStatus);
     } else {
@@ -336,16 +391,20 @@ function calculateOutcome() {
     correctGuesses += 1;
     if (correctGuesses === 4) {
       playerPoints += playerWager;
+      displayPoints();
       gameStatus = "win";
       continueGame(gameStatus);
     } else {
       playerChoice();
     }
   } else if (currCard === prevCard) {
+    totalCards += (currentCardCount - totalCards) - 1;
     gameStatus = "draw"
     continueGame(gameStatus);
   } else {
+    totalCards += (currentCardCount - totalCards) - 1;
     playerPoints -= playerWager;
+    displayPoints();
     gameStatus = "lose"
     continueGame(gameStatus);
   }
@@ -402,7 +461,6 @@ function gameOver() {
   if (dealtCards.remaining < 3) {
     let storedScore = localStorage.getItem("high-score");
     highScore = storedScore ? +storedScore : 0;
-    console.log("Current High Score:", highScore);
     if (playerPoints > highScore) {
       localStorage.setItem("high-score", playerPoints);
       highScore = playerPoints;

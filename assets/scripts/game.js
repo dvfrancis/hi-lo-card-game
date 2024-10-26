@@ -430,7 +430,9 @@ function continueGame(status) {
     bsBtn1.innerText = modalBtns[0];
     bsBtn2.innerText = modalBtns[1];
     bsBtn1.addEventListener("click", newDeck);
-    bsBtn2.addEventListener("click", gameOver);
+    bsBtn2.addEventListener("click", function () {
+      leaveGame("index.html")
+    });
     displayModal();
   }
 }
@@ -480,7 +482,9 @@ function gameOver() {
       deleteModal();
       shuffleCards();
     });
-    bsBtn2.addEventListener("click", leaveGame("index.html"));
+    bsBtn2.addEventListener("click", function () {
+      leaveGame("index.html")
+    });
     displayModal();
   } else {
     gameEnded = true;
@@ -498,7 +502,9 @@ function gameOver() {
       deleteModal();
       shuffleCards();
     });
-    bsBtn2.addEventListener("click", leaveGame("index.html"));
+    bsBtn2.addEventListener("click", function () {
+      leaveGame("index.html")
+    });
     displayModal();
   }
 }
@@ -520,7 +526,9 @@ function finalRound() {
     deleteModal();
     drawCards();
   });
-  bsBtn2.addEventListener("click", leaveGame("index.html"));
+  bsBtn2.addEventListener("click", function () {
+    leaveGame("index.html")
+  });
   displayModal();
 }
 
@@ -541,7 +549,9 @@ function noPoints() {
     deleteModal();
     shuffleCards();
   });
-  bsBtn2.addEventListener("click", leaveGame("index.html"));
+  bsBtn2.addEventListener("click", function () {
+    leaveGame("index.html")
+  });
   displayModal();
 }
 

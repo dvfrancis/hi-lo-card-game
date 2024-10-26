@@ -336,19 +336,6 @@ function playerChoice() {
 }
 
 /**
- * Display card guess information
- */
-// function guessInfo() {
-//   changeMsg.innerHTML = `
-//   <div>
-//   <p>Is the next card HIGHER or LOWER than your card?</p>
-//   <button type="button" id="higher-button">Higher</button>
-//   <button type="button" id="lower-button">Lower</button>
-//   </div>
-//   `;
-// }
-
-/**
  * Sequentially reveal all cards
  * in the dealtCards array
  */
@@ -431,7 +418,11 @@ function continueGame(status) {
     bsBtn2.innerText = modalBtns[1];
     bsBtn1.addEventListener("click", newDeck);
     bsBtn2.addEventListener("click", function () {
-      leaveGame("index.html")
+      displayScore();
+      setTimeout(() => {
+        leaveGame("index.html")
+      }, 3000);
+
     });
     displayModal();
   }
@@ -460,53 +451,49 @@ function newDeck() {
  * Display final points at the end of the game
  */
 function gameOver() {
-  if (dealtCards.remaining < 3) {
-    let storedScore = localStorage.getItem("high-score");
-    highScore = storedScore ? +storedScore : 0;
-    if (playerPoints > highScore) {
-      localStorage.setItem("high-score", playerPoints);
-      highScore = playerPoints;
-    }
-    gameEnded = true;
-    deleteModal();
-    createModal();
-    bsTitle = document.getElementById("modal-title");
-    bsText = document.getElementById("modal-text");
-    bsBtn1 = document.getElementById("modal-btn-1");
-    bsBtn2 = document.getElementById("modal-btn-2");
-    bsBtn1.innerText = "Yes";
-    bsBtn2.innerText = "No";
-    bsTitle.innerText = "CONGRATULATIONS - YOU FINISHED THE GAME!";
-    bsText.innerHTML = `<p>Your score was ${playerPoints} points</p><p>Your highest score so far has been ${highScore} points</p><p>Play again?</p>`;
-    bsBtn1.addEventListener("click", function () {
-      deleteModal();
-      shuffleCards();
-    });
-    bsBtn2.addEventListener("click", function () {
-      leaveGame("index.html")
-    });
-    displayModal();
-  } else {
-    gameEnded = true;
-    deleteModal();
-    createModal();
-    bsTitle = document.getElementById("modal-title");
-    bsText = document.getElementById("modal-text");
-    bsBtn1 = document.getElementById("modal-btn-1");
-    bsBtn2 = document.getElementById("modal-btn-2");
-    bsBtn1.innerText = "Yes";
-    bsBtn2.innerText = "No";
-    bsTitle.innerText = "GAME OVER";
-    bsText.innerText = "You scored " + playerPoints + " points. Do you wish to play again?";
-    bsBtn1.addEventListener("click", function () {
-      deleteModal();
-      shuffleCards();
-    });
-    bsBtn2.addEventListener("click", function () {
-      leaveGame("index.html")
-    });
-    displayModal();
+  let storedScore = localStorage.getItem("high-score");
+  highScore = storedScore ? +storedScore : 0;
+  if (playerPoints > highScore) {
+    localStorage.setItem("high-score", playerPoints);
+    highScore = playerPoints;
   }
+  gameEnded = true;
+  deleteModal();
+  createModal();
+  bsTitle = document.getElementById("modal-title");
+  bsText = document.getElementById("modal-text");
+  bsBtn1 = document.getElementById("modal-btn-1");
+  bsBtn2 = document.getElementById("modal-btn-2");
+  bsBtn1.innerText = "Yes";
+  bsBtn2.innerText = "No";
+  bsTitle.innerText = "CONGRATULATIONS - YOU FINISHED THE GAME!";
+  bsText.innerHTML = `<p>Your score was ${playerPoints} points</p><p>Your highest score so far has been ${highScore} points</p><p>Play again?</p>`;
+  bsBtn1.addEventListener("click", function () {
+    deleteModal();
+    shuffleCards();
+  });
+  bsBtn2.addEventListener("click", function () {
+    leaveGame("index.html")
+  });
+  displayModal();
+}
+
+/**
+ * Display player's most recent score
+ */
+function displayScore() {
+  gameEnded = true;
+  deleteModal();
+  createModal();
+  bsTitle = document.getElementById("modal-title");
+  bsText = document.getElementById("modal-text");
+  bsBtn1 = document.getElementById("modal-btn-1");
+  bsBtn2 = document.getElementById("modal-btn-2");
+  bsBtn1.remove();
+  bsBtn2.remove();
+  bsTitle.innerText = "THANKS FOR PLAYING";
+  bsText.innerText = "Your final score was " + playerPoints + " points";
+  displayModal();
 }
 
 /**
@@ -526,8 +513,11 @@ function finalRound() {
     deleteModal();
     drawCards();
   });
-  bsBtn2.addEventListener("click", function () {
-    leaveGame("index.html")
+  bsBtn1.addEventListener("click", function () {
+    displayScore();
+    setTimeout(() => {
+      leaveGame(linkElement.href);
+    }, 3000);
   });
   displayModal();
 }
@@ -549,8 +539,11 @@ function noPoints() {
     deleteModal();
     shuffleCards();
   });
-  bsBtn2.addEventListener("click", function () {
-    leaveGame("index.html")
+  bsBtn1.addEventListener("click", function () {
+    displayScore();
+    setTimeout(() => {
+      leaveGame(linkElement.href);
+    }, 3000);
   });
   displayModal();
 }
@@ -574,7 +567,10 @@ linkIds.forEach(id => {
       bsBtn1.innerText = "Yes";
       bsBtn2.innerText = "No";
       bsBtn1.addEventListener("click", function () {
-        leaveGame(linkElement.href);
+        displayScore();
+        setTimeout(() => {
+          leaveGame(linkElement.href);
+        }, 3000);
       });
       bsBtn2.addEventListener("click", function () {
         deleteModal();

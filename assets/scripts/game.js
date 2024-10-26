@@ -480,7 +480,7 @@ function gameOver() {
       deleteModal();
       shuffleCards();
     });
-    bsBtn2.addEventListener("click", leaveGame);
+    bsBtn2.addEventListener("click", leaveGame("index.html"));
     displayModal();
   } else {
     gameEnded = true;
@@ -498,7 +498,7 @@ function gameOver() {
       deleteModal();
       shuffleCards();
     });
-    bsBtn2.addEventListener("click", leaveGame);
+    bsBtn2.addEventListener("click", leaveGame("index.html"));
     displayModal();
   }
 }
@@ -520,7 +520,7 @@ function finalRound() {
     deleteModal();
     drawCards();
   });
-  bsBtn2.addEventListener("click", leaveGame);
+  bsBtn2.addEventListener("click", leaveGame("index.html"));
   displayModal();
 }
 
@@ -541,7 +541,7 @@ function noPoints() {
     deleteModal();
     shuffleCards();
   });
-  bsBtn2.addEventListener("click", leaveGame);
+  bsBtn2.addEventListener("click", leaveGame("index.html"));
   displayModal();
 }
 

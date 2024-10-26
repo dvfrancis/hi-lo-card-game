@@ -193,25 +193,25 @@ input {
   height: 100%
 }
 
-#round-info {
+#round-info-group {
   height: 5rem;
   width: 15rem;
   border: 5px goldenrod solid;
 }
 
-#card-info {
+#card-info-group {
   height: 5rem;
   width: 15rem;
   border: 5px goldenrod solid;
 }
 
-#wager-info {
+#wager-info-group {
   height: 5rem;
   width: 15rem;
   border: 5px goldenrod solid;
 }
 
-#points-info {
+#points-info-group {
   height: 5rem;
   width: 15rem;
   border: 5px goldenrod solid;

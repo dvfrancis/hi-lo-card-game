@@ -62,7 +62,7 @@ const cards = [
   document.getElementById("card-4"),
 ];
 let modalTemplate = `
-<div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog" aria-hidden="true">
+<div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">

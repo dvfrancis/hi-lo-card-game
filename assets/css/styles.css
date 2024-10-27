@@ -191,8 +191,26 @@ main {
 
 /* index.html */
 
-#index-header {
+#index-content {
+  font-size: 1.25rem;
   height: 100%;
+  width: 85%;
+}
+
+#index-content h1 {
+  font-size: 3.0rem;
+}
+
+.index-text {
+  background-color: rgb(250, 198, 0, 0.7);
+  border: 15px solid rgb(237, 30, 0, 1);
+  border-radius: 30px;
+}
+
+.index-text p {
+  color: #000;
+  font-size: 1.5rem;
+  border-radius: 30px;
 }
 
 #site-intro-section {
@@ -202,12 +220,13 @@ main {
 
 #play-game {
   background-color: #1A4E04;
-  border: 5px solid rgb(237, 30, 0, 0.65);
+  border: 15px solid rgb(237, 30, 0, 1);
   color: #FFF;
-  border-radius: 30px;
+  border-radius: 80px;
   font-weight: 600;
-  height: 3em;
-  width: 100px;
+  font-size: 2.5em;
+  height: 2.5em;
+  width: 200px;
 }
 
 

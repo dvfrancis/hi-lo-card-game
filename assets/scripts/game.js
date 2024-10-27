@@ -269,9 +269,10 @@ function initialView() {
  */
 function getWager() {
   changeMsg.innerHTML = `<div>
-    <label for="wager-amount">What is your wager for this round?</label>
-    <input type="number" id="wager-amount" min="1" max="${playerPoints}" required>
-    <button id="wager-submit" aria-label="Submit Wager">Submit</button>
+    <label for="wager-amount" class="pb-3">Please place your wager</label>
+    <br>
+    <input type="number" id="wager-amount" class="mb-3" min="1" max="${playerPoints}" required>
+    <button id="wager-submit" class="mb-3" aria-label="Submit Wager">Submit</button>
     <span id="error-message"></span>
   </div>`;
   displayWager();

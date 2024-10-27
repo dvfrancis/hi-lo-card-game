@@ -200,11 +200,36 @@ input {
 #wager-info-group {
   height: 5rem;
   width: 15rem;
-  border: 5px goldenrod solid;
+  border-top: 7px rgba(255, 255, 255, 0.5) solid;
+  border-bottom: 3px rgba(255, 255, 255, 0.4) solid;
+  /* border-radius: 10px; */
+  justify-content: center;
+}
+
+#aces-info,
+#round-info,
+#card-info,
+#points-info,
+#wager {
+  font-family: 'Hind Madurai', serif;
+  font-size: 1.25rem;
 }
 
 #game-messages {
-  border: 5px goldenrod solid;
+  font-family: 'Hind Madurai', serif;
+  font-size: 1.25rem;
+  width: 75%;
+  text-align: center;
+  border: 10px rgba(237, 30, 0, 0.4) solid;
+  border-radius: 10px;
+  justify-content: center;
+  height: 100%;
+}
+
+#info-title {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
 }
 
 #player-card,
@@ -218,6 +243,29 @@ input {
   padding: 0;
   margin: 0;
   background-color: #1A4E04;
+}
+
+.card-container {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#card-deck {
+  border: 10px rgba(250, 198, 0, 0.65) solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* faq.html */

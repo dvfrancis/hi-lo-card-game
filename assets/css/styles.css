@@ -283,6 +283,44 @@ input {
   width: 75%;
 }
 
+/* Customised Bootstrap Modal */
+
+.modal-title {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+}
+
+.modal-header,
+.modal-footer {
+  border: none !important;
+}
+
+.modal-content {
+  text-align: center;
+  backdrop-filter: blur(3px) saturate(100%) !important;
+  -webkit-backdrop-filter: blur(3px) saturate(100%) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(255, 255, 255, 0.125) !important;
+}
+
+#modal-text {
+  font-size: 1.5em;
+}
+
+#modal-btn-1,
+#modal-btn-2 {
+  font-size: 1.25em;
+  background-color: #ED1E00;
+  border: none;
+}
+
+.sub-text {
+  font-size: 0.75rem;
+}
+
 /* Media queries */
 
 /* Bootstrap Extra Small < 576px */

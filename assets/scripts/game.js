@@ -470,7 +470,7 @@ function gameOver() {
   bsBtn2 = document.getElementById("modal-btn-2");
   bsBtn1.innerText = "Yes";
   bsBtn2.innerText = "No";
-  bsTitle.innerText = "CONGRATULATIONS - YOU FINISHED THE GAME!";
+  bsTitle.innerHTML = `CONGRATULATIONS!<br>YOU FINISHED THE GAME`;
   bsText.innerHTML = `<p>Your score was ${playerPoints} points</p><p>Your highest score so far has been ${highScore} points</p><p>Play again?</p>`;
   bsBtn1.addEventListener("click", function () {
     deleteModal();
@@ -497,7 +497,7 @@ function displayScore() {
   bsBtn2.remove();
   bsTitle.innerText = "THANKS FOR PLAYING";
   bsText.innerHTML = `<p>Your final score was ${playerPoints} points</p>`;
-  bsText.innerHTML += `<p>Redirecting home (5 seconds)</p>`;
+  bsText.innerHTML += `<p class="sub-text">Redirecting home (in 5 seconds)</p>`;
   displayModal();
 }
 

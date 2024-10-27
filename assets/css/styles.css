@@ -136,11 +136,17 @@ table {
   height: 50px;
 }
 
-#header, #footer {
+#header,
+#footer {
   background-color: #9A0000;
 }
 
-a, a.fa-brands,
+#header .row {
+  height: 100%;
+}
+
+a,
+a.fa-brands,
 .copyright-text {
   text-decoration: none;
 }

@@ -269,10 +269,10 @@ function initialView() {
  */
 function getWager() {
   changeMsg.innerHTML = `<div>
-    <label for="wager-amount" class="pb-3">Please place your wager</label>
+    <label for="wager-amount" id="wager-amount-label" class="p-3">Please place your wager</label>
     <br>
     <input type="number" id="wager-amount" class="mb-3" min="1" max="${playerPoints}" required>
-    <button id="wager-submit" class="mb-3" aria-label="Submit Wager">Submit</button>
+    <button id="wager-submit" class="mb-3" aria-label="Submit Wager">OK</button>
     <span id="error-message"></span>
   </div>`;
   displayWager();
@@ -319,9 +319,9 @@ function displayWager() {
 function playerChoice() {
   changeMsg.innerHTML = `
   <div>
-  <p>Is the next card HIGHER or LOWER than your card?</p>
-  <button type="button" id="higher-button">Higher</button>
-  <button type="button" id="lower-button">Lower</button>
+  <p class="choice-text p-3">Is the next card HIGHER or LOWER than your card?</p>
+  <button type="button" id="higher-button" class="mb-3">HIGH</button>
+  <button type="button" id="lower-button" class="mb-3">LOW</button>
   </div>
   `;
   const highBtn = document.getElementById("higher-button");
@@ -410,7 +410,7 @@ function continueGame(status) {
   }
   const modalStatus = ["win", "lose", "draw"];
   const modalTitles = ["YOU WON THE ROUND!", "YOU LOST THE ROUND!", "IT'S A DRAW!"];
-  const modalBtns = ["Yes", "No"];
+  const modalBtns = ["YES", "NO"];
   if (modalStatus.includes(status)) {
     createModal();
     bsTitle = document.getElementById("modal-title");

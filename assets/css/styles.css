@@ -187,9 +187,22 @@ main {
   margin-top: 75px;
 }
 
+#play-game {
+  background-color: #1A4E04;
+  border: 5px solid rgb(237, 30, 0, 0.65);
+  color: #FFF;
+  border-radius: 30px;
+  font-weight: 600;
+  height: 3em;
+  width: 100px;
+}
+
+
 /* game.html */
 
 input {
+  height: 2em;
+  width: 150px;
   text-align: center;
 }
 
@@ -205,13 +218,14 @@ input {
   justify-content: center;
 }
 
-#aces-info,
 #round-info,
 #card-info,
 #points-info,
 #wager {
   font-family: 'Hind Madurai', serif;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #FAC600;
 }
 
 #game-messages {
@@ -229,6 +243,37 @@ input {
   font-family: 'Lora', serif;
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+#aces-info-title {
+  font-family: 'Lora', serif;
+  font-size: 1.90rem;
+  font-weight: 700;
+  color: #FAC600;
+}
+
+#wager-submit,
+#higher-button,
+#lower-button {
+  background-color: #1A4E04;
+  color: #FFF;
+  border: 5px solid rgb(253, 128, 0, 0.65);
+  border-radius: 30px;
+  font-weight: 600;
+  height: 2em;
+  width: 100px;
+}
+
+#wager-amount {
+  background-color: rgba(26, 78, 4, 1);
+  color: #FAC600;
+  border: 5px solid rgb(253, 128, 0, 0.65);
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+#wager-amount-label, .choice-text{
+  font-size: 1.55rem;
 }
 
 #player-card,
@@ -312,9 +357,13 @@ input {
 
 #modal-btn-1,
 #modal-btn-2 {
-  font-size: 1.25em;
-  background-color: #ED1E00;
-  border: none;
+  background-color: rgb(0, 30, 0, 0.5);
+  border: 5px solid rgb(237, 30, 0, 0.65);
+  color: #FFF;
+  border-radius: 30px;
+  font-weight: 600;
+  height: 3em;
+  width: 100px;
 }
 
 .sub-text {

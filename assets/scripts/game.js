@@ -195,9 +195,9 @@ async function shuffleCards() {
     const cardDeck = await shuffleReply.json();
     console.log(cardDeck); // Remove before project submission
     playerPoints = 100;
+    roundCount = 0;
     totalCards = 0;
     currentCardCount = 0;
-    roundCount = 0;
     displayPoints();
     deckUrl = cardDeck.deck_id;
     drawCards();
@@ -239,6 +239,7 @@ async function drawCards() {
     decideAces();
     displayAces();
     displayRound();
+    displayCard();
     getWager();
   } catch (error) {
     console.error('Fetch error:', error);
@@ -273,7 +274,6 @@ function getWager() {
     <button id="wager-submit" aria-label="Submit Wager">Submit</button>
     <span id="error-message"></span>
   </div>`;
-  displayCard();
   displayWager();
   const wagerSubmit = document.getElementById("wager-submit");
   document.getElementById("wager-amount").focus();
@@ -370,7 +370,6 @@ function calculateOutcome() {
       playerPoints += playerWager;
       displayPoints();
       gameStatus = "win";
-      gameEnded = true;
       continueGame(gameStatus);
     } else {
       playerChoice();
@@ -381,7 +380,6 @@ function calculateOutcome() {
       playerPoints += playerWager;
       displayPoints();
       gameStatus = "win";
-      gameEnded = true;
       continueGame(gameStatus);
     } else {
       playerChoice();
@@ -404,8 +402,9 @@ function calculateOutcome() {
  * continue playing the game
  */
 function continueGame(status) {
-  if (gameEnded) {
-    gameOver();
+  if (roundCount === 10) {
+    gameEnded = true;
+    decideGameState();
     return;
   }
   const modalStatus = ["win", "lose", "draw"];
@@ -422,7 +421,7 @@ function continueGame(status) {
     bsText.innerText = "Continue to the next round?";
     bsBtn1.innerText = modalBtns[0];
     bsBtn2.innerText = modalBtns[1];
-    bsBtn1.addEventListener("click", newDeck);
+    bsBtn1.addEventListener("click", decideGameState);
     bsBtn2.addEventListener("click", function () {
       displayScore();
       setTimeout(() => {
@@ -435,19 +434,17 @@ function continueGame(status) {
 }
 
 /**
- * Start a new round
+ * Determine game state to decide next action
  */
-function newDeck() {
+function decideGameState() {
   deleteModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
   if (gameEnded) {
-    shuffleCards();
-  } else if ((gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw") && dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
-    drawCards();
-  } else if ((gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw") && dealtCards.remaining === 7 && playerPoints > 0) {
-    finalRound();
-  } else if ((gameStatus === "win" || gameStatus === "lose" || gameStatus === "draw") && dealtCards.remaining === 2 && playerPoints > 0) {
     gameOver();
+  } else if (dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
+    drawCards();
+  } else if (dealtCards.remaining === 7 && playerPoints > 0) {
+    finalRound();
   } else if (playerPoints <= 0) {
     noPoints();
   }

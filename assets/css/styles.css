@@ -187,6 +187,11 @@ main {
 
 /* index.html */
 
+#index-main {
+  background-image: url("assets/images/playing-cards.png");
+  background-position: center;
+}
+
 #site-intro-section {
   margin-top: 75px;
 }

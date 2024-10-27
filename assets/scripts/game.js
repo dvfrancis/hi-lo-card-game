@@ -370,6 +370,7 @@ function calculateOutcome() {
       playerPoints += playerWager;
       displayPoints();
       gameStatus = "win";
+      gameEnded = true;
       continueGame(gameStatus);
     } else {
       playerChoice();
@@ -380,6 +381,7 @@ function calculateOutcome() {
       playerPoints += playerWager;
       displayPoints();
       gameStatus = "win";
+      gameEnded = true;
       continueGame(gameStatus);
     } else {
       playerChoice();
@@ -402,6 +404,10 @@ function calculateOutcome() {
  * continue playing the game
  */
 function continueGame(status) {
+  if (gameEnded) {
+    gameOver();
+    return;
+  }
   const modalStatus = ["win", "lose", "draw"];
   const modalTitles = ["YOU WON THE ROUND!", "YOU LOST THE ROUND!", "IT'S A DRAW!"];
   const modalBtns = ["Yes", "No"];

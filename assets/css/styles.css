@@ -282,3 +282,31 @@ input {
 #error-image img {
   width: 75%;
 }
+
+/* Media queries */
+
+/* Bootstrap Extra Small < 576px */
+@media (max-width: 575px) {
+
+  #player-card,
+  #card-1,
+  #card-2,
+  #card-3,
+  #card-4 {
+    height: 89px;
+    width: 64px;
+  }
+}
+
+/* Bootstrap Small < 768px */
+@media (min-width: 576px) and (max-width: 767px) {
+
+  #player-card,
+  #card-1,
+  #card-2,
+  #card-3,
+  #card-4 {
+    height: 178px;
+    width: 128px;
+  }
+}

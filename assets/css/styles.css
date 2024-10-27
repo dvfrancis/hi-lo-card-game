@@ -137,12 +137,17 @@ table {
 }
 
 #header, #footer {
-  background-color: #FFF;
+  background-color: #9A0000;
 }
 
 a, a.fa-brands,
 .copyright-text {
   text-decoration: none;
+}
+
+main {
+  background-color: #1A4E04;
+  color: #FFF;
 }
 
 /* index.html */
@@ -178,7 +183,10 @@ input {
 #card-4 {
   height: 267px;
   width: 192px;
-  border: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background-color: #1A4E04;
 }
 
 /* faq.html */

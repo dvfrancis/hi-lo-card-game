@@ -168,8 +168,12 @@ a.fa-brands,
 /* Customised Bootstrap pills */
 
 .nav-pills {
-  --bs-nav-pills-link-active-bg: #FD8000 !important;
-  --bs-nav-pills-link-hover-bg: purple;
+  --bs-nav-pills-link-active-bg: rgb(26, 78, 4, 1) !important;
+  --bs-nav-pills-border-radius: 30px !important;
+}
+
+.nav-link {
+  border: 5px solid rgb(253, 128, 0, 0.65) !important;
 }
 
 .nav {
@@ -272,7 +276,9 @@ input {
   font-weight: 600;
 }
 
-#wager-amount-label, .choice-text{
+#wager-amount-label,
+.choice-text,
+#wager-msg {
   font-size: 1.55rem;
 }
 

@@ -290,7 +290,7 @@ function handleWagerSubmit() {
   const wagerAmount = +document.getElementById("wager-amount").value;
   errorMessage = document.getElementById("error-message");
   if (isNaN(wagerAmount) || wagerAmount > playerPoints || wagerAmount < 1) {
-    errorMessage.innerHTML = `<p>Your wager must be a number between 1 and ${playerPoints}. Please try again.</p>`;
+    errorMessage.innerHTML = `<p id="wager-msg">Your wager must be a number between 1 and ${playerPoints}. Please try again.</p>`;
     document.getElementById("wager-amount").value = "";
     playerWager = 0;
     displayCard();

@@ -133,7 +133,13 @@ table {
 /* General */
 
 body {
+  font-family: "Montserrat", serif;
   color: #FFF !important;
+}
+
+#website-title {
+  font-size: 1.5rem;
+  font-weight: 900;
 }
 
 #header {
@@ -143,21 +149,36 @@ body {
 #header,
 #footer {
   background-color: #9A0000;
+  font-family: "Lora", serif;
+  font-size: 0.75rem;
 }
 
 #header .row {
-  height: 100%; /* For correct vertical alignment of child elements */
+  height: 100%;
+  /* For correct vertical alignment of child elements */
 }
 
 a,
 a.fa-brands,
 .copyright-text {
-  text-decoration: none;
+  text-decoration: underline;
+  color: #FFF;
+}
+
+/* Customised Bootstrap pills */
+
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #FD8000 !important;
+  --bs-nav-pills-link-hover-bg: purple;
+}
+
+.nav {
+  --bs-nav-link-color: white !important;
+  --bs-nav-link-hover-color: #FFF !important;
 }
 
 main {
   background-color: #1A4E04;
-  color: #FFF;
 }
 
 /* index.html */

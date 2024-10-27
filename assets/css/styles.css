@@ -174,11 +174,15 @@ a.fa-brands,
 
 .nav-link {
   border: 5px solid rgb(253, 128, 0, 0.65) !important;
+  text-align: center;
+  width: 70px;
 }
 
 .nav {
   --bs-nav-link-color: white !important;
   --bs-nav-link-hover-color: #FFF !important;
+  --bs-nav-link-padding-x: 0!important;
+  --bs-nav-link-padding-y: 10px!important;
 }
 
 main {
@@ -187,12 +191,12 @@ main {
 
 /* index.html */
 
-#index-main {
-  background-image: url("assets/images/playing-cards.png");
-  background-position: center;
+#index-header {
+  height: 100%;
 }
 
 #site-intro-section {
+  background: center / cover no-repeat url("/assets/images/playing-cards.png"), #1A4E04;
   margin-top: 75px;
 }
 

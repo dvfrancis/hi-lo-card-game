@@ -132,6 +132,10 @@ table {
 
 /* General */
 
+body {
+  color: #FFF !important;
+}
+
 #header {
   height: 50px;
 }
@@ -142,7 +146,7 @@ table {
 }
 
 #header .row {
-  height: 100%;
+  height: 100%; /* For correct vertical alignment of child elements */
 }
 
 a,

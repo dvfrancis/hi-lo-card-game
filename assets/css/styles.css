@@ -202,7 +202,6 @@ input {
   width: 15rem;
   border-top: 7px rgba(255, 255, 255, 0.5) solid;
   border-bottom: 3px rgba(255, 255, 255, 0.4) solid;
-  /* border-radius: 10px; */
   justify-content: center;
 }
 
@@ -220,8 +219,8 @@ input {
   font-size: 1.25rem;
   width: 75%;
   text-align: center;
-  border: 10px rgba(237, 30, 0, 0.4) solid;
-  border-radius: 10px;
+  border: 10px rgba(253, 128, 0, 0.5) solid;
+  border-radius: 30px;
   justify-content: center;
   height: 100%;
 }
@@ -254,7 +253,7 @@ input {
 
 #card-deck {
   border: 10px rgba(250, 198, 0, 0.65) solid;
-  border-radius: 10px;
+  border-radius: 30px;
   display: flex;
   flex-direction: row;
   justify-content: center;

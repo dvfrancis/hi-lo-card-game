@@ -421,7 +421,7 @@ function continueGame(status) {
       displayScore();
       setTimeout(() => {
         leaveGame("index.html")
-      }, 3000);
+      }, 5000);
 
     });
     displayModal();
@@ -513,11 +513,11 @@ function finalRound() {
     deleteModal();
     drawCards();
   });
-  bsBtn1.addEventListener("click", function () {
+  bsBtn2.addEventListener("click", function () {
     displayScore();
     setTimeout(() => {
       leaveGame(linkElement.href);
-    }, 3000);
+    }, 5000);
   });
   displayModal();
 }
@@ -539,11 +539,11 @@ function noPoints() {
     deleteModal();
     shuffleCards();
   });
-  bsBtn1.addEventListener("click", function () {
+  bsBtn2.addEventListener("click", function () {
     displayScore();
     setTimeout(() => {
       leaveGame(linkElement.href);
-    }, 3000);
+    }, 5000);
   });
   displayModal();
 }
@@ -570,7 +570,7 @@ linkIds.forEach(id => {
         displayScore();
         setTimeout(() => {
           leaveGame(linkElement.href);
-        }, 3000);
+        }, 5000);
       });
       bsBtn2.addEventListener("click", function () {
         deleteModal();

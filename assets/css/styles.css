@@ -198,7 +198,9 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Customised Bootstrap pills */
+/* Bootstrap customisations */
+
+/* Bootstrap pills */
 
 .nav-pills {
   --bs-nav-pills-link-active-bg: rgb(26, 78, 4, 1) !important;
@@ -216,6 +218,72 @@ input::-webkit-inner-spin-button {
   --bs-nav-link-hover-color: #FFF !important;
   --bs-nav-link-padding-x: 0 !important;
   --bs-nav-link-padding-y: 10px !important;
+}
+
+/* Bootstrap modal */
+
+.modal-title {
+  font-size: 2em;
+  text-align: center;
+  font-weight: 700;
+  width: 100%;
+}
+
+.modal-header,
+.modal-footer {
+  border: none !important;
+}
+
+.modal-content {
+  text-align: center;
+  backdrop-filter: blur(3px) saturate(100%) !important;
+  -webkit-backdrop-filter: blur(3px) saturate(100%) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(0, 0, 0, 0.9) !important;
+}
+
+#modal-text {
+  font-size: 1.5em;
+}
+
+#modal-btn-1,
+#modal-btn-2 {
+  background-color: rgb(0, 30, 0, 0.5);
+  border: 5px solid rgb(237, 30, 0, 0.65);
+  color: #FFF;
+  border-radius: 30px;
+  font-weight: 600;
+  height: 3em;
+  width: 100px;
+}
+
+.sub-text {
+  font-size: 0.75rem;
+}
+
+/* Bootstrap accordion */
+
+#faq-info {
+  margin-top: 130px;
+}
+
+.accordion {
+  font-family: 'Hind Madurai', serif;
+  font-size: 1.25em;
+  margin-top: 75px;
+  --bs-accordion-border-color: #FAC600 !important;
+}
+
+.accordion-item {
+  border: 1px solid #FAC600 !important;
+}
+
+.accordion-button {
+  font-family: 'Hind Madurai', serif;
+  font-size: 0.75em !important;
+  background-color: #FAC600 !important;
+  color: #000 !important;
 }
 
 /* index.html */
@@ -376,29 +444,6 @@ input {
 
 /* faq.html */
 
-/* Customised Bootstrap Accordion */
-
-#faq-info {
-  margin-top: 130px;
-}
-
-.accordion {
-  font-family: 'Hind Madurai', serif;
-  font-size: 1.25em;
-  margin-top: 75px;
-  --bs-accordion-border-color: #FAC600 !important;
-}
-
-.accordion-item {
-  border: 1px solid #FAC600 !important;
-}
-
-.accordion-button {
-  font-family: 'Hind Madurai', serif;
-  font-size: 0.75em !important;
-  background-color: #FAC600 !important;
-  color: #000 !important;
-}
 
 /* 404.html */
 
@@ -408,48 +453,6 @@ input {
 
 #error-image img {
   width: 75%;
-}
-
-/* Customised Bootstrap Modal */
-
-.modal-title {
-  font-size: 2em;
-  text-align: center;
-  font-weight: 700;
-  width: 100%;
-}
-
-.modal-header,
-.modal-footer {
-  border: none !important;
-}
-
-.modal-content {
-  text-align: center;
-  backdrop-filter: blur(3px) saturate(100%) !important;
-  -webkit-backdrop-filter: blur(3px) saturate(100%) !important;
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  border-radius: 12px !important;
-  border: 1px solid rgba(255, 255, 255, 0.125) !important;
-}
-
-#modal-text {
-  font-size: 1.5em;
-}
-
-#modal-btn-1,
-#modal-btn-2 {
-  background-color: rgb(0, 30, 0, 0.5);
-  border: 5px solid rgb(237, 30, 0, 0.65);
-  color: #FFF;
-  border-radius: 30px;
-  font-weight: 600;
-  height: 3em;
-  width: 100px;
-}
-
-.sub-text {
-  font-size: 0.75rem;
 }
 
 /* Media queries */

@@ -49,13 +49,14 @@ The [live site] is hosted by Github Pages.
         3. [Media](#media)
         4. [Content](#content)
 3. [Testing](#testing)
-4. [Deployment](#deployment)
+4. [Technologies Used](#technologies-used)
+5. [Deployment](#deployment)
     1. [GitHub Pages](#github-pages)
     2. [Forks](#forks)
     3. [Local Clones](#local-clones)
     4. [Gitpod Workspaces](#gitpod-workspaces)
-5. [Credits and References](#credits-and-references)
-6. [Technologies Used](#technologies-used)
+6. [Credits and References](#credits-and-references)
+
 7. [Acknowledgements](#acknowledgements)
 
 ## User Experience Design
@@ -326,6 +327,37 @@ All website copy has been written by myself.
 
 - Please refer to [TESTING.md](TESTING.md) for details.
 
+## Technologies Used
+
+- The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [JavaScript.](https://en.wikipedia.org/wiki/JavaScript)
+- [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) was used for layout and some styling.
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
+- [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
+- [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/) to reduce browser inconsistencies.
+- [Deck of Cards - An API](https://www.deckofcardsapi.com/) - the deck of crds API website.
+- The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
+- The [GoFullPage](https://gofullpage.com/) extension was used in all browsers (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
+- [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) was used for website testing.
+- [Microsoft CoPilot](https://copilot.microsoft.com/) - used for general coding advice.
+- [Firefox](https://www.mozilla.org/en-GB/firefox/new/) was used for website testing.
+- [Opera](https://www.opera.com/) was used for website testing.
+- [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
+- [Figma](https://www.figma.com/) was used to create the user flow diagram, logic flowcharts, and wireframes.
+- [Deposit Photos](https://depositphotos.com/) was used for these images on the site:
+    - Baize background image TBC.
+- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used for the website's colour scheme.
+- [Font Joy](https://fontjoy.com/) was used for font pairings.
+- [Google Fonts](https://fonts.google.com/) was used to source all fonts.
+- [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook link state colours.
+- [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
+- [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
+- [To WebP](https://towebp.io/) was used to compress images into webp format.
+- [FontAwesome](https://fontawesome.com/) was used for social media icons.
+- [GitHub](https://github.com/) was used for version control.
+- [GitHub Pages](https://pages.github.com/) was used to host the website.
+- [Gitpod](https://gitpod.io/) was used as an online IDE.
+- [Markdown](https://en.wikipedia.org/wiki/Markdown) was used to create the README.md and TESTING.md documentation.
+
 ## Deployment
 
 ### GitHub Pages
@@ -397,36 +429,6 @@ The following references were used for general advice and help in implementing s
 - [Julia Konovalova's example of Try / Catch.](https://github.com/IuliiaKonovalova/flash_cards/blob/main/assets/js/grammar_quiz.js)
 - [localStorage in JavaScript: A complete guide.](https://blog.logrocket.com/localstorage-javascript-complete-guide/)
 - [Extracting numbers from localStorage as numbers](https://stackoverflow.com/questions/40005108/extracting-numbers-from-localstorage-as-numbers) - how to convert localStorage values into numbers.
-
-## Technologies Used
-
-- The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS),  [JavaScript](https://en.wikipedia.org/wiki/JavaScript), and [Bootstrap.](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)).
-- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
-- [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
-- [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/) to reduce browser inconsistencies.
-- [Deck of Cards - An API](https://www.deckofcardsapi.com/) - the deck of crds API website.
-- The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
-- The [GoFullPage](https://gofullpage.com/) extension was used in all browsers (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
-- [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) was used for website testing.
-- [Microsoft CoPilot](https://copilot.microsoft.com/) - used for general coding advice.
-- [Firefox](https://www.mozilla.org/en-GB/firefox/new/) was used for website testing.
-- [Opera](https://www.opera.com/) was used for website testing.
-- [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
-- [Figma](https://www.figma.com/) was used to create the user flow diagram, logic flowcharts, and wireframes.
-- [Deposit Photos](https://depositphotos.com/) was used for these images on the site:
-    - Baize background image TBC.
-- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used for the website's colour scheme.
-- [Font Joy](https://fontjoy.com/) was used for font pairings.
-- [Google Fonts](https://fonts.google.com/) was used to source all fonts.
-- [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook link state colours.
-- [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
-- [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
-- [To WebP](https://towebp.io/) was used to compress images into webp format.
-- [FontAwesome](https://fontawesome.com/) was used for social media icons.
-- [GitHub](https://github.com/) was used for version control.
-- [GitHub Pages](https://pages.github.com/) was used to host the website.
-- [Gitpod](https://gitpod.io/) was used as an online IDE.
-- [Markdown](https://en.wikipedia.org/wiki/Markdown) was used to create the README.md and TESTING.md documentation.
 
 ## Acknowledgements
 

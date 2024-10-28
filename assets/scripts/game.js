@@ -54,6 +54,7 @@ let cardsObject = {
   cardQS: 12,
   cardKS: 13,
 };
+
 const cards = [
   document.getElementById("player-card"),
   document.getElementById("card-1"),
@@ -61,6 +62,7 @@ const cards = [
   document.getElementById("card-3"),
   document.getElementById("card-4"),
 ];
+
 let modalTemplate = `
 <div class="modal fade" id="bootstrap-modal" tabindex="-1" role="dialog" aria-labelledby="BootstrapModalDialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -76,8 +78,7 @@ let modalTemplate = `
     </div>
   </div>
 </div>`;
-let messageModal = document.getElementById("bootstrap-modal");
-let cardArea = document.getElementById("cards");
+
 let deckUrl = ""; // Current API deck_id used to complete the drawCards function fetch URL
 let dealtCards = "";
 let cardsDrawn = false;
@@ -92,6 +93,8 @@ let bsTitle = document.getElementById("modal-title");
 let bsText = document.getElementById("modal-text");
 let bsBtn1 = document.getElementById("modal-btn-1");
 let bsBtn2 = document.getElementById("modal-btn-2");
+let messageModal = document.getElementById("bootstrap-modal");
+const cardArea = document.getElementById("cards");
 const wagerInfo = document.getElementById("wager");
 const pointsInfo = document.getElementById("points-info");
 const cardInfo = document.getElementById("card-info");
@@ -193,7 +196,6 @@ async function shuffleCards() {
       throw new Error(shuffleReply.statusText);
     }
     const cardDeck = await shuffleReply.json();
-    console.log(cardDeck); // Remove before project submission
     playerPoints = 100;
     roundCount = 0;
     totalCards = 0;
@@ -224,7 +226,6 @@ async function drawCards() {
       throw new Error(drawReply.statusText);
     }
     dealtCards = await drawReply.json();
-    console.log(dealtCards); // Remove before project submission
     initialView();
     displayWager();
     cards[0].innerHTML = `<img id="player-card" src="${dealtCards.cards[0].images.png}" alt="The player's card">`;

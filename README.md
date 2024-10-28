@@ -188,18 +188,14 @@ The website is designed to appeal to all demographics, but the following persona
 - Browser Icon:
 
     - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
-    <details>
-    <summary>Click to see screenshot</summary>
-    ![Website custom favicon](assets/images/holding-image.jpg)
-    </details>
+
+        ![Website custom favicon](assets/images/holding-image.jpg)
 
 - Header:
 
     - TBC
-    <details>
-    <summary>Click to see screenshot</summary>
-    [alt text](![Website header](assets/images/holding-image.jpg))
-    </details>
+
+        ![Website header](assets/images/holding-image.jpg))
     
 - Footer:
 

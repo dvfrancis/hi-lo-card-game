@@ -290,7 +290,7 @@ The wireframes presented here show my initial ideas:
 
 The following colours, taken from palette 406 of the Sarah Renae Clarke Colour Catalogue, Volume 2, have been used to add interesting backgrounds to the website, with white (#FFF) as a contrast:
 
-![Website colour scheme](assets/images/website-colours.jpg)
+![Website colour scheme](assets/images/website-colours.webp)
 
 Link state colours for social media icons:
 

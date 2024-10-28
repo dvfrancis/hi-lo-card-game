@@ -194,10 +194,11 @@ p {
   font-size: 1.2rem;
 }
 
-h1 {
+h1,
+div>h1 {
   text-align: center;
   color: #FFF;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 /* Remove spinners from number input in Chrome, Safari, Edge, Opera */
@@ -205,6 +206,16 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+#play-game:hover,
+.home-link:hover,
+.game-link:hover,
+.faq-link:hover,
+#wager-submit:hover,
+#higher-button:hover,
+#lower-button:hover {
+  background-color: rgb(250, 198, 0, 0.7) !important;
 }
 
 /* Bootstrap customisations */
@@ -267,6 +278,11 @@ input::-webkit-inner-spin-button {
   width: 100px;
 }
 
+#modal-btn-1:hover,
+#modal-btn-2:hover {
+  background-color: rgb(250, 198, 0, 0.7) !important;
+}
+
 .sub-text {
   font-size: 0.75rem;
 }
@@ -309,7 +325,7 @@ input::-webkit-inner-spin-button {
 
 .index-text {
   /* background-color: rgb(250, 198, 0, 0.65); */
-  border: 15px solid rgb(237, 30, 0, 0.65);
+  border: 15px solid rgb(253, 128, 0, 0.65);
   border-radius: 30px;
 }
 
@@ -333,11 +349,6 @@ input::-webkit-inner-spin-button {
   height: 2.5em;
   width: 200px;
 }
-
-#play-game:hover {
-  background-color: rgb(250, 198, 0, 0.7);
-}
-
 
 /* game.html */
 

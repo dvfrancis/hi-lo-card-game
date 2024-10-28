@@ -133,8 +133,16 @@ table {
 /* General */
 
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   font-family: "Montserrat", serif;
   color: #FFF !important;
+}
+
+main {
+  flex: 1 0 auto;
+  background-color: #1A4E04;
 }
 
 #website-title {
@@ -153,16 +161,40 @@ body {
   font-size: 0.75rem;
 }
 
+#footer {
+  color: #FAC600;
+}
+
 #header .row {
   height: 100%;
   /* For correct vertical alignment of child elements */
 }
 
-a,
-a.fa-brands,
+a {
+  text-decoration: underline;
+}
+
+a.fa-brands {
+  text-decoration: underline;
+  color: #FAC600;
+}
+
 .copyright-text {
   text-decoration: underline;
-  color: #FFF;
+  color: #FAC600;
+
+}
+
+/* Remove spinners from number input in Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove spinners from number input in Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* Customised Bootstrap pills */
@@ -183,10 +215,6 @@ a.fa-brands,
   --bs-nav-link-hover-color: #FFF !important;
   --bs-nav-link-padding-x: 0 !important;
   --bs-nav-link-padding-y: 10px !important;
-}
-
-main {
-  background-color: #1A4E04;
 }
 
 /* index.html */

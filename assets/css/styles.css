@@ -214,7 +214,7 @@ main {
 }
 
 #site-intro-section {
-  background: #1A4E04 url("assets/images/playing-cards-background.webp") center cover no-repeat;
+  background: #1A4E04 url("../images/playing-cards-background.webp") center cover no-repeat;
   margin-top: 75px;
 }
 

@@ -181,8 +181,8 @@ a.fa-brands,
 .nav {
   --bs-nav-link-color: white !important;
   --bs-nav-link-hover-color: #FFF !important;
-  --bs-nav-link-padding-x: 0!important;
-  --bs-nav-link-padding-y: 10px!important;
+  --bs-nav-link-padding-x: 0 !important;
+  --bs-nav-link-padding-y: 10px !important;
 }
 
 main {
@@ -214,7 +214,7 @@ main {
 }
 
 #site-intro-section {
-  background: center / cover no-repeat url("assets/images/playing-cards-background.webp"), #1A4E04;
+  background: #1A4E04 url("assets/images/playing-cards-background.webp") center cover no-repeat;
   margin-top: 75px;
 }
 

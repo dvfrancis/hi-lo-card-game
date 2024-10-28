@@ -215,7 +215,7 @@ input::-webkit-inner-spin-button {
 #wager-submit:hover,
 #higher-button:hover,
 #lower-button:hover {
-  background-color: rgb(250, 198, 0, 0.7) !important;
+  background-color: rgba(250, 198, 0, 0.7) !important;
 }
 
 /* Bootstrap customisations */
@@ -223,12 +223,12 @@ input::-webkit-inner-spin-button {
 /* Bootstrap pills */
 
 .nav-pills {
-  --bs-nav-pills-link-active-bg: rgb(26, 78, 4, 1) !important;
+  --bs-nav-pills-link-active-bg: rgba(26, 78, 4, 1) !important;
   --bs-nav-pills-border-radius: 30px !important;
 }
 
 .nav-link {
-  border: 5px solid rgb(253, 128, 0, 0.65) !important;
+  border: 5px solid rgba(253, 128, 0, 0.65) !important;
   text-align: center;
   width: 70px;
 }
@@ -260,7 +260,7 @@ input::-webkit-inner-spin-button {
   -webkit-backdrop-filter: blur(3px) saturate(100%) !important;
   background-color: rgba(0, 0, 0, 0.9) !important;
   border-radius: 12px !important;
-  border: 1px solid rgba(0, 0, 0, 0.9) !important;
+  border: 10px solid rgba(237, 30, 0, 0.65) !important;
 }
 
 #modal-text {
@@ -269,8 +269,8 @@ input::-webkit-inner-spin-button {
 
 #modal-btn-1,
 #modal-btn-2 {
-  background-color: rgb(0, 30, 0, 0.5);
-  border: 5px solid rgb(237, 30, 0, 0.65);
+  background-color: rgba(0, 30, 0, 0.5);
+  border: 5px solid rgba(237, 30, 0, 0.65);
   color: #FFF;
   border-radius: 30px;
   font-weight: 600;
@@ -280,7 +280,7 @@ input::-webkit-inner-spin-button {
 
 #modal-btn-1:hover,
 #modal-btn-2:hover {
-  background-color: rgb(250, 198, 0, 0.7) !important;
+  background-color: rgba(250, 198, 0, 0.7) !important;
 }
 
 .sub-text {
@@ -324,8 +324,7 @@ input::-webkit-inner-spin-button {
 }
 
 .index-text {
-  /* background-color: rgb(250, 198, 0, 0.65); */
-  border: 15px solid rgb(253, 128, 0, 0.65);
+  border: 15px solid rgba(253, 128, 0, 0.65);
   border-radius: 30px;
 }
 
@@ -341,7 +340,7 @@ input::-webkit-inner-spin-button {
 
 #play-game {
   background-color: #1A4E04;
-  border: 15px solid rgb(237, 30, 0, 0.65);
+  border: 15px solid rgba(237, 30, 0, 0.65);
   color: #FFF;
   border-radius: 80px;
   font-weight: 600;
@@ -409,7 +408,7 @@ input {
 #lower-button {
   background-color: #1A4E04;
   color: #FFF;
-  border: 5px solid rgb(253, 128, 0, 0.65);
+  border: 5px solid rgba(253, 128, 0, 0.65);
   border-radius: 30px;
   font-weight: 600;
   height: 2em;
@@ -419,7 +418,7 @@ input {
 #wager-amount {
   background-color: rgba(26, 78, 4, 1);
   color: #FAC600;
-  border: 5px solid rgb(253, 128, 0, 0.65);
+  border: 5px solid rgba(253, 128, 0, 0.65);
   border-radius: 30px;
   font-weight: 600;
 }

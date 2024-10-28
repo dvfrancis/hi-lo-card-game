@@ -185,6 +185,12 @@ a.fa-brands {
 
 }
 
+h1 {
+  text-align: center;
+  color: #FFF;
+  font-weight: 900;
+}
+
 /* Remove spinners from number input in Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -372,6 +378,10 @@ input {
 
 /* Customised Bootstrap Accordion */
 
+#faq-info {
+  margin-top: 130px;
+}
+
 .accordion {
   font-family: 'Hind Madurai', serif;
   font-size: 1.25em;
@@ -385,7 +395,6 @@ input {
 
 .accordion-button {
   font-family: 'Hind Madurai', serif;
-
   font-size: 0.75em !important;
   background-color: #FAC600 !important;
   color: #000 !important;

@@ -192,11 +192,6 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
-/* Remove spinners from number input in Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
 /* Customised Bootstrap pills */
 
 .nav-pills {

@@ -188,15 +188,19 @@ The website is designed to appeal to all demographics, but the following persona
 - Browser Icon:
 
     - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
-
-        ![Website custom favicon](assets/images/holding-image.jpg)
+    <details>
+    <summary>Click to see screenshot</summary>
+    ![Website custom favicon](assets/images/holding-image.jpg)
+    </details>
 
 - Header:
 
     - TBC
-
-        ![Website header](assets/images/holding-image.jpg)
-
+    <details>
+    <summary>Click to see screenshot</summary>
+    [alt text](![Website header](assets/images/holding-image.jpg))
+    </details>
+    
 - Footer:
 
     - At the bottom of each page - it contains the social media icons, and legal information, and allows the user to jump to the social media properties of the podcast.

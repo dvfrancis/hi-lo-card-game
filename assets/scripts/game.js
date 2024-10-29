@@ -123,8 +123,8 @@ function displayPoints() {
 function decideAces() {
   let acesBool = Math.random() < 0.5;
   let acesResult = acesBool ? "HIGH" : "LOW";
-  amendCardsObject(acesResult);
   acesValue = acesResult;
+  amendCardsObject(acesResult);
 }
 
 /**
@@ -168,7 +168,7 @@ function displayModal() {
     messageModal.style.display = "block";
     messageModal.classList.add("show");
   } else {
-    console.error("Modal element not found");
+    // console.error("Modal element not found");
   }
 }
 
@@ -179,7 +179,7 @@ function deleteModal() {
   if (messageModal) {
     messageModal.remove();
   } else {
-    console.error("Modal element not found");
+    // console.error("Modal element not found");
   }
 }
 
@@ -204,7 +204,7 @@ async function shuffleCards() {
     deckUrl = cardDeck.deck_id;
     drawCards();
   } catch (error) {
-    console.error('Fetch error:', error);
+    // console.error('Fetch error:', error);
   }
 }
 
@@ -243,7 +243,7 @@ async function drawCards() {
     displayCard();
     getWager();
   } catch (error) {
-    console.error('Fetch error:', error);
+    // console.error('Fetch error:', error);
   }
 }
 
@@ -597,5 +597,7 @@ function leaveGame(url) {
 shuffleCards();
 
 module.exports = {
-  leaveGame
+  leaveGame,
+  decideAces,
+  amendCardsObject
 }

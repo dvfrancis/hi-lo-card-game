@@ -1,5 +1,5 @@
 /**
- * Save user details and start the game
+ * Start the game when 'Play' button is clicked 
  */
 function startGame() {
   const startGame = document.getElementById("play-game");
@@ -9,3 +9,7 @@ function startGame() {
 }
 
 startGame();
+
+module.exports = {
+  startGame
+};

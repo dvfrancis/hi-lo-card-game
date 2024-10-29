@@ -9,4 +9,6 @@ function updateCopyrightYear() {
 
 updateCopyrightYear();
 
-module.exports = {updateCopyrightYear};
+module.exports = {
+    updateCopyrightYear
+};

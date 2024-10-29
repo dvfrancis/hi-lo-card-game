@@ -1,4 +1,4 @@
-describe('startGame function', () => {
+describe('starting the game', () => {
     beforeEach(() => {
         document.body.innerHTML = '<input type="submit" id="play-game" value="PLAY">'; // Create mock DOM element for testing
         delete window.location; // Remove current window object

@@ -1,4 +1,4 @@
-describe('updateCopyrightYear function', () => {
+describe('updating the copyright year', () => {
     beforeEach(() => {
         document.body.innerHTML = '<div id="copyright"></div>'; // Create mock DOM element for testing
     });

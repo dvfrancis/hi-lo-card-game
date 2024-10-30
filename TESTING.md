@@ -144,7 +144,7 @@ Below are the results of JavaScript validation for each script file, using [JSHi
 <details>
 <summary>Click here to see the JavaScript validation report for general.js</summary>
 
-![JavaScript validation of general.js](assets/images/holding-image.webp)
+![JavaScript validation of general.js](documentation/validation/javascript/js-validation-general.webp)
 </details>
 
 #### index.js
@@ -152,7 +152,7 @@ Below are the results of JavaScript validation for each script file, using [JSHi
 <details>
 <summary>Click here to see the JavaScript validation report for index.js</summary>
 
-![JavaScript validation of index.js](assets/images/holding-image.webp)
+![JavaScript validation of index.js](documentation/validation/javascript/js-validation-index.webp)
 </details>
 
 #### game.js
@@ -160,7 +160,7 @@ Below are the results of JavaScript validation for each script file, using [JSHi
 <details>
 <summary>Click here to see the JavaScript validation report for game.js</summary>
 
-![JavaScript validation of game.js](assets/images/holding-image.webp)
+![JavaScript validation of game.js](documentation/validation/javascript/js-validation-game.webp)
 </details>
 
 ## Manual Validation

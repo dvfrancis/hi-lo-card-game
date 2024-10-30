@@ -94,7 +94,6 @@ let bsText = document.getElementById("modal-text");
 let bsBtn1 = document.getElementById("modal-btn-1");
 let bsBtn2 = document.getElementById("modal-btn-2");
 let messageModal = document.getElementById("bootstrap-modal");
-const cardArea = document.getElementById("cards");
 const wagerInfo = document.getElementById("wager");
 const pointsInfo = document.getElementById("points-info");
 const cardInfo = document.getElementById("card-info");
@@ -133,15 +132,15 @@ function decideAces() {
  */
 function amendCardsObject(result) {
   if (result === "HIGH") {
-    cardsObject["cardAC"] = 14;
-    cardsObject["cardAD"] = 14;
-    cardsObject["cardAH"] = 14;
-    cardsObject["cardAS"] = 14;
+    cardsObject.cardAC = 14;
+    cardsObject.cardAD = 14;
+    cardsObject.cardAH = 14;
+    cardsObject.cardAS = 14;
   } else {
-    cardsObject["cardAC"] = 1;
-    cardsObject["cardAD"] = 1;
-    cardsObject["cardAH"] = 1;
-    cardsObject["cardAS"] = 1;
+    cardsObject.cardAC = 1;
+    cardsObject.cardAD = 1;
+    cardsObject.cardAH = 1;
+    cardsObject.cardAS = 1;
   }
 }
 
@@ -388,13 +387,13 @@ function calculateOutcome() {
     }
   } else if (currCard === prevCard) {
     totalCards += (currentCardCount - totalCards) - 1;
-    gameStatus = "draw"
+    gameStatus = "draw";
     continueGame(gameStatus);
   } else {
     totalCards += (currentCardCount - totalCards) - 1;
     playerPoints -= playerWager;
     displayPoints();
-    gameStatus = "lose"
+    gameStatus = "lose";
     continueGame(gameStatus);
   }
 }
@@ -427,7 +426,7 @@ function continueGame(status) {
     bsBtn2.addEventListener("click", function () {
       displayScore();
       setTimeout(() => {
-        leaveGame("index.html")
+        leaveGame("index.html");
       }, 5000);
 
     });
@@ -478,7 +477,7 @@ function gameOver() {
     shuffleCards();
   });
   bsBtn2.addEventListener("click", function () {
-    leaveGame("index.html")
+    leaveGame("index.html");
   });
   displayModal();
 }

@@ -501,34 +501,41 @@ All website copy has been written by myself.
 
 ## Technologies Used
 
-- The website was built using [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [JavaScript.](https://en.wikipedia.org/wiki/JavaScript)
-- [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) was used for layout and some styling.
-- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) was used for website troubleshooting, and testing (including [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) reports).
-- [Google Chrome](https://www.google.co.uk/chrome/) was used for website testing.
-- [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/) to reduce browser inconsistencies.
-- [Deck of Cards - An API](https://www.deckofcardsapi.com/) - the deck of crds API website.
-- The [Responsive Viewer](https://responsiveviewer.org/) extension was used in all browsers (except Firefox, which does not seem to support it) to create images of the website's pages on a variety of devices.
-- The [GoFullPage](https://gofullpage.com/) extension was used in all browsers (except Firefox, which does not seem to support it) to capture full-sized images of the website's pages.
-- [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) was used for website testing.
-- [Microsoft CoPilot](https://copilot.microsoft.com/) - used for general coding advice.
-- [Firefox](https://www.mozilla.org/en-GB/firefox/new/) was used for website testing.
-- [Opera](https://www.opera.com/) was used for website testing.
-- [Safari](https://www.apple.com/uk/safari/) was used for website testing, and mobile screenshots ofan iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation).
-- [Figma](https://www.figma.com/) was used to create the user flow diagram, logic flowcharts, and wireframes.
-- [Deposit Photos](https://depositphotos.com/) was used for these images on the site:
-    - Baize background image TBC.
-- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) was used for the website's colour scheme.
-- [Font Joy](https://fontjoy.com/) was used for font pairings.
-- [Google Fonts](https://fonts.google.com/) was used to source all fonts.
-- [Brand Palettes](https://brandpalettes.com) was used to source the correct Instagram and Facebook link state colours.
-- [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) was used to edit all images.
-- [RespImageLint](https://ausi.github.io/respimagelint/) was used to ensure all website images were fully responsive.
-- [To WebP](https://towebp.io/) was used to compress images into webp format.
-- [FontAwesome](https://fontawesome.com/) was used for social media icons.
-- [GitHub](https://github.com/) was used for version control.
-- [GitHub Pages](https://pages.github.com/) was used to host the website.
-- [Gitpod](https://gitpod.io/) was used as an online IDE.
-- [Markdown](https://en.wikipedia.org/wiki/Markdown) was used to create the README.md and TESTING.md documentation.
+- [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [JavaScript.](https://en.wikipedia.org/wiki/JavaScript) - for website structure / interactivity.
+- [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) - for layout / some styling.
+- [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - for troubleshooting / testing (including for [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) performance reports).
+- [Deck of Cards - An API](https://www.deckofcardsapi.com/) - for deck of cards API.
+- [GitHub](https://github.com/) - for version control.
+- [GitHub Pages](https://pages.github.com/) - for website hosting.
+- [Gitpod](https://gitpod.io/) - for online coding.
+- [Figma](https://www.figma.com/) - for flow diagrams / flowcharts / wireframes.
+- [Visual Studio Code](https://code.visualstudio.com/) - for local coding.
+- [Microsoft CoPilot](https://copilot.microsoft.com/) - for general coding advice.
+- [Google Fonts](https://fonts.google.com/) - for all fonts.
+- [FontAwesome](https://fontawesome.com/) - for all icons.
+- [Markdown](https://en.wikipedia.org/wiki/Markdown) - for formatting all documentation.
+- [Google Chrome](https://www.google.co.uk/chrome/) - for website preview / testing.
+- [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) - for website preview / testing.
+- [Firefox](https://www.mozilla.org/en-GB/firefox/new/) - for website preview / testing.
+- [Opera](https://www.opera.com/) - for website preview / testing.
+- [Safari](https://www.apple.com/uk/safari/) - for website preview / testing and mobile screenshots (using an iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation)).
+- [W3C HTML Checker](https://validator.w3.org/) - for checking HTML code.
+- [W3C CSS Checker](https://jigsaw.w3.org/css-validator/) - for checking CSS code.
+- [Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/) - for checking website accessibility.
+- [Responsive Web Design Checker](https://responsivedesignchecker.com/) - for checking website responsiveness.
+- [Web Accessibility in Mind (WebAIM) Contrast Checker](https://webaim.org/resources/contrastchecker/) - for checking website contrast.
+- [JSHint](https://jshint.com/) - for checking JavaScript code.
+- [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/) - for addressing browser inconsistencies.
+- [Website Mockup Generator](https://websitemockupgenerator.com/) - for a preview of the site on different devices.
+- [GoFullPage](https://gofullpage.com/) - for exporting full-size web page previews (this does not include Firefox, which does not support it).
+- [Deposit Photos](https://depositphotos.com/) - for the [Devastated gambler man...](https://depositphotos.com/photo/devastated-gambler-man-losing-lot-money-playing-poker-casino-gambling-439339268.html) image used on the 404.html page.
+- [Sarah Renae Clarke's Colour Catalogue V2](https://sarahrenaeclark.com/color-palettes/) - for website colours.
+- [Font Joy](https://fontjoy.com/) - for font pairing inspiration.
+- [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) - for image editing.
+- [Affinity Photo 2](https://affinity.serif.com/en-gb/photo/) - for image editing.
+- [To WebP](https://towebp.io/) - for generating webp images.
+- [Favicon Generator](https://favicon.io/favicon-converter/) - for generating website favicon.
+- [Diffchecker](https://www.diffchecker.com/) - for comparing JavaScript code.
 
 ## Deployment
 
@@ -575,33 +582,22 @@ Click the button below to create a Gitpod workspace from this repository (requir
 
 ## Credits and References
 
-The following references were used for general advice and help in implementing specific functionality on the website:
 - [Duckett, J. (2011) HTML & CSS Design and Build Websites](https://htmlandcssbook.com/) - Indianapolis: John Wiley & Sons, Inc.
 - [Duckett, J. (2014) JavaScript and jQuery Interactive Front-End Web Development](https://javascriptbook.com/) - Indianapolis: John Wiley & Sons, Inc.
-- [Microsoft Edge Copilot](https://www.microsoft.com/en-us/edge/features/copilot) - coding advice, particularly around CSS rules of ingeritance.
-- [How to create a copyright symbol](https://blog.hubspot.com/website/html-code-copyright) - creating the copyright symbol in the footer.
-- [Displaying the current year](https://sysadminsage.com/javascript-get-current-year/) - used to display the current copyright year in the footer.
+- [How to create a copyright symbol](https://blog.hubspot.com/website/html-code-copyright) - for the footer copyright symbol.
+- [Displaying the current year](https://sysadminsage.com/javascript-get-current-year/) - for displaying the current copyright year in the footer.
 - [Generate a random boolean value](https://stackoverflow.com/questions/36756331/js-generate-random-boolean) - for assigning aces high or low.
-- [How to set a favicon in GitHub Pages](https://stackoverflow.com/questions/35037482/favicon-with-github-pages) - setting a favicon on GitGub Pages.
-- [W3 Schools CSS :visited Selector](https://www.w3schools.com/cssref/sel_visited.php) and 
- [CSS-Tricks :visited](https://css-tricks.com/almanac/selectors/v/visited/) - styling the navigation links after they had been visited.
-- [Background on semantic HTML5 elements](https://www.freecodecamp.org/news/semantic-html5-elements/) - ordering semantic HTMl elements.
-- [Redirect to custom form completion page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Redirections?ref=library.linkbot.com) - creating a redirect from the website's custom completion pages.
-- [How to Implement ARIA Tags for Better Accessibility](https://dev.to/sarveshh/how-to-implement-aria-tags-for-better-accessibility-a-comprehensive-guide-for-web-developers-h3k) - how and where to use ARIA tags.
-- [Using Media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_media_queries/Using_media_queries) - creating media queries to control ``body`` padding at different screen sizes.
-- [Creating a custom 404 page for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site) - implementing a GutHub Pages custom 404 page.
-- [How To Change the Color of the Bootstrap 5 Mobile Menu Icon](https://www.youtube.com/watch?v=45QSuJaHEss) - altering the colour of the hamburger menu on mobile devices.
-- [How to use srcset and sizes for responsive images](https://stackoverflow.com/questions/35099471/how-to-use-srcset-and-sizes-for-responsive-images) - making the website's image carousels more responsive.
-- [The Only Markdown Cheatsheet You Need](https://github.com/im-luka/markdown-cheatsheet) - creating the README.md and TESTING.md documentation.
-- [Modal](https://getbootstrap.com/docs/5.0/components/modal/) - Bootstrap modal component document.
-- [Bootstrap 5 Modal](https://www.w3schools.com/bootstrap5/bootstrap_modal.php) - used to create pop-up modal dialogs.
-- [Element: insertAdjacentHTML() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) - used for adding modal dialogs to pages.
-- [HTML DOM Element remove()](https://www.w3schools.com/jsref/met_element_remove.asp) - used for removing modal dialogs from pages.
-- [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) - used to test calls to the API.
+- [How to set a favicon in GitHub Pages](https://stackoverflow.com/questions/35037482/favicon-with-github-pages) - for setting a GitGub Pages favicon.
+- [Modal](https://getbootstrap.com/docs/5.0/components/modal/) - for generating a Bootstrap modal.
+- [Bootstrap 5 Modal](https://www.w3schools.com/bootstrap5/bootstrap_modal.php) - for Bootstrap pop-up modal dialogs.
+- [Element: insertAdjacentHTML() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML) - for adding modal dialogs to pages.
+- [HTML DOM Element remove()](https://www.w3schools.com/jsref/met_element_remove.asp) - for removing modal dialogs from pages.
+- [try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch) - for testing calls to the API.
 - [Julia Konovalova's example of Try / Catch.](https://github.com/IuliiaKonovalova/flash_cards/blob/main/assets/js/grammar_quiz.js)
 - [localStorage in JavaScript: A complete guide.](https://blog.logrocket.com/localstorage-javascript-complete-guide/)
 - [Extracting numbers from localStorage as numbers](https://stackoverflow.com/questions/40005108/extracting-numbers-from-localstorage-as-numbers) - how to convert localStorage values into numbers.
 
 ## Acknowledgements
 
-TBC
+- Extra special thanks to Andrew Parton, for his coding advice and support.
+- Thanks to my mentor, Juliia Konovalova, for her coding advice.

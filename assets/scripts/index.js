@@ -9,7 +9,3 @@ function startGame() {
 }
 
 startGame();
-
-module.exports = {
-  startGame
-};

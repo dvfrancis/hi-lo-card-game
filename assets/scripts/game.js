@@ -595,9 +595,3 @@ function leaveGame(url) {
 }
 
 shuffleCards();
-
-module.exports = {
-  leaveGame,
-  decideAces,
-  amendCardsObject
-}

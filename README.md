@@ -12,7 +12,7 @@ In the UK, higher-or-lower was the basis for the popular 1980s television game s
 
 ### Site Preview
 
-![A preview of the Hi-Lo website at various screen sizes](assets/images/holding-image.jpg)
+![A preview of the Hi-Lo website at various screen sizes](assets/images/site-preview.webp)
 
 ### Site Link
 

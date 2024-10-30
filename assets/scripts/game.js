@@ -557,7 +557,7 @@ function noPoints() {
 /**
  * Leave the game
  */
-const linkIds = ["home-page-link", "faq-page-link"];
+const linkIds = ["home-page-link", "game-page-link", "faq-page-link"];
 linkIds.forEach(id => {
   const linkElement = document.getElementById(id);
   if (linkElement) {

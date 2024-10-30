@@ -72,7 +72,7 @@ Below are the results of HTML validation for each page, using the [W3C Markup Va
 <details>
 <summary>Click here to see the HTML validation report for index.html</summary>
 
-![HTML validation of index.html](assets/images/holding-image.webp)
+![HTML validation of index.html](documentation/validation/html-validation-index-page.webp)
 </details>
 
 #### game.html
@@ -80,7 +80,7 @@ Below are the results of HTML validation for each page, using the [W3C Markup Va
 <details>
 <summary>Click here to see the HTML validation report for game.html</summary>
 
-![HTML validation of game.html](assets/images/holding-image.webp)
+![HTML validation of game.html](documentation/validation/html-validation-game-page.webp)
 </details>
 
 #### faq.html
@@ -88,7 +88,7 @@ Below are the results of HTML validation for each page, using the [W3C Markup Va
 <details>
 <summary>Click here to see the HTML validation report for faq.html</summary>
 
-![HTML validation of faq.html](assets/images/holding-image.webp)
+![HTML validation of faq.html](documentation/validation/html-validation-faq-page.webp)
 </details>
 
 #### 404.html
@@ -96,7 +96,7 @@ Below are the results of HTML validation for each page, using the [W3C Markup Va
 <details>
 <summary>Click here to see the HTML validation report for 404.html</summary>
 
-![HTML validation of 404.html](assets/images/holding-image.webp)
+![HTML validation of 404.html](documentation/validation/html-validation-404-page.webp)
 </details>
 
 ### CSS

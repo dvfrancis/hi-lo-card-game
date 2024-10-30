@@ -186,7 +186,7 @@ The website is designed to appeal to all demographics, but the following persona
     <details>
     <summary>Click to view the browser tab, showing the custom favicon</summary>
         
-    ![Website custom favicon](assets/images/website-favicon.webp)
+    ![Website favicon](assets/images/website-favicon.webp)
     </details>
 
     - A favicon has been added to the site to help users identify the site visually and when saved as a browser bookmark / favourite.
@@ -197,12 +197,12 @@ The website is designed to appeal to all demographics, but the following persona
     <details>
     <summary>Click to view the desktop header</summary>
 
-    ![Website header](assets/images/website-desktop-header.webp)
+    ![Website desktop header](assets/images/website-desktop-header.webp)
     </details>
     <details>
     <summary>Click to view the mobile header</summary>
 
-    ![Website header](assets/images/website-mobile-header.webp)
+    ![Website mobile header](assets/images/website-mobile-header.webp)
     </details>
 
     - The website header is fixed at the top fo the screen, and displays the name of the site; it also contains navigation links.
@@ -228,26 +228,51 @@ The website is designed to appeal to all demographics, but the following persona
 
 - Home (index.html):
 
+    <details>
+    <summary>Click to view the home page</summary>
+
+    ![Website home page](assets/images/home-page.webp)
+    </details>  
+
     - This is the first page a user sees when they enter the site. It contains all pertinent information regarding the podcast, with links to other pages where required.
     - The home page allows the user to get a good overview of the purpose of the website and gives them glimpses of associated activities.
 
-        ![Website home page](assets/images/holding-image.jpg)
-
 - Game (game.html):
+
+    <details>
+    <summary>Click to view the game page</summary>
+
+    ![Website game page](assets/images/game-page.webp)
+    </details>  
+        <details>
+    <summary>Click to view the game page (when navigating away via the links in the header)</summary>
+
+    ![Website game page when navigating away](assets/images/leave-game-page.webp)
+    </details> 
 
 - TBC
 
 - FAQ (faq.html):
 
+    <details>
+    <summary>Click to view the FAQ page</summary>
+
+    ![Website FAQ page](assets/images/faq-page.webp)
+    </details>  
+
     - TBC
 
-        ![Website faq page](assets/images/holding-image.jpg)
-
 - Custom 404 (404.html):
+
+    <details>
+    <summary>Click to view the custom error page</summary>
+
+    ![Website custom error page](assets/images/custom-404.webp)
+    </details>  
+
+
     - A custom 404 error page appears whenever a user attempts to navigate to a non-existent page.
     - After 30 seconds, the page will redirect automatically to the home page.
-
-        ![Website custom 404 error page](assets/images/holding-image.jpg)
 
 #### Future Features
 

@@ -1,4 +1,4 @@
-# Higher-or-Lower Premium Card Game *THIS DOCUMENT IS NOT YET COMPLETE*
+# Higher-or-Lower Premium Card Game
 
 ## Overview
 
@@ -67,7 +67,7 @@ The [live site] is hosted by Github Pages.
 
 - To attract players to the game and provide a fun experience.
 - The value provided to the website owner is from increasing visitor numbers to the website.
-- The call to action on the website will be “Play Game”, or similar.
+- The call to action on the website's home page will be “Play”.
 
 #### Key User Goals
 
@@ -79,7 +79,7 @@ The [live site] is hosted by Github Pages.
     - Any age.
     - Could be a student, employed, or retired.
     - A casual or firm interest in puzzles.
-    - Possibly casual or serious gamer(s).
+    - Possibly casual or serious gamer.
     - Those looking for ways to relax and have fun.
  
 #### User Expectations
@@ -101,12 +101,11 @@ The [live site] is hosted by Github Pages.
         
 ##### Returning visitor goals
     
-- “How many points do I have from the last time I played?”
-- “What other versions of the game are available?”
+- “Will I be able to beat my score from the last time I played?”
     
 ##### Frequent visitor goals
     
-- “Where am I ranked among other players who use the website?”
+- “I would like to play the game on my mobile device, while travelling”
 
 #### User Personas
 
@@ -125,13 +124,11 @@ The website is designed to appeal to all demographics, but the following persona
 
 - The website is responsive and displays correctly on a mobile device.
 - All messages are clearly displayed and easy to read on smaller screens.
-- Any audio prompts can be easily muted when on public transport.
     
 ###### Tasks
 
-- Style a responsive website using Bootstrap, Tailwind, and / or media queries.
+- Style a responsive website using Bootstrap and / or media queries.
 - Display any system messages in a larger format.
-- Add the ability to disable audio feedback.
     
 ##### User 2
 
@@ -139,13 +136,13 @@ The website is designed to appeal to all demographics, but the following persona
 
 ###### Acceptance Criteria
 
-- The website is quick to load and saves user progress.
-- The length of the game can be amended.
+- The website is quick to load.
+- The game can be abandoned, if necessary.
     
 ###### Tasks
 
 - Ensure the website has excellent load performance on Google Lighthouse.
-- Add an option to specify the number of cards used in a game. 
+- Add ability to navigate away from the game at any point. 
 
 ##### User 3
 
@@ -154,12 +151,11 @@ The website is designed to appeal to all demographics, but the following persona
 ###### Acceptance Criteria
 
 - Gameplay is streamlined and easy to understand.
-- The game offers different experiences to maintain user interest.
+- The game offers an easy distraction to daily life.
     
 ###### Tasks
 
-- Add an FAQ page that explains the game, its rules, and other playing modes.
-- Create additional gameplay modes for the game.
+- Add an FAQ page that explains the game and its rules.
 
 ##### User 4
 
@@ -167,12 +163,12 @@ The website is designed to appeal to all demographics, but the following persona
 
 ###### Acceptance Criteria
 
-- The game has a visually interesting design with a captivating (but not annoying) soundtrack.
+- The game has a visually interesting design.
 - Cards and scores are displayed clearly and are easy to understand.
     
 ###### Tasks
 
-- Implement a design that is bright and colourful, with appropriate sound effects and music.
+- Implement a design that is bright and colourful.
 - Display scores clearly on all screen sizes.
 - Ensure cards are easy to see and understand.
 
@@ -182,16 +178,16 @@ The website is designed to appeal to all demographics, but the following persona
 
 - General
 
-    - All pages will be responsive at different screen sizes, and change layout accordingly and appropriately.
-    - All screenshots shown in this section were taken from the desktop site, to give the clearest examples possible (apart from the Header section which also shows the header as seen on mobile devices, with a hamburger menu). 
+    - All pages responsive, with a layout that automaically adjusts to the user device screen size.
+    - The desktop site was used to produce all screenshots, to give the clearest illustration of different aspects of the site. 
 
 - Browser Icon:
 
     - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
         <details>
-        <summary>Click to see a screenshot</summary>
+        <summary>Click to view</summary>
         
-        ![Website custom favicon](assets/images/holding-image.jpg)
+        ![Website custom favicon](assets/images/favicon.ico)
         </details>
 
 - Header:

@@ -176,47 +176,74 @@ The website is designed to appeal to all demographics, but the following persona
 
 #### Existing Features
 
-- General
+- General:
 
     - All pages responsive, with a layout that automaically adjusts to the user device screen size.
-    - The desktop site was used to produce all screenshots, to give the clearest illustration of different aspects of the site. 
+    - The desktop site was used to produce all screenshots in this section, to give the clearest illustration of different aspects of the site. 
 
-- Browser Icon:
+- Browser Tab:
 
-    - A custom HTML favicon will be shown to aid users' identification of the site. It will also appear whenever someone adds the site as a bookmark or favourite.
-        <details>
-        <summary>Click to view</summary>
+    <details>
+    <summary>Click to view the browser tab, showing the custom favicon</summary>
         
-        ![Website custom favicon](assets/images/favicon.ico)
-        </details>
+    ![Website custom favicon](assets/images/website-favicon.webp)
+    </details>
+
+    - A favicon has been added to the site to help users identify the site visually and when saved as a browser bookmark / favourite.
+
 
 - Header:
 
-    - TBC
+    <details>
+    <summary>Click to view the desktop header</summary>
 
-        ![Website header](assets/images/holding-image.jpg))
-    
+    ![Website header](assets/images/website-desktop-header.webp)
+    </details>
+    <details>
+    <summary>Click to view the mobile header</summary>
+
+    ![Website header](assets/images/website-mobile-header.webp)
+    </details>
+
+    - The website header is fixed at the top fo the screen, and displays the name of the site; it also contains navigation links.
+    - It shows the user where they are on the site at any given time, by indicating the currently active page with a green background.
+    - Header text is shown on a contrasting plain background.
+    - The site's name is left-aligned.
+    - Navigation is right-aligned, and contains links to:
+        - Home: returns the user to the home page (index.html).
+        - Game: takes the user directly to the game page (game.html).
+        - FAQ: allows the user to access the frequently asked questions page (faq.html).
+    - If the user attempts to access a non-existent page, they will be taken to a custom error page (404-html) which returns them to index.html after 15 seconds; however, this is NOT indicated in the navigation links that appear on 404.html.
+
 - Footer:
 
-    - At the bottom of each page - it contains the social media icons, and legal information, and allows the user to jump to the social media properties of the podcast.
-    - On hover, each social media icon will change colour, and also when clicked. The legal links only change colour on hover:
+    <details>
+    <summary>Click to view</summary>
 
-        ![Website footer](assets/images/holding-image.jpg)    
+    ![Website footer](assets/images/website-footer.webp)
+    </details>  
 
-- Home (index):
+    - The footer is sticky, and is alway spushed down to the bottom of the page by website content.
+    - It contains social media icons, and legal information, for easy user access.
+
+- Home (index.html):
 
     - This is the first page a user sees when they enter the site. It contains all pertinent information regarding the podcast, with links to other pages where required.
     - The home page allows the user to get a good overview of the purpose of the website and gives them glimpses of associated activities.
 
         ![Website home page](assets/images/holding-image.jpg)
 
-- FAQ:
+- Game (game.html):
+
+- TBC
+
+- FAQ (faq.html):
 
     - TBC
 
         ![Website faq page](assets/images/holding-image.jpg)
 
-- Custom 404:
+- Custom 404 (404.html):
     - A custom 404 error page appears whenever a user attempts to navigate to a non-existent page.
     - After 30 seconds, the page will redirect automatically to the home page.
 

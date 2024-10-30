@@ -369,7 +369,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the mobile home page wireframe</summary>
 
-![Mobile home page wireframe](documentation/wireframes/mobile/mobile-home.jpg)
+![Mobile home page wireframe](documentation/wireframes/mobile/mobile-home.webp)
 </details>
 
 ###### Game
@@ -377,7 +377,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the mobile game page wireframe</summary>
 
-![Mobile game page wireframe](documentation/wireframes/mobile/)
+![Mobile game page wireframe](documentation/wireframes/mobile/mobile-game.webp)
 </details>
 
 ###### FAQ
@@ -385,7 +385,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the mobile FAQ page wireframe</summary>
 
-![Mobile FAQ page wireframe](documentation/wireframes/mobile/mobile-faq.jpg)
+![Mobile FAQ page wireframe](documentation/wireframes/mobile/mobile-faq.webp)
 </details>
 
 ###### 404
@@ -393,7 +393,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the mobile custom error page wireframe</summary>
 
-![Mobile custom error page wireframe](documentation/wireframes/mobile/mobile-404.jpg)
+![Mobile custom error page wireframe](documentation/wireframes/mobile/mobile-404.webp)
 </details>
 
 ##### Tablet
@@ -403,7 +403,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the tablet home page wireframe</summary>
 
-![Tablet home page wireframe](documentation/wireframes/tablet/tablet-home.jpg)
+![Tablet home page wireframe](documentation/wireframes/tablet/tablet-home.webp)
 </details>
 
 ###### Game
@@ -411,7 +411,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the tablet game page wireframe</summary>
 
-![Tablet game page wireframe](documentation/wireframes/tablet/)
+![Tablet game page wireframe](documentation/wireframes/tablet/tablet-game.webp)
 </details>
 
 ###### FAQ
@@ -419,7 +419,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the tablet FAQ page wireframe</summary>
 
-![Tablet FAQ page wireframe](documentation/wireframes/tablet/tablet-faq.jpg)
+![Tablet FAQ page wireframe](documentation/wireframes/tablet/tablet-faq.webp)
 </details>
 
 ###### 404
@@ -427,7 +427,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the tablet custom error page wireframe</summary>
 
-![Tablet custom error page wireframe](documentation/wireframes/tablet/tablet-404.jpg)
+![Tablet custom error page wireframe](documentation/wireframes/tablet/tablet-404.webp)
 </details>
 
 ##### Desktop
@@ -437,7 +437,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the desktop home page wireframe</summary>
 
-![Desktop home page wireframe](documentation/wireframes/desktop/desktop-home.jpg)
+![Desktop home page wireframe](documentation/wireframes/desktop/desktop-home.webp)
 </details>
 
 ###### Game
@@ -445,7 +445,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the desktop game page wireframe</summary>
 
-![Desktop game page wireframe](documentation/wireframes/desktop/)
+![Desktop game page wireframe](documentation/wireframes/desktop/desktop-game.webp)
 </details>
 
 ###### FAQ
@@ -453,7 +453,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the desktop FAQ page wireframe</summary>
 
-![Desktop FAQ page wireframe](documentation/wireframes/desktop/desktop-faq.jpg)
+![Desktop FAQ page wireframe](documentation/wireframes/desktop/desktop-faq.webp)
 </details>
 
 ###### 404
@@ -461,7 +461,7 @@ Wireframe diagrams of my initial ideas:
 <details>
 <summary>Click to view the desktop custom error page wireframe</summary>
 
-![Desktop custom error page wireframe](documentation/wireframes/desktop/desktop-404.jpg)
+![Desktop custom error page wireframe](documentation/wireframes/desktop/desktop-404.webp)
 </details>
 
 ### Surface

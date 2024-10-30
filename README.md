@@ -234,8 +234,7 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website home page](assets/images/home-page.webp)
     </details>  
 
-    - This is the first page a user sees when they enter the site. It contains all pertinent information regarding the podcast, with links to other pages where required.
-    - The home page allows the user to get a good overview of the purpose of the website and gives them glimpses of associated activities.
+    - The home page introduces the site, but its main purpose is to provide the main call to action - which is to play the game.
 
 - Game (game.html):
 
@@ -243,14 +242,56 @@ The website is designed to appeal to all demographics, but the following persona
     <summary>Click to view the game page</summary>
 
     ![Website game page](assets/images/game-page.webp)
-    </details>  
-        <details>
+    </details>
+    <details>
     <summary>Click to view the game page (when navigating away via the links in the header)</summary>
 
-    ![Website game page when navigating away](assets/images/leave-game-page.webp)
-    </details> 
+    ![Website game page when navigating away](assets/images/abandon-game-page.webp)
+    </details>
+    <details>
+    <summary>Click to view the game page (when winning a round)</summary>
 
-- TBC
+    ![Website game page when winning a round](assets/images/game-page-won-round.webp)
+    </details>
+    <details>
+    <summary>Click to view the game page (when lost a round)</summary>
+
+    ![Website game page when lost a round](assets/images/game-page-lost-round.webp)
+    </details>
+    <details>
+    <summary>Click to view the game page (when drawn a round)</summary>
+
+    ![Website game page when drawn a round](assets/images/game-page-drawn-round.webp)
+    </details>
+    <details>
+    <summary>Click to view the game page (when reaching the penultimate round)</summary>
+
+    ![Website game page when reaching the penultimate round](assets/images/game-page-last-round.webp)
+    </details>
+    <details>
+    <summary>Click to view the game page (when leaving the game after any round, before the end of the game)</summary>
+
+    ![Website game page when leaving or abandoning the game after any round, before the end of the game](assets/images/leave-game-page.webp)
+    </details>
+
+    <details>
+    <summary>Click to view the game page (when game completed)</summary>
+
+    ![Website game page when game completed](assets/images/game-page-completed.webp)
+    </details>
+
+    - The game page is where a player plays the game (see screenshot above):
+        - The cards for the current round are prominiently displayed at the top of the page (surrounded by a yellow border).
+        - All messages relating to gameplay are displayed in the central section (surrounded by an orange border).
+        - It clearly shows all information pertinent to the game, such as player points and wager, at the bottom of the page.
+        - It informs a player of their game progress, via the round number and card number, at the bottom of the page.
+    - If a player attempts to navigate away from the page, via the links in the header, a warning will appear (see screenshot above):
+        - If a player still wishes to abandon the game, they are shown their last score and redirected to the link they clicked (see screenshot above).
+    - If a player wins a round, they are asked whether or not they wish to continue (see screenshot above).
+    - If a player loses or draws a round, they are asked whether or not they wish to continue (see screenshot above).
+    - If a player reaches the penultimate round of a game, they are asked whether or not they wish to continue (see screenshot above).
+    - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page (see screenshot above).
+    - If a player completes an entire game of ten rounds, they are shown their final score and their highest score (see screenshot above).
 
 - FAQ (faq.html):
 

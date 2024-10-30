@@ -165,9 +165,9 @@ main {
   color: #FAC600;
 }
 
+/* For correct vertical alignment of child elements */
 #header .row {
   height: 100%;
-  /* For correct vertical alignment of child elements */
 }
 
 a {

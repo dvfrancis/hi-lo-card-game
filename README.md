@@ -54,7 +54,7 @@ The [live site] is hosted by Github Pages.
     1. [GitHub Pages](#github-pages)
     2. [Forks](#forks)
     3. [Local Clones](#local-clones)
-    4. [Gitpod Workspaces](#gitpod-workspaces)
+    4. [Automatically Create a Gitpod Workspaces](#automatically-create-a-gitpod-workspace)
 6. [Credits and References](#credits-and-references)
 
 7. [Acknowledgements](#acknowledgements)
@@ -336,57 +336,133 @@ The website is designed to appeal to all demographics, but the following persona
 
 ### Structure
 
-#### User Flow Diagram *TO BE UPDATED TO FINAL VERSION*
+#### User Flow Diagram
 
-This diagram shows how the user may interact with the website during a game; dashed lines indicate optional routes.
+<details>
+<summary>Click to view the user flow diagram</summary>
 
-![User flow diagram](documentation/flowcharts/user-flow.png)
+![User flow diagram](documentation/flowcharts/user-flow.webp)
+</details>
+
+User flow diagram of potential user-website interaction routes - optional pathways indicated by dashed lines.
 
 #### Logic Flowchart
 
-The following flowchart explains the logic used for the gameplay:
+<details>
+<summary>Click to view the gameplay logic flowchart</summary>
 
-![Hi-Lo Premium](documentation/flowcharts/game-logic.png)
+![Hi-Lo gameplay logic flowchart](documentation/flowcharts/game-logic.webp)
+</details>
+
+Flowchart explaining the logic behind the HI | LO game; used to formulate JavaScript code.
 
 ### Skeleton
 
 #### Wireframes
 
-The wireframes presented here show my initial ideas:
+Wireframe diagrams of my initial ideas:
 
 ##### Mobile
 
 ###### Home
-![Home (index)](documentation/wireframes/mobile/mobile-home.jpg)
+
+<details>
+<summary>Click to view the mobile home page wireframe</summary>
+
+![Mobile home page wireframe](documentation/wireframes/mobile/mobile-home.jpg)
+</details>
+
+###### Game
+
+<details>
+<summary>Click to view the mobile game page wireframe</summary>
+
+![Mobile game page wireframe](documentation/wireframes/mobile/)
+</details>
 
 ###### FAQ
-![FAQ](documentation/wireframes/mobile/mobile-faq.jpg)
+
+<details>
+<summary>Click to view the mobile FAQ page wireframe</summary>
+
+![Mobile FAQ page wireframe](documentation/wireframes/mobile/mobile-faq.jpg)
+</details>
 
 ###### 404
-![404](documentation/wireframes/mobile/mobile-404.jpg)
+
+<details>
+<summary>Click to view the mobile custom error page wireframe</summary>
+
+![Mobile custom error page wireframe](documentation/wireframes/mobile/mobile-404.jpg)
+</details>
 
 ##### Tablet
 
 ###### Home
-![Home (index)](documentation/wireframes/tablet/tablet-home.jpg)
+
+<details>
+<summary>Click to view the tablet home page wireframe</summary>
+
+![Tablet home page wireframe](documentation/wireframes/tablet/tablet-home.jpg)
+</details>
+
+###### Game
+
+<details>
+<summary>Click to view the tablet game page wireframe</summary>
+
+![Tablet game page wireframe](documentation/wireframes/tablet/)
+</details>
 
 ###### FAQ
-![FAQ](documentation/wireframes/tablet/tablet-faq.jpg)
+
+<details>
+<summary>Click to view the tablet FAQ page wireframe</summary>
+
+![Tablet FAQ page wireframe](documentation/wireframes/tablet/tablet-faq.jpg)
+</details>
 
 ###### 404
-![404](documentation/wireframes/tablet/tablet-404.jpg)
+
+<details>
+<summary>Click to view the tablet custom error page wireframe</summary>
+
+![Tablet custom error page wireframe](documentation/wireframes/tablet/tablet-404.jpg)
+</details>
 
 ##### Desktop
 
 ###### Home
-![Home (index)](documentation/wireframes/desktop/desktop-home.jpg)
+
+<details>
+<summary>Click to view the desktop home page wireframe</summary>
+
+![Desktop home page wireframe](documentation/wireframes/desktop/desktop-home.jpg)
+</details>
+
+###### Game
+
+<details>
+<summary>Click to view the desktop game page wireframe</summary>
+
+![Desktop game page wireframe](documentation/wireframes/desktop/)
+</details>
 
 ###### FAQ
-![FAQ](documentation/wireframes/desktop/desktop-faq.jpg)
+
+<details>
+<summary>Click to view the desktop FAQ page wireframe</summary>
+
+![Desktop FAQ page wireframe](documentation/wireframes/desktop/desktop-faq.jpg)
+</details>
 
 ###### 404
-![404](documentation/wireframes/desktop/desktop-404.jpg)
 
+<details>
+<summary>Click to view the desktop custom error page wireframe</summary>
+
+![Desktop custom error page wireframe](documentation/wireframes/desktop/desktop-404.jpg)
+</details>
 
 ### Surface
 
@@ -473,7 +549,7 @@ The site was deployed using GitHub Pages, as follows:
 - On the 'GitHub Pages' section, under 'Build and deployment > Source' select 'Deploy from a branch'.
 - Ensure that the 'main' branch has been selected, and then click 'Save'.
 
-![GitHub Pages deployment](assets/images/holding-image.jpg)
+![GitHub Pages deployment](assets/images/holding-image.webp)
 
 ### Forks
 
@@ -482,7 +558,7 @@ To copy the repository to your own GitHub account, so you can make changes witho
 - Navigate to the GitHub repository.
 - Just above the 'About' section, on the right of the page, click the 'Fork' button.
 
-![Fork deployment](assets/images/holding-image.jpg)
+![Fork deployment](assets/images/holding-image.webp)
 
 ### Local Clones
 
@@ -496,7 +572,7 @@ To deploy the project on your own computer you can clone it:
 - At the prompt, type `git clone` and add the string copied earlier.
 - Press 'Enter' to create the copy.
 
-![Clone deployment](assets/images/holding-image.jpg)
+![Clone deployment](assets/images/holding-image.webp)
 
 ### Automatically Create a Gitpod Workspace
 

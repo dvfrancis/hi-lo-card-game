@@ -543,42 +543,40 @@ All website copy has been written by myself.
 
 The site was deployed using GitHub Pages, as follows:
 
-- Navigate to the GitHub repository.
-- Click 'Settings'.
-- Under 'Code and automation', select 'Pages'.
-- On the 'GitHub Pages' section, under 'Build and deployment > Source' select 'Deploy from a branch'.
-- Ensure that the 'main' branch has been selected, and then click 'Save'.
+- Open the repository > click 'Settings'.
+- On the left, under 'Code and automation', click 'Pages'.
+- On the right section, under 'Build and deployment' and 'Source', click to select 'Deploy from a branch'.
+- Under 'Branch', click to select the main branch.
+- Click 'Save'.
 
-![GitHub Pages deployment](assets/images/holding-image.webp)
+![Deploying to GitHub Pages](assets/images/github-pages-deployment.webp)
 
 ### Forks
 
-To copy the repository to your own GitHub account, so you can make changes without affecting the original version, you can fork it:
+To make changes to a repository, without affecting the original copy, you can fork (duplicate) it:
 
-- Navigate to the GitHub repository.
-- Just above the 'About' section, on the right of the page, click the 'Fork' button.
+- Open the repository.
+- To the right of the page, click the 'Fork' button.
+- You can then open this repository in the IDE of your choice, and make changes as required.
 
-![Fork deployment](assets/images/holding-image.webp)
+![How to fork a repository](assets/images/github-fork-deployment.webp)
 
 ### Local Clones
 
 To deploy the project on your own computer you can clone it:
 
-- Navigate to the GitHub repository.
-- Click the green '<> Code' button above the list of project files.
-- From the 'Local' tab, select either HTTPS, SSH, or GitHub CLI as the method of cloning, and copy the associated link.
-- Open the terminal or Bash prompt.
-- Navigate to the directory where you want to store the cloned copy.
-- At the prompt, type `git clone` and add the string copied earlier.
-- Press 'Enter' to create the copy.
+- Open the repository, and click the '<> Code' button.
+- On 'Local', select your preferred cloning method, and copy the link.
+- Open a prompt in your chosen IDE.
+- Navigate to the destination directory, and then enter `git clone`, paste the copied string, and hit 'Enter'.
 
-![Clone deployment](assets/images/holding-image.webp)
+![Deploy a clone](assets/images/local-cloning-process.webp)
 
 ### Automatically Create a Gitpod Workspace
 
-Click the button below to create a Gitpod workspace from this repository (requires the [Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension)).
+You can create a Gitpod workspace for this repository by clicking the following button (it requires the [Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension)).
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://dvfrancis.github.io/hi-lo-card-game)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dvfrancis/hi-lo-card-game)
 
 ## Credits and References
 

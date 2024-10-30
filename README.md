@@ -468,21 +468,15 @@ Wireframe diagrams of my initial ideas:
 
 #### Colours
 
-The following colours, taken from palette 406 of the Sarah Renae Clarke Colour Catalogue, Volume 2, have been used to add interesting backgrounds to the website, with white (#FFF) as a contrast:
+<details>
+<summary>Click to view the chosen colour scheme</summary>
 
 ![Website colour scheme](assets/images/website-colours.webp)
 
-Link state colours for social media icons:
+</details>
 
-##### Hover
-
-- [Facebook Light Blue (#17A9FD)](https://brandpalettes.com/facebook-colors)
-- [Instagram Rose (#E1306C)](https://brandpalettes.com/instagram-color-codes)
-
-##### Active
-
-- [Facebook Dark Blue (#0165E1)](https://brandpalettes.com/facebook-colors)
-- [Instagram Purple Red (#C13584)](https://brandpalettes.com/instagram-color-codes)
+- Website colours were chosen by using the Sarah Renae Clarke Colour Catalogue (Volume 2) card 406.
+- Text colours on the website are a mix of white (#FFF) and black (#000).
 
 #### Typography
 
@@ -494,9 +488,8 @@ The fonts used on the site were chosen from Google Fonts:
 
 #### Media
 
-The following images, used on the site, have been taken from [Deposit Photos](https://depositphotos.com/):
-- TBC
-- TBC
+The following image was taken from [Deposit Photos](https://depositphotos.com/), and used on the 404.html page:
+- [Devastated gambler man...](https://depositphotos.com/photo/devastated-gambler-man-losing-lot-money-playing-poker-casino-gambling-439339268.html)
 
 #### Content
 

@@ -365,7 +365,7 @@ input {
 #points-info-group,
 #wager-info-group {
   height: 5rem;
-  width: 15rem;
+  width: 20rem;
   border-top: 7px rgba(255, 255, 255, 0.5) solid;
   border-bottom: 3px rgba(255, 255, 255, 0.4) solid;
   justify-content: center;

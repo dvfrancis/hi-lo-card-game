@@ -235,6 +235,7 @@ The website is designed to appeal to all demographics, but the following persona
     </details>  
 
     - The home page introduces the site, but its main purpose is to provide the main call to action - which is to play the game.
+    - The browser tab displays the custom favicon and a title - "HI | LO - How Far Can You Go?".
 
 - Game (game.html):
 
@@ -292,6 +293,8 @@ The website is designed to appeal to all demographics, but the following persona
     - If a player reaches the penultimate round of a game, they are asked whether or not they wish to continue (see screenshot above).
     - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page (see screenshot above).
     - If a player completes an entire game of ten rounds, they are shown their final score and their highest score (see screenshot above).
+    - The browser tab displays the custom favicon and a title - "HI | LO - Play The Game".
+
 
 - FAQ (faq.html):
 
@@ -301,7 +304,9 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website FAQ page](assets/images/faq-page.webp)
     </details>  
 
-    - TBC
+    - The FAQ provides background information about the game, and how it's played.
+    - The browser tab displays the custom favicon and a title - "HI | LO - FAQ".
+
 
 - Custom 404 (404.html):
 
@@ -312,16 +317,22 @@ The website is designed to appeal to all demographics, but the following persona
     </details>  
 
 
-    - A custom 404 error page appears whenever a user attempts to navigate to a non-existent page.
-    - After 30 seconds, the page will redirect automatically to the home page.
+    - If a player navigates to an invalid page, the custom error page is displayed.
+    - It provides a humourous, yet informative, pause for the user.
+    - It also links to the FAQ page.
+    - After 15 seconds, it redirects to the home page.
+    - The browser tab displays the custom favicon and a title - "HI | LO - It's a Busted Flush!".
+
 
 #### Future Features
 
 - Add the ability to play the classic version of higher-or-lower.
 - Add the ability to play the switch version of higher-or-lower.
+- Add the ability to play the premium version of higher-or-lower.
+- Add ability for a player to create an account.
+- Add ability to track and display multiple players' high scores.
 - Expand site to include different card games.
-- Add ability for users to create an account.
-- Allow users to be place real wagers in a currency of their choice.
+- Allow players to place real wagers in a currency of their choice.
 
 ### Structure
 

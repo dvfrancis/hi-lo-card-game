@@ -240,43 +240,43 @@ The website is designed to appeal to all demographics, but the following persona
 - Game (game.html):
 
     <details>
-    <summary>Click to view the game page</summary>
+    <summary>Click to view the game page, when starting a game</summary>
 
     ![Website game page](assets/images/game-page.webp)
     </details>
     <details>
-    <summary>Click to view the game page (when navigating away via the links in the header)</summary>
+    <summary>Click to view the game page, when navigating away via any link in the header</summary>
 
     ![Website game page when navigating away](assets/images/abandon-game-page.webp)
     </details>
     <details>
-    <summary>Click to view the game page (when winning a round)</summary>
+    <summary>Click to view the game page, when winning a round</summary>
 
     ![Website game page when winning a round](assets/images/game-page-won-round.webp)
     </details>
     <details>
-    <summary>Click to view the game page (when lost a round)</summary>
+    <summary>Click to view the game page, when a round is lost</summary>
 
-    ![Website game page when lost a round](assets/images/game-page-lost-round.webp)
+    ![Website game page when a round is lost](assets/images/game-page-lost-round.webp)
     </details>
     <details>
-    <summary>Click to view the game page (when drawn a round)</summary>
+    <summary>Click to view the game page, when a round is a draw</summary>
 
-    ![Website game page when drawn a round](assets/images/game-page-drawn-round.webp)
+    ![Website game page when a round is a draw](assets/images/game-page-drawn-round.webp)
     </details>
     <details>
-    <summary>Click to view the game page (when reaching the penultimate round)</summary>
+    <summary>Click to view the game page, when reaching the penultimate round</summary>
 
     ![Website game page when reaching the penultimate round](assets/images/game-page-last-round.webp)
     </details>
     <details>
-    <summary>Click to view the game page (when leaving the game after any round, before the end of the game)</summary>
+    <summary>Click to view the game page, when leaving the game after any round, and before the end of a game</summary>
 
     ![Website game page when leaving or abandoning the game after any round, before the end of the game](assets/images/leave-game-page.webp)
     </details>
 
     <details>
-    <summary>Click to view the game page (when game completed)</summary>
+    <summary>Click to view the game page, when the game is completed</summary>
 
     ![Website game page when game completed](assets/images/game-page-completed.webp)
     </details>

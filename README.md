@@ -218,7 +218,7 @@ The website is designed to appeal to all demographics, but the following persona
 - Footer:
 
     <details>
-    <summary>Click to view</summary>
+    <summary>Click to view the footer</summary>
 
     ![Website footer](assets/images/website-footer.webp)
     </details>  

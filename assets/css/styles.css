@@ -192,10 +192,12 @@ a.fa-brands {
 
 p {
   font-size: 1.2rem;
+  text-align: center;
 }
 
 h1,
-div>h1 {
+div>h1,
+div>h2 {
   text-align: center;
   color: #FFF;
   font-weight: 700;

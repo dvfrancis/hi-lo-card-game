@@ -69,19 +69,35 @@ Below are the results of HTML validation for each page, using the [W3C Markup Va
 
 #### index.html
 
+<details>
+<summary>Click here to see the HTML validation report for index.html</summary>
+
 ![HTML validation of index.html](assets/images/holding-image.webp)
+</details>
 
 #### game.html
 
+<details>
+<summary>Click here to see the HTML validation report for game.html</summary>
+
 ![HTML validation of game.html](assets/images/holding-image.webp)
+</details>
 
 #### faq.html
 
+<details>
+<summary>Click here to see the HTML validation report for faq.html</summary>
+
 ![HTML validation of faq.html](assets/images/holding-image.webp)
+</details>
 
 #### 404.html
 
+<details>
+<summary>Click here to see the HTML validation report for 404.html</summary>
+
 ![HTML validation of 404.html](assets/images/holding-image.webp)
+</details>
 
 ### CSS
 
@@ -89,19 +105,35 @@ Below are the results of CSS validation for each page, using the [W3C CSS Valida
 
 #### index.html
 
+<details>
+<summary>Click here to see the CSS validation report for index.html</summary>
+
 ![CSS validation of index.html](assets/images/holding-image.webp)
+</details>
 
 #### game.html
 
+<details>
+<summary>Click here to see the CSS validation report for game.html</summary>
+
 ![CSS validation of game.html](assets/images/holding-image.webp)
+</details>
 
 #### faq.html
 
+<details>
+<summary>Click here to see the CSS validation report for faq.html</summary>
+
 ![CSS validation of faq.html](assets/images/holding-image.webp)
+</details>
 
 #### 404.html
 
+<details>
+<summary>Click here to see the CSS validation report for 404.html</summary>
+
 ![CSS validation of 404.html](assets/images/holding-image.webp)
+</details>
 
 ### JavaScript
 
@@ -109,15 +141,27 @@ Below are the results of JavaScript validation for each script file, using [JSHi
 
 #### general.js
 
+<details>
+<summary>Click here to see the JavaScript validation report for general.js</summary>
+
 ![JavaScript validation of general.js](assets/images/holding-image.webp)
+</details>
 
 #### index.js
 
+<details>
+<summary>Click here to see the JavaScript validation report for index.js</summary>
+
 ![JavaScript validation of index.js](assets/images/holding-image.webp)
+</details>
 
 #### game.js
 
+<details>
+<summary>Click here to see the JavaScript validation report for game.js</summary>
+
 ![JavaScript validation of game.js](assets/images/holding-image.webp)
+</details>
 
 ## Manual Validation
 
@@ -276,7 +320,11 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | --- | --- | --- | --- | --- |
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
 
+<details>
+<summary>Click here to see proof of first time visitor goal number one</summary>
+
 ![First time visitor goal 1](assets/images/holding-image.webp)
+</details>
 
 ### Returning Visitor Goals:
 
@@ -287,7 +335,11 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
 | Home page | Navigate to the home page, scroll down to the section called "Mailing List", enter a valid email address, and click the button titled 'Send' to be included on the podcast's mailing list | User is added to the mailing list, and will receive further information via email | User is added to the mailing list, and will receive further information via email | PASS | 
 
+<details>
+<summary>Click here to see proof of returning visitor goal number one</summary>
+
 ![Returning visitor goal 1](assets/images/holding-image.webp)
+</details>
 
 ### Frequent Visitor Goals:
 
@@ -297,7 +349,11 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | --- | --- | --- | --- | --- |
 | Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is redirected to the contact completion page | A message is sent, and the user is redirected to the contact completion page | PASS | 
 
+<details>
+<summary>Click here to see proof of frequent visitor goal number one</summary>
+
 ![Frequent visitor goal 1](assets/images/holding-image.webp)
+</details>
 
 ## User Personas
 
@@ -315,27 +371,51 @@ The website has been successfully tested in the following browsers (desktop scre
 
 ### Google Chrome
 
+<details>
+<summary>Click here to see a website preview in Google Chrome</summary>
+
 ![Website in Google Chrome](assets/images/holding-image.webp)
+</details>
 
 ### Microsoft Edge
 
+<details>
+<summary>Click here to see a website preview in Microsoft Edge</summary>
+
 ![Website in Microsoft Edge](assets/images/holding-image.webp)
+</details>
 
 ### Firefox
 
+<details>
+<summary>Click here to see a website preview in Firefox</summary>
+
 ![Website in Firefox](assets/images/holding-image.webp)
+</details>
 
 ### Opera
 
+<details>
+<summary>Click here to see a website preview in Opera</summary>
+
 ![Website in Opera](assets/images/holding-image.webp)
-
-### Safari (on an iPad)
-
-![Website in Safari (iPad)](assets/images/holding-image.webp)
+</details>
 
 ### Safari (on an iPhone)
 
+<details>
+<summary>Click here to see a website preview in Safari (on an iPhone)</summary>
+
 ![Website in Safari (iPhone)](assets/images/holding-image.webp)
+</details>
+
+### Safari (on an iPad)
+
+<details>
+<summary>Click here to see a website preview in Safari (on an iPad)</summary>
+
+![Website in Safari (iPad)](assets/images/holding-image.webp)
+</details>
 
 ## Accessibility
 
@@ -343,19 +423,35 @@ Pages were tested for accessibility using the [Wave Accessibility Evaluation Too
 
 #### index.html
 
+<details>
+<summary>Click here to see the accessibility report for index.html</summary>
+
 ![Accessibility of index.html](assets/images/holding-image.webp)
+</details>
 
 #### game.html
 
+<details>
+<summary>Click here to see the accessibility report for game.html</summary>
+
 ![Accessibility of game.html](assets/images/holding-image.webp)
+</details>
 
 #### faq.html
 
+<details>
+<summary>Click here to see the accessibility report for faq.html</summary>
+
 ![Accessibility of faq.html](assets/images/holding-image.webp)
+</details>
 
 #### 404.html
 
+<details>
+<summary>Click here to see the accessibility report for 404.html</summary>
+
 ![Accessibility of 404.html](assets/images/holding-image.webp)
+</details>
 
 ## Responsiveness
 
@@ -365,57 +461,105 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 
 #### Mobile
 
+<details>
+<summary>Click here to see the responsiveness report for index.html, on a mobile device</summary>
+
 ![Responsiveness report for index.html](assets/images/holding-image.webp)
+</details>
 
 #### Tablet
 
+<details>
+<summary>Click here to see the responsiveness report for index.html, on a tablet device</summary>
+
 ![Responsiveness report for index.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the responsiveness report for index.html, on a desktop device</summary>
+
 ![Responsiveness report for index.html](assets/images/holding-image.webp)
+</details>
 
 ### game.html
 
 #### Mobile
 
+<details>
+<summary>Click here to see the responsiveness report for game.html, on a mobile device</summary>
+
 ![Responsiveness report for game.html](assets/images/holding-image.webp)
+</details>
 
 #### Tablet
 
+<details>
+<summary>Click here to see the responsiveness report for game.html, on a tablet device</summary>
+
 ![Responsiveness report for game.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the responsiveness report for game.html, on a desktop device</summary>
+
 ![Responsiveness report for game.html](assets/images/holding-image.webp)
+</details>
 
 ### faq.html
 
 #### Mobile
 
+<details>
+<summary>Click here to see the responsiveness report for faq.html, on a mobile device</summary>
+
 ![Responsiveness report for faq.html](assets/images/holding-image.webp)
+</details>
 
 #### Tablet
 
+<details>
+<summary>Click here to see the responsiveness report for faq.html, on a tablet device</summary>
+
 ![Responsiveness report for faq.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the responsiveness report for faq.html, on a desktop device</summary>
+
 ![Responsiveness report for faq.html](assets/images/holding-image.webp)
+</details>
 
 ### 404.html
 
 #### Mobile
 
+<details>
+<summary>Click here to see the responsiveness report for 404.html, on a mobile device</summary>
+
 ![Responsiveness report for 404.html](assets/images/holding-image.webp)
+</details>
 
 #### Tablet
 
+<details>
+<summary>Click here to see the responsiveness report for 404.html, on a tablet device</summary>
+
 ![Responsiveness report for 404.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the responsiveness report for 404.html, on a desktop device</summary>
+
 ![Responsiveness report for 404.html](assets/images/holding-image.webp)
+</details>
 
 ## Performance
 
@@ -425,41 +569,73 @@ Each page was audited using [Google Lighthouse](https://developer.chrome.com/doc
 
 #### Mobile
 
+<details>
+<summary>Click here to see the mobile performance report for index.html</summary>
+
 ![Mobile performance report for index.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the desktop performance report for index.html</summary>
+
 ![Desktop performance report for index.html](assets/images/holding-image.webp)
+</details>
 
 ### game.html
 
 #### Mobile
 
+<details>
+<summary>Click here to see the mobile performance report for game.html</summary>
+
 ![Mobile performance report for game.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the desktop performance report for game.html</summary>
+
 ![Desktop performance report for game.html](assets/images/holding-image.webp)
+</details>
 
 ### faq.html
 
 #### Mobile
 
+<details>
+<summary>Click here to see the mobile performance report for faq.html</summary>
+
 ![Mobile performance report for faq.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the desktop performance report for faq.html</summary>
+
 ![Desktop performance report for faq.html](assets/images/holding-image.webp)
+</details>
 
 ### 404.html
 
 #### Mobile
 
+<details>
+<summary>Click here to see the mobile performance report for 404.html</summary>
+
 ![Mobile performance report for 404.html](assets/images/holding-image.webp)
+</details>
 
 #### Desktop
 
+<details>
+<summary>Click here to see the desktop performance report for 404.html</summary>
+
 ![Desktop performance report for 404.html](assets/images/holding-image.webp)
+</details>
 
 ## Bugs
 
@@ -468,6 +644,7 @@ Here is a list of bugs encountered while building this website. Images shown ill
 ### Bug 1
 
 ![Fixed Bug 1](assets/images/holding-image.webp)
+</details>
 
 | Bug | Fix |
 | --- | --- |
@@ -482,6 +659,7 @@ MENTION ABOUT BACKGOURND IMAGE ISSUE WHICH COULD NOT BE FIXED. JULIA THOUGHT IT 
 ### Bug 1
 
 ![Unfixed Bug 1](assets/images/holding-image.webp)
+</details>
 
 | Bug | Fix |
 | --- | --- |

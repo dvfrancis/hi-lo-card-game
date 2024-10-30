@@ -392,7 +392,11 @@ input {
   height: 100%;
 }
 
-#info-title {
+#info-title,
+#round-title,
+#card-title,
+#points-title,
+#wager-title {
   font-family: 'Lora', serif;
   font-size: 1.25rem;
   font-weight: 700;

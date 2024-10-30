@@ -108,7 +108,7 @@ Below are the results of CSS validation for each page, using the [W3C CSS Valida
 <details>
 <summary>Click here to see the CSS validation report for index.html</summary>
 
-![CSS validation of index.html](assets/images/holding-image.webp)
+![CSS validation of index.html](documentation/validation/css/css-validation-index-page.webp)
 </details>
 
 #### game.html
@@ -116,7 +116,7 @@ Below are the results of CSS validation for each page, using the [W3C CSS Valida
 <details>
 <summary>Click here to see the CSS validation report for game.html</summary>
 
-![CSS validation of game.html](assets/images/holding-image.webp)
+![CSS validation of game.html](documentation/validation/css/css-validation-game-page.webp)
 </details>
 
 #### faq.html
@@ -124,7 +124,7 @@ Below are the results of CSS validation for each page, using the [W3C CSS Valida
 <details>
 <summary>Click here to see the CSS validation report for faq.html</summary>
 
-![CSS validation of faq.html](assets/images/holding-image.webp)
+![CSS validation of faq.html](documentation/validation/css/css-validation-faq-page.webp)
 </details>
 
 #### 404.html
@@ -132,7 +132,7 @@ Below are the results of CSS validation for each page, using the [W3C CSS Valida
 <details>
 <summary>Click here to see the CSS validation report for 404.html</summary>
 
-![CSS validation of 404.html](assets/images/holding-image.webp)
+![CSS validation of 404.html](documentation/validation/css/css-validation-404-page.webp)
 </details>
 
 ### JavaScript

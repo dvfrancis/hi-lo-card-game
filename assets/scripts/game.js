@@ -498,7 +498,7 @@ function displayScore() {
   bsBtn2.remove();
   bsTitle.innerText = "THANKS FOR PLAYING";
   bsText.innerHTML = `<p>Your final score was ${playerPoints} points</p>`;
-  bsText.innerHTML += `<p class="sub-text">Redirecting home (in 5 seconds)</p>`;
+  bsText.innerHTML += `<p class="sub-text">Redirecting (in 5 seconds)</p>`;
   displayModal();
 }
 

@@ -7,61 +7,57 @@
 1. [Code Validation](#code-validation)
     1. [HTML](#html)
         1. [index.html](#indexhtml)
-        2. [mailing-list-completion.html](#mailing-list-completionhtml)
-        3. [about.html](#abouthtml)
-        4. [message-board.html](#message-boardhtml)
-        5. [contact.html](#contacthtml)
-        6. [contact-completion.html](#contact-completionhtml)
-        7. [404.html](#404html)
+        2. [game.html](#gamehtml)
+        3. [faq.html](#faqhtml)
+        4. [404.html](#404html)
     2. [CSS](#css)
         1. [index.html](#indexhtml-1)
-        2. [mailing-list-completion.html](#mailing-list-completionhtml-1)
-        3. [about.html](#abouthtml-1)
-        4. [message-board.html](#message-boardhtml-1)
-        5. [contact.html](#contacthtml-1)
-        6. [contact-completion.html](#contact-completionhtml-1)
-        7. [404.html](#404html-1)
+        2. [game.html](#gamehtml-1)
+        3. [faq.html](#faqhtml-1)
+        4. [404.html](#404html-1)
+    3. [JavaScript](#javascript)
+        1. [general.js](#generaljs)
+        2. [index.js](#indexjs)
+        3. [game.js](#gamejs)
 2. [Manual Validation](#manual-validation)
     1. [index.html](#indexhtml-2)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-2)
-    3. [about.html](#abouthtml-2)
-    4. [message-board.html](#message-boardhtml-2)
-    5. [contact.html](#contacthtml-2)
-    6. [contact-completion.html](#contact-completionhtml-2)
-    7. [404.html](#404html-2)
+    2. [game.html](#gamehtml-2)
+    3. [faq.html](#faqhtml-2)
+    4. [404.html](#404html-2)
+    5. [general.js](#generaljs-1)
+    6. [index.js](#indexjs-1)
+    7. [game.js](#gamejs-1)
 3. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
     3. [Frequent Visitor Goals](#frequent-visitor-goals)
+4. [User Personas](#user-personas)
+    1. [User 1](#user-1)
+    2. [User 2](#user-2)
+    3. [User 3](#user-3)
+    4. [User 4](#user-4)
 4. [Browser Compatibility](#browser-compatibility)
     1. [Google Chrome](#google-chrome)
     2. [Microsoft Edge](#microsoft-edge)
     3. [Firefox](#firefox)
     4. [Opera](#opera)
+    5. [Safari (on an iPhone)](#safari-on-an-iphone)
+    6. [Safari (on an iPad)](#safari-on-an-ipad)
 5. [Accessibility](#accessibility)
-    1. [index.html](#404html-3)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-3)
-    3. [about.html](#abouthtml-3)
-    4. [message-board.html](#message-boardhtml-3)
-    5. [contact.html](#contact-completionhtml-3)
-    6. [contact-completion.html](#contact-completionhtml-3)
-    7. [404.html](#404html-3)
+    1. [index.html](#indexhtml-3)
+    2. [game.html](#gamehtml-3)
+    3. [faq.html](#faqhtml-3)
+    4. [404.html](#404html-3)
 6. [Responsiveness](#responsiveness)
     1. [index.html](#indexhtml-4)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-4)
-    3. [about.html](#abouthtml-4)
-    4. [message-board.html](#message-boardhtml-4)
-    5. [contact.html](#contacthtml-4)
-    6. [contact-completion.html](#contact-completionhtml-4)
-    7. [404.html](#404html-4)
+    2. [game.html](#gamehtml-4)
+    3. [faq.html](#faqhtml-4)
+    4. [404.html](#404html-4)
 7. [Performance](#performance)
     1. [index.html](#indexhtml-5)
-    2. [mailing-list-completion.html](#mailing-list-completionhtml-5)
-    3. [about.html](#abouthtml-5)
-    4. [message-board.html](#message-boardhtml-5)
-    5. [contact.html](#contacthtml-5)
-    6. [contact-completion.html](#contact-completionhtml-5)
-    7. [404.html](#404html-5)
+    2. [game.html](#gamehtml-5)
+    3. [faq.html](#faqhtml-5)
+    4. [404.html](#404html-5)
 8. [Bugs](#bugs)
 9. [Unfixed Bugs](#unfixed-bugs)
 
@@ -73,15 +69,19 @@ Below are the results of HTML validation for each page, using the [W3C Markup Va
 
 #### index.html
 
-![HTML validation of index.html](assets/images/holding-image.jpg)
+![HTML validation of index.html](assets/images/holding-image.webp)
+
+#### game.html
+
+![HTML validation of game.html](assets/images/holding-image.webp)
 
 #### faq.html
 
-![HTML validation of index.html](assets/images/holding-image.jpg)
+![HTML validation of faq.html](assets/images/holding-image.webp)
 
 #### 404.html
 
-![HTML validation of index.html](assets/images/holding-image.jpg)
+![HTML validation of 404.html](assets/images/holding-image.webp)
 
 ### CSS
 
@@ -89,16 +89,35 @@ Below are the results of CSS validation for each page, using the [W3C CSS Valida
 
 #### index.html
 
-![CSS validation of index.html](assets/images/holding-image.jpg)
+![CSS validation of index.html](assets/images/holding-image.webp)
+
+#### game.html
+
+![CSS validation of game.html](assets/images/holding-image.webp)
 
 #### faq.html
 
-![CSS validation of index.html](assets/images/holding-image.jpg)
+![CSS validation of faq.html](assets/images/holding-image.webp)
 
 #### 404.html
 
-![CSS validation of index.html](assets/images/holding-image.jpg)
+![CSS validation of 404.html](assets/images/holding-image.webp)
 
+### JavaScript
+
+Below are the results of JavaScript validation for each script file, using [JSHint](https://jshint.com/).
+
+#### general.js
+
+![JavaScript validation of general.js](assets/images/holding-image.webp)
+
+#### index.js
+
+![JavaScript validation of index.js](assets/images/holding-image.webp)
+
+#### game.js
+
+![JavaScript validation of game.js](assets/images/holding-image.webp)
 
 ## Manual Validation
 
@@ -129,7 +148,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
-### faq.html
+### game.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
@@ -147,7 +166,87 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
+### faq.html
+
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
+| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
+| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
+| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
+| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
+| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
+| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
+| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
+| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+
 ### 404.html
+
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
+| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
+| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
+| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
+| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
+| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
+| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
+| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
+| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+
+### general.js
+
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
+| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
+| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
+| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
+| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
+| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
+| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
+| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
+| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+
+### index.js
+
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
+| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
+| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
+| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
+| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
+| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
+| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
+| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
+| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
+| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+
+### game.js
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
@@ -177,7 +276,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | --- | --- | --- | --- | --- |
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
 
-![First time visitor goal 1](assets/images/holding-image.jpg)
+![First time visitor goal 1](assets/images/holding-image.webp)
 
 ### Returning Visitor Goals:
 
@@ -188,7 +287,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
 | Home page | Navigate to the home page, scroll down to the section called "Mailing List", enter a valid email address, and click the button titled 'Send' to be included on the podcast's mailing list | User is added to the mailing list, and will receive further information via email | User is added to the mailing list, and will receive further information via email | PASS | 
 
-![Returning visitor goal 1](assets/images/holding-image.jpg)
+![Returning visitor goal 1](assets/images/holding-image.webp)
 
 ### Frequent Visitor Goals:
 
@@ -198,7 +297,17 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | --- | --- | --- | --- | --- |
 | Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is redirected to the contact completion page | A message is sent, and the user is redirected to the contact completion page | PASS | 
 
-![Frequent visitor goal 1](assets/images/holding-image.jpg)
+![Frequent visitor goal 1](assets/images/holding-image.webp)
+
+## User Personas
+
+### User 1
+
+### User 2
+
+### User 3
+
+### User 4
 
 ## Browser Compatibility
 
@@ -206,45 +315,47 @@ The website has been successfully tested in the following browsers (desktop scre
 
 ### Google Chrome
 
-![Website in Google Chrome](assets/images/holding-image.jpg)
+![Website in Google Chrome](assets/images/holding-image.webp)
 
 ### Microsoft Edge
 
-![Website in Microsoft Edge](assets/images/holding-image.jpg)
+![Website in Microsoft Edge](assets/images/holding-image.webp)
 
 ### Firefox
 
-![Website in Firefox](assets/images/holding-image.jpg)
+![Website in Firefox](assets/images/holding-image.webp)
 
 ### Opera
 
-![Website in Opera](assets/images/holding-image.jpg)
+![Website in Opera](assets/images/holding-image.webp)
 
 ### Safari (on an iPad)
 
-![Website in Safari (iPad)](assets/images/holding-image.jpg)
+![Website in Safari (iPad)](assets/images/holding-image.webp)
 
 ### Safari (on an iPhone)
 
-![Website in Safari (iPhone)](assets/images/holding-image.jpg)
+![Website in Safari (iPhone)](assets/images/holding-image.webp)
 
 ## Accessibility
 
 Pages were tested for accessibility using the [Wave Accessibility Evaluation Tool](https://wave.webaim.org):
 
-### index.html
+#### index.html
 
-![WAVE report for index.html](assets/images/holding-image.jpg)
+![Accessibility of index.html](assets/images/holding-image.webp)
 
-### faq.html
+#### game.html
 
-![WAVE report for index.html](assets/images/holding-image.jpg)
+![Accessibility of game.html](assets/images/holding-image.webp)
 
-### 404.html
+#### faq.html
 
-The error being shown here is because of the auto-redirect setup on the page, which is part of the design:
+![Accessibility of faq.html](assets/images/holding-image.webp)
 
-![WAVE report for 404.html](assets/images/holding-image.jpg)
+#### 404.html
+
+![Accessibility of 404.html](assets/images/holding-image.webp)
 
 ## Responsiveness
 
@@ -254,43 +365,57 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 
 #### Mobile
 
-![Responsiveness report for index.html](assets/images/holding-image.jpg)
+![Responsiveness report for index.html](assets/images/holding-image.webp)
 
 #### Tablet
 
-![Responsiveness report for index.html](assets/images/holding-image.jpg)
+![Responsiveness report for index.html](assets/images/holding-image.webp)
 
 #### Desktop
 
-![Responsiveness report for index.html](assets/images/holding-image.jpg)
+![Responsiveness report for index.html](assets/images/holding-image.webp)
+
+### game.html
+
+#### Mobile
+
+![Responsiveness report for game.html](assets/images/holding-image.webp)
+
+#### Tablet
+
+![Responsiveness report for game.html](assets/images/holding-image.webp)
+
+#### Desktop
+
+![Responsiveness report for game.html](assets/images/holding-image.webp)
 
 ### faq.html
 
 #### Mobile
 
-![Responsiveness report for about.html](assets/images/holding-image.jpg)
+![Responsiveness report for faq.html](assets/images/holding-image.webp)
 
 #### Tablet
 
-![Responsiveness report for about.html](assets/images/holding-image.jpg)
+![Responsiveness report for faq.html](assets/images/holding-image.webp)
 
 #### Desktop
 
-![Responsiveness report for about.html](assets/images/holding-image.jpg)
+![Responsiveness report for faq.html](assets/images/holding-image.webp)
 
 ### 404.html
 
 #### Mobile
 
-![Responsiveness report for 404.html](assets/images/holding-image.jpg)
+![Responsiveness report for 404.html](assets/images/holding-image.webp)
 
 #### Tablet
 
-![Responsiveness report for 404.html](assets/images/holding-image.jpg)
+![Responsiveness report for 404.html](assets/images/holding-image.webp)
 
 #### Desktop
 
-![Responsiveness report for 404.html](assets/images/holding-image.jpg)
+![Responsiveness report for 404.html](assets/images/holding-image.webp)
 
 ## Performance
 
@@ -300,33 +425,41 @@ Each page was audited using [Google Lighthouse](https://developer.chrome.com/doc
 
 #### Mobile
 
-![Mobile performance report for index.html](assets/images/holding-image.jpg)
+![Mobile performance report for index.html](assets/images/holding-image.webp)
 
 #### Desktop
 
-![Desktop performance report for index.html](assets/images/holding-image.jpg)
+![Desktop performance report for index.html](assets/images/holding-image.webp)
+
+### game.html
+
+#### Mobile
+
+![Mobile performance report for game.html](assets/images/holding-image.webp)
+
+#### Desktop
+
+![Desktop performance report for game.html](assets/images/holding-image.webp)
 
 ### faq.html
 
 #### Mobile
 
-![Mobile performance report for about.html](assets/images/holding-image.jpg)
+![Mobile performance report for faq.html](assets/images/holding-image.webp)
 
 #### Desktop
 
-![Desktop performance report for about.html](assets/images/holding-image.jpg)
+![Desktop performance report for faq.html](assets/images/holding-image.webp)
 
 ### 404.html
 
-The lower score for accessibility here is caused by two things - the presence of the redirect (which is part of the site design), and because FontAwesome automatically adds the ``aria-hidden="true"`` class to all of its icons. This cannot be stopped and is conflicting with my own ARIA label on each social media icon. 
-
 #### Mobile
 
-![Mobile performance report for 404.html](assets/images/holding-image.jpg)
+![Mobile performance report for 404.html](assets/images/holding-image.webp)
 
 #### Desktop
 
-![Desktop performance report for 404.html](assets/images/holding-image.jpg)
+![Desktop performance report for 404.html](assets/images/holding-image.webp)
 
 ## Bugs
 
@@ -334,7 +467,7 @@ Here is a list of bugs encountered while building this website. Images shown ill
 
 ### Bug 1
 
-![Fixed Bug 1](assets/images/holding-image.jpg)
+![Fixed Bug 1](assets/images/holding-image.webp)
 
 | Bug | Fix |
 | --- | --- |
@@ -348,7 +481,7 @@ MENTION ABOUT BACKGOURND IMAGE ISSUE WHICH COULD NOT BE FIXED. JULIA THOUGHT IT 
 
 ### Bug 1
 
-![Unfixed Bug 1](assets/images/holding-image.jpg)
+![Unfixed Bug 1](assets/images/holding-image.webp)
 
 | Bug | Fix |
 | --- | --- |

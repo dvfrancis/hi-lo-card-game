@@ -594,7 +594,3 @@ function leaveGame(url) {
 }
 
 shuffleCards();
-
-module.exports = {
-  leaveGame
-};

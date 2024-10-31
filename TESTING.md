@@ -236,7 +236,15 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### general.js
 
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| Function - updateCopyrightYear | Keep copyright year current, in each page footer | The copyright year, of all footers, is the current year | The copyright year, of all footers, is the current year | WORKS AS EXPECTED |
+
 ### index.js
+
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| Function - startGame | Start the game when 'PLAY' is clicked | User is taken to game.html and a new game begins | User is taken to game.html and a new game begins | WORKS AS EXPECTED |
 
 ### game.js
 

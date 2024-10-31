@@ -1,5 +1,5 @@
 /**
- * Keep copyright year current, in the footer
+ * Keep copyright year current, in each page footer
  */
 function updateCopyrightYear() {
     let dateNow = new Date();

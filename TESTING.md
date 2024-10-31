@@ -240,46 +240,57 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### First Time Visitor Goals
 
-1. "What is the Older and Wider podcast about?"
+“What is this website about?”
+
+<details>
+<summary>Click here to see proof of first time visitor goal number 1</summary>
+
+![First time visitor goal 1](documentation/validation/user-stories-personas/first-time-visitor-goal-1.webp)
+</details>
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
+| Home page | Scroll down to the text box | View information about the website | View information about the website | PASS |
+
+“How do you play the game?”, “What are the rules of the game?”, and "What can I win?"
 
 <details>
-<summary>Click here to see proof of first time visitor goal number one</summary>
+<summary>Click here to see proof of first time visitor goals 2 to 4</summary>
 
-![First time visitor goal 1](assets/images/holding-image.webp)
+![First time visitor goal 2 to 4](documentation/validation/user-stories-personas/first-time-visitor-goal-2-to-4.webp)
 </details>
+
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| FAQ page | Navigate to the FAQ page using the navigation link at the top of each page, and scroll down to the FAQ accordion | View information about the game and how to play it | View information about the game and how to play it | PASS |
 
 ### Returning Visitor Goals:
 
-1. "I want to find out more background information about the Older and Wider podcast"
+“Will I be able to beat my score from the last time I played?”
+
+<details>
+<summary>Click here to see proof of the returning visitor goal</summary>
+
+![Returning visitor goal](documentation/validation/user-stories-personas/returning-visitor-goal.webp)
+</details>
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| About page | Navigate to the about page using the navigation bar at the top of each page, and scroll down to the section called "What is Older & Wider?" | View information about the podcast | View information about the podcast | PASS |
-| Home page | Navigate to the home page, scroll down to the section called "Mailing List", enter a valid email address, and click the button titled 'Send' to be included on the podcast's mailing list | User is added to the mailing list, and will receive further information via email | User is added to the mailing list, and will receive further information via email | PASS | 
-
-<details>
-<summary>Click here to see proof of returning visitor goal number one</summary>
-
-![Returning visitor goal 1](assets/images/holding-image.webp)
-</details>
+| Game page | Complete a game of 10 rounds of five cards | Modal dialog displays current game score, and highest previous score | Modal dialog displays current game score, and highest previous score | PASS |
 
 ### Frequent Visitor Goals:
 
-1. "How can I contact Jenny and Judith to share my experiences, or comment on an item that was mentioned in the show?"
+“I would like to play the game on my mobile device, while travelling”
+
+<details>
+<summary>Click here to see proof of the frequent visitor goal</summary>
+
+![Frequent visitor goal](documentation/validation/user-stories-personas/frequent-visitor-goal.webp)
+</details>
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is directed to the contact completion page | A message is sent, and the user is directed to the contact completion page | PASS | 
-
-<details>
-<summary>Click here to see proof of frequent visitor goal number one</summary>
-
-![Frequent visitor goal 1](assets/images/holding-image.webp)
-</details>
+| Game page | Navigate to the game page on a mobile device | The game adapts to the screen size and can still be played | The game adapts to the screen size and can still be played | PASS | 
 
 ## User Personas
 

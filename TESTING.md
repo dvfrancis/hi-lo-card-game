@@ -595,17 +595,132 @@ As the site design requires an automatic redirect on this page, it results in a 
 
 The fixed bugs listed here are numbered to match the cases logged in the GitGub repository project (they do not follow a set sequential order).
 
-### Bug 1
+### Bug 47
 
 <details>
-<summary>Click here to see a screenshot of bug 1</summary>
+<summary>Click here to see a screenshot showing the result of bug 47</summary>
 
-![Fixed Bug 1](documentation/bugs/)
+![Fixed Bug 47](documentation/bugs/bug-47-padding-on-nav-link.webp)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| Nav link is too close to right-hand side edge of the page | The following code below was added to remove extraneous padding elsewhere but this also affected the padding on the nav link `.row > * { padding-left: 0 !important; padding-right: 0 !important; }`. I added this selector beneath the above to over-ride its effects `#nav { padding-right: 15px !important; }` |
+
+### Bug 52
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 52</summary>
+
+![Fixed Bug 52](documentation/bugs/bug-52-cards-not-displayed.webp)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| The initial card view is not displaying any playing cards | I renamed some classes and IDs in JavaScript and HTML but forgot to use the correct names in my initial JavaScript variable declarations. Once I had updated those the cards were displayed correctly |
+
+### Bug 61
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 61</summary>
+
+![Fixed Bug 61](documentation/bugs/bug-61-cards-not-resizing-correctly-on-flip.webp)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| Renamed some classes and IDs to help in coding but now cards are not resizing correctly when flipped | This is the code I amended to auto-generate the id name based on array position `cards[cardIndex].innerHTML = <img id="card-${dealtCards.cards[cardIndex]}" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">;`. However, looking at this in the browser console it appears the name is not generating as I expected - it says `id="card-[object Object]"` when it should be `id="card-1"` or `id=card-2`, etc. What I needed to do was simplify the code to just use the currentCard variable (which stores the index of the currently flipped card) - `cards[cardIndex].innerHTML = <img id="card-${currentCard}" src="${dealtCards.cards[cardIndex].images.png}" alt="The first card">; // Flip the next card`. Now the cards are targeted by the CSS correctly, and display at their correct size |
+
+### Bug 62
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 62</summary>
+
+![Fixed Bug 62](documentation/bugs/bug-62-game-finishes-before-last-card-is-flipped-unfixed.webp)
+</details>
+
+<details>
+<summary>Click here to see a screenshot showing the result when bug 62 was fixed</summary>
+
+![Fixed Bug 62](documentation/bugs/bug-62-game-finishes-before-last-card-is-flipped-fixed.webp)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| When playing the game it should get to the last (known as the fourth) card and then calculate if you have won or lost. At the moment it gets to the third card and then calculates if you have won or lost | The correctGuesses variable needs to be of value 4 before the game calculates if you have won or lost. However, it was only reaching 3 because there was a section of unnecessary code in the flipCard function that was from an earlier version of the code. Once removed, correctGuesses could correctly increment to 4 and the game could complete successfully |
+
+### Bug 63
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 63</summary>
+
+![Fixed Bug 63](documentation/bugs/bug-63-multiple-card-decks-being-drawn-at-once.webp)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| When a round is won, instead of drawing a new deck of cards the game appears to be drawing a random number of decks. The console.log output after four winning rounds shows the multiple drawn decks | When a player wins a round they are asked if they wish to continue. My code uses a Bootstrap modal template that is stored in a variable, and an event listener is added to the 'Yes' button of this modal each time the round is completed. I hadn't removed this event listener between rounds and so, as the game progressed, additional event listeners were being added to the button and then all of them were calling the drawCards function when the 'Yes' button was clicked. I added the following into my code to remove any previous event listener `bsBtn1.removeEventListener("click", handleClick);`. I also added this to the drawCards function, using a variable called cardsDrawn to act as a true or false checkpoint. The cardsDrawn variable is set to true when the drawCards function runs (preventing the drawCards function being called multiple times in a short space of time), and to false by the continueGame function (to allow a new deck to be drawn from the current card pile) `if (cardsDrawn) {return;} // Additional check to ensure that the drawCards function is not called multiple times` |
+
+### Bug 66
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 66</summary>
+
+![Fixed Bug 66](documentation/bugs/)
 </details>
 
 | Bug | Fix |
 | --- | --- |
 | The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+
+### Bug 67
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 67</summary>
+
+![Fixed Bug 67](documentation/bugs/)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+
+### Bug 71
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 71</summary>
+
+![Fixed Bug 71](documentation/bugs/)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+
+### Bug 72
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 72</summary>
+
+![Fixed Bug 72](documentation/bugs/)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+
+### Bug 75
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 75</summary>
+
+![Fixed Bug 75](documentation/bugs/)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+
 
 ## Unfixed Bugs
 
@@ -633,4 +748,4 @@ The unfixed bugs listed here are numbered to match the cases logged in the GitGu
 
 | Bug | Fix |
 | --- | --- |
-| The button text on the 'PLAY' button on index.html is misaligned only when using the Safari browser | I ran out of time to fix this very minor issue |
+| The button text on the 'PLAY' button on index.html is misaligned only when using the Safari browser | I ran out of time to fix this issue |

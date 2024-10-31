@@ -397,7 +397,7 @@ The error is caused by the auto-redirect on this page, which is a design feature
 
 ## Responsiveness
 
-Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 360px x 640px), tablet size (Apple iPad Retina - 768px 1024px), and desktop size (1400px x 700px), using the [Responsive Web Design Checker](https://responsivedesignchecker.com/):
+Pages were tested for responsiveness on mobile (Apple iPhone 6s Plus/7 Plus - 414px x 736px), tablet (Amazon Kindle Fire - 768px 1024px), and desktop (24" - 1920px x 1200px), using the [Responsive Web Design Checker](https://responsivedesignchecker.com/). On the game.html page, the playing cards are not appearing as the Responsive Web Design Checker is not pulling them from the API (although they appear as expected in all browsers tested).
 
 ### index.html
 
@@ -406,7 +406,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for index.html, on a mobile device</summary>
 
-![Responsiveness report for index.html](assets/images/holding-image.webp)
+![Responsiveness report for index.html](documentation/validation/responsiveness/mobile-responsiveness-index-page.webp)
 </details>
 
 #### Tablet
@@ -414,7 +414,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for index.html, on a tablet device</summary>
 
-![Responsiveness report for index.html](assets/images/holding-image.webp)
+![Responsiveness report for index.html](documentation/validation/responsiveness/tablet-responsiveness-index-page.webp)
 </details>
 
 #### Desktop
@@ -422,7 +422,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for index.html, on a desktop device</summary>
 
-![Responsiveness report for index.html](assets/images/holding-image.webp)
+![Responsiveness report for index.html](documentation/validation/responsiveness/desktop-responsiveness-index-page.webp)
 </details>
 
 ### game.html
@@ -432,7 +432,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for game.html, on a mobile device</summary>
 
-![Responsiveness report for game.html](assets/images/holding-image.webp)
+![Responsiveness report for game.html](documentation/validation/responsiveness/mobile-responsiveness-game-page.webp)
 </details>
 
 #### Tablet
@@ -440,7 +440,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for game.html, on a tablet device</summary>
 
-![Responsiveness report for game.html](assets/images/holding-image.webp)
+![Responsiveness report for game.html](documentation/validation/responsiveness/tablet-responsiveness-game-page.webp)
 </details>
 
 #### Desktop
@@ -448,7 +448,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for game.html, on a desktop device</summary>
 
-![Responsiveness report for game.html](assets/images/holding-image.webp)
+![Responsiveness report for game.html](documentation/validation/responsiveness/desktop-responsiveness-game-page.webp)
 </details>
 
 ### faq.html
@@ -458,7 +458,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for faq.html, on a mobile device</summary>
 
-![Responsiveness report for faq.html](assets/images/holding-image.webp)
+![Responsiveness report for faq.html](documentation/validation/responsiveness/mobile-responsiveness-faq-page.webp)
 </details>
 
 #### Tablet
@@ -466,7 +466,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for faq.html, on a tablet device</summary>
 
-![Responsiveness report for faq.html](assets/images/holding-image.webp)
+![Responsiveness report for faq.html](documentation/validation/responsiveness/tablet-responsiveness-faq-page.webp)
 </details>
 
 #### Desktop
@@ -474,7 +474,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for faq.html, on a desktop device</summary>
 
-![Responsiveness report for faq.html](assets/images/holding-image.webp)
+![Responsiveness report for faq.html](documentation/validation/responsiveness/desktop-responsiveness-faq-page.webp)
 </details>
 
 ### 404.html
@@ -484,7 +484,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for 404.html, on a mobile device</summary>
 
-![Responsiveness report for 404.html](assets/images/holding-image.webp)
+![Responsiveness report for 404.html](documentation/validation/responsiveness/mobile-responsiveness-404-page.webp)
 </details>
 
 #### Tablet
@@ -492,7 +492,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for 404.html, on a tablet device</summary>
 
-![Responsiveness report for 404.html](assets/images/holding-image.webp)
+![Responsiveness report for 404.html](documentation/validation/responsiveness/tablet-responsiveness-404-page.webp)
 </details>
 
 #### Desktop
@@ -500,7 +500,7 @@ Pages were tested for responsiveness at mobile size (Samsung Galaxy S5/S6/S7 - 3
 <details>
 <summary>Click here to see the responsiveness report for 404.html, on a desktop device</summary>
 
-![Responsiveness report for 404.html](assets/images/holding-image.webp)
+![Responsiveness report for 404.html](documentation/validation/responsiveness/desktop-responsiveness-404-page.webp)
 </details>
 
 ## Performance

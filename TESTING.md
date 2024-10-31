@@ -250,31 +250,31 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Function - displayPoints | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - decideAces | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - amendCardsObject | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - displayAces | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - createModal | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - displayModal | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - deleteModal | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - shuffleCards | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - drawCards | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - displayRound | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - initialView | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - getWager | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - handleWagerSubmit | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - displayWager | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - playerChoice | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - flipCard | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - displayCard | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - calculateOutcome | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - continueGame | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - decideGameState | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - gameOver | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - displayScore | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - finalRound | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - noPoints | XXX | XXX | XXX | WORKS AS EXPECTED |
-| Function - leaveGame | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - displayPoints | Read playerPoints and display on game.html | The player's points are shown on game.html | The player's points are shown on game.html | WORKS AS EXPECTED |
+| Function - decideAces | Generate a True or False value, store as "HIGH" or "LOW", and pass value when calling amendCardsObject  | acesValue stores "HIGH" or "LOW" and this is passed to amendCardsObject | acesValue stores "HIGH" or "LOW" and this is passed to amendCardsObject | WORKS AS EXPECTED |
+| Function - amendCardsObject | Update cardsObject so the value of any Aces are either 1 or 14 | cardsObject contains Aces that have a value of either 1 or 14 | cardsObject contains Aces that have a value of either 1 or 14 | WORKS AS EXPECTED |
+| Function - displayAces | Read acesValue and display on game.html | "ACES ARE LOW" or "ACES ARE HIGH" is displayed on game.html  | "ACES ARE LOW" or "ACES ARE HIGH" is displayed on game.html | WORKS AS EXPECTED |
+| Function - createModal | Create and store a Bootstrap modal dialog, insert at the end of the HTML file | The modal is inserted into the HTML, and messageModal contains a DOM reference to the newly created modal | The modal is inserted into the HTML, and messageModal contains a DOM reference to the newly created modal | WORKS AS EXPECTED |
+| Function - displayModal | If messageModal exists then make it visible, or log an error message | The modal is displayed on the page, or an error is logged | The modal is displayed on the page, or an error is logged | WORKS AS EXPECTED |
+| Function - deleteModal | If messageModal exists then delete it, or log an error message | The modal is deleted from the HTML file, or an error is logged | The modal is deleted from the HTML file, or an error is logged | WORKS AS EXPECTED |
+| Function - shuffleCards | Make an API call to shuffle a new pack of cards, set initial variables for the game, and call drawCards | A new deck of cards is generated, variables initialised, and drawCards called | A new deck of cards is generated, variables initialised, and drawCards called | WORKS AS EXPECTED |
+| Function - drawCards | Draw five cards, create the initial card view and display the first card, display the wager, reset al initial variables before the round starts, decide and display value of Aces for the round, display round and card number, and call getWager | Five cards are displayed, along with all other relevant information, and getWager is called | Five cards are displayed, along with all other relevant information, and getWager is called | WORKS AS EXPECTED |
+| Function - displayRound | Read roundCount and display on game.html | The current round number is displayed | The current round number is displayed | WORKS AS EXPECTED |
+| Function - initialView | Create and display the initial card view | The initial card view is displayed | The initial card view is displayed | WORKS AS EXPECTED |
+| Function - getWager | Get the player's wager, and pass value when calling handleWagerSubmit | Get a wager amount from the player, and pass value when calling handleWagerSubmit | Get a wager amount from the player, and pass value when calling handleWagerSubmit | WORKS AS EXPECTED |
+| Function - handleWagerSubmit | Check that the player's wager is valid | A valid wager is stored in playerWager, the current card number is displayed on game.html, the current wager is displayed on game.html, and playerChoice is called | A valid wager is stored in playerWager, the current card number is displayed on game.html, the current wager is displayed on game.html, and playerChoice is called | WORKS AS EXPECTED |
+| Function - displayWager | Read playerWager and display on game.html | The current wager is displayed | The current wager is displayed | WORKS AS EXPECTED |
+| Function - playerChoice | Get the player's higher or lower choice, and pass the value when calling flipCard  | The player's choice is passed to flipCard | The player's choice is passed to flipCard | WORKS AS EXPECTED |
+| Function - flipCard | Use playerChoice to reveal each card, based on whether the choice was valid or not. Display the card and call playerChoice | The card is revealed | The card is revealed | WORKS AS EXPECTED |
+| Function - displayCard | Read totalCards and display on game.html | The current card number is displayed | The current card number is displayed | WORKS AS EXPECTED |
+| Function - calculateOutcome | Calculate if the player's choice was correct and what the next step should be | The player's choice is evaluated and they are then directed to the next step (based on that calculation) | The player's choice is evaluated and they are then directed to the next step (based on that calculation) | WORKS AS EXPECTED |
+| Function - continueGame | Display the appropriate modal dialog asking if the player wishes to continue, based on the result of their last guess | The correct modal dialog is displayed | The correct modal dialog is displayed | WORKS AS EXPECTED |
+| Function - decideGameState | Determine where the player is in the game | Player is guided along the correct decision path based on their position in the game | Player is guided along the correct decision path based on their position in the game | WORKS AS EXPECTED |
+| Function - gameOver | Display modal dialog at the end of a game, asking what the player wants to do next | Modal dialog is displayed, and player decides whether to play again or exit the game | Modal dialog is displayed, and player decides whether to play again or exit the game | WORKS AS EXPECTED |
+| Function - displayScore | If player exits a game early, display their final score and redirect to index.html | Final score is displayed, and player is directed to the correct page according to their choice | Final score is displayed, and player is directed to the correct page according to their choice | WORKS AS EXPECTED |
+| Function - finalRound | Display a modal dialog informing the player they have reached the final round, and ask if they want to continue | A modal dialog is displayed and player chooses next step | A modal dialog is displayed and player chooses next step | WORKS AS EXPECTED |
+| Function - noPoints | End the game if the player has exhausted their points | A modal dialog is displayed informing the player they have no points remaining, and asking what they wish to do next | A modal dialog is displayed informing the player they have no points remaining, and asking what they wish to do next | WORKS AS EXPECTED |
+| Function - leaveGame | Display a modal dialog asking the player if they want to abandon the game | A modal dialog is displayed and player chooses next step; if they want to leave, their final score is displayed and they are redirected to index.html after five seconds; if not, they remain on the same page | A modal dialog is displayed and player chooses next step; if they want to leave, their final score is displayed and they are redirected to index.html after five seconds; if not, they remain on the same page | WORKS AS EXPECTED |
 
 ## Automated Validation
 

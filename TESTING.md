@@ -514,7 +514,7 @@ Mobile and desktop page performance was assessed using the [Google Lighthouse](h
 <details>
 <summary>Click here to see the mobile performance report for index.html</summary>
 
-![Mobile performance report for index.html](assets/images/holding-image.webp)
+![Mobile performance report for index.html](documentation/validation/performance/mobile-performance-index-page.webp)
 </details>
 
 #### Desktop
@@ -522,7 +522,7 @@ Mobile and desktop page performance was assessed using the [Google Lighthouse](h
 <details>
 <summary>Click here to see the desktop performance report for index.html</summary>
 
-![Desktop performance report for index.html](assets/images/holding-image.webp)
+![Desktop performance report for index.html](documentation/validation/performance/desktop-performance-index-page.webp)
 </details>
 
 ### game.html
@@ -532,7 +532,7 @@ Mobile and desktop page performance was assessed using the [Google Lighthouse](h
 <details>
 <summary>Click here to see the mobile performance report for game.html</summary>
 
-![Mobile performance report for game.html](assets/images/holding-image.webp)
+![Mobile performance report for game.html](documentation/validation/performance/mobile-performance-game-page.webp)
 </details>
 
 #### Desktop
@@ -540,7 +540,7 @@ Mobile and desktop page performance was assessed using the [Google Lighthouse](h
 <details>
 <summary>Click here to see the desktop performance report for game.html</summary>
 
-![Desktop performance report for game.html](assets/images/holding-image.webp)
+![Desktop performance report for game.html](documentation/validation/performance/desktop-performance-game-page.webp)
 </details>
 
 ### faq.html
@@ -550,7 +550,7 @@ Mobile and desktop page performance was assessed using the [Google Lighthouse](h
 <details>
 <summary>Click here to see the mobile performance report for faq.html</summary>
 
-![Mobile performance report for faq.html](assets/images/holding-image.webp)
+![Mobile performance report for faq.html](documentation/validation/performance/mobile-performance-faq-page.webp)
 </details>
 
 #### Desktop
@@ -558,17 +558,19 @@ Mobile and desktop page performance was assessed using the [Google Lighthouse](h
 <details>
 <summary>Click here to see the desktop performance report for faq.html</summary>
 
-![Desktop performance report for faq.html](assets/images/holding-image.webp)
+![Desktop performance report for faq.html](documentation/validation/performance/desktop-performance-faq-page.webp)
 </details>
 
 ### 404.html
+
+As the site design requires an automatic redirect on this page, it results in a slightly lower accessibility score for both metrics.
 
 #### Mobile
 
 <details>
 <summary>Click here to see the mobile performance report for 404.html</summary>
 
-![Mobile performance report for 404.html](assets/images/holding-image.webp)
+![Mobile performance report for 404.html](documentation/validation/performance/mobile-performance-404-page.webp)
 </details>
 
 #### Desktop
@@ -576,7 +578,7 @@ Mobile and desktop page performance was assessed using the [Google Lighthouse](h
 <details>
 <summary>Click here to see the desktop performance report for 404.html</summary>
 
-![Desktop performance report for 404.html](assets/images/holding-image.webp)
+![Desktop performance report for 404.html](documentation/validation/performance/desktop-performance-404-page.webp)
 </details>
 
 ## Bugs

@@ -168,8 +168,6 @@ Below are the results of JavaScript validation for each script file, using [JSHi
 
 ## Manual Validation
 
-Here are the results of a manual test of all links, and any form fields, for each page:
-
 ### index.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
@@ -848,7 +846,7 @@ The fixed bugs listed here are numbered to match the cases logged in the GitGub 
 
 | Bug | Fix |
 | --- | --- |
-| When noPoints() or finalRound() are invoked they immediately redirect to index.html | In both functions, I was calling the leaveGame() function via an addEventListerner event `bsBtn2.addEventListener("click", leaveGame("index.html"));`. However, this immediately runs the called function, so I had to wrap them in an anonymous function so they were only called when the associated button was clicked, and not when the script file itself was loaded `bsBtn2.addEventListener("click", function () {leaveGame("index.html")});` |
+| When `noPoints()` or `finalRound()` are called they immediately redirect to index.html | In both functions, I was calling the leaveGame() function via an addEventListerner event `bsBtn2.addEventListener("click", leaveGame("index.html"));`. However, this immediately runs the called function, so I had to wrap them in an anonymous function so they were only called when the associated button was clicked, and not when the script file itself was loaded `bsBtn2.addEventListener("click", function () {leaveGame("index.html")});` |
 
 ### Bug 72
 

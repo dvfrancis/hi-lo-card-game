@@ -248,6 +248,34 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ### game.js
 
+| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
+| --- | --- | --- | --- | --- |
+| Function - displayPoints | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - decideAces | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - amendCardsObject | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - displayAces | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - createModal | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - displayModal | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - deleteModal | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - shuffleCards | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - drawCards | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - displayRound | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - initialView | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - getWager | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - handleWagerSubmit | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - displayWager | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - playerChoice | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - flipCard | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - displayCard | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - calculateOutcome | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - continueGame | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - decideGameState | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - gameOver | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - displayScore | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - finalRound | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - noPoints | XXX | XXX | XXX | WORKS AS EXPECTED |
+| Function - leaveGame | XXX | XXX | XXX | WORKS AS EXPECTED |
+
 ## Automated Validation
 
 I've done one test for each of the three JavaScript files (general.js, index.js, and game,js) as, unfortunately, I ran out of time to do any more.

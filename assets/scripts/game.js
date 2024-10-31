@@ -203,7 +203,7 @@ async function shuffleCards() {
     deckUrl = cardDeck.deck_id;
     drawCards();
   } catch (error) {
-    // console.error('Fetch error:', error);
+    console.error('Fetch error:', error);
   }
 }
 

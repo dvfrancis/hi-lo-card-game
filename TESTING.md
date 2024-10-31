@@ -676,51 +676,62 @@ The fixed bugs listed here are numbered to match the cases logged in the GitGub 
 ### Bug 67
 
 <details>
-<summary>Click here to see a screenshot showing the result of bug 67</summary>
+<summary>Click here to see a screenshot showing the multiple modal elements in game.html caused by bug 67 (in the lower centre of the image)</summary>
 
-![Fixed Bug 67](documentation/bugs/)
+![Fixed Bug 67](documentation/bugs/bug-67-game-continues-when-no-cards-remaining-unfixed-showing-multiple-modal-elements-created-in-game-page-html.webp)
+</details>
+
+<details>
+<summary>Click here to see a screenshot showing the API error caused by bug 67 (on the bottom right of the image)</summary>
+
+![Fixed Bug 67](documentation/bugs/bug-67-game-continues-when-no-cards-remaining-unfixed-showing-the-error-generated-by-the-API.webp)
+</details>
+
+<details>
+<summary>Click here to see a screenshot showing the newly generated pack of cards when bug 67 was fixed (on the bottom right of the image)</summary>
+
+![Fixed Bug 67](documentation/bugs/bug-67-game-continues-when-no-cards-remaining-fixed-showing-the-newly-generated-pack-at-the-end-of-a-game.webp)
 </details>
 
 | Bug | Fix |
 | --- | --- |
-| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+| When you play all ten rounds of the game it should display a modal that asks if you wish to start a new game. What it is actually doing is trying to carry on drawing cards from the exhausted deck, and this prompts the API to return an error | In the hideModal function (later renamed to deleteModal) I was using code to hide all modal windows created during program use. Unfortunately, this was only hiding them and, as more modals were added to the document, it was having a negative effect on the way the game ran - for example, the modal that asks if you wish to start a new game was not being displayed at the end of the game. I altered the code to completely remove the modal using `messageModal.remove()` once it had been displayed, and this fixed the problem. Now when the pack is empty the modal that asks if you wish to start a new game is displayed so that the player can start a new game (and create a new pack of cards in the process) |
 
 ### Bug 71
 
-<details>
-<summary>Click here to see a screenshot showing the result of bug 71</summary>
-
-![Fixed Bug 71](documentation/bugs/)
-</details>
-
 | Bug | Fix |
 | --- | --- |
-| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+| When noPoints() or finalRound() are invoked they immediately redirect to index.html | In both functions, I was calling the leaveGame() function via an addEventListerner event `bsBtn2.addEventListener("click", leaveGame("index.html"));`. However, this immediately runs the called function, so I had to wrap them in an anonymous function so they were only called when the associated button was clicked, and not when the script file itself was loaded `bsBtn2.addEventListener("click", function () {leaveGame("index.html")});` |
 
 ### Bug 72
 
 <details>
 <summary>Click here to see a screenshot showing the result of bug 72</summary>
 
-![Fixed Bug 72](documentation/bugs/)
+![Fixed Bug 72](documentation/bugs/bug-72-blocked-aria-hidden-on-an-element.webp)
 </details>
 
 | Bug | Fix |
 | --- | --- |
-| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+| Blocked aria-hidden on an element | I removed `aria-hidden="true"` from the code shown above |
 
 ### Bug 75
 
 <details>
-<summary>Click here to see a screenshot showing the result of bug 75</summary>
+<summary>Click here to see a screenshot showing the first part of the result of bug 75</summary>
 
-![Fixed Bug 75](documentation/bugs/)
+![Fixed Bug 75](documentation/bugs/bug-75-fetch-error-part-one.webp)
+</details>
+
+<details>
+<summary>Click here to see a screenshot showing the second part of the result of bug 75</summary>
+
+![Fixed Bug 75](documentation/bugs/bug-75-fetch-error-part-two.webp)
 </details>
 
 | Bug | Fix |
 | --- | --- |
-| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
-
+| Fetch error in console when using Jest tests | Although the Jest test run as expected, this error was caused by `console.error('Fetch error:', error);`, which is used in a try / catch statement. When the line is commented out, the error disappears (However, I cannot remove the line completely as it is essential to the code) |
 
 ## Unfixed Bugs
 

@@ -666,12 +666,12 @@ The fixed bugs listed here are numbered to match the cases logged in the GitGub 
 <details>
 <summary>Click here to see a screenshot showing the result of bug 66</summary>
 
-![Fixed Bug 66](documentation/bugs/)
+![Fixed Bug 66](documentation/bugs/bug-66-points-reset-incorrectly.webp)
 </details>
 
 | Bug | Fix |
 | --- | --- |
-| The Fontawesome logos are not centred | Replace original code with Bootstrap classes to organise the icons into rows and columns before applying text-end and text-start to achieve final position |
+| Points reset at the start of each round instead of at the start of a new game, and points are not updating correctly at the start of the new round | I was declaring the code shown above with all the variables at the top of the code, and it was picking up the default value for playerPoints from there everytime the HTML was inserted into the game.html page, when I moved it into the getWager function the problem was resolved |
 
 ### Bug 67
 

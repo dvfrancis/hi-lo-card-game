@@ -505,7 +505,7 @@ Pages were tested for responsiveness on mobile (Apple iPhone 6s Plus/7 Plus - 41
 
 ## Performance
 
-Each page was audited using [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/), for both mobile and desktop:
+Mobile and desktop page performance was assessed using the [Google Lighthouse](https://developer.chrome.com/docs/lighthouse/):
 
 ### index.html
 

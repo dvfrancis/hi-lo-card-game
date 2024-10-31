@@ -285,7 +285,6 @@ function getWager() {
 /**
  * Handle Wager Submissions
  */
-
 function handleWagerSubmit() {
   const wagerAmount = +document.getElementById("wager-amount").value;
   errorMessage = document.getElementById("error-message");
@@ -588,7 +587,6 @@ linkIds.forEach(id => {
 /**
  * Leave game.html and return to the specified URL
  */
-
 function leaveGame(url) {
   window.location.href = url || "index.html";
 }

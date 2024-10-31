@@ -359,14 +359,14 @@ The following browsers have been used to test the website (screenshots taken fro
 
 ## Accessibility
 
-Pages were tested for accessibility using the [Wave Accessibility Evaluation Tool](https://wave.webaim.org):
+Accessibility was tested on all pages with the [Wave Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org):
 
 #### index.html
 
 <details>
 <summary>Click here to see the accessibility report for index.html</summary>
 
-![Accessibility of index.html](assets/images/holding-image.webp)
+![Accessibility of index.html](documentation/validation/accessibility/accessibility-index-page.webp)
 </details>
 
 #### game.html
@@ -374,7 +374,7 @@ Pages were tested for accessibility using the [Wave Accessibility Evaluation Too
 <details>
 <summary>Click here to see the accessibility report for game.html</summary>
 
-![Accessibility of game.html](assets/images/holding-image.webp)
+![Accessibility of game.html](documentation/validation/accessibility/accessibility-game-page.webp)
 </details>
 
 #### faq.html
@@ -382,15 +382,17 @@ Pages were tested for accessibility using the [Wave Accessibility Evaluation Too
 <details>
 <summary>Click here to see the accessibility report for faq.html</summary>
 
-![Accessibility of faq.html](assets/images/holding-image.webp)
+![Accessibility of faq.html](documentation/validation/accessibility/accessibility-faq-page.webp)
 </details>
 
 #### 404.html
 
+The error is caused by the auto-redirect on this page, which is a design feature. The alert is for a possible redundant tag, linking to faq.html, which is also part of the intended design:
+
 <details>
 <summary>Click here to see the accessibility report for 404.html</summary>
 
-![Accessibility of 404.html](assets/images/holding-image.webp)
+![Accessibility of 404.html](documentation/validation/accessibility/accessibility-404-page.webp)
 </details>
 
 ## Responsiveness

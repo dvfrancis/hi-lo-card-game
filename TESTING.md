@@ -58,7 +58,7 @@
     2. [game.html](#gamehtml-5)
     3. [faq.html](#faqhtml-5)
     4. [404.html](#404html-5)
-8. [Bugs](#bugs)
+8. [Fixed Bugs](#fixed-bugs)
 9. [Unfixed Bugs](#unfixed-bugs)
 
 ## Code Validation
@@ -357,6 +357,16 @@ The following browsers have been used to test the website (screenshots taken fro
 ![Website in Opera](documentation/validation/browsers/preview-in-opera.webp)
 </details>
 
+### Safari (on an iPad)
+
+Unfixed bug 76 (below) relates to this screenshot.
+
+<details>
+<summary>Click here to view the site in Safari (on an iPad)</summary>
+
+![Website in Opera](documentation/validation/browsers/preview-in-safari-on-ipad.webp)
+</details>
+
 ## Accessibility
 
 Accessibility was tested on all pages with the [Wave Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org):
@@ -581,13 +591,16 @@ As the site design requires an automatic redirect on this page, it results in a 
 ![Desktop performance report for 404.html](documentation/validation/performance/desktop-performance-404-page.webp)
 </details>
 
-## Bugs
+## Fixed Bugs
 
-Here is a list of bugs encountered while building this website. Images shown illustrate the original problem:
+The fixed bugs listed here are numbered to match the cases logged in the GitGub repository project (they do not follow a set sequential order).
 
 ### Bug 1
 
-![Fixed Bug 1](assets/images/holding-image.webp)
+<details>
+<summary>Click here to see a screenshot of bug 1</summary>
+
+![Fixed Bug 1](documentation/bugs/)
 </details>
 
 | Bug | Fix |
@@ -596,15 +609,28 @@ Here is a list of bugs encountered while building this website. Images shown ill
 
 ## Unfixed Bugs
 
-Here is a list of bugs I was unable to fix due to circumstances beyond my control:
+The unfixed bugs listed here are numbered to match the cases logged in the GitGub repository project (they do not follow a set sequential order). Despite best efforts, I was unable to fix them.
 
-MENTION ABOUT BACKGOURND IMAGE ISSUE WHICH COULD NOT BE FIXED. JULIA THOUGHT IT MIGHT BE RELATED TO BOOTSTRAP. TRIED COMBINATION BACKGOURND SELECTOR, SEPARATE SELECTORS, DIFFERENT FILE PATHS, DIFFERENT FILE LOCATIONS, RECREATING THE IMAGE, CHECKING THAT EVERYTHING WAS SPELT CORRECTLY, CHECKING THAT ALL TAGS WERE CLOSED CORRECTLY - NOTHING WORKED.
+### Bug 74
 
-### Bug 1
+<details>
+<summary>Click here to see a screenshot of the console error produced by bug 74</summary>
 
-![Unfixed Bug 1](assets/images/holding-image.webp)
+![Unfixed Bug 74](documentation/bugs/bug-74-background-image-not-loading.webp)
 </details>
 
 | Bug | Fix |
 | --- | --- |
-| There is a white line beneath the footer | This only occurs in Chromium-based browsers such as Google Chrome and Microsoft Edge; the line does not appear in other browers tested. After discussing this with Code Institute's tutor support we came to the conclusion it was either a problem with that type of browser, or a strange quirk of the computer I am using |
+| The background image that is being loaded using `background: #1A4E04 url("assets/images/playing-cards-background.webp") center cover no-repeat;` is not loading, and is instead returnng an error in the console | I tried using the following - a combined background selector command, a separate background selector commands, the full file path, the relative file path, a different image location, recreating the image, compressing the image, checking all spelling, checking all tags were closed. None of these fixed the issue. I also brought it up with my mentor, Julia Konovalova, and she couldn't work out why it wasn't working either. She did suggest it might be something to do with Bootstrap. Ultimately, I decided not to use an image on the page |
+
+### Bug 76
+
+<details>
+<summary>Click here to see a screenshot showing the result of bug 76</summary>
+
+![Unfixed Bug 74](documentation/bugs/bug-76-misaligned-button-text.webp)
+</details>
+
+| Bug | Fix |
+| --- | --- |
+| The button text on the 'PLAY' button on index.html is misaligned only when using the Safari browser | I ran out of time to fix this very minor issue |

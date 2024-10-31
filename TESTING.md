@@ -264,7 +264,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | --- | --- | --- | --- | --- |
 | FAQ page | Navigate to the FAQ page using the navigation link at the top of each page, and scroll down to the FAQ accordion | View information about the game and how to play it | View information about the game and how to play it | WORKS AS EXPECTED |
 
-### Returning Visitor Goals:
+### Returning Visitor Goals
 
 “Will I be able to beat my score from the last time I played?”
 
@@ -278,7 +278,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | --- | --- | --- | --- | --- |
 | Game page | Complete a game of 10 rounds of five cards | Modal dialog displays current game score, and highest previous score | Modal dialog displays current game score, and highest previous score | WORKS AS EXPECTED |
 
-### Frequent Visitor Goals:
+### Frequent Visitor Goals
 
 “I would like to play the game on my mobile device, while travelling”
 

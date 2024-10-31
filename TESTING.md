@@ -242,11 +242,111 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ## Automated Validation
 
+I've done one test for each of the three JavaScript files (general.js, index.js, and game,js) as, unfortunately, I ran out of time to do any more.
+
+The `module.exports` commmand, required by Jest at the end of each JavaScript file, causes an `Uncaught ReferenceError: module is not defined` in the browser. This is because it is Node.js-specific and part of the CommonJS module system, whereas the browser uses the ES6 module system. I have therefore run the tests with this code and then deleted it from each file - this doesn't affect the functioning of the website in any way.
+
+Shown below are the exact commands used in each file, alongside the tests used by the test files.
+
 ### general.js
+
+Export command for Jest testing (removed after testing)
+
+```
+module.exports = {
+    updateCopyrightYear
+};
+```
+
+Jest tests from general.test.js:
+
+```
+describe('updating the copyright year', () => {
+    beforeEach(() => {
+        document.body.innerHTML = '<div id="copyright"></div>'; // Create mock DOM element for testing
+    });
+
+    test('should update copyright year', () => {
+        const {
+            updateCopyrightYear
+        } = require('../general'); // Import JavaScript file
+        updateCopyrightYear(); // Run function to be tested
+        const yearNow = new Date().getFullYear(); // Create yearNow variable for testing below
+        expect(document.getElementById('copyright').innerHTML).toBe(` ${yearNow} `); // Assert the result
+    });
+});
+```
 
 ### index.js
 
+Export command for Jest testing (removed after testing)
+
+```
+module.exports = {
+  startGame
+};
+```
+
+Jest tests from index.test.js:
+
+```
+describe('starting the game', () => {
+    beforeEach(() => {
+        document.body.innerHTML = '<input type="submit" id="play-game" value="PLAY">'; // Create mock DOM element for testing
+        delete window.location; // Remove current window object
+        window.location = {
+            href: ''
+        }; // Create mock window object
+    });
+
+    test('should navigate to game.html when play-game button clicked', () => {
+        const {
+            startGame
+        } = require('../index'); // Import JavaScript file
+        startGame(); // Run function to be tested
+        const playGame = document.getElementById("play-game");
+        playGame.click(); // Simulate play-game button click
+        expect(window.location.href).toBe("game.html"); // Assert the result
+    });
+});
+```
+
 ### game.js
+
+Export command for Jest testing (removed after testing)
+
+```
+module.exports = {
+  leaveGame
+};
+```
+
+Jest tests from game.test.js:
+
+```
+describe('gameplay', () => {
+    beforeEach(() => {
+        document.body.innerHTML = '<input type="submit" id="play-game" value="PLAY">';
+        delete window.location;
+        window.location = {
+            href: ''
+        };
+    });
+
+    test("leaveGame function should navigate to specified URL", () => {
+        const {
+            leaveGame
+        } = require('../game');
+        const testUrl = "index.html";
+        leaveGame(testUrl);
+        expect(window.location.href).toBe(testUrl);
+    });
+});
+```
+
+All three tests passed successfully.
+
+![Automated test results](documentation/validation/automated/automated-validation-results.webp)
 
 ## User Story Validation
 

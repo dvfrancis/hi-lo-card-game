@@ -167,7 +167,7 @@ function displayModal() {
     messageModal.style.display = "block";
     messageModal.classList.add("show");
   } else {
-    // console.error("Modal element not found");
+    console.error("Modal element not found");
   }
 }
 
@@ -178,7 +178,7 @@ function deleteModal() {
   if (messageModal) {
     messageModal.remove();
   } else {
-    // console.error("Modal element not found");
+    console.error("Modal element not found");
   }
 }
 
@@ -242,7 +242,7 @@ async function drawCards() {
     displayCard();
     getWager();
   } catch (error) {
-    // console.error('Fetch error:', error);
+    console.error('Fetch error:', error);
   }
 }
 
@@ -594,3 +594,7 @@ function leaveGame(url) {
 }
 
 shuffleCards();
+
+module.exports = {
+  leaveGame
+};

@@ -8,3 +8,7 @@ function updateCopyrightYear() {
 }
 
 updateCopyrightYear();
+
+module.exports = {
+    updateCopyrightYear
+};

@@ -171,64 +171,64 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
-| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
-| Button link - "Play"" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
-| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | WORKS AS EXPECTED |
+| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | WORKS AS EXPECTED |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | WORKS AS EXPECTED |
+| Button link - "Play"" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | WORKS AS EXPECTED |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
 
 ### game.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Navigation bar link - "Home" | Click to open index.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to index.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html  | The user is asked if they want to leave the game. If they click 'Yes', they are directed to index.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | PASS |
-| Navigation bar link - "Game" | Click to open game.html | The user is asked if they want to leave the game. If they click 'Yes', game.html is reloaded in the same window (and a new game begins), following a five second delay. If they click 'No' the modal dialog disappears, and they continue their current game on game.html |  The user is asked if they want to leave the game. If they click 'Yes', game.html is reloaded in the same window (and a new game begins), following a five second delay. If they click 'No' the modal dialog disappears, and they continue their current game on game.html | PASS |
-| Navigation bar link - "FAQ" | Click to open faq.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to faq.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to faq.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | PASS |
-| Game - wager entry field (with a valid entry - more than zero and less than total player points) | Enter a valid wager amount, and click 'OK' to submit | The player's wager is accepted, and they are prompted to guess if the next card is higher or lower | The player's wager is accepted, and they are prompted to guess if the next card is higher or lower | PASS |
-| Game - wager entry field (with an invalid entry - more than total player points / a zero amount / a blank entry / a text entry) | Enter an invalid wager amount, and click 'OK' to submit | The player's wager is rejected, the field is cleared, a message is displayed "Your wager must be a number between 1 and `playerPoints`. Please try again.", and they are able to re-enter a new amount | The player's wager is rejected, the field is cleared, a message is displayed "Your wager must be a number between 1 and `playerPoints`. Please try again.", and they are able to re-enter a new amount | PASS |
-| Game - "Is the next card HIGHER or LOWER than your card?" (with a valid guess) | Player guesses "HIGH" or "LOW" correctly | The next card is displayed, and the game continues | The next card is displayed, and the game continues | PASS |
-| Game - "Is the next card HIGHER or LOWER than your card?" (with an invalid guess) | Player guesses "HIGH" or "LOW" incorrectly | The next card is displayed but a modal dialog appears to inform the player that they have lost the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are decreased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are decreased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | The next card is displayed but a modal dialog appears to inform the player that they have lost the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are decreased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are decreased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | PASS |
-| Game - "Is the next card HIGHER or LOWER than your card?" (when it's a draw) | Player guesses "HIGH" or "LOW" correctly | The next card is displayed, but it's a draw. A modal dialog appears to inform the player that it was a draw. The player does not lose their wager, and their points are not reduced. | The next card is displayed, but it's a drawer. A modal dialog appears to inform the player that it was a draw. The player does not lose their wager, and their points are not reduced. | PASS |
-| Game - "Is the next card HIGHER or LOWER than your card?" (when a round is completed successfully) | Player guesses "HIGH" or "LOW" correctly on the final card of a round | A modal dialog appears to inform the player that they won the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | A modal dialog appears to inform the player that they won the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds.  | PASS |
-| Game - "Is the next card HIGHER or LOWER than your card?" (on the penultimate round of a game) | Player guesses "HIGH" or "LOW" correctly on round nine of ten | A modal dialog appears to inform the player that the next round of cards is the final round and asks if they want to continue. If they click "YES" the final deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | A modal dialog appears to inform the player that the next round of cards is the final round and asks if they want to continue. If they click "YES" the final deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | PASS |
-| Game - "Is the next card HIGHER or LOWER than your card?" (on the final round of a game) | Player guesses "HIGH" or "LOW" correctly or incorrectly on round ten | A modal dialog appears to inform the player that the game has finished, and displays their score for that game as well as their highest score of all the games they have played. The player is also asked if they want to continue; if they click "YES" a new game begins, and they make their next guess (The ROUND number resets to one / the CARD number resets to one / their POINTS are reset to 100 / the WAGER is reset to zero); if they click "NO", they are directed to index.html immediately. | A modal dialog appears to inform the player that the game has finished, and displays their score for that game as well as their highest score of all the games they have played. The player is also asked if they want to continue; if they click "YES" a new game begins, and they make their next guess (The ROUND number resets to one / the CARD number resets to one / their POINTS are reset to 100 / the WAGER is reset to zero); if they click "NO", they are directed to index.html immediately. | PASS |
-| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to index.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html  | The user is asked if they want to leave the game. If they click 'Yes', they are directed to index.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | WORKS AS EXPECTED |
+| Navigation bar link - "Game" | Click to open game.html | The user is asked if they want to leave the game. If they click 'Yes', game.html is reloaded in the same window (and a new game begins), following a five second delay. If they click 'No' the modal dialog disappears, and they continue their current game on game.html |  The user is asked if they want to leave the game. If they click 'Yes', game.html is reloaded in the same window (and a new game begins), following a five second delay. If they click 'No' the modal dialog disappears, and they continue their current game on game.html | WORKS AS EXPECTED |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to faq.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to faq.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | WORKS AS EXPECTED |
+| Game - wager entry field (with a valid entry - more than zero and less than total player points) | Enter a valid wager amount, and click 'OK' to submit | The player's wager is accepted, and they are prompted to guess if the next card is higher or lower | The player's wager is accepted, and they are prompted to guess if the next card is higher or lower | WORKS AS EXPECTED |
+| Game - wager entry field (with an invalid entry - more than total player points / a zero amount / a blank entry / a text entry) | Enter an invalid wager amount, and click 'OK' to submit | The player's wager is rejected, the field is cleared, a message is displayed "Your wager must be a number between 1 and `playerPoints`. Please try again.", and they are able to re-enter a new amount | The player's wager is rejected, the field is cleared, a message is displayed "Your wager must be a number between 1 and `playerPoints`. Please try again.", and they are able to re-enter a new amount | WORKS AS EXPECTED |
+| Game - "Is the next card HIGHER or LOWER than your card?" (with a valid guess) | Player guesses "HIGH" or "LOW" correctly | The next card is displayed, and the game continues | The next card is displayed, and the game continues | WORKS AS EXPECTED |
+| Game - "Is the next card HIGHER or LOWER than your card?" (with an invalid guess) | Player guesses "HIGH" or "LOW" incorrectly | The next card is displayed but a modal dialog appears to inform the player that they have lost the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are decreased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are decreased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | The next card is displayed but a modal dialog appears to inform the player that they have lost the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are decreased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are decreased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | WORKS AS EXPECTED |
+| Game - "Is the next card HIGHER or LOWER than your card?" (when it's a draw) | Player guesses "HIGH" or "LOW" correctly | The next card is displayed, but it's a draw. A modal dialog appears to inform the player that it was a draw. The player does not lose their wager, and their points are not reduced. | The next card is displayed, but it's a drawer. A modal dialog appears to inform the player that it was a draw. The player does not lose their wager, and their points are not reduced. | WORKS AS EXPECTED |
+| Game - "Is the next card HIGHER or LOWER than your card?" (when a round is completed successfully) | Player guesses "HIGH" or "LOW" correctly on the final card of a round | A modal dialog appears to inform the player that they won the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | A modal dialog appears to inform the player that they won the round and asks if they want to continue. If they click "YES" a new deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds.  | WORKS AS EXPECTED |
+| Game - "Is the next card HIGHER or LOWER than your card?" (on the penultimate round of a game) | Player guesses "HIGH" or "LOW" correctly on round nine of ten | A modal dialog appears to inform the player that the next round of cards is the final round and asks if they want to continue. If they click "YES" the final deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | A modal dialog appears to inform the player that the next round of cards is the final round and asks if they want to continue. If they click "YES" the final deck of cards is dealt, and they make their next guess (The ROUND number increases / the CARD number increases / their POINTS are increased by the wager amount / the WAGER is reset to zero); if they click "NO", the CARD number increases, their POINTS are increased by the wager amount, their final score is displayed, and they are directed to index.html after five seconds. | WORKS AS EXPECTED |
+| Game - "Is the next card HIGHER or LOWER than your card?" (on the final round of a game) | Player guesses "HIGH" or "LOW" correctly or incorrectly on round ten | A modal dialog appears to inform the player that the game has finished, and displays their score for that game as well as their highest score of all the games they have played. The player is also asked if they want to continue; if they click "YES" a new game begins, and they make their next guess (The ROUND number resets to one / the CARD number resets to one / their POINTS are reset to 100 / the WAGER is reset to zero); if they click "NO", they are directed to index.html immediately. | A modal dialog appears to inform the player that the game has finished, and displays their score for that game as well as their highest score of all the games they have played. The player is also asked if they want to continue; if they click "YES" a new game begins, and they make their next guess (The ROUND number resets to one / the CARD number resets to one / their POINTS are reset to 100 / the WAGER is reset to zero); if they click "NO", they are directed to index.html immediately. | WORKS AS EXPECTED |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
 
 ### faq.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
-| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
-| Accordion header - "What is HI LO?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
-| Accordion header - "How do I play?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
-| Accordion header - "Is there a minimum or maximum wager for each round?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
-| Accordion header - "Are Aces considered high or low?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
-| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | WORKS AS EXPECTED |
+| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | WORKS AS EXPECTED |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | WORKS AS EXPECTED |
+| Accordion header - "What is HI LO?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | WORKS AS EXPECTED |
+| Accordion header - "How do I play?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | WORKS AS EXPECTED |
+| Accordion header - "Is there a minimum or maximum wager for each round?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | WORKS AS EXPECTED |
+| Accordion header - "Are Aces considered high or low?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | WORKS AS EXPECTED |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
 
 ### 404.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
-| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
-| Navigation link in text - "Alternatively, you might want to play your cards right by visiting the FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
-| Auto redirect (after 15 seconds) | The page is automatically redirected to index.html after 15 seconds have elapsed | The index.html page loads after 15 seconds | The index.html page loads after 15 seconds | PASS |
-| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | WORKS AS EXPECTED |
+| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | WORKS AS EXPECTED |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | WORKS AS EXPECTED |
+| Navigation link in text - "Alternatively, you might want to play your cards right by visiting the FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | WORKS AS EXPECTED |
+| Auto redirect (after 15 seconds) | The page is automatically redirected to index.html after 15 seconds have elapsed | The index.html page loads after 15 seconds | The index.html page loads after 15 seconds | WORKS AS EXPECTED |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
 
 ### general.js
 
@@ -250,7 +250,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Home page | Scroll down to the text box | View information about the website | View information about the website | PASS |
+| Home page | Scroll down to the text box | View information about the website | View information about the website | WORKS AS EXPECTED |
 
 “How do you play the game?”, “What are the rules of the game?”, and "What can I win?"
 
@@ -262,7 +262,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| FAQ page | Navigate to the FAQ page using the navigation link at the top of each page, and scroll down to the FAQ accordion | View information about the game and how to play it | View information about the game and how to play it | PASS |
+| FAQ page | Navigate to the FAQ page using the navigation link at the top of each page, and scroll down to the FAQ accordion | View information about the game and how to play it | View information about the game and how to play it | WORKS AS EXPECTED |
 
 ### Returning Visitor Goals:
 
@@ -276,7 +276,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Game page | Complete a game of 10 rounds of five cards | Modal dialog displays current game score, and highest previous score | Modal dialog displays current game score, and highest previous score | PASS |
+| Game page | Complete a game of 10 rounds of five cards | Modal dialog displays current game score, and highest previous score | Modal dialog displays current game score, and highest previous score | WORKS AS EXPECTED |
 
 ### Frequent Visitor Goals:
 
@@ -290,17 +290,36 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Game page | Navigate to the game page on a mobile device | The game adapts to the screen size and can still be played | The game adapts to the screen size and can still be played | PASS | 
+| Game page | Navigate to the game page on a mobile device | The game adapts to the screen size and can still be played | The game adapts to the screen size and can still be played | WORKS AS EXPECTED | 
 
 ## User Personas
 
 ### User 1
 
+| ACCEPTANCE CRITERIA | TASKS | STATUS |
+| --- | --- | --- |
+| The website is responsive and displays correctly on a mobile device | Style a responsive website using Bootstrap and / or media queries | COMPLETED SUCCESSFULLY |
+| All messages are clearly displayed and easy to read on smaller screens | Display any system messages in a larger format | COMPLETED SUCCESSFULLY |
+
 ### User 2
+
+| ACCEPTANCE CRITERIA | TASKS | STATUS |
+| --- | --- | --- |
+| The website is quick to load | Ensure the website has excellent load performance on Google Lighthouse | COMPLETED SUCCESSFULLY |
+| The game can be abandoned, if necessary | Add ability to navigate away from the game at any point | COMPLETED SUCCESSFULLY |
 
 ### User 3
 
+| ACCEPTANCE CRITERIA | TASKS | STATUS |
+| --- | --- | --- |
+| Gameplay is streamlined and easy to understand, offering an easy distraction to daily life | Add an FAQ page that explains the game and its rules, and guide the user through the game via messages on screen | COMPLETED SUCCESSFULLY |
+
 ### User 4
+
+| ACCEPTANCE CRITERIA | TASKS | STATUS |
+| --- | --- | --- |
+| The game has a visually interesting design | Implement a design that is bright and colourful | COMPLETED SUCCESSFULLY |
+| Cards and scores are displayed clearly and are easy to understand | Display scores clearly on all screen sizes and ensure cards are easy to see and understand | COMPLETED SUCCESSFULLY |
 
 ## Browser Compatibility
 

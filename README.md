@@ -518,7 +518,7 @@ All website copy has been written by myself.
 - [Microsoft Edge](https://www.microsoft.com/en-gb/edge/) - for website preview / testing.
 - [Firefox](https://www.mozilla.org/en-GB/firefox/new/) - for website preview / testing.
 - [Opera](https://www.opera.com/) - for website preview / testing.
-- [Safari](https://www.apple.com/uk/safari/) - for website preview / testing and mobile screenshots (using an iPhone 12 Pro Max and iPad Pro (12.9-inch) (2nd generation)).
+- [Safari](https://www.apple.com/uk/safari/) - for website preview / testing and mobile screenshots (using an iPad Pro (12.9-inch) (2nd generation)).
 - [W3C HTML Checker](https://validator.w3.org/) - for checking HTML code.
 - [W3C CSS Checker](https://jigsaw.w3.org/css-validator/) - for checking CSS code.
 - [Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/) - for checking website accessibility.

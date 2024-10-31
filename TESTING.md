@@ -323,7 +323,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ## Browser Compatibility
 
-The website has been successfully tested in the following browsers (desktop screenshots used to allow for a larger preview, except for Safari as there is no Windows version of that browser):
+The following browsers have been used to test the website (screenshots taken from a desktop setup for clearer view - there is no Windows version of Safari so that is taken from an iPad):
 
 ### Google Chrome
 
@@ -355,14 +355,6 @@ The website has been successfully tested in the following browsers (desktop scre
 <summary>Click here to see a website preview in Opera</summary>
 
 ![Website in Opera](assets/images/holding-image.webp)
-</details>
-
-### Safari (on an iPhone)
-
-<details>
-<summary>Click here to see a website preview in Safari (on an iPhone)</summary>
-
-![Website in Safari (iPhone)](assets/images/holding-image.webp)
 </details>
 
 ### Safari (on an iPad)

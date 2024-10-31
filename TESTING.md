@@ -328,7 +328,7 @@ The following browsers have been used to test the website (screenshots taken fro
 ### Google Chrome
 
 <details>
-<summary>Click here to see a website preview in Google Chrome</summary>
+<summary>Click here to view the site in Google Chrome</summary>
 
 ![Website in Google Chrome](assets/images/holding-image.webp)
 </details>
@@ -336,7 +336,7 @@ The following browsers have been used to test the website (screenshots taken fro
 ### Microsoft Edge
 
 <details>
-<summary>Click here to see a website preview in Microsoft Edge</summary>
+<summary>Click here to view the site in Microsoft Edge</summary>
 
 ![Website in Microsoft Edge](assets/images/holding-image.webp)
 </details>
@@ -344,7 +344,7 @@ The following browsers have been used to test the website (screenshots taken fro
 ### Firefox
 
 <details>
-<summary>Click here to see a website preview in Firefox</summary>
+<summary>Click here to view the site in Firefox</summary>
 
 ![Website in Firefox](assets/images/holding-image.webp)
 </details>
@@ -352,7 +352,7 @@ The following browsers have been used to test the website (screenshots taken fro
 ### Opera
 
 <details>
-<summary>Click here to see a website preview in Opera</summary>
+<summary>Click here to view the site in Opera</summary>
 
 ![Website in Opera](assets/images/holding-image.webp)
 </details>
@@ -360,7 +360,7 @@ The following browsers have been used to test the website (screenshots taken fro
 ### Safari (on an iPad)
 
 <details>
-<summary>Click here to see a website preview in Safari (on an iPad)</summary>
+<summary>Click here to view the site in Safari (on an iPad)</summary>
 
 ![Website in Safari (iPad)](assets/images/holding-image.webp)
 </details>

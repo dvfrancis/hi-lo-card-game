@@ -323,14 +323,14 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 ## Browser Compatibility
 
-The following browsers have been used to test the website (screenshots taken from a desktop setup for clearer view - there is no Windows version of Safari so that is taken from an iPad):
+The following browsers have been used to test the website (screenshots taken from a Windows desktop setup for a clearer view - there is no Windows version of Safari):
 
 ### Google Chrome
 
 <details>
 <summary>Click here to view the site in Google Chrome</summary>
 
-![Website in Google Chrome](assets/images/holding-image.webp)
+![Website in Google Chrome](documentation/validation/browsers/preview-in-google-chrome.webp)
 </details>
 
 ### Microsoft Edge
@@ -338,7 +338,7 @@ The following browsers have been used to test the website (screenshots taken fro
 <details>
 <summary>Click here to view the site in Microsoft Edge</summary>
 
-![Website in Microsoft Edge](assets/images/holding-image.webp)
+![Website in Microsoft Edge](documentation/validation/browsers/preview-in-microsoft-edge.webp)
 </details>
 
 ### Firefox
@@ -346,7 +346,7 @@ The following browsers have been used to test the website (screenshots taken fro
 <details>
 <summary>Click here to view the site in Firefox</summary>
 
-![Website in Firefox](assets/images/holding-image.webp)
+![Website in Firefox](documentation/validation/browsers/preview-in-firefox.webp)
 </details>
 
 ### Opera
@@ -354,15 +354,7 @@ The following browsers have been used to test the website (screenshots taken fro
 <details>
 <summary>Click here to view the site in Opera</summary>
 
-![Website in Opera](assets/images/holding-image.webp)
-</details>
-
-### Safari (on an iPad)
-
-<details>
-<summary>Click here to view the site in Safari (on an iPad)</summary>
-
-![Website in Safari (iPad)](assets/images/holding-image.webp)
+![Website in Opera](documentation/validation/browsers/preview-in-opera.webp)
 </details>
 
 ## Accessibility

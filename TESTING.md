@@ -216,7 +216,6 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
-
 ### 404.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
@@ -231,66 +230,11 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
-
 ### general.js
-
-| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
-| --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is directed to about.html | The user is directed to about.html | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is directed to message-board.html | The user is directed to message-board.html | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is directed to contact.html | The user is directed to contact.html | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically directed to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is directed to the home page | The user is directed to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is directed to the about page | The user is directed to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is directed to the message board page | The user is directed to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is directed to the contact page | The user is directed to the contact page | PASS |
-| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
 ### index.js
 
-| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
-| --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is directed to about.html | The user is directed to about.html | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is directed to message-board.html | The user is directed to message-board.html | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is directed to contact.html | The user is directed to contact.html | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically directed to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is directed to the home page | The user is directed to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is directed to the about page | The user is directed to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is directed to the message board page | The user is directed to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is directed to the contact page | The user is directed to the contact page | PASS |
-| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-
 ### game.js
-
-| ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
-| --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is directed to about.html | The user is directed to about.html | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is directed to message-board.html | The user is directed to message-board.html | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is directed to contact.html | The user is directed to contact.html | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically directed to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is directed to the home page | The user is directed to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is directed to the about page | The user is directed to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is directed to the message board page | The user is directed to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is directed to the contact page | The user is directed to the contact page | PASS |
-| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
 ## User Story Validation
 

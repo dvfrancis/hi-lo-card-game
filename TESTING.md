@@ -171,99 +171,73 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
-| Image carousel | Use arrow and indicator controls to move between all image slides | Slides transition succesfully | Slides transition succesfully | PASS |
-| Link - "Acast" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
-| Link - "Apple Podcasts" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
-| Link - "Spotify" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
-| Button - "About the Podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
-| Podcast player | Click play to play the podcast, and then click pause to pause playback | Playback begins or ends | Playback begins or ends | PASS |
-| Button - "Buy Tickets" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
-| Button - "See the Merch" | Click to open external website in new tab | The link opens in a new tab | The link opens in a new tab | PASS |
-| "Mailing List" - using a valid email | Enter a valid email address and click 'Send' | The email address is accepted and the user redirected to mailing-list-completion.html  | The email is accepted and the user is redirected to mailing-list-completion.html | PASS |
-| "Mailing List" - using an invalid email | Enter an invalid email address and click 'Send' | The email address is rejected  | The email is rejected | PASS |
-| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
+| Button link - "Play"" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
 ### game.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
-| Image carousel for "What is Older & Wider?" | Use arrow and indicator controls to move between all image slides | Slides transition succesfully | Slides transition succesfully | PASS |
-| Image carousel for "Who is Judith Holder" | Use arrow and indicator controls to move between all image slides | Slides transition succesfully | Slides transition succesfully | PASS |
-| Image carousel for "Who is Jenny Eclair?" | Use arrow and indicator controls to move between all image slides | Slides transition succesfully | Slides transition succesfully | PASS |
-| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to index.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html  | The user is asked if they want to leave the game. If they click 'Yes', they are directed to index.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | PASS |
+| Navigation bar link - "Game" | Click to open game.html | The user is asked if they want to leave the game. If they click 'Yes', game.html is reloaded in the same window (and a new game begins), following a five second delay. If they click 'No' the modal dialog disappears, and they continue their current game on game.html |  The user is asked if they want to leave the game. If they click 'Yes', game.html is reloaded in the same window (and a new game begins), following a five second delay. If they click 'No' the modal dialog disappears, and they continue their current game on game.html | PASS |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to faq.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | The user is asked if they want to leave the game. If they click 'Yes', they are directed to faq.html, following a five second delay. If they click 'No' the modal dialog disappears, and they remain on game.html | PASS |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
 
 ### faq.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
-| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
+| Accordion header - "What is HI LO?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
+| Accordion header - "How do I play?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
+| Accordion header - "Is there a minimum or maximum wager for each round?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
+| Accordion header - "Are Aces considered high or low?" | Click to expand / collapse the section | The section expands / collapses  | The section expands / collapses | PASS |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+
 
 ### 404.html
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
-| Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "Game" | Click to open game.html | The user is directed to game.html | The user is directed to game.html | PASS |
+| Navigation bar link - "FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
+| Navigation link in text - "Alternatively, you might want to play your cards right by visiting the FAQ" | Click to open faq.html | The user is directed to faq.html | The user is directed to faq.html | PASS |
+| Auto redirect (after 15 seconds) | The page is automatically redirected to index.html after 15 seconds have elapsed | The index.html page loads after 15 seconds | The index.html page loads after 15 seconds | PASS |
+| Social media icon - Threads | Click to open Threads in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
+| Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Older & Wider" | Click to open the Acast Older & Wider website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
-| Footer link - "Acast" | Click to open the Acast website in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
+
 
 ### general.js
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
+| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "About" | Click to open about.html | The user is directed to about.html | The user is directed to about.html | PASS |
+| Navigation bar link - "Message Board" | Click to open message-board.html | The user is directed to message-board.html | The user is directed to message-board.html | PASS |
+| Navigation bar link - "Contact"" | Click to open contact.html | The user is directed to contact.html | The user is directed to contact.html | PASS |
+| Auto redirect (after 30 seconds) | The page is automatically directed to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
+| Button - "Return to the home page" | Click to move to index.html | The user is directed to the home page | The user is directed to the home page | PASS |
+| Button - "Learn about the podcast" | Click to move to about.html | The user is directed to the about page | The user is directed to the about page | PASS |
+| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is directed to the message board page | The user is directed to the message board page | PASS |
+| Button - "Why not send us a message?" | Click to move to contact.html | The user is directed to the contact page | The user is directed to the contact page | PASS |
 | Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
@@ -274,16 +248,16 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
+| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "About" | Click to open about.html | The user is directed to about.html | The user is directed to about.html | PASS |
+| Navigation bar link - "Message Board" | Click to open message-board.html | The user is directed to message-board.html | The user is directed to message-board.html | PASS |
+| Navigation bar link - "Contact"" | Click to open contact.html | The user is directed to contact.html | The user is directed to contact.html | PASS |
+| Auto redirect (after 30 seconds) | The page is automatically directed to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
+| Button - "Return to the home page" | Click to move to index.html | The user is directed to the home page | The user is directed to the home page | PASS |
+| Button - "Learn about the podcast" | Click to move to about.html | The user is directed to the about page | The user is directed to the about page | PASS |
+| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is directed to the message board page | The user is directed to the message board page | PASS |
+| Button - "Why not send us a message?" | Click to move to contact.html | The user is directed to the contact page | The user is directed to the contact page | PASS |
 | Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
@@ -294,16 +268,16 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "Home" | Click to open index.html | The user is redirected to index.html (even if already there) | The user is redirected to index.html (even if already there) | PASS |
-| Navigation bar link - "About" | Click to open about.html | The user is redirected to about.html (even if already there) | The user is redirected to about.html (even if already there) | PASS |
-| Navigation bar link - "Message Board" | Click to open message-board.html | The user is redirected to message-board.html (even if already there) | The user is redirected to message-board.html (even if already there) | PASS |
-| Navigation bar link - "Contact"" | Click to open contact.html | The user is redirected to contact.html (even if already there) | The user is redirected to contact.html (even if already there) | PASS |
-| Auto redirect (after 30 seconds) | The page is automatically redirected to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
-| Button - "Return to the home page" | Click to move to index.html | The user is redirected to the home page | The user is redirected to the home page | PASS |
-| Button - "Learn about the podcast" | Click to move to about.html | The user is redirected to the about page | The user is redirected to the about page | PASS |
-| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is redirected to the message board page | The user is redirected to the message board page | PASS |
-| Button - "Why not send us a message?" | Click to move to contact.html | The user is redirected to the contact page | The user is redirected to the contact page | PASS |
+| Site title - "The Older & Wider Podcast" | Click to return to index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "Home" | Click to open index.html | The user is directed to index.html | The user is directed to index.html | PASS |
+| Navigation bar link - "About" | Click to open about.html | The user is directed to about.html | The user is directed to about.html | PASS |
+| Navigation bar link - "Message Board" | Click to open message-board.html | The user is directed to message-board.html | The user is directed to message-board.html | PASS |
+| Navigation bar link - "Contact"" | Click to open contact.html | The user is directed to contact.html | The user is directed to contact.html | PASS |
+| Auto redirect (after 30 seconds) | The page is automatically directed to index.html after 30 seconds have elapsed | The index.html page loads after 30 seconds | The index.html page loads after 30 seconds | PASS |
+| Button - "Return to the home page" | Click to move to index.html | The user is directed to the home page | The user is directed to the home page | PASS |
+| Button - "Learn about the podcast" | Click to move to about.html | The user is directed to the about page | The user is directed to the about page | PASS |
+| Button - "View the 'Message Board'" | Click to move to message-board.html | The user is directed to the message board page | The user is directed to the message board page | PASS |
+| Button - "Why not send us a message?" | Click to move to contact.html | The user is directed to the contact page | The user is directed to the contact page | PASS |
 | Social media icon - Instagram | Click to open the Older & Wider Instagram page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Social media icon - Facebook | Click to open the Older & Wider Facebook page in a new tab  | The link opens in a new tab  | The link opens in a new tab | PASS |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | PASS |
@@ -347,7 +321,7 @@ Here are the results of a manual test of all links, and any form fields, for eac
 
 | ITEM | PROCESS | EXPECTED RESULT | ACTUAL RESULT | STATUS |
 | --- | --- | --- | --- | --- |
-| Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is redirected to the contact completion page | A message is sent, and the user is redirected to the contact completion page | PASS | 
+| Contact page | Navigate to the contact page, and complete the contact form to send a message to the podcast | A message is sent, and the user is directed to the contact completion page | A message is sent, and the user is directed to the contact completion page | PASS | 
 
 <details>
 <summary>Click here to see proof of frequent visitor goal number one</summary>

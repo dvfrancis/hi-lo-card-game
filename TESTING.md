@@ -1,6 +1,6 @@
 [Return to the Hi-Lo card game README.md](https://github.com/dvfrancis/hi-lo-card-game/blob/main/README.md)
 
-# Testing *THIS DOCUMENT IS NOT YET COMPLETE*
+# Testing
 
 ## Index
 
@@ -27,39 +27,43 @@
     5. [general.js](#generaljs-1)
     6. [index.js](#indexjs-1)
     7. [game.js](#gamejs-1)
-3. [User Story Validation](#user-story-validation)
+3. [Automated Validation](#automated-validation)
+    1. [general.js](#generaljs-2)
+    2. [index.js](#indexjs-2)
+    3. [game.js](#gamejs-2)
+4. [User Story Validation](#user-story-validation)
     1. [First Time Visitor Goals](#first-time-visitor-goals)
     2. [Returning Visitor Goals](#returning-visitor-goals)
     3. [Frequent Visitor Goals](#frequent-visitor-goals)
-4. [User Personas](#user-personas)
+5. [User Personas](#user-personas)
     1. [User 1](#user-1)
     2. [User 2](#user-2)
     3. [User 3](#user-3)
     4. [User 4](#user-4)
-4. [Browser Compatibility](#browser-compatibility)
+6. [Browser Compatibility](#browser-compatibility)
     1. [Google Chrome](#google-chrome)
     2. [Microsoft Edge](#microsoft-edge)
     3. [Firefox](#firefox)
     4. [Opera](#opera)
     5. [Safari (on an iPhone)](#safari-on-an-iphone)
     6. [Safari (on an iPad)](#safari-on-an-ipad)
-5. [Accessibility](#accessibility)
+7. [Accessibility](#accessibility)
     1. [index.html](#indexhtml-3)
     2. [game.html](#gamehtml-3)
     3. [faq.html](#faqhtml-3)
     4. [404.html](#404html-3)
-6. [Responsiveness](#responsiveness)
+8. [Responsiveness](#responsiveness)
     1. [index.html](#indexhtml-4)
     2. [game.html](#gamehtml-4)
     3. [faq.html](#faqhtml-4)
     4. [404.html](#404html-4)
-7. [Performance](#performance)
+9. [Performance](#performance)
     1. [index.html](#indexhtml-5)
     2. [game.html](#gamehtml-5)
     3. [faq.html](#faqhtml-5)
     4. [404.html](#404html-5)
-8. [Fixed Bugs](#fixed-bugs)
-9. [Unfixed Bugs](#unfixed-bugs)
+10. [Fixed Bugs](#fixed-bugs)
+11. [Unfixed Bugs](#unfixed-bugs)
 
 ## Code Validation
 
@@ -229,6 +233,14 @@ Here are the results of a manual test of all links, and any form fields, for eac
 | Social media icon - Instagram | Click to open Instagram in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
 | Social media icon - Facebook | Click to open Facebook in a new tab  | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
 | Footer link - "Dominic Francis" | Click to open dominicfrancis.co.uk in a new tab | The link opens in a new tab  | The link opens in a new tab | WORKS AS EXPECTED |
+
+### general.js
+
+### index.js
+
+### game.js
+
+## Automated Validation
 
 ### general.js
 

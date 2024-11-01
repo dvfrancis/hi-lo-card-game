@@ -234,7 +234,7 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website home page](assets/images/home-page.webp)
     </details>  
 
-    - The home page introduces the site, but its main purpose is to provide the main call to action - which is to play the game.
+    - The home page introduces the site, but its main purpose is to provide the main call to action - play the game.
     - The browser tab displays the custom favicon and a title - "HI | LO - How Far Can You Go?".
 
 - Game (game.html):
@@ -244,36 +244,60 @@ The website is designed to appeal to all demographics, but the following persona
 
     ![Website game page](assets/images/game-page.webp)
     </details>
+
+    - The game page is where a player plays the game:
+        - The cards for the current round are prominiently displayed at the top of the page (surrounded by a yellow border).
+        - All messages relating to gameplay are displayed in the central section (surrounded by an orange border).
+        - It clearly shows all information pertinent to the game, such as player points and wager, at the bottom of the page.
+        - It informs a player of their game progress, via the round number and card number, at the bottom of the page.
+  
     <details>
     <summary>Click to view the game page, when navigating away via any link in the header</summary>
 
     ![Website game page when navigating away](assets/images/abandon-game-page.webp)
     </details>
-    <details>
-    <summary>Click to view the game page, when winning a round</summary>
 
-    ![Website game page when winning a round](assets/images/game-page-won-round.webp)
-    </details>
-    <details>
-    <summary>Click to view the game page, when a round is lost</summary>
-
-    ![Website game page when a round is lost](assets/images/game-page-lost-round.webp)
-    </details>
-    <details>
-    <summary>Click to view the game page, when a round is a draw</summary>
-
-    ![Website game page when a round is a draw](assets/images/game-page-drawn-round.webp)
-    </details>
-    <details>
-    <summary>Click to view the game page, when reaching the penultimate round</summary>
-
-    ![Website game page when reaching the penultimate round](assets/images/game-page-last-round.webp)
-    </details>
     <details>
     <summary>Click to view the game page, when leaving the game after any round, and before the end of a game</summary>
 
     ![Website game page when leaving or abandoning the game after any round, before the end of the game](assets/images/leave-game-page.webp)
     </details>
+
+    - If a player attempts to navigate away from the page, via the links in the header, a warning will appear:
+        - If a player still wishes to abandon the game, they are shown their last score and redirected to the link they clicked.
+
+    <details>
+    <summary>Click to view the game page, when winning a round</summary>
+
+    ![Website game page when winning a round](assets/images/game-page-won-round.webp)
+    </details>
+
+    - If a player wins a round, they are asked whether or not they wish to continue.
+
+    <details>
+
+    - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page.
+
+    <summary>Click to view the game page, when a round is lost</summary>
+
+    ![Website game page when a round is lost](assets/images/game-page-lost-round.webp)
+    </details>
+
+    <details>
+    <summary>Click to view the game page, when a round is a draw</summary>
+
+    ![Website game page when a round is a draw](assets/images/game-page-drawn-round.webp)
+    </details>
+
+    - If a player loses or draws a round, they are asked whether or not they wish to continue.
+
+    <details>
+    <summary>Click to view the game page, when reaching the penultimate round</summary>
+
+    ![Website game page when reaching the penultimate round](assets/images/game-page-last-round.webp)
+    </details>
+
+    - If a player reaches the penultimate round of a game, they are asked whether or not they wish to continue.
 
     <details>
     <summary>Click to view the game page, when the game is completed</summary>
@@ -281,20 +305,8 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website game page when game completed](assets/images/game-page-completed.webp)
     </details>
 
-    - The game page is where a player plays the game (see screenshot above):
-        - The cards for the current round are prominiently displayed at the top of the page (surrounded by a yellow border).
-        - All messages relating to gameplay are displayed in the central section (surrounded by an orange border).
-        - It clearly shows all information pertinent to the game, such as player points and wager, at the bottom of the page.
-        - It informs a player of their game progress, via the round number and card number, at the bottom of the page.
-    - If a player attempts to navigate away from the page, via the links in the header, a warning will appear (see screenshot above):
-        - If a player still wishes to abandon the game, they are shown their last score and redirected to the link they clicked (see screenshot above).
-    - If a player wins a round, they are asked whether or not they wish to continue (see screenshot above).
-    - If a player loses or draws a round, they are asked whether or not they wish to continue (see screenshot above).
-    - If a player reaches the penultimate round of a game, they are asked whether or not they wish to continue (see screenshot above).
-    - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page (see screenshot above).
     - If a player completes an entire game of ten rounds, they are shown their final score and their highest score (see screenshot above).
     - The browser tab displays the custom favicon and a title - "HI | LO - Play The Game".
-
 
 - FAQ (faq.html):
 

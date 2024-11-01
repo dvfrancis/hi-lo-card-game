@@ -1,4 +1,4 @@
-# Higher-or-Lower Premium Card Game
+# Higher-or-Lower Card Game
 
 ## Overview
 

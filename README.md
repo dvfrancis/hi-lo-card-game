@@ -178,8 +178,8 @@ The website is designed to appeal to all demographics, but the following persona
 
 - General:
 
-    - All pages responsive, with a layout that automaically adjusts to the user device screen size.
-    - The desktop site was used to produce all screenshots in this section, to give the clearest illustration of different aspects of the site. 
+    - All pages are responsive, with a layout that automaically adjusts to the user's device screen size.
+    - A desktop (and larger tablet) screen size was used to produce all screenshots in this section, to give the clearest illustration of different aspects of the site. 
 
 - Browser Tab:
 
@@ -189,7 +189,7 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website favicon](assets/images/website-favicon.webp)
     </details>
 
-    - A favicon has been added to the site to help users identify the site visually and when saved as a browser bookmark / favourite.
+    - A favicon has been added to the site to help users identify the site when loaded among other tabs, and when the site is saved as a browser bookmark / favourite.
 
 
 - Header:
@@ -210,10 +210,10 @@ The website is designed to appeal to all demographics, but the following persona
     - Header text is shown on a contrasting plain background.
     - The site's name is left-aligned.
     - Navigation is right-aligned, and contains links to:
-        - Home: returns the user to the home page (index.html).
-        - Game: takes the user directly to the game page (game.html).
-        - FAQ: allows the user to access the frequently asked questions page (faq.html).
-    - If the user attempts to access a non-existent page, they will be taken to a custom error page (404-html) which returns them to index.html after 15 seconds; however, this is NOT indicated in the navigation links that appear on 404.html.
+        - Home: takes the user to the home page (index.html).
+        - Game: takes the user to the game page (game.html).
+        - FAQ: takes the user to the frequently asked questions page (faq.html).
+    - If the user attempts to access a non-existent page, they will be taken to a custom error page (404-html) which returns them to index.html after 15 seconds; however, this is NOT indicated in the navigation links that appear on any page (including 404.html).
 
 - Footer:
 
@@ -223,8 +223,8 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website footer](assets/images/website-footer.webp)
     </details>  
 
-    - The footer is sticky, and is alway spushed down to the bottom of the page by website content.
-    - It contains social media icons, and legal information, for easy user access.
+    - The footer is sticky, and is always pushed down to the bottom of the page by website content.
+    - It contains social media icons, and miscellaneous information, for easy user access.
 
 - Home (index.html):
 

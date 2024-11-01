@@ -270,10 +270,6 @@ The website is designed to appeal to all demographics, but the following persona
 
     ![Website game page when winning a round](assets/images/game-page-won-round.webp)
     </details>
-
-    - If a player wins a round, they are asked whether or not they wish to continue.
-    - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page.
-    
     <details>
     <summary>Click to view the game page, when a round is lost</summary>
 
@@ -286,6 +282,8 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website game page when a round is a draw](assets/images/game-page-drawn-round.webp)
     </details>
 
+    - If a player wins a round, they are asked whether or not they wish to continue.
+    - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page.
     - If a player loses or draws a round, they are asked whether or not they wish to continue.
 
     <details>
@@ -302,7 +300,7 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website game page when game completed](assets/images/game-page-completed.webp)
     </details>
 
-    - If a player completes an entire game of ten rounds, they are shown their final score and their highest score (see screenshot above).
+    - If a player completes an entire game of ten rounds, they are shown their final score and their highest score.
     - The browser tab displays the custom favicon and a title - "HI | LO - Play The Game".
 
 - FAQ (faq.html):
@@ -313,7 +311,7 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website FAQ page](assets/images/faq-page.webp)
     </details>  
 
-    - The FAQ provides background information about the game, and how it's played.
+    - The FAQ provides background information on the game, and explains the rules.
     - The browser tab displays the custom favicon and a title - "HI | LO - FAQ".
 
 
@@ -363,7 +361,7 @@ User flow diagram of potential user-website interaction routes - optional pathwa
 ![Hi-Lo gameplay logic flowchart](documentation/flowcharts/game-logic.webp)
 </details>
 
-Flowchart explaining the logic behind the HI | LO game; used to formulate JavaScript code.
+Flowchart explaining the logic behind the HI | LO game, and used to formulate the JavaScript code.
 
 ### Skeleton
 
@@ -484,12 +482,12 @@ Wireframe diagrams of my initial ideas:
 
 </details>
 
-- Website colours were chosen by using the Sarah Renae Clarke Colour Catalogue (Volume 2) card 406.
+- Website colours were chosen from the Sarah Renae Clarke Colour Catalogue (Volume 2) - card 406.
 - Text colours on the website are a mix of white (#FFF) and black (#000).
 
 #### Typography
 
-The fonts used on the site were chosen from Google Fonts:
+Google Fonts was used to source all fonts:
   
 - [Montserrat](https://fonts.google.com/specimen/Montserrat)
 - [Lora](https://fonts.google.com/specimen/Lora)
@@ -513,12 +511,12 @@ All website copy has been written by myself.
 - [HTML](https://en.wikipedia.org/wiki/HTML), [CSS](https://en.wikipedia.org/wiki/CSS), and [JavaScript.](https://en.wikipedia.org/wiki/JavaScript) - for website structure / interactivity.
 - [Bootstrap](https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)) - for layout / some styling.
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - for troubleshooting / testing (including for [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) performance reports).
-- [Deck of Cards - An API](https://www.deckofcardsapi.com/) - for deck of cards API.
+- [Deck of Cards - An API](https://www.deckofcardsapi.com/) - for obtaining the deck of cards.
 - [GitHub](https://github.com/) - for version control.
 - [GitHub Pages](https://pages.github.com/) - for website hosting.
 - [Gitpod](https://gitpod.io/) - for online coding.
-- [Figma](https://www.figma.com/) - for flow diagrams / flowcharts / wireframes.
 - [Visual Studio Code](https://code.visualstudio.com/) - for local coding.
+- [Figma](https://www.figma.com/) - for flow diagram / flowchart / wireframe design.
 - [Microsoft CoPilot](https://copilot.microsoft.com/) - for general coding advice.
 - [Google Fonts](https://fonts.google.com/) - for all fonts.
 - [FontAwesome](https://fontawesome.com/) - for all icons.
@@ -530,10 +528,9 @@ All website copy has been written by myself.
 - [Safari](https://www.apple.com/uk/safari/) - for website preview / testing and mobile screenshots (using an iPad Pro (12.9-inch) (2nd generation)).
 - [W3C HTML Checker](https://validator.w3.org/) - for checking HTML code.
 - [W3C CSS Checker](https://jigsaw.w3.org/css-validator/) - for checking CSS code.
+- [JSHint](https://jshint.com/) - for checking JavaScript code.
 - [Web Accessibility Evaluation Tool (WAVE)](https://wave.webaim.org/) - for checking website accessibility.
 - [Responsive Web Design Checker](https://responsivedesignchecker.com/) - for checking website responsiveness.
-- [Web Accessibility in Mind (WebAIM) Contrast Checker](https://webaim.org/resources/contrastchecker/) - for checking website contrast.
-- [JSHint](https://jshint.com/) - for checking JavaScript code.
 - [CSS Tools: Reset CSS](https://meyerweb.com/eric/tools/css/reset/) - for addressing browser inconsistencies.
 - [Website Mockup Generator](https://websitemockupgenerator.com/) - for a preview of the site on different devices.
 - [GoFullPage](https://gofullpage.com/) - for exporting full-size web page previews (this does not include Firefox, which does not support it).
@@ -542,8 +539,8 @@ All website copy has been written by myself.
 - [Font Joy](https://fontjoy.com/) - for font pairing inspiration.
 - [Microsoft Photos](https://apps.microsoft.com/detail/9wzdncrfjbh4?hl=en-gb&gl=US) - for image editing.
 - [Affinity Photo 2](https://affinity.serif.com/en-gb/photo/) - for image editing.
-- [To WebP](https://towebp.io/) - for generating webp images.
-- [Favicon Generator](https://favicon.io/favicon-converter/) - for generating website favicon.
+- [To WebP](https://towebp.io/) - for converting all images to webp format.
+- [Favicon Generator](https://favicon.io/favicon-converter/) - for generating the website favicon.
 - [Diffchecker](https://www.diffchecker.com/) - for comparing JavaScript code.
 
 ## Deployment
@@ -552,7 +549,7 @@ All website copy has been written by myself.
 
 The site was deployed using GitHub Pages, as follows:
 
-- Open the repository > click 'Settings'.
+- Open the repository > 'Settings'.
 - On the left, under 'Code and automation', click 'Pages'.
 - On the right section, under 'Build and deployment' and 'Source', click to select 'Deploy from a branch'.
 - Under 'Branch', click to select the main branch.
@@ -566,7 +563,7 @@ To make changes to a repository, without affecting the original copy, you can fo
 
 - Open the repository.
 - To the right of the page, click the 'Fork' button.
-- You can then open this repository in the IDE of your choice, and make changes as required.
+- You can then open this repository in the IDE of your choice, and make your own changes.
 
 ![How to fork a repository](assets/images/github-fork-deployment.webp)
 

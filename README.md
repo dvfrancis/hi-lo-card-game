@@ -282,9 +282,8 @@ The website is designed to appeal to all demographics, but the following persona
     ![Website game page when a round is a draw](assets/images/game-page-drawn-round.webp)
     </details>
 
-    - If a player wins a round, they are asked whether or not they wish to continue.
+    - If a player wins, loses, or draws a round they are asked whether or not they wish to continue.
     - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page.
-    - If a player loses or draws a round, they are asked whether or not they wish to continue.
 
     <details>
     <summary>Click to view the game page, when reaching the penultimate round</summary>

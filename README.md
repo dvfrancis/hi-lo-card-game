@@ -248,8 +248,7 @@ The website is designed to appeal to all demographics, but the following persona
     - The game page is where a player plays the game:
         - The cards for the current round are prominiently displayed at the top of the page (surrounded by a yellow border).
         - All messages relating to gameplay are displayed in the central section (surrounded by an orange border).
-        - It clearly shows all information pertinent to the game, such as player points and wager, at the bottom of the page.
-        - It informs a player of their game progress, via the round number and card number, at the bottom of the page.
+        - It clearly shows all information pertinent to the game - the value of aces, the current round number, the current card number, the player's points, and the player's wager - at the bottom of the page, to help inform a player of their progress through the game.
   
     <details>
     <summary>Click to view the game page, when navigating away via any link in the header</summary>
@@ -273,11 +272,9 @@ The website is designed to appeal to all demographics, but the following persona
     </details>
 
     - If a player wins a round, they are asked whether or not they wish to continue.
-
-    <details>
-
     - If a player does not wish to continue after winning, losing, or drawing a round, or once they reach the last round, they are shown their final score and redirected to the home page.
-
+    
+    <details>
     <summary>Click to view the game page, when a round is lost</summary>
 
     ![Website game page when a round is lost](assets/images/game-page-lost-round.webp)

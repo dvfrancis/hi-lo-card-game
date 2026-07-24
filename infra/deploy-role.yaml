@@ -11,6 +11,11 @@ Parameters:
   GitHubRepo:
     Type: String
     Default: dvfrancis/hi-lo-card-game
+  # The same repository, identified by immutable numeric IDs (owner, then repo)
+  # rather than by name. See the trust policy below for why both are needed.
+  GitHubRepoIds:
+    Type: String
+    Default: dvfrancis@30801098/hi-lo-card-game@864848233
   Bucket:
     Type: String
     Default: hi-lo-card-game-dominicfrancis
@@ -34,7 +39,21 @@ Resources:
             Condition:
               StringEquals:
                 token.actions.githubusercontent.com:aud: sts.amazonaws.com
-                token.actions.githubusercontent.com:sub: !Sub repo:${GitHubRepo}:ref:refs/heads/main
+                # The repository is listed twice, and both forms are needed.
+                # GitHub sends the plain name today, and switches to the
+                # immutable-ID form after a repository is renamed. A subject is
+                # matched as an exact string, so listing only the name means a
+                # rename breaks deploys - with an error ("Not authorized to
+                # perform sts:AssumeRoleWithWebIdentity") that names neither the
+                # repository nor the condition that failed. That happened to
+                # kanban after it was renamed from Simple-Kanban, and took a
+                # CloudTrail dig to work out.
+                #
+                # This widens nothing: both entries identify the same single
+                # repository and the same single branch.
+                token.actions.githubusercontent.com:sub:
+                  - !Sub repo:${GitHubRepoIds}:ref:refs/heads/main
+                  - !Sub repo:${GitHubRepo}:ref:refs/heads/main
       Policies:
         - PolicyName: deploy-site
           PolicyDocument:

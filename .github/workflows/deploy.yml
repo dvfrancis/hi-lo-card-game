@@ -1,0 +1,39 @@
+# Deploys the site to S3 on every push to main that touches something the
+# live site is built from. Authenticates to AWS via OIDC (no stored keys):
+# the github-actions-deploy-hi-lo-card-game role (infra/deploy-role.yaml)
+# only trusts this repo's main branch. The deploy itself is the same
+# build.sh everyone runs locally, so CI and by-hand deploys cannot drift.
+
+name: Deploy site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.html"
+      - "assets/**"
+      - "build.sh"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+concurrency:
+  group: deploy-site
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::115019371912:role/github-actions-deploy-hi-lo-card-game
+          aws-region: eu-west-2
+
+      - name: Build and deploy
+        run: ./build.sh --deploy --yes

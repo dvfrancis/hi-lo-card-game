@@ -1,0 +1,63 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >-
+  IAM role assumed by this repo's GitHub Actions deploy workflow via the
+  account's existing GitHub OIDC provider. Follows the same pattern as the
+  other github-actions-deploy roles: trust locked to one repo's main branch,
+  permissions locked to exactly what the deploy touches (the site bucket and
+  its CloudFront distribution). Deployed as stack "hi-lo-card-game-deploy-role"
+  in eu-west-2.
+
+Parameters:
+  GitHubRepo:
+    Type: String
+    Default: dvfrancis/hi-lo-card-game
+  Bucket:
+    Type: String
+    Default: hi-lo-card-game-dominicfrancis
+  DistributionId:
+    Type: String
+    Default: E3BVAHCA09RLS3
+
+Resources:
+  DeployRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: github-actions-deploy-hi-lo-card-game
+      Description: Lets GitHub Actions on the hi-lo-card-game repo main branch sync the site bucket and invalidate its distribution.
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Federated: !Sub arn:aws:iam::${AWS::AccountId}:oidc-provider/token.actions.githubusercontent.com
+            Action: sts:AssumeRoleWithWebIdentity
+            Condition:
+              StringEquals:
+                token.actions.githubusercontent.com:aud: sts.amazonaws.com
+                token.actions.githubusercontent.com:sub: !Sub repo:${GitHubRepo}:ref:refs/heads/main
+      Policies:
+        - PolicyName: deploy-site
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: SyncOnlyTheSiteBucket
+                Effect: Allow
+                Action:
+                  - s3:ListBucket
+                Resource: !Sub arn:aws:s3:::${Bucket}
+              - Sid: WriteOnlyTheSiteObjects
+                Effect: Allow
+                Action:
+                  - s3:GetObject
+                  - s3:PutObject
+                  - s3:DeleteObject
+                Resource: !Sub arn:aws:s3:::${Bucket}/*
+              - Sid: InvalidateOnlyTheSiteDistribution
+                Effect: Allow
+                Action: cloudfront:CreateInvalidation
+                Resource: !Sub arn:aws:cloudfront::${AWS::AccountId}:distribution/${DistributionId}
+
+Outputs:
+  DeployRoleArn:
+    Description: Set as role-to-assume in .github/workflows/deploy.yml.
+    Value: !GetAtt DeployRole.Arn

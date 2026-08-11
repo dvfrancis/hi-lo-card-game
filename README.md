@@ -16,8 +16,8 @@ In the UK, higher-or-lower was the basis for the popular 1980s television game s
 
 ### Site Link
 
-[live site]: https://dvfrancis.github.io/hi-lo-card-game
-The [live site] is hosted by Github Pages.
+[live site]: https://hi-lo.dominicfrancis.co.uk
+The [live site] is hosted on Amazon S3 and served through Amazon CloudFront.
 
 ## Index
 
@@ -51,8 +51,9 @@ The [live site] is hosted by Github Pages.
 3. [Testing](#testing)
 4. [Technologies Used](#technologies-used)
 5. [Deployment](#deployment)
-    1. [GitHub Pages](#github-pages)
-    2. [Forks](#forks)
+    1. [Amazon S3 and CloudFront](#amazon-s3-and-cloudfront)
+    2. [GitHub Pages (original deployment)](#github-pages-original-deployment)
+    3. [Forks](#forks)
     3. [Local Clones](#local-clones)
     4. [Automatically Create a Gitpod Workspaces](#automatically-create-a-gitpod-workspace)
 6. [Credits and References](#credits-and-references)
@@ -512,7 +513,9 @@ All website copy has been written by myself.
 - [Google Chrome Developer Tools](https://developer.chrome.com/docs/devtools/) - for troubleshooting / testing (including for [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) performance reports).
 - [Deck of Cards - An API](https://www.deckofcardsapi.com/) - for obtaining the deck of cards.
 - [GitHub](https://github.com/) - for version control.
-- [GitHub Pages](https://pages.github.com/) - for website hosting.
+- [Amazon S3](https://aws.amazon.com/s3/) and [Amazon CloudFront](https://aws.amazon.com/cloudfront/) - for website hosting.
+- [GitHub Actions](https://github.com/features/actions) - for automated deployment.
+- [GitHub Pages](https://pages.github.com/) - for the original website hosting.
 - [Gitpod](https://gitpod.io/) - for online coding.
 - [Visual Studio Code](https://code.visualstudio.com/) - for local coding.
 - [Figma](https://www.figma.com/) - for flow diagram / flowchart / wireframe design.
@@ -544,9 +547,30 @@ All website copy has been written by myself.
 
 ## Deployment
 
-### GitHub Pages
+### Amazon S3 and CloudFront
 
-The site was deployed using GitHub Pages, as follows:
+The site is deployed to an Amazon S3 bucket in the `eu-west-2` region and served through an Amazon CloudFront distribution at [hi-lo.dominicfrancis.co.uk](https://hi-lo.dominicfrancis.co.uk).
+
+Deployment is automated. Every push to the main branch that touches an HTML file, anything under `assets/`, `build.sh`, or the workflow file itself triggers the `Deploy site` GitHub Actions workflow, which runs `./build.sh --deploy --yes`.
+
+- `build.sh` copies the four pages and the `assets` directory into a `deploy/` folder, so nothing outside that allowlist can reach the bucket.
+- Assets upload first, with a one-year immutable cache header.
+- HTML uploads last, with a `no-cache` header, so a page is never live while referencing an asset that has not finished uploading.
+- The CloudFront cache is then invalidated.
+
+GitHub Actions authenticates to AWS using OpenID Connect, so no access keys are stored in the repository. The IAM role it assumes is defined as CloudFormation in `infra/deploy-role.yaml`, and is scoped to that one bucket and that one distribution, trusting only the main branch of this repository.
+
+To deploy manually from a local machine, with the AWS CLI installed and configured:
+
+```
+./build.sh --deploy
+```
+
+The script prompts for confirmation before it writes anything to the bucket.
+
+### GitHub Pages (original deployment)
+
+The site was originally deployed using GitHub Pages, as follows:
 
 - Open the repository > 'Settings'.
 - On the left, under 'Code and automation', click 'Pages'.

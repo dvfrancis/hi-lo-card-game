@@ -9,3 +9,8 @@ function startGame() {
 }
 
 startGame();
+
+// Exported for Jest. Guarded so the browser never dereferences `module`.
+if (typeof module !== "undefined") {
+  module.exports = { startGame };
+}

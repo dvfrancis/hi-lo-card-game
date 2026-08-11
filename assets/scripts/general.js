@@ -8,3 +8,8 @@ function updateCopyrightYear() {
 }
 
 updateCopyrightYear();
+
+// Exported for Jest. Guarded so the browser never dereferences `module`.
+if (typeof module !== "undefined") {
+    module.exports = { updateCopyrightYear };
+}

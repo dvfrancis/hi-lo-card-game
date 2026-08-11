@@ -277,18 +277,20 @@ Below are the results of JavaScript validation for each script file, using [JSHi
 
 I've done one test for each of the three JavaScript files (general.js, index.js, and game,js) as, unfortunately, I ran out of time to do any more.
 
-The `module.exports` commmand, required by Jest at the end of each JavaScript file, causes an `Uncaught ReferenceError: module is not defined` in the browser. This is because it is Node.js-specific and part of the CommonJS module system, whereas the browser uses the ES6 module system. I have therefore run the tests with this code and then deleted it from each file - this doesn't affect the functioning of the website in any way.
+A bare `module.exports` command at the end of each JavaScript file, which is what Jest needs in order to import the functions, causes an `Uncaught ReferenceError: module is not defined` in the browser. This is because it is Node.js-specific and part of the CommonJS module system, whereas the browser uses the ES6 module system. I originally worked around this by adding the export lines before a test run and deleting them afterwards. The export is now wrapped in a `typeof module` guard instead, so the browser skips the block entirely and the tests can be run at any time with `npm test`. This doesn't affect the functioning of the website in any way.
 
 Shown below are the exact commands used in each file, alongside the tests used by the test files.
 
 ### general.js
 
-Export command for Jest testing (removed after testing)
+Export command for Jest testing (guarded, so it is skipped in the browser)
 
 ```
-module.exports = {
-    updateCopyrightYear
-};
+if (typeof module !== "undefined") {
+    module.exports = {
+        updateCopyrightYear
+    };
+}
 ```
 
 Jest tests from general.test.js:
@@ -312,12 +314,14 @@ describe('updating the copyright year', () => {
 
 ### index.js
 
-Export command for Jest testing (removed after testing)
+Export command for Jest testing (guarded, so it is skipped in the browser)
 
 ```
-module.exports = {
-  startGame
-};
+if (typeof module !== "undefined") {
+  module.exports = {
+    startGame
+  };
+}
 ```
 
 Jest tests from index.test.js:
@@ -346,12 +350,14 @@ describe('starting the game', () => {
 
 ### game.js
 
-Export command for Jest testing (removed after testing)
+Export command for Jest testing (guarded, so it is skipped in the browser)
 
 ```
-module.exports = {
-  leaveGame
-};
+if (typeof module !== "undefined") {
+  module.exports = {
+    leaveGame
+  };
+}
 ```
 
 Jest tests from game.test.js:
@@ -876,7 +882,7 @@ The fixed bugs listed here are numbered to match the cases logged in the GitGub 
 
 | Bug | Fix |
 | --- | --- |
-| Fetch error in console when using Jest tests | Although the Jest test run as expected, this error was caused by `console.error('Fetch error:', error);`, which is used in a try / catch statement. When the line is commented out, the error disappears (However, I cannot remove the line completely as it is essential to the code) |
+| Fetch error in console when using Jest tests | Although the Jest test run as expected, this error was caused by `console.error('Fetch error:', error);`, which is used in a try / catch statement. When the line is commented out, the error disappears (However, I cannot remove the line completely as it is essential to the code). Since resolved: `game.js` calls `shuffleCards()` as soon as it is imported, and jsdom supplies no `fetch`, so the request failed and hit that catch block. `jest.setup.js` now stubs `global.fetch`, and `jest.config.js` loads it via `setupFiles`, so the console stays clean and the `console.error` line is untouched |
 
 ## Unfixed Bugs
 

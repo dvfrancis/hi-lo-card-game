@@ -592,3 +592,8 @@ function leaveGame(url) {
 }
 
 shuffleCards();
+
+// Exported for Jest. Guarded so the browser never dereferences `module`.
+if (typeof module !== "undefined") {
+  module.exports = { leaveGame };
+}

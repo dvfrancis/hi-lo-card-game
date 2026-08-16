@@ -1,15 +1,10 @@
-core.Microsoft*
-core.mongo*
-core.python*
-env.py
-__pycache__/
-*.py[cod]
 node_modules/
-cloudinary_python.txt
 # Build output of build.sh (the script itself is committed; GitHub Actions runs it)
 deploy/
 # macOS metadata
 .DS_Store
 ._*
-# Claude Code local config (launch.json for the static preview server)
+# Editor and local tool config
+.vscode/
+.idea/
 .claude/

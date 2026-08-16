@@ -106,5 +106,6 @@ heading.
   reports, bug log). It is not part of the site and `build.sh` deliberately excludes it.
 - `README.md` and `TESTING.md` are assessment deliverables and are long and structured. Keep
   their existing format if you edit them.
-- `.vscode/` and `.gitpod.*` are Code Institute template scaffolding — Python, Postgres and
-  Heroku tooling with nothing to do with this project. Ignore them unless asked.
+- The Code Institute template scaffolding (`.vscode/`, `.gitpod.yml`, `.gitpod.dockerfile`)
+  was removed in #85. It configured Python, Postgres, Mongo and Heroku, none of which this
+  project uses. `.gitignore` no longer carries the Python entries either.

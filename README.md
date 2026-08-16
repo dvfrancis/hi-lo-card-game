@@ -55,7 +55,6 @@ The [live site] is hosted on Amazon S3 and served through Amazon CloudFront.
     2. [GitHub Pages (original deployment)](#github-pages-original-deployment)
     3. [Forks](#forks)
     3. [Local Clones](#local-clones)
-    4. [Automatically Create a Gitpod Workspaces](#automatically-create-a-gitpod-workspace)
 6. [Credits and References](#credits-and-references)
 
 7. [Acknowledgements](#acknowledgements)
@@ -516,7 +515,7 @@ All website copy has been written by myself.
 - [Amazon S3](https://aws.amazon.com/s3/) and [Amazon CloudFront](https://aws.amazon.com/cloudfront/) - for website hosting.
 - [GitHub Actions](https://github.com/features/actions) - for automated deployment.
 - [GitHub Pages](https://pages.github.com/) - for the original website hosting.
-- [Gitpod](https://gitpod.io/) - for online coding.
+- [Gitpod](https://gitpod.io/) - for online coding during the original build.
 - [Visual Studio Code](https://code.visualstudio.com/) - for local coding.
 - [Figma](https://www.figma.com/) - for flow diagram / flowchart / wireframe design.
 - [Microsoft CoPilot](https://copilot.microsoft.com/) - for general coding advice.
@@ -600,12 +599,6 @@ To deploy the project on your own computer you can clone it:
 - Navigate to the destination directory, and then enter `git clone`, paste the copied string, and hit 'Enter'.
 
 ![Deploy a clone](assets/images/local-cloning-process.webp)
-
-### Automatically Create a Gitpod Workspace
-
-You can create a Gitpod workspace for this repository by clicking the following button (it requires the [Gitpod browser extension](https://www.gitpod.io/docs/configure/user-settings/browser-extension)).
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/dvfrancis/hi-lo-card-game)
 
 ## Credits and References
 

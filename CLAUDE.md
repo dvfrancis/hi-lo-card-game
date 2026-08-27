@@ -83,12 +83,14 @@ lines each.
 404.html)` and `DIRS=(assets)`. A new top-level page will not ship until it is added to that
 array. `deploy/` is wiped on every run and is gitignored.
 
-Deployment is S3 + CloudFront in `eu-west-2` (bucket `hi-lo-card-game-dominicfrancis`,
-distribution `E3BVAHCA09RLS3`). `.github/workflows/deploy.yml` runs the same `build.sh` on
+Deployment is S3 + CloudFront in `eu-west-2` (bucket `portfolio-dominicfrancis`, folder
+`hi-lo`, distribution `E3BVAHCA09RLS3`). The bucket holds several sites, one folder each.
+The distribution reads the folder through an origin path, so page addresses do not change. `.github/workflows/deploy.yml` runs the same `build.sh` on
 every push to `main` that touches `*.html`, `assets/**`, `build.sh`, or the workflow itself,
 authenticating via OIDC — no stored keys. The IAM role is defined in
 `infra/deploy-role.yaml` (CloudFormation stack `hi-lo-card-game-deploy-role`) and is scoped
-to that one bucket and distribution, trusting only this repo's `main` branch.
+to the `hi-lo` folder and that one distribution, trusting only this repo's `main` branch. It
+cannot touch another site's folder, so a wrong path in `build.sh` cannot erase one.
 
 Because CI and local deploys run the identical script, they cannot drift. Assets upload with
 a one-year immutable `Cache-Control`; HTML uploads last with `no-cache`, so a page never goes

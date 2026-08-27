@@ -550,14 +550,16 @@ All website copy has been written by myself.
 
 The site is deployed to an Amazon S3 bucket in the `eu-west-2` region and served through an Amazon CloudFront distribution at [hi-lo.dominicfrancis.co.uk](https://hi-lo.dominicfrancis.co.uk).
 
+The bucket is `portfolio-dominicfrancis`. It holds more than one site. Each site has its own folder, and this site uses the folder `hi-lo`. CloudFront reads that folder through an origin path. Thus the address of each page stays the same.
+
 Deployment is automated. Every push to the main branch that touches an HTML file, anything under `assets/`, `build.sh`, or the workflow file itself triggers the `Deploy site` GitHub Actions workflow, which runs `./build.sh --deploy --yes`.
 
-- `build.sh` copies the four pages and the `assets` directory into a `deploy/` folder, so nothing outside that allowlist can reach the bucket.
+- `build.sh` copies the four pages and the `assets` directory into a `deploy/` folder, so nothing outside that allowlist can reach the site folder.
 - Assets upload first, with a one-year immutable cache header.
 - HTML uploads last, with a `no-cache` header, so a page is never live while referencing an asset that has not finished uploading.
 - The CloudFront cache is then invalidated.
 
-GitHub Actions authenticates to AWS using OpenID Connect, so no access keys are stored in the repository. The IAM role it assumes is defined as CloudFormation in `infra/deploy-role.yaml`, and is scoped to that one bucket and that one distribution, trusting only the main branch of this repository.
+GitHub Actions authenticates to AWS using OpenID Connect, so no access keys are stored in the repository. The IAM role it assumes is defined as CloudFormation in `infra/deploy-role.yaml`, and is scoped to this site's folder and that one distribution, trusting only the main branch of this repository. The role cannot read or delete the folder of another site.
 
 To deploy manually from a local machine, with the AWS CLI installed and configured:
 

@@ -18,7 +18,21 @@ Parameters:
     Default: dvfrancis@30801098/hi-lo-card-game@864848233
   Bucket:
     Type: String
-    Default: hi-lo-card-game-dominicfrancis
+    Default: portfolio-dominicfrancis
+    Description: >-
+      Shared with the other dominicfrancis.co.uk sites. One folder per site.
+      This role reaches only the folder named in Prefix.
+
+      A change to this default does NOT change a stack that already exists.
+      "aws cloudformation deploy" keeps the value the stack already holds for
+      a parameter it already has. Pass the value to change it:
+        --parameter-overrides Bucket=portfolio-dominicfrancis
+  Prefix:
+    Type: String
+    Default: hi-lo
+    Description: >-
+      The folder this site is published into. The distribution reads the same
+      folder through an origin path, so the public addresses do not change.
   DistributionId:
     Type: String
     Default: E3BVAHCA09RLS3
@@ -59,18 +73,27 @@ Resources:
           PolicyDocument:
             Version: "2012-10-17"
             Statement:
-              - Sid: SyncOnlyTheSiteBucket
+              # Listing is limited to this site's folder. The deploy syncs with
+              # --delete, and the bucket holds other sites. A role that could
+              # list and delete the whole bucket makes one wrong path in
+              # build.sh able to erase them. This makes that impossible.
+              - Sid: ListOnlyThisSiteFolder
                 Effect: Allow
                 Action:
                   - s3:ListBucket
                 Resource: !Sub arn:aws:s3:::${Bucket}
-              - Sid: WriteOnlyTheSiteObjects
+                Condition:
+                  StringLike:
+                    s3:prefix:
+                      - !Sub "${Prefix}/*"
+                      - !Sub "${Prefix}"
+              - Sid: WriteOnlyThisSiteObjects
                 Effect: Allow
                 Action:
                   - s3:GetObject
                   - s3:PutObject
                   - s3:DeleteObject
-                Resource: !Sub arn:aws:s3:::${Bucket}/*
+                Resource: !Sub arn:aws:s3:::${Bucket}/${Prefix}/*
               - Sid: InvalidateOnlyTheSiteDistribution
                 Effect: Allow
                 Action: cloudfront:CreateInvalidation

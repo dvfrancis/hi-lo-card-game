@@ -10,7 +10,12 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 OUT="deploy"
-BUCKET="hi-lo-card-game-dominicfrancis"
+BUCKET="portfolio-dominicfrancis"
+PREFIX="hi-lo"
+# Every path below goes through DEST. The bucket holds more than one site,
+# so a sync with --delete that points at the bucket root erases the others.
+# Build the destination once here and never write "s3://$BUCKET/" again.
+DEST="s3://$BUCKET/$PREFIX"
 DISTRIBUTION_ID="E3BVAHCA09RLS3"
 
 # ---------------------------------------------------------------- build
@@ -47,12 +52,12 @@ echo "Built $(find "$OUT" -type f | wc -l | tr -d ' ') files into $OUT/ ($(du -s
 command -v aws >/dev/null || { echo "error: aws CLI not installed (brew install awscli)" >&2; exit 1; }
 
 # Fail before --delete can touch the wrong place.
-aws s3 ls "s3://$BUCKET/" >/dev/null 2>&1 \
-  || { echo "error: cannot read s3://$BUCKET/ — wrong bucket name, or credentials not configured" >&2; exit 1; }
+aws s3 ls "$DEST/" >/dev/null 2>&1 \
+  || { echo "error: cannot read $DEST/ — wrong bucket or prefix, or credentials not configured" >&2; exit 1; }
 
 echo
-echo "About to sync $OUT/ to s3://$BUCKET/ with --delete."
-echo "This removes anything in the bucket that is not in $OUT/."
+echo "About to sync $OUT/ to $DEST/ with --delete."
+echo "This removes anything in $PREFIX/ that is not in $OUT/. Other sites are not touched."
 # --yes (or a CI environment) skips the prompt; anything interactive must confirm.
 if [ "${2:-}" = "--yes" ] || [ -n "${CI:-}" ]; then
   echo "Non-interactive run, proceeding."
@@ -63,24 +68,24 @@ fi
 
 # Cache-Control is what makes deploys land without a CloudFront invalidation:
 # CloudFront obeys these headers instead of falling back to its 24h default TTL.
-aws s3 sync "$OUT/assets/" "s3://$BUCKET/assets/" \
+aws s3 sync "$OUT/assets/" "$DEST/assets/" \
   --delete --cache-control "public, max-age=31536000, immutable"
 
 # awscli guesses .svg from the extension and sometimes lands on
 # binary/octet-stream, which stops browsers rendering the image.
 find "$OUT/assets" -name '*.svg' -type f | while read -r f; do
   key="assets/${f#"$OUT"/assets/}"
-  aws s3 cp "s3://$BUCKET/$key" "s3://$BUCKET/$key" \
+  aws s3 cp "$DEST/$key" "$DEST/$key" \
     --metadata-directive REPLACE --content-type "image/svg+xml" \
     --cache-control "public, max-age=31536000, immutable"
 done
 
 # HTML last: a page must never go live referencing an asset that hasn't uploaded.
-aws s3 sync "$OUT/" "s3://$BUCKET/" \
+aws s3 sync "$OUT/" "$DEST/" \
   --delete --exclude "assets/*" --cache-control "no-cache"
 
 echo
-echo "Deployed to s3://$BUCKET/"
+echo "Deployed to $DEST/"
 if [ -n "$DISTRIBUTION_ID" ]; then
   echo "Only if something looks stale, invalidate:"
   echo "  aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'"

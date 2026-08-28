@@ -28,8 +28,13 @@ root with any static server; the pages use relative paths and work either way.
 
 ## Tests
 
-Three suites, one test each, all passing. They live in `assets/scripts/tests/` and cover
-`updateCopyrightYear`, `startGame` and `leaveGame`.
+Three suites, 30 tests, all passing. They live in `assets/scripts/tests/` and cover
+`updateCopyrightYear`, `startGame` and `leaveGame`, plus the pure decision helpers
+extracted from `game.js` in #84 — `judgeGuess`, `roundIsWon`, `isValidWager`,
+`aceValueFor`/`amendCardsObject`/`decideAces`, `nextGameState` and `resolveHighScore`.
+Those helpers hold the decisions only; the callers keep every DOM and state side effect,
+so the tests never stand up a game DOM. The rest of `game.js` stays uncovered, which is
+why statement coverage sits around 24%.
 
 Each script file ends with a guarded export so Jest can `require()` it without breaking the
 browser, which never dereferences `module`:

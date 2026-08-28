@@ -127,21 +127,22 @@ function decideAces() {
 }
 
 /**
+ * Give the numeric value an Ace takes for a round
+ */
+function aceValueFor(result) {
+  return result === "HIGH" ? 14 : 1;
+}
+
+/**
  * Update all Aces in the card array
  * to match the current round's Ace value
  */
 function amendCardsObject(result) {
-  if (result === "HIGH") {
-    cardsObject.cardAC = 14;
-    cardsObject.cardAD = 14;
-    cardsObject.cardAH = 14;
-    cardsObject.cardAS = 14;
-  } else {
-    cardsObject.cardAC = 1;
-    cardsObject.cardAD = 1;
-    cardsObject.cardAH = 1;
-    cardsObject.cardAS = 1;
-  }
+  const value = aceValueFor(result);
+  cardsObject.cardAC = value;
+  cardsObject.cardAD = value;
+  cardsObject.cardAH = value;
+  cardsObject.cardAS = value;
 }
 
 /**
@@ -283,12 +284,20 @@ function getWager() {
 }
 
 /**
+ * Decide whether a wager is allowed.
+ * It must be a number from 1 to the player's points
+ */
+function isValidWager(wagerAmount, points) {
+  return !isNaN(wagerAmount) && wagerAmount >= 1 && wagerAmount <= points;
+}
+
+/**
  * Handle Wager Submissions
  */
 function handleWagerSubmit() {
   const wagerAmount = +document.getElementById("wager-amount").value;
   errorMessage = document.getElementById("error-message");
-  if (isNaN(wagerAmount) || wagerAmount > playerPoints || wagerAmount < 1) {
+  if (!isValidWager(wagerAmount, playerPoints)) {
     errorMessage.innerHTML = `<p id="wager-msg">Your wager must be a number between 1 and ${playerPoints}. Please try again.</p>`;
     document.getElementById("wager-amount").value = "";
     playerWager = 0;
@@ -358,15 +367,43 @@ function displayCard() {
 }
 
 /**
+ * Number of correct guesses needed to win a round
+ */
+const GUESSES_TO_WIN = 4;
+
+/**
+ * Compare the two cards against the player's choice.
+ * Returns "correct", "wrong" or "draw"
+ */
+function judgeGuess(prevValue, currValue, choice) {
+  if (currValue === prevValue) {
+    return "draw";
+  }
+  if (currValue > prevValue) {
+    return choice === "Higher" ? "correct" : "wrong";
+  }
+  return choice === "Lower" ? "correct" : "wrong";
+}
+
+/**
+ * Decide whether the round is won.
+ * The round is won on the fourth correct guess only
+ */
+function roundIsWon(correct) {
+  return correct === GUESSES_TO_WIN;
+}
+
+/**
  * Calculate whether player choices
  * were correct or incorrect
  */
 function calculateOutcome() {
   let prevCard = cardsObject["card" + dealtCards.cards[currentCardIndex - 1].code];
   let currCard = cardsObject["card" + dealtCards.cards[currentCardIndex].code];
-  if (currCard > prevCard && hiLoChoice === "Higher") {
+  const verdict = judgeGuess(prevCard, currCard, hiLoChoice);
+  if (verdict === "correct") {
     correctGuesses += 1;
-    if (correctGuesses === 4) {
+    if (roundIsWon(correctGuesses)) {
       playerPoints += playerWager;
       displayPoints();
       gameStatus = "win";
@@ -374,17 +411,7 @@ function calculateOutcome() {
     } else {
       playerChoice();
     }
-  } else if (currCard < prevCard && hiLoChoice === "Lower") {
-    correctGuesses += 1;
-    if (correctGuesses === 4) {
-      playerPoints += playerWager;
-      displayPoints();
-      gameStatus = "win";
-      continueGame(gameStatus);
-    } else {
-      playerChoice();
-    }
-  } else if (currCard === prevCard) {
+  } else if (verdict === "draw") {
     totalCards += (currentCardCount - totalCards) - 1;
     gameStatus = "draw";
     continueGame(gameStatus);
@@ -434,31 +461,65 @@ function continueGame(status) {
 }
 
 /**
+ * Name the next action for the current game state.
+ * Returns "gameOver", "drawCards", "finalRound",
+ * "noPoints", or "none" when nothing is due
+ */
+function nextGameState(ended, remaining, points) {
+  if (ended) {
+    return "gameOver";
+  }
+  if (remaining > 7 && remaining <= 47 && points > 0) {
+    return "drawCards";
+  }
+  if (remaining === 7 && points > 0) {
+    return "finalRound";
+  }
+  if (points <= 0) {
+    return "noPoints";
+  }
+  return "none";
+}
+
+/**
  * Determine game state to decide next action
  */
 function decideGameState() {
   deleteModal();
   cardsDrawn = false; // Set cardsDrawn to false to allow new deck to be drawn
-  if (gameEnded) {
+  const next = nextGameState(gameEnded, dealtCards.remaining, playerPoints);
+  if (next === "gameOver") {
     gameOver();
-  } else if (dealtCards.remaining > 7 && dealtCards.remaining <= 47 && playerPoints > 0) {
+  } else if (next === "drawCards") {
     drawCards();
-  } else if (dealtCards.remaining === 7 && playerPoints > 0) {
+  } else if (next === "finalRound") {
     finalRound();
-  } else if (playerPoints <= 0) {
+  } else if (next === "noPoints") {
     noPoints();
   }
+}
+
+/**
+ * Work out the high score after a finished game.
+ * Reports the score to show and whether it beat the stored one
+ */
+function resolveHighScore(storedScore, points) {
+  const previous = storedScore ? +storedScore : 0;
+  const improved = points > previous;
+  return {
+    highScore: improved ? points : previous,
+    improved: improved
+  };
 }
 
 /**
  * Display final points at the end of the game
  */
 function gameOver() {
-  let storedScore = localStorage.getItem("high-score");
-  highScore = storedScore ? +storedScore : 0;
-  if (playerPoints > highScore) {
+  const scoreResult = resolveHighScore(localStorage.getItem("high-score"), playerPoints);
+  highScore = scoreResult.highScore;
+  if (scoreResult.improved) {
     localStorage.setItem("high-score", playerPoints);
-    highScore = playerPoints;
   }
   gameEnded = true;
   deleteModal();
@@ -595,5 +656,16 @@ shuffleCards();
 
 // Exported for Jest. Guarded so the browser never dereferences `module`.
 if (typeof module !== "undefined") {
-  module.exports = { leaveGame };
+  module.exports = {
+    leaveGame,
+    aceValueFor,
+    amendCardsObject,
+    decideAces,
+    isValidWager,
+    judgeGuess,
+    roundIsWon,
+    nextGameState,
+    resolveHighScore,
+    cardsObject
+  };
 }
